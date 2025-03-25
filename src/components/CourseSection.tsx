@@ -1,13 +1,13 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Check, Robot, Code, Database } from 'lucide-react';
+import { Bot, Code, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const courses = [
   {
     id: 'ur',
     title: 'Universal Robots (UR)',
-    icon: <Robot className="h-8 w-8 text-robotics-blue" />,
+    icon: <Bot className="h-8 w-8 text-robotics-blue" />,
     description: 'Master programming and operation of UR collaborative robots.',
     features: [
       'UR Script programming fundamentals',
