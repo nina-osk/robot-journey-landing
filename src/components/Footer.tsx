@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">RoboticsMastery</h3>
             <p className="text-gray-400 mb-6">
-              Empowering professionals with advanced industrial robotics programming skills since 2018.
+              Empoderando a profesionales con habilidades avanzadas de programación robótica industrial desde 2018.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">
@@ -32,40 +32,40 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">Home</a>
+                <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">Inicio</a>
               </li>
               <li>
-                <a href="#courses" className="text-gray-400 hover:text-robotics-blue transition-colors">Courses</a>
+                <a href="#courses" className="text-gray-400 hover:text-robotics-blue transition-colors">Cursos</a>
               </li>
               <li>
-                <a href="#features" className="text-gray-400 hover:text-robotics-blue transition-colors">Features</a>
+                <a href="#features" className="text-gray-400 hover:text-robotics-blue transition-colors">Características</a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-400 hover:text-robotics-blue transition-colors">Testimonials</a>
+                <a href="#testimonials" className="text-gray-400 hover:text-robotics-blue transition-colors">Testimonios</a>
               </li>
               <li>
-                <a href="#enroll" className="text-gray-400 hover:text-robotics-blue transition-colors">Enroll</a>
+                <a href="#enroll" className="text-gray-400 hover:text-robotics-blue transition-colors">Inscripción</a>
               </li>
             </ul>
           </div>
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4">Contáctanos</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
                 <span className="text-gray-400">
-                  123 Innovation Drive, Tech Park<br />
-                  San Francisco, CA 94107
+                  123 Avenida Innovación, Parque Tecnológico<br />
+                  Madrid, España, 28001
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-robotics-blue shrink-0 mr-3" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">+34 911 234 567</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-robotics-blue shrink-0 mr-3" />
@@ -76,21 +76,21 @@ const Footer = () => {
           
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
+            <h3 className="text-lg font-semibold mb-4">Mantente Actualizado</h3>
             <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for the latest course updates and industry news.
+              Suscríbete a nuestro boletín para recibir las últimas actualizaciones de cursos y noticias de la industria.
             </p>
             <form className="flex">
               <input
                 type="email"
-                placeholder="Your email address"
+                placeholder="Tu correo electrónico"
                 className="px-4 py-2 bg-gray-800 text-gray-200 rounded-l-md focus:outline-none focus:ring-1 focus:ring-robotics-blue w-full"
               />
               <button
                 type="submit"
                 className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-4 py-2 rounded-r-md"
               >
-                Join
+                Unirse
               </button>
             </form>
           </div>
@@ -99,12 +99,12 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © {currentYear} RoboticsMastery. All rights reserved.
+              © {currentYear} RoboticsMastery. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Terms of Service</a>
-              <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Cookies Policy</a>
+              <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Política de Privacidad</a>
+              <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Términos de Servicio</a>
+              <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Política de Cookies</a>
             </div>
           </div>
         </div>

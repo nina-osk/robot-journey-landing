@@ -34,26 +34,26 @@ const Navbar = () => {
               href="#courses" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
-              Courses
+              Cursos
             </a>
             <a 
               href="#features" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
-              Features
+              Características
             </a>
             <a 
               href="#testimonials" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
-              Testimonials
+              Testimonios
             </a>
             <Button 
               asChild 
               variant="default" 
               className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
             >
-              <a href="#enroll">Enroll Now</a>
+              <a href="#enroll">Inscríbete Ahora</a>
             </Button>
           </nav>
 
@@ -77,28 +77,28 @@ const Navbar = () => {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Courses
+              Cursos
             </a>
             <a
               href="#features"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Features
+              Características
             </a>
             <a
               href="#testimonials"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Testimonials
+              Testimonios
             </a>
             <Button 
               asChild 
               variant="default" 
               className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md mt-3"
             >
-              <a href="#enroll" onClick={() => setMobileMenuOpen(false)}>Enroll Now</a>
+              <a href="#enroll" onClick={() => setMobileMenuOpen(false)}>Inscríbete Ahora</a>
             </Button>
           </div>
         </div>

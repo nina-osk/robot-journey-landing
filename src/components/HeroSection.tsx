@@ -30,14 +30,14 @@ const HeroSection = () => {
             }`}
           >
             <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-              Master Industrial Robotics
+              Domina la Robótica Industrial
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-robotics-dark mb-6 text-balance leading-tight">
-              Elevate Your Career With <br />
-              <span className="text-robotics-blue">Industrial Robotics</span> Skills
+              Impulsa Tu Carrera Con <br />
+              <span className="text-robotics-blue">Robótica Industrial</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-xl text-balance">
-              Comprehensive courses on UR, KUKA, and ROS robotics programming. Learn from industry experts and gain hands-on experience.
+              Cursos completos de programación de robots UR, KUKA y ROS. Aprende de expertos de la industria y obtén experiencia práctica.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -46,7 +46,7 @@ const HeroSection = () => {
                 className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
               >
                 <a href="#enroll" className="inline-flex items-center">
-                  Start Learning
+                  Comienza a Aprender
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -56,7 +56,7 @@ const HeroSection = () => {
                 size="lg" 
                 className="border-gray-300 hover:bg-gray-50 text-gray-700 rounded-md"
               >
-                <a href="#courses">View Courses</a>
+                <a href="#courses">Ver Cursos</a>
               </Button>
             </div>
           </div>
@@ -83,22 +83,22 @@ const HeroSection = () => {
                           <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
                         </svg>
                       </div>
-                      <p className="mt-4 text-white font-medium">Watch Introduction</p>
+                      <p className="mt-4 text-white font-medium">Ver Introducción</p>
                     </div>
                   </div>
                 </div>
                 <div className="mt-6">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="text-sm text-gray-500">Featured Course</div>
+                    <div className="text-sm text-gray-500">Curso Destacado</div>
                     <div className="text-sm font-medium text-robotics-blue">4.9 ★★★★★</div>
                   </div>
-                  <h3 className="text-xl font-semibold text-robotics-dark mb-2">Industrial Robotics Mastery Path</h3>
+                  <h3 className="text-xl font-semibold text-robotics-dark mb-2">Ruta de Dominio en Robótica Industrial</h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Complete course bundle covering UR, KUKA and ROS programming
+                    Paquete completo de cursos que incluye programación de UR, KUKA y ROS
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-robotics-dark font-bold">$399</span>
-                    <span className="text-xs text-gray-500">300+ enrolled</span>
+                    <span className="text-xs text-gray-500">+300 inscritos</span>
                   </div>
                 </div>
               </div>

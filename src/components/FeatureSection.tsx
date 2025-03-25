@@ -12,33 +12,33 @@ import {
 const features = [
   {
     icon: <BookOpen className="h-10 w-10" />,
-    title: 'Comprehensive Curriculum',
-    description: 'Structured learning path covering theoretical concepts and practical applications of robotics programming.',
+    title: 'Plan de Estudios Completo',
+    description: 'Ruta de aprendizaje estructurada que cubre conceptos teóricos y aplicaciones prácticas de programación robótica.',
   },
   {
     icon: <Code2 className="h-10 w-10" />,
-    title: 'Hands-on Exercises',
-    description: 'Interactive programming exercises with real-world scenarios to build practical skills.',
+    title: 'Ejercicios Prácticos',
+    description: 'Ejercicios de programación interactivos con escenarios del mundo real para desarrollar habilidades prácticas.',
   },
   {
     icon: <Users className="h-10 w-10" />,
-    title: 'Expert Instructors',
-    description: 'Learn from industry professionals with years of experience in industrial robotics implementation.',
+    title: 'Instructores Expertos',
+    description: 'Aprende de profesionales de la industria con años de experiencia en implementación de robótica industrial.',
   },
   {
     icon: <FileSpreadsheet className="h-10 w-10" />,
-    title: 'Project-Based Learning',
-    description: 'Complete industry-relevant projects to build a strong portfolio for your job applications.',
+    title: 'Aprendizaje Basado en Proyectos',
+    description: 'Completa proyectos relevantes para la industria y construye un portafolio sólido para tus solicitudes de empleo.',
   },
   {
     icon: <GraduationCap className="h-10 w-10" />,
-    title: 'Certification',
-    description: 'Earn industry-recognized certification upon course completion to validate your skills.',
+    title: 'Certificación',
+    description: 'Obtén una certificación reconocida por la industria al completar el curso para validar tus habilidades.',
   },
   {
     icon: <Award className="h-10 w-10" />,
-    title: 'Career Support',
-    description: 'Resume review, interview preparation, and job placement assistance from our career services team.',
+    title: 'Apoyo Profesional',
+    description: 'Revisión de currículum, preparación para entrevistas y asistencia para la colocación laboral por parte de nuestro equipo.',
   },
 ];
 
@@ -81,14 +81,14 @@ const FeatureSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-            Program Benefits
+            Beneficios del Programa
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
-            Why Choose Our Robotics Courses
+            Por Qué Elegir Nuestros Cursos de Robótica
           </h2>
           <p className="text-lg text-gray-600">
-            Our comprehensive curriculum and innovative teaching methods ensure you gain practical 
-            skills valued by employers in the automation industry.
+            Nuestro plan de estudios integral y métodos de enseñanza innovadores aseguran que adquieras 
+            habilidades prácticas valoradas por los empleadores en la industria de la automatización.
           </p>
         </div>
 

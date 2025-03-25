@@ -8,48 +8,48 @@ const courses = [
     id: 'ur',
     title: 'Universal Robots (UR)',
     icon: <Bot className="h-8 w-8 text-robotics-blue" />,
-    description: 'Master programming and operation of UR collaborative robots.',
+    description: 'Domina la programación y operación de robots colaborativos UR.',
     features: [
-      'UR Script programming fundamentals',
-      'Safety configurations and best practices',
-      'Path planning and optimization',
-      'Integration with vision systems',
-      'Complex automation project implementation'
+      'Fundamentos de programación UR Script',
+      'Configuraciones de seguridad y mejores prácticas',
+      'Planificación y optimización de trayectorias',
+      'Integración con sistemas de visión',
+      'Implementación de proyectos de automatización complejos'
     ],
-    duration: '10 weeks',
-    level: 'Beginner to Advanced',
+    duration: '10 semanas',
+    level: 'Principiante a Avanzado',
     price: '$299'
   },
   {
     id: 'kuka',
-    title: 'KUKA Robot Programming',
+    title: 'Programación de Robots KUKA',
     icon: <Database className="h-8 w-8 text-robotics-blue" />,
-    description: 'Comprehensive training on KUKA robot programming and operation.',
+    description: 'Formación completa en programación y operación de robots KUKA.',
     features: [
-      'KRL programming language mastery',
-      'Robot cell design and configuration',
-      'Advanced motion control techniques',
-      'WorkVisual and KUKA.Sim integration',
-      'Industrial automation workflows'
+      'Dominio del lenguaje de programación KRL',
+      'Diseño y configuración de celdas robóticas',
+      'Técnicas avanzadas de control de movimiento',
+      'Integración con WorkVisual y KUKA.Sim',
+      'Flujos de trabajo de automatización industrial'
     ],
-    duration: '12 weeks',
-    level: 'Intermediate',
+    duration: '12 semanas',
+    level: 'Intermedio',
     price: '$349'
   },
   {
     id: 'ros',
     title: 'Robot Operating System (ROS)',
     icon: <Code className="h-8 w-8 text-robotics-blue" />,
-    description: 'Learn ROS framework for developing complex robot applications.',
+    description: 'Aprende el framework ROS para desarrollar aplicaciones robóticas complejas.',
     features: [
-      'ROS architecture and core concepts',
-      'Robot modeling with URDF',
-      'Sensor integration and processing',
-      'Navigation and path planning',
-      'Custom node development in Python'
+      'Arquitectura ROS y conceptos fundamentales',
+      'Modelado de robots con URDF',
+      'Integración y procesamiento de sensores',
+      'Navegación y planificación de rutas',
+      'Desarrollo de nodos personalizados en Python'
     ],
-    duration: '14 weeks',
-    level: 'Advanced',
+    duration: '14 semanas',
+    level: 'Avanzado',
     price: '$399'
   }
 ];
@@ -86,14 +86,14 @@ const CourseSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-            Our Specialized Programs
+            Nuestros Programas Especializados
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
-            Comprehensive Robotics Courses
+            Cursos Completos de Robótica
           </h2>
           <p className="text-lg text-gray-600">
-            Choose the robotics platform that aligns with your career goals and industry needs.
-            Each course is designed by industry experts with hands-on exercises.
+            Elige la plataforma robótica que se alinee con tus objetivos profesionales y necesidades de la industria.
+            Cada curso está diseñado por expertos con ejercicios prácticos.
           </p>
         </div>
 
@@ -145,18 +145,18 @@ const CourseSection = () => {
                   <div className="mt-auto">
                     <div className="flex justify-between items-center mb-4">
                       <div className="flex flex-col">
-                        <span className="text-sm text-gray-500">Duration</span>
+                        <span className="text-sm text-gray-500">Duración</span>
                         <span className="font-medium">{course.duration}</span>
                       </div>
                       <div className="flex flex-col text-right">
-                        <span className="text-sm text-gray-500">Level</span>
+                        <span className="text-sm text-gray-500">Nivel</span>
                         <span className="font-medium">{course.level}</span>
                       </div>
                     </div>
                     
                     <div className="flex justify-between items-center mb-6">
                       <span className="text-2xl font-bold text-robotics-dark">{course.price}</span>
-                      <span className="text-sm text-gray-500">One-time payment</span>
+                      <span className="text-sm text-gray-500">Pago único</span>
                     </div>
                     
                     <Button 
@@ -167,7 +167,7 @@ const CourseSection = () => {
                           : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                       }`}
                     >
-                      <a href="#enroll">Enroll Now</a>
+                      <a href="#enroll">Inscribirse Ahora</a>
                     </Button>
                   </div>
                 </div>

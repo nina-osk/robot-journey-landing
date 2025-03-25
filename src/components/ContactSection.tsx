@@ -5,20 +5,20 @@ import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 const FAQs = [
   {
-    question: 'What prerequisites are needed for these courses?',
-    answer: 'Basic programming knowledge is recommended but not required. We start with fundamentals and gradually progress to advanced concepts. For ROS, some familiarity with Python or C++ would be beneficial.'
+    question: '¿Qué requisitos previos se necesitan para estos cursos?',
+    answer: 'Se recomienda conocimientos básicos de programación, pero no es obligatorio. Comenzamos con los fundamentos y progresamos gradualmente hacia conceptos avanzados. Para ROS, cierta familiaridad con Python o C++ sería beneficioso.'
   },
   {
-    question: 'Do I need access to robotics hardware for the courses?',
-    answer: "No, our courses use advanced simulation software that accurately replicates robot behavior. You'll gain practical experience without needing physical hardware, though we do offer optional in-person workshops periodically."
+    question: '¿Necesito acceso a hardware robótico para los cursos?',
+    answer: "No, nuestros cursos utilizan software de simulación avanzado que replica con precisión el comportamiento del robot. Obtendrás experiencia práctica sin necesitar hardware físico, aunque ofrecemos talleres presenciales opcionales periódicamente."
   },
   {
-    question: 'Are the certifications industry-recognized?',
-    answer: 'Yes, our certifications are recognized by major companies in the automation industry. Many of our graduates have successfully transitioned into robotics roles at leading manufacturing companies.'
+    question: '¿Las certificaciones están reconocidas por la industria?',
+    answer: 'Sí, nuestras certificaciones son reconocidas por las principales empresas de la industria de automatización. Muchos de nuestros graduados han realizado con éxito la transición a roles de robótica en importantes empresas manufactureras.'
   },
   {
-    question: 'What is the refund policy?',
-    answer: "We offer a 14-day money-back guarantee. If you're not satisfied with the course, you can request a full refund within the first two weeks of enrollment."
+    question: '¿Cuál es la política de reembolso?',
+    answer: "Ofrecemos una garantía de devolución del dinero de 14 días. Si no estás satisfecho con el curso, puedes solicitar un reembolso completo dentro de las primeras dos semanas de inscripción."
   }
 ];
 
@@ -39,7 +39,7 @@ const ContactSection = () => {
     setCourse('');
     setMessage('');
     // Show success message
-    alert('Thanks for your interest! We will contact you shortly.');
+    alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.');
   };
 
   const toggleFAQ = (index: number) => {
@@ -54,19 +54,19 @@ const ContactSection = () => {
             {/* Contact Form */}
             <div className="animate-fade-in-up">
               <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                Get Started Today
+                Comienza Hoy Mismo
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-6">
-                Ready to Advance Your Career?
+                ¿Listo para Avanzar en tu Carrera?
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Fill out the form below to enroll in one of our robotics courses or to request more information.
+                Completa el formulario a continuación para inscribirte en uno de nuestros cursos de robótica o para solicitar más información.
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
+                    Nombre Completo
                   </label>
                   <input
                     type="text"
@@ -74,14 +74,14 @@ const ContactSection = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
-                    placeholder="Enter your full name"
+                    placeholder="Ingresa tu nombre completo"
                     required
                   />
                 </div>
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address
+                    Correo Electrónico
                   </label>
                   <input
                     type="email"
@@ -89,14 +89,14 @@ const ContactSection = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
-                    placeholder="Enter your email address"
+                    placeholder="Ingresa tu correo electrónico"
                     required
                   />
                 </div>
                 
                 <div>
                   <label htmlFor="course" className="block text-sm font-medium text-gray-700 mb-1">
-                    Interested Course
+                    Curso de Interés
                   </label>
                   <select
                     id="course"
@@ -105,24 +105,24 @@ const ContactSection = () => {
                     className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
                     required
                   >
-                    <option value="">Select a course</option>
+                    <option value="">Selecciona un curso</option>
                     <option value="ur">Universal Robots (UR)</option>
-                    <option value="kuka">KUKA Robot Programming</option>
+                    <option value="kuka">Programación de Robots KUKA</option>
                     <option value="ros">Robot Operating System (ROS)</option>
-                    <option value="bundle">Complete Bundle</option>
+                    <option value="bundle">Paquete Completo</option>
                   </select>
                 </div>
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message (Optional)
+                    Mensaje (Opcional)
                   </label>
                   <textarea
                     id="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
-                    placeholder="Any questions or special requirements?"
+                    placeholder="¿Alguna pregunta o requisito especial?"
                     rows={4}
                   />
                 </div>
@@ -131,7 +131,7 @@ const ContactSection = () => {
                   type="submit"
                   className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white py-3 rounded-md"
                 >
-                  Submit Enrollment Request
+                  Enviar Solicitud de Inscripción
                 </Button>
               </form>
             </div>
@@ -139,10 +139,10 @@ const ContactSection = () => {
             {/* FAQs */}
             <div className="animate-fade-in-up delay-300">
               <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                Frequently Asked Questions
+                Preguntas Frecuentes
               </span>
               <h2 className="text-3xl font-bold text-robotics-dark mb-6">
-                Common Questions
+                Preguntas Comunes
               </h2>
               <div className="space-y-4">
                 {FAQs.map((faq, index) => (
@@ -172,24 +172,24 @@ const ContactSection = () => {
               
               <div className="mt-10 p-6 rounded-xl border border-robotics-blue/20 bg-robotics-blue/5">
                 <h3 className="text-xl font-semibold text-robotics-dark mb-4">
-                  Our Guarantee
+                  Nuestra Garantía
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-start">
                     <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">14-day money-back guarantee</span>
+                    <span className="text-gray-700">Garantía de devolución de dinero de 14 días</span>
                   </div>
                   <div className="flex items-start">
                     <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">Lifetime access to course materials</span>
+                    <span className="text-gray-700">Acceso de por vida a los materiales del curso</span>
                   </div>
                   <div className="flex items-start">
                     <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">Certificate upon successful completion</span>
+                    <span className="text-gray-700">Certificado al completar con éxito</span>
                   </div>
                   <div className="flex items-start">
                     <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">Dedicated support during your learning journey</span>
+                    <span className="text-gray-700">Soporte dedicado durante tu proceso de aprendizaje</span>
                   </div>
                 </div>
               </div>

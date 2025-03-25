@@ -4,26 +4,26 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Michael Johnson',
-    role: 'Automation Engineer',
+    name: 'Miguel Jiménez',
+    role: 'Ingeniero de Automatización',
     company: 'Tesla',
-    content: 'The UR robotics course was incredibly comprehensive. The hands-on exercises helped me build confidence in programming collaborative robots. Now I use these skills daily in my automation role.',
+    content: 'El curso de robótica UR fue increíblemente completo. Los ejercicios prácticos me ayudaron a ganar confianza en la programación de robots colaborativos. Ahora uso estas habilidades diariamente en mi rol de automatización.',
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
     rating: 5,
   },
   {
-    name: 'Sarah Chen',
-    role: 'Manufacturing Specialist',
+    name: 'Sara Chen',
+    role: 'Especialista en Manufactura',
     company: 'Boeing',
-    content: "Learning KUKA robot programming through this platform was one of the best career decisions I've made. The curriculum is well-structured and the instructors are knowledgeable and supportive.",
+    content: "Aprender programación de robots KUKA a través de esta plataforma fue una de las mejores decisiones profesionales que he tomado. El plan de estudios está bien estructurado y los instructores son expertos y atentos.",
     avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     rating: 5,
   },
   {
-    name: 'David Rodriguez',
-    role: 'Robotics Developer',
+    name: 'David Rodríguez',
+    role: 'Desarrollador de Robótica',
     company: 'Boston Dynamics',
-    content: 'The ROS course provided me with the exact skills needed to transition into a robotics role. The project-based approach gave me confidence to tackle complex robotics challenges.',
+    content: 'El curso de ROS me proporcionó exactamente las habilidades necesarias para transicionar a un rol en robótica. El enfoque basado en proyectos me dio la confianza para abordar desafíos robóticos complejos.',
     avatar: 'https://randomuser.me/api/portraits/men/62.jpg',
     rating: 5,
   },
@@ -71,13 +71,13 @@ const TestimonialSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-            Success Stories
+            Historias de Éxito
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
-            What Our Students Say
+            Lo Que Dicen Nuestros Estudiantes
           </h2>
           <p className="text-lg text-gray-600">
-            Hear from professionals who transformed their careers with our industrial robotics training.
+            Conoce a profesionales que transformaron sus carreras con nuestra formación en robótica industrial.
           </p>
         </div>
 
@@ -133,7 +133,7 @@ const TestimonialSection = () => {
                       ? 'bg-robotics-blue w-8' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-label={`Ir al testimonio ${index + 1}`}
                 />
               ))}
             </div>
