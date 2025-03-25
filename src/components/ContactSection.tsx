@@ -13,10 +13,6 @@ const FAQs = [
     answer: "No, nuestros cursos utilizan software de simulación avanzado que replica con precisión el comportamiento del robot. Obtendrás experiencia práctica sin necesitar hardware físico, aunque ofrecemos talleres presenciales opcionales periódicamente."
   },
   {
-    question: '¿Las certificaciones están reconocidas por la industria?',
-    answer: 'Sí, nuestras certificaciones son reconocidas por las principales empresas de la industria de automatización. Muchos de nuestros graduados han realizado con éxito la transición a roles de robótica en importantes empresas manufactureras.'
-  },
-  {
     question: '¿Cuál es la política de reembolso?',
     answer: "Ofrecemos una garantía de devolución del dinero de 14 días. Si no estás satisfecho con el curso, puedes solicitar un reembolso completo dentro de las primeras dos semanas de inscripción."
   }

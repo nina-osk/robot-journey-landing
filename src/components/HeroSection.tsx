@@ -97,7 +97,7 @@ const HeroSection = () => {
                     Paquete completo de cursos que incluye programación de UR, KUKA y ROS
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-robotics-dark font-bold">$399</span>
+                    <span className="text-robotics-dark font-bold">$2399</span>
                     <span className="text-xs text-gray-500">+300 inscritos</span>
                   </div>
                 </div>

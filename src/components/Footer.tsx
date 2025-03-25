@@ -69,7 +69,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-robotics-blue shrink-0 mr-3" />
-                <span className="text-gray-400">info@roboticsmastery.com</span>
+                <span className="text-gray-400">info@Robotsconsultant.net</span>
               </li>
             </ul>
           </div>
@@ -99,7 +99,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © {currentYear} RoboticsMastery. Todos los derechos reservados.
+              © {currentYear} RobotcsConsultant. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Política de Privacidad</a>

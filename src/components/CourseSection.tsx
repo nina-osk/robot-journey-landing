@@ -18,7 +18,7 @@ const courses = [
     ],
     duration: '10 semanas',
     level: 'Principiante a Avanzado',
-    price: '$299'
+    price: '$2299'
   },
   {
     id: 'kuka',
@@ -34,7 +34,7 @@ const courses = [
     ],
     duration: '12 semanas',
     level: 'Intermedio',
-    price: '$349'
+    price: '$3349'
   },
   {
     id: 'ros',
@@ -50,7 +50,7 @@ const courses = [
     ],
     duration: '14 semanas',
     level: 'Avanzado',
-    price: '$399'
+    price: '$3399'
   }
 ];
 

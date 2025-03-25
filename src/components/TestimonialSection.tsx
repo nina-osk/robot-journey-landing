@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: 'Miguel Jiménez',
     role: 'Ingeniero de Automatización',
-    company: 'Tesla',
+    company: '',
     content: 'El curso de robótica UR fue increíblemente completo. Los ejercicios prácticos me ayudaron a ganar confianza en la programación de robots colaborativos. Ahora uso estas habilidades diariamente en mi rol de automatización.',
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
     rating: 5,
@@ -14,7 +14,7 @@ const testimonials = [
   {
     name: 'Sara Chen',
     role: 'Especialista en Manufactura',
-    company: 'Boeing',
+    company: 'Boe',
     content: "Aprender programación de robots KUKA a través de esta plataforma fue una de las mejores decisiones profesionales que he tomado. El plan de estudios está bien estructurado y los instructores son expertos y atentos.",
     avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     rating: 5,
@@ -22,7 +22,7 @@ const testimonials = [
   {
     name: 'David Rodríguez',
     role: 'Desarrollador de Robótica',
-    company: 'Boston Dynamics',
+    company: 'Dynamics',
     content: 'El curso de ROS me proporcionó exactamente las habilidades necesarias para transicionar a un rol en robótica. El enfoque basado en proyectos me dio la confianza para abordar desafíos robóticos complejos.',
     avatar: 'https://randomuser.me/api/portraits/men/62.jpg',
     rating: 5,
