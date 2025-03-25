@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Bot, Code, Database } from 'lucide-react';
+import { Bot, Code, Database, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const courses = [
