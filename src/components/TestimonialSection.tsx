@@ -15,7 +15,7 @@ const testimonials = [
     name: 'Sarah Chen',
     role: 'Manufacturing Specialist',
     company: 'Boeing',
-    content: 'Learning KUKA robot programming through this platform was one of the best career decisions I've made. The curriculum is well-structured and the instructors are knowledgeable and supportive.',
+    content: "Learning KUKA robot programming through this platform was one of the best career decisions I've made. The curriculum is well-structured and the instructors are knowledgeable and supportive.",
     avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     rating: 5,
   },

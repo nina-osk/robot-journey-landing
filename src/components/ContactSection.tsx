@@ -10,7 +10,7 @@ const FAQs = [
   },
   {
     question: 'Do I need access to robotics hardware for the courses?',
-    answer: 'No, our courses use advanced simulation software that accurately replicates robot behavior. You'll gain practical experience without needing physical hardware, though we do offer optional in-person workshops periodically.'
+    answer: "No, our courses use advanced simulation software that accurately replicates robot behavior. You'll gain practical experience without needing physical hardware, though we do offer optional in-person workshops periodically."
   },
   {
     question: 'Are the certifications industry-recognized?',
@@ -18,7 +18,7 @@ const FAQs = [
   },
   {
     question: 'What is the refund policy?',
-    answer: 'We offer a 14-day money-back guarantee. If you're not satisfied with the course, you can request a full refund within the first two weeks of enrollment.'
+    answer: "We offer a 14-day money-back guarantee. If you're not satisfied with the course, you can request a full refund within the first two weeks of enrollment."
   }
 ];
 
