@@ -1,31 +1,32 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Star } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const testimonials = [
+const robotsForSale = [
   {
-    name: 'Miguel Jiménez',
-    role: 'Ingeniero de Automatización',
-    company: '',
-    content: 'El curso de robótica UR fue increíblemente completo. Los ejercicios prácticos me ayudaron a ganar confianza en la programación de robots colaborativos. Ahora uso estas habilidades diariamente en mi rol de automatización.',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-    rating: 5,
+    name: 'Universal Robots UR5',
+    condition: 'Excelente estado',
+    description: 'Cobot UR5 de segunda mano en excelente estado. Solo 1200 horas de uso. Incluye controlador, tablet y todas las piezas originales. Ideal para aplicaciones de pick and place, paletizado o atornillado.',
+    image: 'https://media.istockphoto.com/id/1010435424/photo/robotic-arm-on-black-background.jpg?s=612x612&w=0&k=20&c=YVJLUBgaYq5oYhwRkrpqacKYuqnZuWSUOu-mDJ8FdqE=',
+    price: '19.500€',
+    year: '2019',
   },
   {
-    name: 'Sara Chen',
-    role: 'Especialista en Manufactura',
-    company: 'Boe',
-    content: "Aprender programación de robots KUKA a través de esta plataforma fue una de las mejores decisiones profesionales que he tomado. El plan de estudios está bien estructurado y los instructores son expertos y atentos.",
-    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-    rating: 5,
+    name: 'KUKA LBR iiwa 7 R800',
+    condition: 'Buen estado',
+    description: 'Cobot KUKA LBR iiwa de segunda mano con 2400 horas de operación. Mantenimiento al día con certificados. Perfecto para tareas de precisión, ensamblaje e interacción con humanos en entornos industriales.',
+    image: 'https://media.istockphoto.com/id/1010435420/photo/robotic-arm-on-black-background.jpg?s=612x612&w=0&k=20&c=GKuuOhgxXbFnFQSqAboUJgzj3P0rxBTqQk4wJKtysCE=',
+    price: '22.800€',
+    year: '2018',
   },
   {
-    name: 'David Rodríguez',
-    role: 'Desarrollador de Robótica',
-    company: 'Dynamics',
-    content: 'El curso de ROS me proporcionó exactamente las habilidades necesarias para transicionar a un rol en robótica. El enfoque basado en proyectos me dio la confianza para abordar desafíos robóticos complejos.',
-    avatar: 'https://randomuser.me/api/portraits/men/62.jpg',
-    rating: 5,
+    name: 'Universal Robots UR10e',
+    condition: 'Como nuevo',
+    description: 'UR10e con menos de 800 horas de uso. El robot colaborativo más avanzado de Universal Robots con payload de 10kg. Incluye carro móvil, controlador actualizado y gripper eléctrico OnRobot.',
+    image: 'https://media.istockphoto.com/id/1010435426/photo/robotic-arm-on-black-background.jpg?s=612x612&w=0&k=20&c=Brc6yroQAB6MgQEjZWMO2MHnZ4m8P0Y4USFn8A9X9Jg=',
+    price: '28.300€',
+    year: '2020',
   },
 ];
 
@@ -55,12 +56,24 @@ const TestimonialSection = () => {
   useEffect(() => {
     if (isVisible) {
       const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % robotsForSale.length);
       }, 5000);
       
       return () => clearInterval(interval);
     }
   }, [isVisible]);
+
+  const goToPrev = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? robotsForSale.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => 
+      (prevIndex + 1) % robotsForSale.length
+    );
+  };
 
   return (
     <section 
@@ -71,13 +84,13 @@ const TestimonialSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-            Historias de Éxito
+            Robots de Segunda Mano
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
-            Lo Que Dicen Nuestros Estudiantes
+            Cobots UR y KUKA en Venta
           </h2>
           <p className="text-lg text-gray-600">
-            Conoce a profesionales que transformaron sus carreras con nuestra formación en robótica industrial.
+            Robots colaborativos de alta calidad y rendimiento probado a precios competitivos.
           </p>
         </div>
 
@@ -88,33 +101,37 @@ const TestimonialSection = () => {
                 className="flex transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
-                {testimonials.map((testimonial, index) => (
+                {robotsForSale.map((robot, index) => (
                   <div 
                     key={index} 
                     className="w-full flex-shrink-0 px-4"
                   >
                     <div className="glass-card rounded-2xl p-8 md:p-10">
-                      <div className="flex mb-6">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                        ))}
-                      </div>
-                      <p className="text-lg text-gray-700 mb-8 italic">
-                        "{testimonial.content}"
-                      </p>
-                      <div className="flex items-center">
-                        <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
-                          <img 
-                            src={testimonial.avatar} 
-                            alt={testimonial.name} 
-                            className="h-full w-full object-cover"
-                          />
+                      <div className="flex flex-col md:flex-row gap-6">
+                        <div className="w-full md:w-2/5">
+                          <div className="rounded-lg overflow-hidden h-64 bg-gray-100">
+                            <img 
+                              src={robot.image} 
+                              alt={robot.name} 
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-bold text-robotics-dark">{testimonial.name}</h4>
-                          <p className="text-sm text-gray-600">
-                            {testimonial.role}, {testimonial.company}
+                        <div className="w-full md:w-3/5">
+                          <div className="bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-3 py-1 rounded-full inline-block mb-2">
+                            {robot.condition}
+                          </div>
+                          <h3 className="text-2xl font-bold text-robotics-dark mb-2">{robot.name}</h3>
+                          <p className="text-lg font-semibold text-robotics-blue mb-1">
+                            {robot.price} <span className="text-gray-500 text-sm font-normal">(Año {robot.year})</span>
                           </p>
+                          <p className="text-gray-700 mb-4">{robot.description}</p>
+                          <Button 
+                            variant="default" 
+                            className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
+                          >
+                            Solicitar Información
+                          </Button>
                         </div>
                       </div>
                     </div>
@@ -123,19 +140,41 @@ const TestimonialSection = () => {
               </div>
             </div>
 
-            <div className="flex justify-center mt-8 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                    currentIndex === index 
-                      ? 'bg-robotics-blue w-8' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Ir al testimonio ${index + 1}`}
-                />
-              ))}
+            <div className="flex items-center justify-center mt-8 gap-4">
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full"
+                onClick={goToPrev}
+                aria-label="Anterior robot"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              
+              <div className="flex space-x-2">
+                {robotsForSale.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                      currentIndex === index 
+                        ? 'bg-robotics-blue w-8' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Ir al robot ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full"
+                onClick={goToNext}
+                aria-label="Siguiente robot"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
             </div>
           </div>
         </div>

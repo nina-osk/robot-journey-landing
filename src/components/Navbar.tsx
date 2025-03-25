@@ -46,7 +46,7 @@ const Navbar = () => {
               href="#testimonials" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
-              Testimonios
+              Robots en Venta
             </a>
             <Button 
               asChild 
@@ -91,7 +91,7 @@ const Navbar = () => {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Testimonios
+              Robots en Venta
             </a>
             <Button 
               asChild 
