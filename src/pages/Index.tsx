@@ -36,10 +36,10 @@ const Index = () => {
     <div className="min-h-screen bg-white overflow-hidden">
       <Navbar />
       <HeroSection />
-      <CourseSection />
-      <FeatureSection />
-      <ServicesSection />
       <TestimonialSection />
+      <ServicesSection />
+      <FeatureSection />
+      <CourseSection />
       <ContactSection />
       <Footer />
     </div>
