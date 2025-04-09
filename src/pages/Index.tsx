@@ -35,11 +35,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white overflow-hidden">
       <Navbar />
-      <HeroSection />
       <TestimonialSection />
       <ServicesSection />
       <FeatureSection />
       <CourseSection />
+      <HeroSection />
       <ContactSection />
       <Footer />
     </div>
