@@ -83,9 +83,9 @@ const TestimonialSection = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-robotics-blue mb-4">
             Venta y Asesoramiento
-          </span>
+          </h2>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
             Cobots de Segunda Mano
           </h2>
