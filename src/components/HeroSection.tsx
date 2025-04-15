@@ -8,10 +8,29 @@ const HeroSection = () => {
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // Create intersection observer for this section specifically
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    const sectionElement = document.getElementById('hero-section');
+    if (sectionElement) {
+      observer.observe(sectionElement);
+    }
+    
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <div id="hero-section" className="relative min-h-screen flex items-center overflow-hidden py-16">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-white z-0" />
       

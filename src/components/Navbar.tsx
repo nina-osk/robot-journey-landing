@@ -31,10 +31,16 @@ const Navbar = () => {
 
           <nav className="hidden md:flex space-x-8 items-center">
             <a 
-              href="#courses" 
+              href="#testimonials" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
-              Cursos
+              Cobots en Venta
+            </a>
+            <a 
+              href="#services" 
+              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+            >
+              Servicios
             </a>
             <a 
               href="#features" 
@@ -43,17 +49,17 @@ const Navbar = () => {
               Características
             </a>
             <a 
-              href="#testimonials" 
+              href="#courses" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
-              Robots en Venta
+              Cursos
             </a>
             <Button 
               asChild 
               variant="default" 
               className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
             >
-              <a href="#enroll">Inscríbete Ahora</a>
+              <a href="#enroll">Contactar Ahora</a>
             </Button>
           </nav>
 
@@ -73,11 +79,18 @@ const Navbar = () => {
         <div className="md:hidden glass-card animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
-              href="#courses"
+              href="#testimonials"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Cursos
+              Cobots en Venta
+            </a>
+            <a
+              href="#services"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Servicios
             </a>
             <a
               href="#features"
@@ -87,18 +100,18 @@ const Navbar = () => {
               Características
             </a>
             <a
-              href="#testimonials"
+              href="#courses"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Robots en Venta
+              Cursos
             </a>
             <Button 
               asChild 
               variant="default" 
               className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md mt-3"
             >
-              <a href="#enroll" onClick={() => setMobileMenuOpen(false)}>Inscríbete Ahora</a>
+              <a href="#enroll" onClick={() => setMobileMenuOpen(false)}>Contactar Ahora</a>
             </Button>
           </div>
         </div>
