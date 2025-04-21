@@ -3,18 +3,19 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
+// NUEVAS PREGUNTAS FRECUENTES
 const FAQs = [
   {
-    question: '¿Qué requisitos previos se necesitan para estos cursos?',
-    answer: 'Se recomienda conocimientos básicos de programación, pero no es obligatorio. Comenzamos con los fundamentos y progresamos gradualmente hacia conceptos avanzados. Para ROS, cierta familiaridad con Python o C++ sería beneficioso.'
+    question: '¿Puedo alquilar un robot por días o solo por meses?',
+    answer: 'Ofrecemos opciones flexibles de alquiler: puedes alquilar por días, semanas o meses según tus necesidades específicas.'
   },
   {
-    question: '¿Necesito acceso a hardware robótico para los cursos?',
-    answer: "No, nuestros cursos utilizan software de simulación avanzado que replica con precisión el comportamiento del robot. Obtendrás experiencia práctica sin necesitar hardware físico, aunque ofrecemos talleres presenciales opcionales periódicamente."
+    question: '¿El soporte técnico está incluido en la compra o alquiler?',
+    answer: 'Sí, tanto en la venta como en el alquiler de robots, tienes acceso a soporte técnico especializado sin costo adicional.'
   },
   {
-    question: '¿Cuál es la política de reembolso?',
-    answer: "Ofrecemos una garantía de devolución del dinero de 14 días. Si no estás satisfecho con el curso, puedes solicitar un reembolso completo dentro de las primeras dos semanas de inscripción."
+    question: '¿Realizan envíos a cualquier parte del país?',
+    answer: 'Entregamos robots y piezas en toda la República. Consulta condiciones especiales para envíos internacionales.'
   }
 ];
 
@@ -198,3 +199,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
