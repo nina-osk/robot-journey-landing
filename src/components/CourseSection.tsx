@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
-import { Box, HardDrive, Wrench, Gear } from "lucide-react";
+import { Box, HardDrive, Wrench, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const robotParts = [
@@ -46,7 +46,7 @@ const robotParts = [
   {
     id: "sensores",
     name: "Kit de Sensores Inteligentes",
-    icon: <Gear className="h-8 w-8 text-robotics-blue" />,
+    icon: <Settings className="h-8 w-8 text-robotics-blue" />,
     description: "Incluye sensores de proximidad, finales de carrera, módulo de fuerza y sensor de distancia.",
     specs: [
       "3 Sensores inductivos",
