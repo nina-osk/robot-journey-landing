@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 // import HeroSection from '@/components/HeroSection';
@@ -8,6 +7,7 @@ import ServicesSection from '@/components/ServicesSection';
 import TestimonialSection from '@/components/TestimonialSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import AutomationVisionSection from "@/components/AutomationVisionSection";
 
 const Index = () => {
   useEffect(() => {
@@ -56,6 +56,8 @@ const Index = () => {
       </section>
       <TestimonialSection />
       <ServicesSection />
+      {/* NUEVA SECCIÓN Automatización y Visión Artificial */}
+      <AutomationVisionSection />
       <FeatureSection />
       <RobotPartsSection />
       <ContactSection />
@@ -65,4 +67,3 @@ const Index = () => {
 };
 
 export default Index;
-
