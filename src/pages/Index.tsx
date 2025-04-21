@@ -43,8 +43,8 @@ const Index = () => {
             Venta y Alquiler de Robots Colaborativos
           </h1>
           <p className="text-xl text-gray-700 mb-8">
-            Especialistas en soluciones robóticas industriales: <br />
-            venta y alquiler de cobots de segunda mano, asesoramiento y soporte técnico para tu empresa.
+            Especialistas en soluciones robóticas colaborativas <br />
+            venta y alquiler de cobots nuevos y de segunda mano, asesoramiento y soporte técnico para tu empresa.
           </p>
           <a
             href="#testimonials"
