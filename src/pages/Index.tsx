@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-// import HeroSection from '@/components/HeroSection';
 import RobotPartsSection from '@/components/CourseSection';
 import FeatureSection from '@/components/FeatureSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -8,10 +7,10 @@ import TestimonialSection from '@/components/TestimonialSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import AutomationVisionSection from "@/components/AutomationVisionSection";
+import SocialRobotsSection from '@/components/SocialRobotsSection';
 
 const Index = () => {
   useEffect(() => {
-    // Add intersection observer for the slide-in sections
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -24,7 +23,6 @@ const Index = () => {
       { threshold: 0.1 }
     );
 
-    // Observe all sections with the slide-in-section class
     document.querySelectorAll('.slide-in-section').forEach((section) => {
       observer.observe(section);
     });
@@ -35,7 +33,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white overflow-hidden">
       <Navbar />
-      {/* Sección principal de venta y alquiler de robots */}
       <section className="relative flex flex-col items-center justify-center min-h-[60vh] py-20 bg-gradient-to-r from-white via-blue-50 to-white">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-white z-0" />
         <div className="relative z-10 max-w-2xl text-center">
@@ -56,8 +53,8 @@ const Index = () => {
       </section>
       <TestimonialSection />
       <ServicesSection />
-      {/* NUEVA SECCIÓN Automatización y Visión Artificial */}
       <AutomationVisionSection />
+      <SocialRobotsSection />
       <FeatureSection />
       <RobotPartsSection />
       <ContactSection />
