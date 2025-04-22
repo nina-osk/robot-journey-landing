@@ -1,5 +1,5 @@
 
-import { MessageSquare, Robot, Users } from "lucide-react";
+import { MessageSquare, Bot, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,7 +11,7 @@ import {
 
 const robotServices = [
   {
-    icon: <Robot className="h-8 w-8 text-robotics-blue" />,
+    icon: <Bot className="h-8 w-8 text-robotics-blue" />,
     title: "Asistentes de Eventos",
     description: "Robots conversacionales que interactúan con los invitados, responden preguntas y guían durante el evento.",
     features: ["Interacción natural mediante IA", "Multilingüe", "Personalizable según el evento"],
