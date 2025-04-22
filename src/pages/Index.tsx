@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import RobotPartsSection from '@/components/CourseSection';
@@ -51,10 +52,10 @@ const Index = () => {
           </a>
         </div>
       </section>
+      <SocialRobotsSection />
       <TestimonialSection />
       <ServicesSection />
       <AutomationVisionSection />
-      <SocialRobotsSection />
       <FeatureSection />
       <RobotPartsSection />
       <ContactSection />
