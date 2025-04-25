@@ -12,15 +12,16 @@ import {
 const robotServices = [
   {
     icon: <Bot className="h-8 w-8 text-robotics-blue" />,
-    title: "Asistentes de Eventos",
-    description: "Robots conversacionales que interactúan con los invitados, responden preguntas y guían durante el evento.",
+    title: "Asistentes de Eventos e Entretenimiento",
+    description: "Robots que ofrecen información, entretenimiento y asistencia a los asistentes.",
+    description2: "Robots conversacionales que interactúan con los invitados, responden preguntas y guían durante el evento.",
     features: ["Interacción natural mediante IA", "Multilingüe", "Personalizable según el evento"],
   },
   {
     icon: <Users className="h-8 w-8 text-robotics-blue" />,
-    title: "Entretenimiento Interactivo",
-    description: "Robots sociales que animan el evento con juegos, bailes y actividades interactivas.",
-    features: ["Juegos interactivos", "Bailes programados", "Fotografías con invitados"],
+    title: "Robots de vigilancia y Seguridad",
+    description: "Robots que patrullan el área del evento, asegurando la seguridad y el control de acceso.",
+    features: ["Monitoreo en tiempo real", "Detección de intrusos", "Alertas automáticas"]
   },
   {
     icon: <MessageSquare className="h-8 w-8 text-robotics-blue" />,

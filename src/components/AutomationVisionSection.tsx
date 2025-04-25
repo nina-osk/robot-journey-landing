@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const services = [
   {
     icon: <Cog className="h-8 w-8 text-robotics-blue" />,
-    title: "Automatización Industrial",
+    title: "Asesoramos, proveemos robots y equipamiento para automatizacion industrial.",
     description:
       "Optimizamos procesos productivos mediante soluciones de automatización robótica accesibles y escalables, diseñadas especialmente para pequeñas y medianas empresas.",
     benefits: [
@@ -35,7 +35,7 @@ const AutomationVisionSection = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto text-center mb-14">
         <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-          Tecnología para PYME
+          Tecnología para Robotica,
         </span>
         <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
           Automatización y Visión Artificial para PYMES

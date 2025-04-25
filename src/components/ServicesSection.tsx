@@ -21,7 +21,7 @@ const services = [
     id: 'ros',
     title: 'Desarrollo con ROS 2',
     icon: <Code className="h-10 w-10 text-robotics-blue" />,
-    description: 'Creación de aplicaciones robóticas avanzadas utilizando Robot Operating System 2 para integración de sensores, visión artificial y control de movimiento.',
+    description: 'Creación de aplicaciones robóticas avanzadas utilizando Robot Operating System ROS2 para integración de sensores, visión artificial y control de movimiento.',
     benefits: [
       'Arquitectura modular y escalable',
       'Compatibilidad con múltiples plataformas',
