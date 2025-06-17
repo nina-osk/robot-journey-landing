@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import AutomationVisionSection from "@/components/AutomationVisionSection";
 import SocialRobotsSection from '@/components/SocialRobotsSection';
 import GDPRConsent from '@/components/GDPRConsent';
+import OnlineStorePopup from '@/components/OnlineStorePopup';
 
 const Index = () => {
   useEffect(() => {
@@ -62,6 +63,7 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <GDPRConsent />
+      <OnlineStorePopup />
     </div>
   );
 };
