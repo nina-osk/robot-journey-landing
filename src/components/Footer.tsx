@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">RoboticsMastery</h3>
+            <h3 className="text-xl font-bold mb-4">RobotsConsultant</h3>
             <p className="text-gray-400 mb-6">
               Empoderando a profesionales con habilidades avanzadas de programación robótica industrial desde 2018.
             </p>

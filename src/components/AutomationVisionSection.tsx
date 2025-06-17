@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const services = [
   {
     icon: <Cog className="h-8 w-8 text-robotics-blue" />,
-    title: "Asesoramos, proveemos robots y equipamiento para automatizacion industrial.",
+    title: "Asesoramos, proveemos robots y equipamiento para robótica y automatizacion industrial.",
     description:
       "Optimizamos procesos productivos mediante soluciones de automatización robótica accesibles y escalables, diseñadas especialmente para pequeñas y medianas empresas.",
     benefits: [
