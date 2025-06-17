@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
-            <a href="#" className="text-robotics-dark font-bold text-xl md:text-2xl">
+            <a href="/" className="text-robotics-dark font-bold text-xl md:text-2xl">
               Robotisconsultant
             </a>
           </div>
@@ -35,6 +35,12 @@ const Navbar = () => {
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
               Cobots en Venta
+            </a>
+            <a 
+              href="/robots-moviles" 
+              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+            >
+              Robots Móviles
             </a>
             <a 
               href="#services" 
@@ -84,6 +90,13 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Cobots en Venta
+            </a>
+            <a
+              href="/robots-moviles"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Robots Móviles
             </a>
             <a
               href="#services"
