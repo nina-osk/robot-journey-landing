@@ -1,6 +1,5 @@
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 // NUEVAS PREGUNTAS FRECUENTES
@@ -20,24 +19,7 @@ const FAQs = [
 ];
 
 const ContactSection = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [course, setCourse] = useState('');
-  const [message, setMessage] = useState('');
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    console.log({ name, email, course, message });
-    // Reset form
-    setName('');
-    setEmail('');
-    setCourse('');
-    setMessage('');
-    // Show success message
-    alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.');
-  };
 
   const toggleFAQ = (index: number) => {
     setExpandedFAQ(expandedFAQ === index ? null : index);
@@ -48,7 +30,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* HubSpot Form */}
             <div className="animate-fade-in-up">
               <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
                 Comienza Hoy Mismo
@@ -57,80 +39,10 @@ const ContactSection = () => {
                 ¿Listo para Avanzar en tu Carrera?
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Completa el formulario a continuación para inscribirte en uno de nuestros cursos de robótica o para solicitar más información.
+                Completa el formulario a continuación para solicitar más información sobre nuestros robots colaborativos y servicios.
               </p>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Nombre Completo
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
-                    placeholder="Ingresa tu nombre completo"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Correo Electrónico
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
-                    placeholder="Ingresa tu correo electrónico"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="course" className="block text-sm font-medium text-gray-700 mb-1">
-                    Curso de Interés
-                  </label>
-                  <select
-                    id="course"
-                    value={course}
-                    onChange={(e) => setCourse(e.target.value)}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
-                    required
-                  >
-                    <option value="">Selecciona un curso</option>
-                    <option value="ur">Universal Robots (UR)</option>
-                    <option value="kuka">Programación de Robots KUKA</option>
-                    <option value="ros">Robot Operating System (ROS)</option>
-                    <option value="bundle">Paquete Completo</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Mensaje (Opcional)
-                  </label>
-                  <textarea
-                    id="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-robotics-blue/50 focus:border-robotics-blue"
-                    placeholder="¿Alguna pregunta o requisito especial?"
-                    rows={4}
-                  />
-                </div>
-                
-                <Button 
-                  type="submit"
-                  className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white py-3 rounded-md"
-                >
-                  Enviar Solicitud de Inscripción
-                </Button>
-              </form>
+              <div className="hs-form-frame" data-region="eu1" data-form-id="3ed163b6-4dee-4555-8c12-943c18ade29a" data-portal-id="146031285"></div>
             </div>
             
             {/* FAQs */}
@@ -199,4 +111,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-
