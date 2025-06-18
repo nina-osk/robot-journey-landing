@@ -15,7 +15,7 @@ const robotParts = [
       "Entradas y salidas digitales",
       "Comunicaciones estándar: Ethernet, USB",
     ],
-    price: "$499"
+    price: "$899"
   },
   {
     id: "estructura",
@@ -28,7 +28,7 @@ const robotParts = [
       "Superficie resistente a corrosión",
       "Compatible con sensores y actuadores estándar"
     ],
-    price: "$179"
+    price: "$1179"
   },
   {
     id: "actuadores",
@@ -54,7 +54,7 @@ const robotParts = [
       "1 Sensor de fuerza (gripper)",
       "Cableado y fijaciones incluidos"
     ],
-    price: "$149"
+    price: "$1149"
   }
 ];
 

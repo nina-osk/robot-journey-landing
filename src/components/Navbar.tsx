@@ -28,18 +28,9 @@ const Navbar = () => {
               alt="Robots Consultant Technology" 
               className="h-8 md:h-10"
             />
-            <a href="/" className="text-robotics-dark font-bold text-xl md:text-2xl">
-              Robotisconsultant
-            </a>
           </div>
 
           <nav className="hidden md:flex space-x-8 items-center">
-            <a 
-              href="#testimonials" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
-            >
-              Cobots en Venta
-            </a>
             <a 
               href="/robots-moviles" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
@@ -87,13 +78,6 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden glass-card animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#testimonials"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Cobots en Venta
-            </a>
             <a
               href="/robots-moviles"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"

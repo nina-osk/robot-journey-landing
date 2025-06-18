@@ -9,12 +9,12 @@ const FAQs = [
     answer: 'Ofrecemos opciones flexibles de alquiler: puedes alquilar por días, semanas o meses según tus necesidades específicas.'
   },
   {
-    question: '¿El soporte técnico está incluido en la compra o alquiler?',
-    answer: 'Sí, tanto en la venta como en el alquiler de robots, tienes acceso a soporte técnico especializado sin costo adicional.'
+    question: '¿El soporte técnico está incluido en la compra?',
+    answer: 'Sí, en la compra de robots, tienes acceso a soporte técnico especializado sin costo adicional.'
   },
   {
     question: '¿Realizan envíos a cualquier parte del país?',
-    answer: 'Entregamos robots y piezas en toda la República. Consulta condiciones especiales para envíos internacionales.'
+    answer: 'Entregamos robots y piezas en toda la Península. Consulta condiciones especiales para envíos internacionales.'
   }
 ];
 

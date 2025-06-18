@@ -27,7 +27,7 @@ const OnlineStorePopup = () => {
 
   const visitStore = () => {
     // Replace with your actual store URL
-    window.open('https://tu-tienda-online.com', '_blank');
+    window.open('https://robotsconsultant.net/tienda', '_blank');
     closePopup();
   };
 
