@@ -46,7 +46,11 @@ const OnlineStorePopup = () => {
           
           <div className="text-center flex-1 flex flex-col justify-center">
             <div className="mb-8">
-              <ShoppingCart className="h-16 w-16 text-robotics-blue mx-auto mb-4" />
+              <img 
+                src="/lovable-uploads/0d87c931-53e1-470f-ad83-99c83e63768c.png" 
+                alt="Robots Consultant Technology" 
+                className="h-16 mx-auto mb-4"
+              />
               <h2 className="text-2xl font-bold text-robotics-dark mb-2">
                 ¡Visita Nuestra Tienda Online!
               </h2>
