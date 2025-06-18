@@ -59,8 +59,8 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
                 <span className="text-gray-400">
-                  123 Avenida Innovación, Parque Tecnológico<br />
-                  Madrid, España, 28001
+                  Avenida Cerro del Aguila nº2<br />
+                  Madrid, España, 27803
                 </span>
               </li>
               <li className="flex items-center">

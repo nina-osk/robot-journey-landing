@@ -25,7 +25,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/0d87c931-53e1-470f-ad83-99c83e63768c.png" 
-              alt="Robots Consultant Technology" 
+              alt="RobotsConsultant" 
               className="h-8 md:h-10"
             />
           </div>
