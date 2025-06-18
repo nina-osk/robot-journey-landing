@@ -6,11 +6,11 @@ import { Button } from '@/components/ui/button';
 const ImageCarousel = () => {
   const images = [
     {
-      src: "/lovable-uploads/public/lovable-uploads/armRobotMovil.png",
+      src: "lovable-uploads/armRobotMovil.png",
       alt: "Producto robótico 1"
     },
     {
-      src: "/lovable-uploads/public/lovable-uploads/RobotsMovil.png", 
+      src: "lovable-uploads/RobotsMovil.png", 
       alt: "Producto robótico 2"
     },
     {
