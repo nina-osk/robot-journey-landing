@@ -6,15 +6,15 @@ import { Button } from '@/components/ui/button';
 const ImageCarousel = () => {
   const images = [
     {
-      src: "/lovable-uploads/86febd5b-eda5-4932-990a-d74158a07a0d.png",
+      src: "/lovable-uploads/public/lovable-uploads/armRobotMovil.png",
       alt: "Producto robótico 1"
     },
     {
-      src: "/lovable-uploads/0dfddcd1-14f3-4de4-b057-1356b3f4ccfa.png", 
+      src: "/lovable-uploads/public/lovable-uploads/RobotsMovil.png", 
       alt: "Producto robótico 2"
     },
     {
-      src: "/lovable-uploads/95d35c4b-e51e-452f-ae66-e1ee11c9c6f4.png",
+      src: "/lovable-uploads/robotArm.png",
       alt: "Robot colaborativo en acción"
     }
   ];

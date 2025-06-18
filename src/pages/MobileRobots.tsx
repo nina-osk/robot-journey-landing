@@ -32,19 +32,19 @@ const MobileRobots = () => {
       name: "AutoBuilder Pro",
       description: "Robot autónomo para construcción de estructuras modulares",
       features: ["Precisión milimétrica", "Trabajo 24/7", "Sensores LiDAR"],
-      price: "Desde €8,500/mes"
+      price: "Desde €8,500"
     },
     {
       name: "SiteGuard Mobile",
       description: "Sistema de vigilancia y monitoreo móvil para obras",
       features: ["Patrullaje autónomo", "Detección de intrusos", "Reportes en tiempo real"],
-      price: "Desde €3,200/mes"
+      price: "Desde €12,200"
     },
     {
       name: "MaterialMover X1",
       description: "Transporte autónomo de materiales pesados",
       features: ["Carga hasta 2 toneladas", "Navegación GPS", "Evita obstáculos"],
-      price: "Desde €6,800/mes"
+      price: "Desde €16,800"
     }
   ];
 
@@ -53,19 +53,19 @@ const MobileRobots = () => {
       name: "WareHouse Navigator",
       description: "Robot móvil para gestión de almacenes automatizada",
       features: ["Picking automatizado", "Inventario en tiempo real", "Integración ERP"],
-      price: "Desde €4,500/mes"
+      price: "Desde €4,500"
     },
     {
       name: "DeliveryBot Fleet",
       description: "Flota de robots para última milla de entrega",
       features: ["Entrega autónoma", "Rutas optimizadas", "Seguimiento GPS"],
-      price: "Desde €2,800/mes"
+      price: "Desde €12,800"
     },
     {
       name: "SortMaster Pro",
       description: "Sistema de clasificación automática de paquetes",
       features: ["1000+ paquetes/hora", "Reconocimiento óptico", "Zero errores"],
-      price: "Desde €7,200/mes"
+      price: "Desde €17,200"
     }
   ];
 
