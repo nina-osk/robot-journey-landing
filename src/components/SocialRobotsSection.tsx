@@ -40,7 +40,7 @@ const SocialRobotsSection = () => {
             Robótica Social
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
-            Alquiler de Robots Sociales para Eventos
+            Venta de Robots Sociales para Eventos
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Revoluciona tus eventos con robots conversacionales que interactúan de forma natural con los invitados
