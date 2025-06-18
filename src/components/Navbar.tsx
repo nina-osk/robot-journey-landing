@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,7 +22,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/0d87c931-53e1-470f-ad83-99c83e63768c.png" 
+              alt="Robots Consultant Technology" 
+              className="h-8 md:h-10"
+            />
             <a href="/" className="text-robotics-dark font-bold text-xl md:text-2xl">
               Robotisconsultant
             </a>
@@ -80,7 +84,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden glass-card animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
