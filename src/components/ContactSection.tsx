@@ -5,8 +5,8 @@ import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 // NUEVAS PREGUNTAS FRECUENTES
 const FAQs = [
   {
-    question: '¿Puedo alquilar un robot por días o solo por meses?',
-    answer: 'Ofrecemos opciones flexibles de alquiler: puedes alquilar por días, semanas o meses según tus necesidades específicas.'
+    question: '¿Puedo devolver mi robots?',
+    answer: 'Ofrecemos la posibilidad de devolución por 30 dias, si no estas satisfecho con el equipo.'
   },
   {
     question: '¿El soporte técnico está incluido en la compra?',
@@ -86,19 +86,11 @@ const ContactSection = () => {
                 <div className="space-y-3">
                   <div className="flex items-start">
                     <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">Garantía de devolución de dinero de 14 días</span>
+                    <span className="text-gray-700">Garantía de devolución de 30 días</span>
                   </div>
                   <div className="flex items-start">
                     <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">Acceso de por vida a los materiales del curso</span>
-                  </div>
-                  <div className="flex items-start">
-                    <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">Certificado al completar con éxito</span>
-                  </div>
-                  <div className="flex items-start">
-                    <Check className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-gray-700">Soporte dedicado durante tu proceso de aprendizaje</span>
+                    <span className="text-gray-700">Soporte dedicado durante tu proceso de compra</span>
                   </div>
                 </div>
               </div>

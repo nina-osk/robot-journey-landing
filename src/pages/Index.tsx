@@ -64,11 +64,12 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <SocialRobotsSection />
+
       <ServicesSection />
       <AutomationVisionSection />
       <FeatureSection />
       <RobotPartsSection />
+      <SocialRobotsSection />
       <ContactSection />
       <Footer />
       <GDPRConsent />
