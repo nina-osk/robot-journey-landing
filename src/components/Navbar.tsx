@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -26,7 +27,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/0d87c931-53e1-470f-ad83-99c83e63768c.png" 
               alt="Robots Consultant Technology" 
-              className="h-8 md:h-10"
+              className="h-16 md:h-20"
             />
           </div>
 
