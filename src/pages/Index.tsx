@@ -42,11 +42,11 @@ const Index = () => {
         <div className="relative z-10 max-w-6xl w-full px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-robotics-dark mb-6 leading-tight">
-              Venta y Alquiler de Robots Colaborativos
+              Venta Robots Móviles y Colaborativos
             </h1>
             <p className="text-xl text-gray-700 mb-8">
               Especialistas en soluciones robóticas colaborativas <br />
-              venta y alquiler de cobots nuevos y de segunda mano, asesoramiento y soporte técnico para tu empresa.
+              venta robots y cobots, asesoramiento y soporte técnico para tu empresa.
             </p>
           </div>
           
@@ -65,7 +65,6 @@ const Index = () => {
         </div>
       </section>
       <SocialRobotsSection />
-      <TestimonialSection />
       <ServicesSection />
       <AutomationVisionSection />
       <FeatureSection />
