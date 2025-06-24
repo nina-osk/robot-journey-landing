@@ -12,6 +12,7 @@ import SocialRobotsSection from '@/components/SocialRobotsSection';
 import GDPRConsent from '@/components/GDPRConsent';
 import OnlineStorePopup from '@/components/OnlineStorePopup';
 import ImageCarousel from '@/components/ImageCarousel';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   useEffect(() => {
@@ -54,13 +55,25 @@ const Index = () => {
             <ImageCarousel />
           </div>
           
-          <div className="text-center">
-            <a
-              href="#contacto"
-              className="inline-flex items-center gap-3 bg-robotics-blue hover:bg-robotics-blue/90 text-white text-lg font-semibold px-8 py-4 rounded-md shadow transition-colors"
+          <div className="text-center space-y-4">
+            <Button
+              size="lg"
+              className="bg-robotics-blue hover:bg-robotics-blue/90 text-white text-lg font-semibold px-8 py-4 rounded-md shadow transition-colors"
+              asChild
             >
-              Ver robots disponibles
-            </a>
+              <a href="#contacto">Contactar Ahora</a>
+            </Button>
+            
+            <div>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-robotics-blue text-robotics-blue hover:bg-robotics-blue hover:text-white text-lg font-semibold px-8 py-4 rounded-md shadow transition-colors"
+                asChild
+              >
+                <a href="#contacto">Asesoría Gratuita</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
