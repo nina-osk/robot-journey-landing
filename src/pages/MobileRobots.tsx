@@ -169,9 +169,11 @@ const MobileRobots = () => {
                   </ul>
                   <div className="pt-4 border-t">
                     <p className="text-lg font-semibold text-robotics-blue mb-3">{robot.price}</p>
-                    <Button className="w-full" variant="outline">
-                      Solicitar Información
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button className="w-full" variant="outline" asChild>
+                      <a href="/#contacto">
+                        Solicitar Información
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
@@ -212,9 +214,11 @@ const MobileRobots = () => {
                   </ul>
                   <div className="pt-4 border-t">
                     <p className="text-lg font-semibold text-robotics-blue mb-3">{robot.price}</p>
-                    <Button className="w-full" variant="outline">
-                      Solicitar Información
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button className="w-full" variant="outline" asChild>
+                      <a href="/#contacto">
+                        Solicitar Información
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
@@ -233,8 +237,8 @@ const MobileRobots = () => {
           <p className="text-xl mb-8 text-gray-300">
             Contacta con nuestros expertos para una consulta personalizada
           </p>
-          <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90">
-            Solicitar Consulta Gratuita
+          <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90" asChild>
+            <a href="/#contacto">Solicitar Consulta Gratuita</a>
           </Button>
         </div>
       </section>

@@ -75,7 +75,7 @@ const SocialRobotsSection = () => {
             className="bg-robotics-blue text-white hover:bg-robotics-blue/90"
             asChild
           >
-            <a href="#contact">Solicitar Robot para Evento</a>
+            <a href="#contacto">Solicitar Robot para Evento</a>
           </Button>
         </div>
       </div>

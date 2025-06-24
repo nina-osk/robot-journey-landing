@@ -56,7 +56,7 @@ const Index = () => {
           
           <div className="text-center">
             <a
-              href="#testimonials"
+              href="#contacto"
               className="inline-flex items-center gap-3 bg-robotics-blue hover:bg-robotics-blue/90 text-white text-lg font-semibold px-8 py-4 rounded-md shadow transition-colors"
             >
               Ver robots disponibles
