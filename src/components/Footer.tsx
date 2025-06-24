@@ -38,16 +38,16 @@ const Footer = () => {
                 <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">Inicio</a>
               </li>
               <li>
-                <a href="#courses" className="text-gray-400 hover:text-robotics-blue transition-colors">Cursos</a>
+                <a href="#courses" className="text-gray-400 hover:text-robotics-blue transition-colors">Robot Moviles</a>
               </li>
               <li>
-                <a href="#features" className="text-gray-400 hover:text-robotics-blue transition-colors">Características</a>
+                <a href="#features" className="text-gray-400 hover:text-robotics-blue transition-colors">Kiosco de Autoservicio</a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-400 hover:text-robotics-blue transition-colors">Testimonios</a>
+                <a href="#services" className="text-gray-400 hover:text-robotics-blue transition-colors">Servicios</a>  
               </li>
               <li>
-                <a href="#enroll" className="text-gray-400 hover:text-robotics-blue transition-colors">Inscripción</a>
+                <a href="https://robotsconsultant.net/tienda" className="text-gray-400 hover:text-robotics-blue transition-colors">Tienda</a> 
               </li>
             </ul>
           </div>
@@ -65,11 +65,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-robotics-blue shrink-0 mr-3" />
-                <span className="text-gray-400">+34 911 234 567</span>
+                <span className="text-gray-400">+34 602 63 29 81</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-robotics-blue shrink-0 mr-3" />
-                <span className="text-gray-400">info@Robotsconsultant.net</span>
+                <span className="text-gray-400">info@robotsconsultant.net</span>
               </li>
             </ul>
           </div>

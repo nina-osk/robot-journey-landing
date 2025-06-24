@@ -55,26 +55,6 @@ const Index = () => {
             <ImageCarousel />
           </div>
           
-          <div className="text-center space-y-4">
-            <Button
-              size="lg"
-              className="bg-robotics-blue hover:bg-robotics-blue/90 text-white text-lg font-semibold px-8 py-4 rounded-md shadow transition-colors"
-              asChild
-            >
-              <a href="#contacto">Contactar Ahora</a>
-            </Button>
-            
-            <div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-robotics-blue text-robotics-blue hover:bg-robotics-blue hover:text-white text-lg font-semibold px-8 py-4 rounded-md shadow transition-colors"
-                asChild
-              >
-                <a href="#contacto">Asesoría Gratuita</a>
-              </Button>
-            </div>
-          </div>
         </div>
       </section>
 

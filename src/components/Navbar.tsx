@@ -51,23 +51,18 @@ const Navbar = () => {
               Servicios
             </a>
             <a 
-              href="#features" 
+              href="https://robotsconsultant.net/tienda" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
-              Características
+              Tienda
             </a>
-            <a 
-              href="#courses" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
-            >
-              Cursos
-            </a>
+
             <Button 
               asChild 
               variant="default" 
               className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
             >
-              <a href="#enroll">Contactar Ahora</a>
+              <a href="#contacto">Contactar Ahora</a>
             </Button>
           </nav>
 

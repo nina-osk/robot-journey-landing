@@ -70,7 +70,9 @@ const ImageCarousel = () => {
           <Button 
             className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3 text-lg font-semibold rounded-md"
           >
-            Asesoría gratuita
+       
+            
+              <a href="#contacto">     Asesoría gratuita</a>
           </Button>
         </div>
       </div>
