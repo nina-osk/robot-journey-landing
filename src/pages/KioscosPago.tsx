@@ -2,11 +2,27 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Check, Smartphone, Printer, QrCode, BarChart, Settings, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const KioscosPago = () => {
+  const kioskImages = [
+    {
+      src: "/lovable-uploads/185c69eb-b011-48b3-999d-f598b65e9d63.png",
+      alt: "Kiosco de pago con escáner QR"
+    },
+    {
+      src: "/lovable-uploads/2ba5809e-a197-4378-9cb8-f65fada390ab.png",
+      alt: "Kiosco de pago con reconocimiento facial"
+    },
+    {
+      src: "/lovable-uploads/ce523968-b623-4adc-9cf1-c1140d583924.png",
+      alt: "Kiosco de pago para restaurantes"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Navbar />
@@ -18,10 +34,50 @@ const KioscosPago = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Kioscos de Pago <span className="text-robotics-blue">Inteligentes</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Quiosco de pantalla táctil de 21,5 pulgadas con escáner 2D y impresora de 80 mm, 
-              máquina de pedido automático de escritorio, POS de pedido sin acceso de montaje en pared.
-            </p>
+          </div>
+          
+          {/* Carrusel y Descripción */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+            {/* Carrusel a la izquierda */}
+            <div className="w-full">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {kioskImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <div className="glass-card p-6 rounded-2xl border border-white/30">
+                          <div className="relative aspect-video rounded-lg overflow-hidden bg-white">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
+
+            {/* Descripción a la derecha */}
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Quiosco de pantalla táctil de 21,5 pulgadas con escáner 2D y impresora de 80 mm, 
+                  máquina de pedido automático de escritorio, POS de pedido sin acceso de montaje en pared.
+                </p>
+              </div>
+              
+              <Button 
+                className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3 text-lg font-semibold rounded-md"
+              >
+                Solicitar Información
+              </Button>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
