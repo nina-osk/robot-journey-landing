@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Youtube } from 'lucide-react';
 
 const ContactCTA = () => {
   // Load HubSpot script when component mounts
@@ -43,7 +44,7 @@ const ContactCTA = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto mb-16">
           <Card className="border-0 shadow-2xl overflow-hidden bg-white">
             <CardContent className="p-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
@@ -90,6 +91,54 @@ const ContactCTA = () => {
                     data-portal-id="146031285">
                   </div>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* YouTube Channel Section */}
+        <div className="max-w-4xl mx-auto text-center">
+          <Card className="border-0 shadow-xl bg-gradient-to-r from-red-600 to-red-700 text-white">
+            <CardContent className="p-8 lg:p-12">
+              <div className="flex flex-col items-center space-y-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <Youtube className="w-12 h-12 text-white" />
+                  <h3 className="text-3xl font-bold">Canal Educativo YouTube</h3>
+                </div>
+                
+                <p className="text-xl leading-relaxed max-w-3xl">
+                  Mantente al día con las últimas tendencias en <strong>automatización</strong>, <strong>robótica</strong> e <strong>inteligencia artificial</strong>. 
+                  Cada semana subimos contenido educativo especializado para PyMEs y noticias interesantes del sector.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mt-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                    <span className="text-lg">Automatizaciones para PyMEs</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                    <span className="text-lg">Tutoriales de Robótica</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                    <span className="text-lg">Noticias de IA</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                    <span className="text-lg">Videos semanales</span>
+                  </div>
+                </div>
+                
+                <a 
+                  href="#" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg mt-6"
+                >
+                  <Youtube className="w-6 h-6" />
+                  Suscríbete a Nuestro Canal
+                </a>
               </div>
             </CardContent>
           </Card>
