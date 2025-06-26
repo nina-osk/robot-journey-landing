@@ -97,10 +97,10 @@ const ContactCTA = () => {
         </div>
 
         {/* YouTube Channel Section */}
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <Card className="border-0 shadow-xl bg-gradient-to-r from-red-600 to-red-700 text-white">
             <CardContent className="p-8 lg:p-12">
-              <div className="flex flex-col items-center space-y-6">
+              <div className="flex flex-col items-center space-y-8">
                 <div className="flex items-center gap-4 mb-4">
                   <Youtube className="w-12 h-12 text-white" />
                   <h3 className="text-3xl font-bold">Canal Educativo YouTube</h3>
@@ -111,7 +111,7 @@ const ContactCTA = () => {
                   Cada semana subimos contenido educativo especializado para PyMEs y noticias interesantes del sector.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                     <span className="text-lg">Automatizaciones para PyMEs</span>
@@ -127,6 +127,60 @@ const ContactCTA = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                     <span className="text-lg">Videos semanales</span>
+                  </div>
+                </div>
+
+                {/* Videos Section */}
+                <div className="w-full mt-8">
+                  <h4 className="text-2xl font-bold mb-6">Últimos Videos</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="bg-white/10 rounded-lg p-4">
+                      <div className="aspect-video bg-black rounded-lg mb-3 overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                          title="Automatización para PyMEs"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                      <h5 className="font-semibold text-lg mb-2">Automatización para PyMEs</h5>
+                      <p className="text-sm text-white/80">Descubre cómo automatizar procesos en pequeñas empresas</p>
+                    </div>
+                    
+                    <div className="bg-white/10 rounded-lg p-4">
+                      <div className="aspect-video bg-black rounded-lg mb-3 overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                          title="Robótica Industrial"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                      <h5 className="font-semibold text-lg mb-2">Robótica Industrial</h5>
+                      <p className="text-sm text-white/80">Los últimos avances en robots colaborativos</p>
+                    </div>
+                    
+                    <div className="bg-white/10 rounded-lg p-4">
+                      <div className="aspect-video bg-black rounded-lg mb-3 overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                          title="Inteligencia Artificial"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                      <h5 className="font-semibold text-lg mb-2">Noticias de IA</h5>
+                      <p className="text-sm text-white/80">Las últimas tendencias en inteligencia artificial</p>
+                    </div>
                   </div>
                 </div>
                 
