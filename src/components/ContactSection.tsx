@@ -5,28 +5,30 @@ import { Youtube } from 'lucide-react';
 
 const ContactCTA = () => {
   // Load HubSpot script when component mounts
-  useEffect(() => {
-    // Create a script element for HubSpot
-    const script = document.createElement('script');
-    script.src = 'https://js-eu1.hsforms.net/forms/embed/146031285.js';
-    script.defer = true;
-    
-    // Add the script to the document
-    document.head.appendChild(script);
-    
-    // Cleanup function to remove the script when component unmounts
-    return () => {
-      // Find and remove the script
-      const scripts = document.head.getElementsByTagName('script');
-      for (let i = 0; i < scripts.length; i++) {
-        if (scripts[i].src.includes('js-eu1.hsforms.net/forms/embed/146031285.js')) {
-          document.head.removeChild(scripts[i]);
-          break;
-        }
-      }
-    };
-  }, []); // Empty dependency array means this effect runs once on mount
 
+useEffect(() => {
+  // Load HubSpot forms script
+  const script = document.createElement('script');
+  script.src = '//js-eu1.hsforms.net/forms/embed/v2.js';
+  script.async = true;
+  script.onload = () => {
+    // @ts-ignore
+    if (window.hbspt) {
+      // @ts-ignore
+      window.hbspt.forms.create({
+        region: "eu1",
+        portalId: "146031285",
+        formId: "3ed163b6-4dee-4555-8c12-943c18ade29a",
+        target: ".hs-form-frame"
+      });
+    }
+  };
+  document.body.appendChild(script);
+
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
   return (
     <section id="contacto" className="py-20 bg-gradient-to-b from-robotics-dark to-gray-900 relative">
       <div className="container mx-auto px-4">
