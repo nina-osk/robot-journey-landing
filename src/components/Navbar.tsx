@@ -39,13 +39,13 @@ const Navbar = () => {
               Inicio
             </a>
             <a 
-              href="/robots-moviles" 
+              href="./robots-moviles" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
               Robots Móviles
             </a>
             <a
-              href="/kioscos-pago" 
+              href="./kioscos-pago" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
               Kioscos de pago
@@ -88,14 +88,14 @@ const Navbar = () => {
               Inicio
             </a>
             <a
-              href="/robots-moviles" 
+              href="./robots-moviles" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
               Robots Móviles
             </a>
             <a
-              href="/kioscos-pago" 
+              href="./kioscos-pago" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
