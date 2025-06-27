@@ -139,15 +139,15 @@ const ContactCTA = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                          title="Automatización para PyMEs"
+                          src="https://www.youtube.com/watch?v=sOLfQvYjSNs&ab_channel=RobotsConsultants"
+                          title="Los Agentes de IA, ¿Que son, te reemplazarán en 2025?"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                         ></iframe>
                       </div>
-                      <h5 className="font-semibold text-lg mb-2">Automatización para PyMEs</h5>
-                      <p className="text-sm text-white/80">Descubre cómo automatizar procesos en pequeñas empresas</p>
+                      <h5 className="font-semibold text-lg mb-2">Los Agentes de IA, ¿Que son, te reemplazarán en 2025?</h5>
+                      <p className="text-sm text-white/80">Descubre cómo los agentes de IA están cambiando el panorama laboral</p>
                     </div>
                     
                     <div className="bg-white/10 rounded-lg p-4">
@@ -155,15 +155,15 @@ const ContactCTA = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                          title="Robótica Industrial"
+                          src="https://www.youtube.com/watch?v=kh0oYd_EkZk&ab_channel=RobotsConsultants"
+                          title="Resumen rápido de las ultimas novedades de la Google IO 2025"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                         ></iframe>
                       </div>
-                      <h5 className="font-semibold text-lg mb-2">Robótica Industrial</h5>
-                      <p className="text-sm text-white/80">Los últimos avances en robots colaborativos</p>
+                      <h5 className="font-semibold text-lg mb-2">Resumen rápido de las ultimas novedades de la Google IO 2025</h5>
+                      <p className="text-sm text-white/80">Las últimas novedades de la Google IO 2025 en un solo lugar</p>
                     </div>
                     
                     <div className="bg-white/10 rounded-lg p-4">
@@ -171,15 +171,15 @@ const ContactCTA = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                          title="Inteligencia Artificial"
+                          src="https://www.youtube.com/watch?v=rTa7yggFCKU&ab_channel=RobotsConsultants"
+                          title="¿Por Qué Unos Robots BAILAN y Otros CHOCAN? 🤖 | Tipos de Robots Móviles EXPLICADO"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                         ></iframe>
                       </div>
-                      <h5 className="font-semibold text-lg mb-2">Noticias de IA</h5>
-                      <p className="text-sm text-white/80">Las últimas tendencias en inteligencia artificial</p>
+                      <h5 className="font-semibold text-lg mb-2">¿Por Qué Unos Robots BAILAN y Otros CHOCAN? 🤖 | Tipos de Robots Móviles EXPLICADO</h5>
+                      <p className="text-sm text-white/80">Las últimas tendencias en robots móviles, que son, cuales existen y como se utilizan en la industria</p>
                     </div>
                   </div>
                 </div>
