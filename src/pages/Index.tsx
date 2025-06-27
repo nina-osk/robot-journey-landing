@@ -43,11 +43,11 @@ const Index = () => {
         <div className="relative z-10 max-w-6xl w-full px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-robotics-dark mb-6 leading-tight">
-              Venta Robots Móviles y Colaborativos
+              💬 “No necesitas ser experto en tecnología para automatizar tu negocio.
+                   Sólo necesitas la herramienta adecuada que trabaje por ti.”
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              Especialistas en soluciones robóticas colaborativas <br />
-              venta robots y cobots, asesoramiento y soporte técnico para tu empresa.
+             Somos Especialistas en ERP Odoo, automatizaciones y soluciones robóticas colaborativas <br />
             </p>
           </div>
           
