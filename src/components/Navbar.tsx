@@ -51,12 +51,6 @@ const Navbar = () => {
               Kioscos de pago
             </a>
             <a 
-              href="#services" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
-            >
-              Servicios
-            </a>
-            <a 
               href="https://robotsconsultant.net/tienda" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
