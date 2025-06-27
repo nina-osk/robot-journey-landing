@@ -88,14 +88,14 @@ const Navbar = () => {
               Inicio
             </a>
             <a
-              href="https://robotsconsultant.net/robots-moviles" 
+              href="./robots-moviles" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
               Robots Móviles
             </a>
             <a
-              href="https://robotsconsultant.net/kioscos-pago" 
+              href="./kioscos-pago" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
