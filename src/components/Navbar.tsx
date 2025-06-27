@@ -39,13 +39,13 @@ const Navbar = () => {
               Inicio
             </a>
             <a 
-              href="/robots-moviles" 
+              href="/MobileRobots" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
               Robots Móviles
             </a>
             <a 
-              href="/kioscos-pago" 
+              href="/KioscosPago" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
               Kioscos de pago
