@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import RobotPartsSection from '@/components/CourseSection';
@@ -119,15 +118,27 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button 
-                asChild
-                size="lg" 
-                className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all"
-              >
-                <a href="#contacto" className="inline-flex items-center">
-                  Solicita tu demo gratuita
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-gray-600 hover:bg-gray-700 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all"
+                >
+                  <a href="/kioscos-pago" className="inline-flex items-center">
+                    Más información de los kioscos
+                  </a>
+                </Button>
+                
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all"
+                >
+                  <a href="#contacto" className="inline-flex items-center">
+                    Solicita tu demo gratuita
+                  </a>
+                </Button>
+              </div>
               
               <div className="flex items-center space-x-2 text-gray-500 animate-bounce">
                 <ArrowDown className="w-5 h-5" />
