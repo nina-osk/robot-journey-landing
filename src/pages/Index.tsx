@@ -58,7 +58,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 z-0" />
         <div className="relative z-10 max-w-6xl w-full px-4">
           <div className="text-center mb-12">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-robotics-dark mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-robotics-dark mb-6 leading-tight">
               Automatiza sin gastar una fortuna
             </h2>
             <p className="text-2xl sm:text-3xl text-gray-700 mb-8 font-medium">
