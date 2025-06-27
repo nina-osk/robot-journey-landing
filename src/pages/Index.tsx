@@ -40,14 +40,27 @@ const Index = () => {
     <div className="min-h-screen bg-white overflow-hidden">
       <Navbar />
       
-      {/* New Hero Section */}
+      {/* Introduction Section */}
+      <section className="relative py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-robotics-dark mb-6 leading-relaxed">
+            💬 "No necesitas ser experto en tecnología para automatizar tu negocio. 
+            Sólo necesitas la herramienta adecuada que trabaje por ti."
+          </h1>
+          <p className="text-lg text-gray-700 font-medium">
+            Somos Especialistas en ERP Odoo, automatizaciones y soluciones robóticas colaborativas
+          </p>
+        </div>
+      </section>
+      
+      {/* Main Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 z-0" />
         <div className="relative z-10 max-w-6xl w-full px-4">
           <div className="text-center mb-12">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-robotics-dark mb-8 leading-tight">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-robotics-dark mb-8 leading-tight">
               Automatiza sin gastar una fortuna
-            </h1>
+            </h2>
             <p className="text-2xl sm:text-3xl text-gray-700 mb-8 font-medium">
               Kioscos inteligentes + CRM con IA + Odoo = Tu negocio funcionando solo, 24/7.
             </p>
@@ -101,19 +114,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-white z-0" />
         <div className="relative z-10 max-w-6xl w-full px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-robotics-dark mb-6 leading-tight">
-              💬 "No necesitas ser experto en tecnología para automatizar tu negocio.
-                   Sólo necesitas la herramienta adecuada que trabaje por ti."
-            </h2>
-            <p className="text-xl text-gray-700 mb-8">
-             Somos Especialistas en ERP Odoo, automatizaciones y soluciones robóticas colaborativas <br />
-            </p>
+            <div className="mb-12">
+              <ImageCarousel />
+            </div>
           </div>
-          
-          <div className="mb-12">
-            <ImageCarousel />
-          </div>
-          
         </div>
       </section>
 
