@@ -41,11 +41,11 @@ const Index = () => {
       <Navbar />
       
       {/* Introduction Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="mb-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-robotics-dark mb-8 leading-relaxed">
+          <div className="text-center mb-8">
+            <div className="mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-robotics-dark mb-6 leading-relaxed">
                 💬 "No necesitas ser experto en tecnología para automatizar tu negocio."
               </h1>
               <p className="text-xl sm:text-2xl text-gray-600 font-medium mb-4">
@@ -53,8 +53,8 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
-              <p className="text-lg sm:text-xl text-robotics-dark font-semibold mb-8">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 max-w-4xl mx-auto">
+              <p className="text-lg sm:text-xl text-robotics-dark font-semibold mb-6">
                 Somos Especialistas en ERP Odoo, automatizaciones y soluciones robóticas colaborativas
               </p>
               
@@ -83,7 +83,7 @@ const Index = () => {
       </section>
       
       {/* Main Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="relative flex flex-col items-center justify-center min-h-screen py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 z-0" />
         <div className="relative z-10 max-w-6xl w-full px-4">
           <div className="text-center mb-12">
@@ -139,7 +139,7 @@ const Index = () => {
       </section>
 
       {/* Original Hero Section - now secondary */}
-      <section className="relative flex flex-col items-center justify-center min-h-[80vh] py-20 bg-gradient-to-r from-white via-blue-50 to-white">
+      <section className="relative flex flex-col items-center justify-center min-h-[70vh] py-16 bg-gradient-to-r from-white via-blue-50 to-white">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-white z-0" />
         <div className="relative z-10 max-w-6xl w-full px-4">
           <div className="text-center mb-12">
