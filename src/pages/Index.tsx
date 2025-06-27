@@ -41,15 +41,44 @@ const Index = () => {
       <Navbar />
       
       {/* Introduction Section */}
-      <section className="relative py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-robotics-dark mb-6 leading-relaxed">
-            💬 "No necesitas ser experto en tecnología para automatizar tu negocio. 
-            Sólo necesitas la herramienta adecuada que trabaje por ti."
-          </h1>
-          <p className="text-lg text-gray-700 font-medium">
-            Somos Especialistas en ERP Odoo, automatizaciones y soluciones robóticas colaborativas
-          </p>
+      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-robotics-dark mb-8 leading-relaxed">
+                💬 "No necesitas ser experto en tecnología para automatizar tu negocio."
+              </h1>
+              <p className="text-xl sm:text-2xl text-gray-600 font-medium mb-4">
+                Sólo necesitas la herramienta adecuada que trabaje por ti.
+              </p>
+            </div>
+            
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
+              <p className="text-lg sm:text-xl text-robotics-dark font-semibold mb-8">
+                Somos Especialistas en ERP Odoo, automatizaciones y soluciones robóticas colaborativas
+              </p>
+              
+              <div className="flex items-center justify-center space-x-12 opacity-70">
+                <div className="text-center">
+                  <img 
+                    src="/lovable-uploads/bfe6bd59-2f34-4a21-8391-eec584496997.png" 
+                    alt="Odoo ERP" 
+                    className="h-12 mx-auto mb-2"
+                  />
+                  <p className="text-sm text-gray-600 font-medium">ERP Odoo</p>
+                </div>
+                
+                <div className="text-center">
+                  <img 
+                    src="/lovable-uploads/5a99c305-6368-4347-a88f-7234f99136be.png" 
+                    alt="n8n Automation" 
+                    className="h-12 mx-auto mb-2"
+                  />
+                  <p className="text-sm text-gray-600 font-medium">Automatización n8n</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       
