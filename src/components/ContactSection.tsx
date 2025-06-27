@@ -85,7 +85,7 @@ const ContactCTA = () => {
                 
                 <div className="bg-white p-8 lg:p-12 flex items-center justify-center">
                   <div 
-                    className="hs-form-frame w-full" 
+                    className="hs-form-frame" 
                     data-region="eu1" 
                     data-form-id="3ed163b6-4dee-4555-8c12-943c18ade29a" 
                     data-portal-id="146031285">
