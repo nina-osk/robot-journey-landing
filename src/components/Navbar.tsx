@@ -88,39 +88,25 @@ const Navbar = () => {
               Inicio
             </a>
             <a
-              href="/robots-moviles"
+              href="/MobileRobots" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
               Robots Móviles
             </a>
             <a
-              href="/kioscos-pago"
+              href="/KioscosPago" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
               Kioscos de pago
             </a>
             <a
-              href="#services"
+              href="https://robotsconsultant.net/tienda" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
               Servicios
-            </a>
-            <a
-              href="#features"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Características
-            </a>
-            <a
-              href="#courses"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Cursos
             </a>
             <Button 
               asChild 
