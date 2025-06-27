@@ -139,7 +139,7 @@ const ContactCTA = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src="https://www.youtube.com/watch?v=sOLfQvYjSNs&ab_channel=RobotsConsultants"
+                          src="https://www.youtube.com/embed/sOLfQvYjSNs"
                           title="Los Agentes de IA, ¿Que son, te reemplazarán en 2025?"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -155,7 +155,7 @@ const ContactCTA = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src="https://www.youtube.com/watch?v=kh0oYd_EkZk&ab_channel=RobotsConsultants"
+                          src="https://www.youtube.com/embed/kh0oYd_EkZk"
                           title="Resumen rápido de las ultimas novedades de la Google IO 2025"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -171,7 +171,7 @@ const ContactCTA = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src="https://www.youtube.com/watch?v=rTa7yggFCKU&ab_channel=RobotsConsultants"
+                          src="https://www.youtube.com/embed/rTa7yggFCKU"
                           title="¿Por Qué Unos Robots BAILAN y Otros CHOCAN? 🤖 | Tipos de Robots Móviles EXPLICADO"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
