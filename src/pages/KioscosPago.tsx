@@ -1,9 +1,9 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Check, Smartphone, Printer, QrCode, BarChart, Settings, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -74,8 +74,11 @@ const KioscosPago = () => {
               
               <Button 
                 className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3 text-lg font-semibold rounded-md"
+                asChild
               >
-                Solicitar Información
+                <Link to="/#contacto">
+                  Solicitar Información
+                </Link>
               </Button>
             </div>
           </div>
@@ -379,8 +382,10 @@ const KioscosPago = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3">
-              Solicitar Cotización Personalizada
+            <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3" asChild>
+              <Link to="/#contacto">
+                Solicitar Cotización Personalizada
+              </Link>
             </Button>
           </div>
         </div>
