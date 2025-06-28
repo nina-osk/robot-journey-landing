@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Truck, Construction, Rocket } from 'lucide-react';
@@ -252,9 +253,9 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-robotics-dark" asChild>
-                <Link to="/kioscos-pago">
+                <a href="#contacto">
                   Más información de los kioscos
-                </Link>
+                </a>
               </Button>
               <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90" asChild>
                 <a href="#contacto">Solicitar Consulta Gratuita</a>
