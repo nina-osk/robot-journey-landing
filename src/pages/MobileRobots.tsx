@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Truck, Construction, ArrowRight, CheckCircle, Users, Clock, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -139,7 +138,7 @@ const MobileRobots = () => {
       </section>
 
       {/* Construction Robots Section */}
-      <section className="py-16 bg-gray-50 slide-in-section">
+      <section id="construccion" className="py-16 bg-gray-50 slide-in-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Construction className="h-12 w-12 text-robotics-blue mx-auto mb-4" />
@@ -184,7 +183,7 @@ const MobileRobots = () => {
       </section>
 
       {/* Logistics Robots Section */}
-      <section className="py-16 bg-white slide-in-section">
+      <section id="logistica" className="py-16 bg-white slide-in-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Truck className="h-12 w-12 text-robotics-blue mx-auto mb-4" />
