@@ -1,5 +1,3 @@
-
-
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Truck, Construction, Rocket } from 'lucide-react';
@@ -271,4 +269,3 @@ const Index = () => {
 };
 
 export default Index;
-
