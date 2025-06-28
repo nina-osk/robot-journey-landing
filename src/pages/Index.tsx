@@ -43,16 +43,16 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90" asChild>
-                  <a href="/robots-moviles#construccion">
+                  <Link to="/robots-moviles#construccion">
                     <Construction className="mr-2 h-5 w-5" />
                     Ver Robots Construcción
-                  </a>
+                  </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-robotics-blue text-robotics-blue hover:bg-robotics-blue hover:text-white" asChild>
-                  <a href="/robots-moviles#logistica">
+                  <Link to="/robots-moviles#logistica">
                     <Truck className="mr-2 h-5 w-5" />
                     Ver Robots Logística
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -250,9 +250,16 @@ const Index = () => {
               Contacta con nuestros expertos para descubrir cómo la robótica puede impulsar tu
               empresa
             </p>
-            <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90" asChild>
-              <a href="#contacto">Solicitar Consulta Gratuita</a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-robotics-dark" asChild>
+                <Link to="/kioscos-pago">
+                  Más información de los kioscos
+                </Link>
+              </Button>
+              <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90" asChild>
+                <a href="#contacto">Solicitar Consulta Gratuita</a>
+              </Button>
+            </div>
           </div>
         </section>
       </main>
