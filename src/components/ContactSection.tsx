@@ -19,7 +19,7 @@ useEffect(() => {
         region: "eu1",
         portalId: "146031285",
         formId: "3ed163b6-4dee-4555-8c12-943c18ade29a",
-        target: ".hs-form-frame"
+        target: ".hs-form"
       });
     }
   };
@@ -87,7 +87,7 @@ useEffect(() => {
                 
                 <div className="bg-white p-8 lg:p-12 flex items-center justify-center">
                   <div 
-                    className="hs-form-frame" 
+                    className="hs-form" 
                     data-region="eu1" 
                     data-form-id="3ed163b6-4dee-4555-8c12-943c18ade29a" 
                     data-portal-id="146031285">
