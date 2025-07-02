@@ -62,7 +62,7 @@ const Navbar = () => {
               variant="default" 
               className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
             >
-              <a href="#contacto">Contactar Ahora</a>
+              <a href="/#contacto">Contactar Ahora</a>
             </Button>
           </nav>
 
