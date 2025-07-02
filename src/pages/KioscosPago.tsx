@@ -92,7 +92,7 @@ const KioscosPago = () => {
             <div className="space-y-6">
               <div className="space-y-4">
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Quiosco de pantalla táctil de 21,5 pulgadas con escáner 2D y impresora de 80 mm, 
+                  Quiosco de pantalla táctil desde 10" hasta 21,5 pulgadas con escáner 2D y impresora de 80 mm, 
                   máquina de pedido automático de escritorio, POS de pedido sin acceso de montaje en pared.
                 </p>
               </div>
@@ -112,7 +112,7 @@ const KioscosPago = () => {
             <Card className="border-robotics-blue/20">
               <CardContent className="p-6 text-center">
                 <Smartphone className="w-12 h-12 text-robotics-blue mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Pantalla Táctil 21.5"</h3>
+                <h3 className="font-semibold mb-2">Pantalla Táctil desde 10" hasta 21.5"</h3>
                 <p className="text-gray-600 text-sm">Interfaz intuitiva y responsive</p>
               </CardContent>
             </Card>
@@ -146,7 +146,7 @@ const KioscosPago = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Settings className="w-6 h-6 text-robotics-blue" />
-                  Integración Completa con Odoo
+                  Integración Completa con Odoo Community o Odoo Enterprise, segun requerimiento del cliente.
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -309,7 +309,7 @@ const KioscosPago = () => {
                       <li>• Catálogo completo sincronizado con Odoo</li>
                       <li>• Sistema de apartado y reserva de productos</li>
                       <li>• Integración con programa de lealtad/puntos</li>
-                      <li>• Búsqueda inteligente por categorías o síntomas (farmacias)</li>
+                      <li>• Búsqueda inteligente por categorías</li>
                     </ul>
                   </div>
                 </div>
@@ -367,7 +367,7 @@ const KioscosPago = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-600 mb-4">
-                  Quiosco + configuración básica + capacitación
+                  Kiosco + configuración básica + capacitación
                 </p>
                 <Button variant="outline" className="w-full">
                   Consultar Precio
@@ -404,14 +404,6 @@ const KioscosPago = () => {
                 </Button>
               </CardContent>
             </Card>
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3" asChild>
-              <Link to="/#contacto">
-                Solicitar Cotización Personalizada
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
