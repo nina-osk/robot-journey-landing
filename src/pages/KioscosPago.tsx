@@ -35,7 +35,8 @@ const KioscosPago = () => {
         (window as any).hbspt.forms.create({
           portalId: "146031285",
           formId: "569b1f1d-0603-4de0-a885-a0bdbaf74911",
-          region: "eu1"
+          region: "eu1",
+          target: "#hubspot-form-container"
         });
       }
     };
@@ -92,19 +93,20 @@ const KioscosPago = () => {
             <div className="space-y-6">
               <div className="space-y-4">
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Quiosco de pantalla táctil desde 10" hasta 21,5 pulgadas con escáner 2D y impresora de 80 mm, 
+                  Kiosco de pantalla táctil desde 10" hasta 21,5 pulgadas con escáner 2D y impresora de 80 mm, 
                   máquina de pedido automático de escritorio, POS de pedido sin acceso de montaje en pared.
                 </p>
               </div>
               
-              <Button 
-                className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3 text-lg font-semibold rounded-md"
-                asChild
-              >
-                <Link to="/#contacto">
-                  Solicitar Información
-                </Link>
-              </Button>
+        <Button 
+        className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3 text-lg font-semibold rounded-md"
+         onClick={() => {
+          const el = document.getElementById('hubspot-form-container');
+           if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
+        >
+        Solicitar Información
+          </Button>
             </div>
           </div>
           
@@ -370,7 +372,9 @@ const KioscosPago = () => {
                   Kiosco + configuración básica + capacitación
                 </p>
                 <Button variant="outline" className="w-full">
-                  Consultar Precio
+                  <a href="#hubspot-form-container">
+                    Consultar Precio
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -385,7 +389,9 @@ const KioscosPago = () => {
                   + Integración Odoo + personalización de interfaz + soporte 6 meses
                 </p>
                 <Button className="w-full bg-robotics-blue hover:bg-robotics-blue/90">
-                  Más Popular
+                <a href="#hubspot-form-container">
+                         Más Popular
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -400,7 +406,9 @@ const KioscosPago = () => {
                   + Desarrollo de funcionalidades específicas + analytics avanzados + mantenimiento anual
                 </p>
                 <Button variant="outline" className="w-full">
-                  Contactar
+                   <a href="#hubspot-form-container">
+                   Solicitar Información
+                </a>
                 </Button>
               </CardContent>
             </Card>
