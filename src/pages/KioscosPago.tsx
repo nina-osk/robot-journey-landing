@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Check, Smartphone, Printer, QrCode, BarChart, Settings, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,30 @@ const KioscosPago = () => {
       alt: "Kiosco de pago para restaurantes"
     }
   ];
+
+  useEffect(() => {
+    // Load HubSpot script
+    const script = document.createElement('script');
+    script.src = '//js-eu1.hsforms.net/forms/embed/v2.js';
+    script.charset = 'utf-8';
+    script.type = 'text/javascript';
+    script.onload = () => {
+      if ((window as any).hbspt) {
+        (window as any).hbspt.forms.create({
+          portalId: "146031285",
+          formId: "569b1f1d-0603-4de0-a885-a0bdbaf74911",
+          region: "eu1"
+        });
+      }
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -387,6 +412,26 @@ const KioscosPago = () => {
                 Solicitar Cotización Personalizada
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Formulario de Contacto HubSpot */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Solicita Información Detallada
+            </h2>
+            <p className="text-lg text-gray-600">
+              Completa el formulario y te contactaremos para brindarte más información sobre nuestros kioscos de pago
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <div id="hubspot-form-container" className="min-h-[400px]">
+              {/* El formulario de HubSpot se cargará aquí */}
+            </div>
           </div>
         </div>
       </section>
