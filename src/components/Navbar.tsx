@@ -113,7 +113,7 @@ const Navbar = () => {
               variant="default" 
               className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md mt-3"
             >
-              <a href="#enroll" onClick={() => setMobileMenuOpen(false)}>Contactar Ahora</a>
+              <a href="/#contacto" onClick={() => setMobileMenuOpen(false)}>Contactar Ahora</a>
             </Button>
           </div>
         </div>
