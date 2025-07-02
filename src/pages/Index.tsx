@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import RobotPartsSection from '@/components/CourseSection';
@@ -40,11 +41,11 @@ const Index = () => {
       <Navbar />
       
       {/* Introduction Section */}
-      <section className="relative py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-12 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <div className="mb-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-robotics-dark mb-6 leading-relaxed">
+          <div className="text-center mb-6">
+            <div className="mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-robotics-dark mb-4 leading-relaxed">
                 💬 "No necesitas ser experto en tecnología para automatizar tu negocio."
               </h1>
               <p className="text-xl sm:text-2xl text-gray-600 font-medium mb-4">
@@ -82,21 +83,21 @@ const Index = () => {
       </section>
       
       {/* Main Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="relative flex flex-col items-center justify-center py-12 bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 z-0" />
         <div className="relative z-10 max-w-6xl w-full px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-robotics-dark mb-6 leading-tight">
               Automatiza sin gastar una fortuna
             </h2>
-            <p className="text-2xl sm:text-3xl text-gray-700 mb-8 font-medium">
+            <p className="text-2xl sm:text-3xl text-gray-700 mb-6 font-medium">
               Kioscos inteligentes + CRM con IA + Odoo = Tu negocio funcionando solo, 24/7.
             </p>
-            <p className="text-xl text-gray-600 mb-12 max-w-4xl mx-auto">
+            <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
               Reduce errores, ahorra tiempo y ofrece una experiencia moderna a tus clientes.
             </p>
             
-            <div className="flex flex-col items-center space-y-8 mb-12">
+            <div className="flex flex-col items-center space-y-6 mb-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
                 <div className="flex items-center space-x-3 bg-white/70 backdrop-blur-sm rounded-lg p-4 shadow-sm">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
@@ -150,11 +151,11 @@ const Index = () => {
       </section>
 
       {/* Original Hero Section - now secondary */}
-      <section className="relative flex flex-col items-center justify-center min-h-[70vh] py-16 bg-gradient-to-r from-white via-blue-50 to-white">
+      <section className="relative flex flex-col items-center justify-center py-8 bg-gradient-to-r from-white via-blue-50 to-white">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-white z-0" />
         <div className="relative z-10 max-w-6xl w-full px-4">
-          <div className="text-center mb-12">
-            <div className="mb-12">
+          <div className="text-center">
+            <div className="mb-6">
               <ImageCarousel />
             </div>
           </div>
