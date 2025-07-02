@@ -1,5 +1,4 @@
 
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import RobotPartsSection from '@/components/CourseSection';
@@ -35,6 +34,33 @@ const Index = () => {
     });
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    // Load HubSpot form script
+    const script = document.createElement('script');
+    script.src = '//js-eu1.hsforms.net/forms/embed/v2.js';
+    script.charset = 'utf-8';
+    script.type = 'text/javascript';
+    script.onload = () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: "146031285",
+          formId: "569b1f1d-0603-4de0-a885-a0bdbaf74911",
+          region: "eu1",
+          target: '#hubspot-form'
+        });
+      }
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      const existingScript = document.querySelector('script[src="//js-eu1.hsforms.net/forms/embed/v2.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, []);
 
   return (
@@ -170,6 +196,21 @@ const Index = () => {
       <RobotPartsSection />
       <SocialRobotsSection />
       <ContactSection />
+      
+      {/* HubSpot Contact Form Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Puedes solicitar información más detallada a continuación
+            </h2>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <div id="hubspot-form"></div>
+          </div>
+        </div>
+      </section>
+      
       <Footer />
       <GDPRConsent />
       <OnlineStorePopup />
@@ -178,4 +219,3 @@ const Index = () => {
 };
 
 export default Index;
-
