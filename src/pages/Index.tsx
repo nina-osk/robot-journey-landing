@@ -1,4 +1,5 @@
 
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import RobotPartsSection from '@/components/CourseSection';
@@ -41,12 +42,14 @@ const Index = () => {
       <Navbar />
       
       {/* Introduction Section */}
-      <section className="relative py-12 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative pt-32 pb-12 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-6">
             <div className="mb-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-robotics-dark mb-4 leading-relaxed">
-                💬 "No necesitas ser experto en tecnología para automatizar tu negocio."
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-relaxed">
+                <span className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent animate-pulse">
+                  💬 "No necesitas ser experto en tecnología para automatizar tu negocio."
+                </span>
               </h1>
               <p className="text-xl sm:text-2xl text-gray-600 font-medium mb-4">
                 Sólo necesitas la herramienta adecuada que trabaje por ti.
@@ -175,3 +178,4 @@ const Index = () => {
 };
 
 export default Index;
+
