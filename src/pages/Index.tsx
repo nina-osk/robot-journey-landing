@@ -53,6 +53,9 @@ const Index = () => {
               <p className="text-xl sm:text-2xl text-gray-600 font-medium mb-4">
                 Sólo necesitas la herramienta adecuada que trabaje por ti.
               </p>
+              <p className="text-lg sm:text-xl text-robotics-blue font-bold mb-4">
+                Queremos ser líderes en automatización gastronómica
+              </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 max-w-4xl mx-auto">
