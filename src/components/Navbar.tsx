@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -49,6 +50,12 @@ const Navbar = () => {
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
               Kioscos de pago
+            </a>
+            <a
+              href="./sobre-mi" 
+              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+            >
+              Sobre Mí
             </a>
             <a 
               href="https://robotsconsultant.net/tienda" 
@@ -102,11 +109,18 @@ const Navbar = () => {
               Kioscos de pago
             </a>
             <a
+              href="./sobre-mi" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Sobre Mí
+            </a>
+            <a
               href="https://robotsconsultant.net/tienda" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Servicios
+              Tienda
             </a>
             <Button 
               asChild 
