@@ -174,7 +174,7 @@ const ServicesSection = () => {
                 asChild
                 className="bg-robotics-blue hover:bg-robotics-blue/90"
               >
-                <a href="#enroll">Solicitar consulta</a>
+                <a href="#contacto">Solicitar consulta</a>
               </Button>
             </div>
             
@@ -248,9 +248,9 @@ const ServicesSection = () => {
                     <Button 
                       variant="outline"
                       className="w-full border-robotics-blue text-robotics-blue hover:bg-robotics-blue/10"
-                      onClick={() => setActiveService(service.id)}
+                      asChild
                     >
-                      Ver detalles
+                      <a href="#contacto">Solicitar consulta</a>
                     </Button>
                   </CardContent>
                 </Card>
