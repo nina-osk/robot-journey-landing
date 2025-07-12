@@ -1,9 +1,35 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Youtube } from 'lucide-react';
 
 const ContactCTA = () => {
+  useEffect(() => {
+    // Load Calendly script when component mounts
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => {
+      console.log('Calendly script loaded successfully');
+    };
+    script.onerror = () => {
+      console.error('Failed to load Calendly script');
+    };
+    
+    // Check if script is already loaded
+    const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+    if (!existingScript) {
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      // Cleanup: remove script when component unmounts
+      const scriptToRemove = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (scriptToRemove && scriptToRemove.parentNode) {
+        scriptToRemove.parentNode.removeChild(scriptToRemove);
+      }
+    };
+  }, []);
+
   return (
     <section id="contacto" className="py-20 bg-gradient-to-b from-robotics-dark to-gray-900 relative">
       <div className="container mx-auto px-4">
@@ -62,17 +88,11 @@ const ContactCTA = () => {
                 
                 <div className="bg-white p-8 lg:p-12 flex items-center justify-center">
                   <div className="w-full">
-                    {/* Calendly widget */}
                     <div 
                       className="calendly-inline-widget" 
                       data-url="https://calendly.com/robotsconsultant" 
                       style={{minWidth: '320px', height: '700px'}}
                     ></div>
-                    <script 
-                      type="text/javascript" 
-                      src="https://assets.calendly.com/assets/external/widget.js" 
-                      async
-                    ></script>
                   </div>
                 </div>
               </div>
@@ -80,7 +100,6 @@ const ContactCTA = () => {
           </Card>
         </div>
 
-        {/* YouTube Channel Section */}
         <div className="max-w-6xl mx-auto text-center">
           <Card className="border-0 shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 text-white">
             <CardContent className="p-8 lg:p-12">
@@ -114,7 +133,6 @@ const ContactCTA = () => {
                   </div>
                 </div>
 
-                {/* Videos Section */}
                 <div className="w-full mt-8">
                   <h4 className="text-2xl font-bold mb-6">Últimos Videos</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
