@@ -1,34 +1,9 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Youtube } from 'lucide-react';
 
 const ContactCTA = () => {
-  // Load HubSpot script when component mounts
-
-useEffect(() => {
-  // Load HubSpot forms script
-  const script = document.createElement('script');
-  script.src = '//js-eu1.hsforms.net/forms/embed/v2.js';
-  script.async = true;
-  script.onload = () => {
-    // @ts-ignore
-    if (window.hbspt) {
-      // @ts-ignore
-      window.hbspt.forms.create({
-        region: "eu1",
-        portalId: "146031285",
-        formId: "3ed163b6-4dee-4555-8c12-943c18ade29a",
-        target: ".hs-form"
-      });
-    }
-  };
-  document.body.appendChild(script);
-
-  return () => {
-    document.body.removeChild(script);
-  };
-}, []);
   return (
     <section id="contacto" className="py-20 bg-gradient-to-b from-robotics-dark to-gray-900 relative">
       <div className="container mx-auto px-4">
@@ -86,11 +61,18 @@ useEffect(() => {
                 </div>
                 
                 <div className="bg-white p-8 lg:p-12 flex items-center justify-center">
-                  <div 
-                    className="hs-form" 
-                    data-region="eu1" 
-                    data-form-id="3ed163b6-4dee-4555-8c12-943c18ade29a" 
-                    data-portal-id="146031285">
+                  <div className="w-full">
+                    {/* Calendly widget */}
+                    <div 
+                      className="calendly-inline-widget" 
+                      data-url="https://calendly.com/robotsconsultant" 
+                      style={{minWidth: '320px', height: '700px'}}
+                    ></div>
+                    <script 
+                      type="text/javascript" 
+                      src="https://assets.calendly.com/assets/external/widget.js" 
+                      async
+                    ></script>
                   </div>
                 </div>
               </div>
