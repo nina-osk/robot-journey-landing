@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -42,9 +43,39 @@ const KioscosPago = () => {
     };
     document.head.appendChild(script);
 
+    // Load Calendly CSS
+    const calendlyCSS = document.createElement('link');
+    calendlyCSS.href = 'https://assets.calendly.com/assets/external/widget.css';
+    calendlyCSS.rel = 'stylesheet';
+    document.head.appendChild(calendlyCSS);
+
+    // Load Calendly JS
+    const calendlyJS = document.createElement('script');
+    calendlyJS.src = 'https://assets.calendly.com/assets/external/widget.js';
+    calendlyJS.type = 'text/javascript';
+    calendlyJS.async = true;
+    calendlyJS.onload = () => {
+      if ((window as any).Calendly) {
+        (window as any).Calendly.initBadgeWidget({ 
+          url: 'https://calendly.com/robotsconsultant', 
+          text: 'Programe una reunión conmigo', 
+          color: '#0069ff', 
+          textColor: '#ffffff', 
+          branding: true 
+        });
+      }
+    };
+    document.head.appendChild(calendlyJS);
+
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
+      }
+      if (document.head.contains(calendlyCSS)) {
+        document.head.removeChild(calendlyCSS);
+      }
+      if (document.head.contains(calendlyJS)) {
+        document.head.removeChild(calendlyJS);
       }
     };
   }, []);
