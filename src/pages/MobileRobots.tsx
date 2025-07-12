@@ -23,7 +23,19 @@ const MobileRobots = () => {
       observer.observe(section);
     });
 
-    return () => observer.disconnect();
+    // Load HubSpot form script
+    const hubspotScript = document.createElement('script');
+    hubspotScript.src = 'https://js-eu1.hsforms.net/forms/embed/146031285.js';
+    hubspotScript.defer = true;
+    document.head.appendChild(hubspotScript);
+
+    return () => {
+      observer.disconnect();
+      // Clean up script when component unmounts
+      if (document.head.contains(hubspotScript)) {
+        document.head.removeChild(hubspotScript);
+      }
+    };
   }, []);
 
   const constructionRobots = [
@@ -227,18 +239,27 @@ const MobileRobots = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Contact Form Section */}
       <section className="py-16 bg-robotics-dark text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            ¿Listo para Automatizar tu Industria?
-          </h2>
-          <p className="text-xl mb-8 text-gray-300">
-            Contacta con nuestros expertos para una consulta personalizada
-          </p>
-          <Button size="lg" className="bg-robotics-blue hover:bg-robotics-blue/90" asChild>
-            <a href="/#contacto">Solicitar Consulta Gratuita</a>
-          </Button>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4">
+              ¿Listo para Automatizar tu Industria?
+            </h2>
+            <p className="text-xl mb-8 text-gray-300">
+              Contacta con nuestros expertos para una consulta personalizada
+            </p>
+          </div>
+          
+          {/* HubSpot Form */}
+          <div className="max-w-2xl mx-auto">
+            <div 
+              className="hs-form-frame bg-white p-8 rounded-lg" 
+              data-region="eu1" 
+              data-form-id="3ed163b6-4dee-4555-8c12-943c18ade29a" 
+              data-portal-id="146031285"
+            ></div>
+          </div>
         </div>
       </section>
 
