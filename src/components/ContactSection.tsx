@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Youtube } from 'lucide-react';
@@ -47,51 +48,51 @@ const ContactCTA = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-16">
           <Card className="border-0 shadow-2xl overflow-hidden bg-white">
             <CardContent className="p-0">
-              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-                <div className="bg-gradient-to-br from-robotics-blue to-robotics-accent p-8 lg:p-12 text-white flex flex-col justify-center">
-                  <h3 className="text-3xl font-bold mb-6 leading-tight">
+              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
+                <div className="bg-gradient-to-br from-robotics-blue to-robotics-accent p-8 lg:p-10 text-white flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold mb-4 leading-tight">
                     SOLICITE UNA ASESORÍA GRATUITA
                   </h3>
-                  <p className="text-lg mb-8 leading-relaxed opacity-95">
+                  <p className="text-base mb-6 leading-relaxed opacity-95">
                     Compruebe en persona el impacto de nuestros robots. Le visitamos sin compromiso para mostrarle cómo pueden transformar su negocio.
                   </p>
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
                       <div className="p-2 rounded-full bg-white/20 flex-shrink-0 mt-1">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                           <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
                         </svg>
                       </div>
-                      <span className="text-lg font-medium">Demostraciones en vivo</span>
+                      <span className="text-base font-medium">Demostraciones en vivo</span>
                     </div>
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-3">
                       <div className="p-2 rounded-full bg-white/20 flex-shrink-0 mt-1">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                           <path fillRule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd"></path>
                         </svg>
                       </div>
-                      <span className="text-lg font-medium">Presentación personalizada según necesidades</span>
+                      <span className="text-base font-medium">Presentación personalizada según necesidades</span>
                     </div>
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-3">
                       <div className="p-2 rounded-full bg-white/20 flex-shrink-0 mt-1">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                           <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                         </svg>
                       </div>
-                      <span className="text-lg font-medium">Respuesta a todas sus preguntas por expertos</span>
+                      <span className="text-base font-medium">Respuesta a todas sus preguntas por expertos</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-white p-8 lg:p-12 flex items-center justify-center">
+                <div className="bg-white p-6 lg:p-8 flex items-center justify-center">
                   <div className="w-full">
                     <div 
                       className="calendly-inline-widget" 
                       data-url="https://calendly.com/robotsconsultant" 
-                      style={{minWidth: '320px', height: '700px'}}
+                      style={{minWidth: '300px', height: '500px'}}
                     ></div>
                   </div>
                 </div>
