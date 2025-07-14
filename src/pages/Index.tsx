@@ -54,7 +54,7 @@ const Index = () => {
                 Sólo necesitas la herramienta adecuada que trabaje por ti.
               </p>
               <p className="text-lg sm:text-xl text-robotics-blue font-bold mb-4">
-                RobotsConsultant: La única empresa que garantiza tu transformación digital mientras construye un futuro más inclusivo. No vendemos tecnología, creamos ecosistemas de éxito sostenible.
+                Somos una empresa que garantiza tu transformación digital mientras construye un futuro más inclusivo. No vendemos tecnología, creamos ecosistemas de éxito sostenible.
               </p>
             </div>
             
@@ -169,7 +169,6 @@ const Index = () => {
 
       <ServicesSection />
       <AutomationVisionSection />
-      <RobotPartsSection />
       <SocialRobotsSection />
       <ContactSection />
       <Footer />
