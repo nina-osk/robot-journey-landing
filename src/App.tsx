@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import MobileRobots from "./pages/MobileRobots";
 import KioscosPago from "./pages/KioscosPago";
 import AboutMe from "./pages/AboutMe";
+import OdooServices from "./pages/OdooServices";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/robots-moviles" element={<MobileRobots />} />
           <Route path="/kioscos-pago" element={<KioscosPago />} />
+          <Route path="/servicios-odoo" element={<OdooServices />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
