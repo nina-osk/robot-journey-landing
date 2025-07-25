@@ -445,6 +445,82 @@ const OdooServices = () => {
                   y práctica para asegurar que todo tu equipo se sienta cómodo y aproveche la herramienta al máximo.
                 </AccordionContent>
               </AccordionItem>
+              
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left">
+                  ¿Qué diferencias hay entre Odoo Community y Enterprise?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Odoo Community es gratuito y de código abierto, ideal para PyMES con funcionalidades básicas. 
+                  Odoo Enterprise incluye módulos avanzados, soporte oficial, hosting en la nube y mayor escalabilidad. 
+                  Te ayudamos a elegir la versión que mejor se adapte a tu presupuesto y necesidades.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left">
+                  ¿Puedo migrar mis datos desde mi sistema actual?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Sí, ofrecemos servicios de migración completos. Podemos transferir datos desde Excel, Access, 
+                  otros ERPs o sistemas contables. Garantizamos la integridad de tus datos y minimizamos el tiempo 
+                  de inactividad durante la transición.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6">
+                <AccordionTrigger className="text-left">
+                  ¿Qué tipo de soporte ofrecen después de la implementación?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Ofrecemos soporte técnico continuo, actualizaciones, mantenimiento y nuevas personalizaciones. 
+                  También disponemos de planes de soporte mensual y formación adicional según las necesidades de tu equipo.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-7">
+                <AccordionTrigger className="text-left">
+                  ¿Odoo funciona en la nube o necesito servidores propios?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Odoo puede funcionar en ambos modos. Podemos instalarlo en tus servidores locales para mayor control, 
+                  o configurarlo en la nube (Odoo.sh, AWS, Azure) para mayor flexibilidad y menor mantenimiento. 
+                  Te asesoramos sobre la mejor opción según tu caso.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-8">
+                <AccordionTrigger className="text-left">
+                  ¿Qué módulos de Odoo necesita mi empresa?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Cada empresa es diferente. En nuestro diagnóstico gratuito analizamos tus procesos actuales y 
+                  te recomendamos exactamente qué módulos necesitas: CRM, Ventas, Inventario, Contabilidad, 
+                  Proyectos, eCommerce, etc. Solo implementamos lo que realmente vas a usar.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-9">
+                <AccordionTrigger className="text-left">
+                  ¿Puedo integrar Odoo con mis herramientas actuales?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Sí, Odoo tiene una excelente capacidad de integración. Podemos conectarlo con tu software de 
+                  facturación, pasarelas de pago, tiendas online, herramientas de marketing, sistemas bancarios 
+                  y muchas otras aplicaciones que ya uses en tu negocio.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-10">
+                <AccordionTrigger className="text-left">
+                  ¿Qué pasa si mi negocio crece? ¿Odoo puede escalarse?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Absolutamente. Odoo está diseñado para crecer contigo. Puedes añadir nuevos usuarios, módulos 
+                  y funcionalidades sin límites. Muchas empresas empiezan con funciones básicas y van expandiendo 
+                  el sistema según van creciendo sus necesidades.
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
         </div>
