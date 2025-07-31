@@ -7,6 +7,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const OdooServices = () => {
+  const scrollToCalendly = () => {
+    const calendlySection = document.querySelector('.calendly-inline-widget');
+    if (calendlySection) {
+      calendlySection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   useEffect(() => {
     // Load Calendly script when component mounts
     const script = document.createElement('script');
@@ -62,7 +69,7 @@ const OdooServices = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="text-lg px-8">
+            <Button size="lg" className="text-lg px-8" onClick={scrollToCalendly}>
               Agenda tu Diagnóstico Gratuito
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -425,7 +432,7 @@ const OdooServices = () => {
             y te mostraremos en vivo cómo Odoo puede transformar tu negocio. Saldrás de la llamada 
             con un plan de acción claro.
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-12 py-6">
+          <Button size="lg" variant="secondary" className="text-lg px-12 py-6" onClick={scrollToCalendly}>
             SÍ, QUIERO MI DIAGNÓSTICO GRATUITO
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
