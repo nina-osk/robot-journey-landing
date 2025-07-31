@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,6 +7,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const OdooServices = () => {
+  useEffect(() => {
+    // Load Calendly script when component mounts
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => {
+      console.log('Calendly script loaded successfully');
+    };
+    script.onerror = () => {
+      console.error('Failed to load Calendly script');
+    };
+    
+    // Check if script is already loaded
+    const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+    if (!existingScript) {
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      // Cleanup: remove script when component unmounts
+      const scriptToRemove = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (scriptToRemove && scriptToRemove.parentNode) {
+        scriptToRemove.parentNode.removeChild(scriptToRemove);
+      }
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -522,6 +548,78 @@ const OdooServices = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-gradient-to-b from-robotics-dark to-gray-900 relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              ¿LISTO PARA <span className="text-robotics-blue">IMPLEMENTAR ODOO</span> EN SU EMPRESA?
+            </h2>
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              En <span className="text-robotics-accent font-semibold">RobotsConsultant</span> ofrecemos servicios especializados de implementación y consultoría en Odoo. 
+              Desde la instalación hasta la capacitación completa de su equipo.
+            </p>
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              No espere más para digitalizar completamente su empresa. 
+              Nuestros servicios están adaptados a las necesidades específicas de su negocio.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-16">
+            <Card className="border-0 shadow-2xl overflow-hidden bg-white">
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
+                  <div className="bg-gradient-to-br from-robotics-blue to-robotics-accent p-8 lg:p-10 text-white flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold mb-4 leading-tight">
+                      SOLICITE UNA ASESORÍA GRATUITA EN ODOO
+                    </h3>
+                    <p className="text-base mb-6 leading-relaxed opacity-95">
+                      Compruebe cómo Odoo puede transformar su gestión empresarial. Le ofrecemos una consultoría personalizada sin compromiso.
+                    </p>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-full bg-white/20 flex-shrink-0 mt-1">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
+                          </svg>
+                        </div>
+                        <span className="text-base font-medium">Análisis de procesos actuales</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-full bg-white/20 flex-shrink-0 mt-1">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd"></path>
+                          </svg>
+                        </div>
+                        <span className="text-base font-medium">Propuesta personalizada de módulos</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-full bg-white/20 flex-shrink-0 mt-1">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                          </svg>
+                        </div>
+                        <span className="text-base font-medium">Presupuesto detallado sin compromiso</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-6 lg:p-8 flex items-center justify-center">
+                    <div className="w-full">
+                      <div 
+                        className="calendly-inline-widget" 
+                        data-url="https://calendly.com/robotsconsultant" 
+                        style={{minWidth: '300px', height: '500px'}}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
