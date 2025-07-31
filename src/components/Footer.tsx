@@ -15,7 +15,7 @@ const Footer = () => {
               Empoderando a profesionales con habilidades avanzadas de programación robótica industrial desde 2018.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61578024748586" className="text-gray-400 hover:text-robotics-blue transition-colors">
                 <Facebook size={20} />
               </a>
               <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">
@@ -24,7 +24,7 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">
+              <a href="https://www.instagram.com/robotsqueen/" className="text-gray-400 hover:text-robotics-blue transition-colors">
                 <Instagram size={20} />
               </a>
             </div>
