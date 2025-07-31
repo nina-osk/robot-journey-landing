@@ -26,8 +26,7 @@ const OnlineStorePopup = () => {
   };
 
   const visitStore = () => {
-    // Replace with your actual store URL
-    window.open('https://robotsconsultant.net/tienda', '_blank');
+    window.open('https://robotsconsultant.systeme.io/paginaderegistro-aee9eab3-4709fe38', '_blank');
     closePopup();
   };
 
