@@ -96,7 +96,7 @@ const Index = () => {
               Automatiza sin gastar una fortuna
             </h2>
             <p className="text-2xl sm:text-3xl text-gray-700 mb-6 font-medium">
-              Kioscos inteligentes + CRM con IA + Odoo = Tu negocio funcionando solo, 24/7.
+              Kioscos inteligentes + CRM Odoo + IA = Tu negocio funcionando solo, 24/7.
             </p>
             <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
               Reduce errores, ahorra tiempo y ofrece una experiencia moderna a tus clientes.
