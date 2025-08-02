@@ -34,7 +34,7 @@ const OnlineStorePopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 animate-fade-in">
-      <div className={`fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed right-0 top-1/2 transform -translate-y-1/2 h-1/2 w-80 bg-white shadow-2xl transition-transform duration-500 ease-in-out rounded-l-lg ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="p-8 h-full flex flex-col">
           <button
             onClick={closePopup}
