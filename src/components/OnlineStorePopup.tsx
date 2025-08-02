@@ -44,45 +44,45 @@ const OnlineStorePopup = () => {
           </button>
           
           <div className="text-center flex-1 flex flex-col justify-center">
-            <div className="mb-8">
+            <div className="mb-4">
               <img 
                 src="/lovable-uploads/c1e36c3f-139a-41f6-a37a-0cf435e2c3a9.png" 
                 alt="Robots Consultant Technology" 
-                className="h-12 mx-auto mb-4"
+                className="h-8 mx-auto mb-2"
               />
-              <h2 className="text-2xl font-bold text-robotics-dark mb-2">
+              <h2 className="text-lg font-bold text-robotics-dark mb-1">
                 ¡Crea tu Página Web GRATIS!
               </h2>
-              <p className="text-gray-600">
+              <p className="text-sm text-gray-600">
                 Aprende a hacer tu página web profesional con Odoo
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 mb-8">
+            <div className="grid grid-cols-1 gap-3 mb-4">
               <div className="text-center">
-                <ShoppingCart className="h-10 w-10 text-robotics-blue mx-auto mb-3" />
-                <span className="text-gray-600 block">E-commerce Profesional</span>
+                <ShoppingCart className="h-6 w-6 text-robotics-blue mx-auto mb-1" />
+                <span className="text-xs text-gray-600 block">E-commerce Profesional</span>
               </div>
               <div className="text-center">
-                <Cog className="h-10 w-10 text-robotics-blue mx-auto mb-3" />
-                <span className="text-gray-600 block">CRM Integrado</span>
+                <Cog className="h-6 w-6 text-robotics-blue mx-auto mb-1" />
+                <span className="text-xs text-gray-600 block">CRM Integrado</span>
               </div>
               <div className="text-center">
-                <GraduationCap className="h-10 w-10 text-robotics-blue mx-auto mb-3" />
-                <span className="text-gray-600 block">Guía Paso a Paso</span>
+                <GraduationCap className="h-6 w-6 text-robotics-blue mx-auto mb-1" />
+                <span className="text-xs text-gray-600 block">Guía Paso a Paso</span>
               </div>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               <Button 
                 onClick={visitStore}
-                className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white font-semibold py-3"
+                className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white font-semibold py-2 text-sm"
               >
                 Descargar Guía GRATIS
               </Button>
               <button
                 onClick={closePopup}
-                className="w-full text-gray-500 hover:text-gray-700 text-sm transition-colors"
+                className="w-full text-gray-500 hover:text-gray-700 text-xs transition-colors"
               >
                 Continuar navegando
               </button>
