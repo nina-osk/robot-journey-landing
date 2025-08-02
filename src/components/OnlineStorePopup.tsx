@@ -51,25 +51,25 @@ const OnlineStorePopup = () => {
                 className="h-16 mx-auto mb-4"
               />
               <h2 className="text-2xl font-bold text-robotics-dark mb-2">
-                ¡Visita Nuestra Tienda Online!
+                ¡Crea tu Página Web GRATIS!
               </h2>
               <p className="text-gray-600">
-                Encuentra todo lo que necesitas para robótica
+                Aprende a hacer tu página web profesional con Odoo
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-6 mb-8">
               <div className="text-center">
-                <Wrench className="h-10 w-10 text-robotics-blue mx-auto mb-3" />
-                <span className="text-gray-600 block">Piezas y Repuestos</span>
+                <ShoppingCart className="h-10 w-10 text-robotics-blue mx-auto mb-3" />
+                <span className="text-gray-600 block">E-commerce Profesional</span>
               </div>
               <div className="text-center">
                 <Cog className="h-10 w-10 text-robotics-blue mx-auto mb-3" />
-                <span className="text-gray-600 block">Piezas Industriales</span>
+                <span className="text-gray-600 block">CRM Integrado</span>
               </div>
               <div className="text-center">
                 <GraduationCap className="h-10 w-10 text-robotics-blue mx-auto mb-3" />
-                <span className="text-gray-600 block">Robots Educativos</span>
+                <span className="text-gray-600 block">Guía Paso a Paso</span>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ const OnlineStorePopup = () => {
                 onClick={visitStore}
                 className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white font-semibold py-3"
               >
-                Ir a la Tienda Online
+                Descargar Guía GRATIS
               </Button>
               <button
                 onClick={closePopup}
