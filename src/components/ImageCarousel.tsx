@@ -51,7 +51,7 @@ const ImageCarousel = () => {
         <div className="space-y-6">
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-robotics-dark">
-              Especialistas en robótica aplicada al sector de la construcción
+              Especialistas en robótica aplicada al sector de la hostelería, logistica y construcción
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed">
               Te ayudamos a integrar robots móviles y colaborativos para mover materiales, 
