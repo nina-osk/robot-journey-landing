@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
-    
-    // Create intersection observer for this section specifically
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,116 +14,63 @@ const HeroSection = () => {
       },
       { threshold: 0.1 }
     );
-    
-    const sectionElement = document.getElementById('hero-section');
-    if (sectionElement) {
-      observer.observe(sectionElement);
+
+    const heroElement = document.getElementById('hero-section');
+    if (heroElement) {
+      observer.observe(heroElement);
     }
-    
+
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div id="hero-section" className="relative min-h-screen flex items-center overflow-hidden py-16">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-white z-0" />
+    <section 
+      id="hero-section"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-foreground/20" />
       
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 right-1/3 w-64 h-64 rounded-full bg-robotics-blue/5 animate-pulse-subtle" />
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 rounded-full bg-robotics-blue/10 animate-float" />
-        <div className="absolute top-1/2 right-1/4 w-48 h-48 rounded-full bg-robotics-accent/5 animate-pulse-subtle" />
-      </div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div 
-            className={`transition-all duration-1000 delay-300 transform ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-            }`}
-          >
-            <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-              Domina la Robótica Industrial
+      <div className={`relative z-10 max-w-4xl mx-auto px-4 text-center transform transition-all duration-1000 ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+      }`}>
+        <div className="mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            🏠 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Digitaliza tu negocio
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-robotics-dark mb-6 text-balance leading-tight">
-              Impulsa Tu Carrera Con <br />
-              <span className="text-robotics-blue">Robótica Industrial</span>
-            </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-xl text-balance">
-              Cursos completos de programación de robots UR, KUKA y ROS. Aprende de expertos de la industria y obtén experiencia práctica.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                asChild
-                size="lg" 
-                className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
-              >
-                <a href="#enroll" className="inline-flex items-center">
-                  Comienza a Aprender
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button 
-                asChild
-                variant="outline" 
-                size="lg" 
-                className="border-gray-300 hover:bg-gray-50 text-gray-700 rounded-md"
-              >
-                <a href="#courses">Ver Cursos</a>
-              </Button>
-            </div>
-          </div>
-          
-          <div 
-            className={`relative transition-all duration-1000 delay-500 transform ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
-            }`}
-          >
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="glass-card p-6 rounded-2xl border border-white/30">
-                <div className="relative aspect-video rounded-lg overflow-hidden bg-robotics-dark">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 mx-auto rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
-                        <svg 
-                          width="24" 
-                          height="24" 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="text-white"
-                        >
-                          <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
-                        </svg>
-                      </div>
-                      <p className="mt-4 text-white font-medium">Ver Introducción</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-sm text-gray-500">Curso Destacado</div>
-                    <div className="text-sm font-medium text-robotics-blue">4.9 ★★★★★</div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-robotics-dark mb-2">Ruta de Dominio en Robótica Industrial</h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Paquete completo de cursos que incluye programación de UR, KUKA y ROS
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-robotics-dark font-bold">$2399</span>
-                    <span className="text-xs text-gray-500">+300 inscritos</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-robotics-blue/10 animate-pulse-subtle z-0" />
-            <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-robotics-accent/10 animate-float z-0" />
-          </div>
+          </h1>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-blue-100 font-light mb-8">
+            con soluciones completas y rentables
+          </h2>
+          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            Transformamos tu empresa con tecnología moderna: automatización, ERP Odoo, 
+            kioscos inteligentes y soluciones robóticas que impulsan tu crecimiento.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
+            Ver Soluciones
+          </button>
+          <button className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-xl text-lg font-semibold backdrop-blur-sm transition-all duration-300">
+            Contactar Ahora
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
   );
 };
 
