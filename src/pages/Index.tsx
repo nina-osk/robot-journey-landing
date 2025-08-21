@@ -6,6 +6,7 @@ import PacksSection from '@/components/PacksSection';
 import OnlineStoreSection from '@/components/OnlineStoreSection';
 import NewServicesSection from '@/components/NewServicesSection';
 import RobotsServicesSection from '@/components/RobotsServicesSection';
+import RoboticProgrammingSection from '@/components/RoboticProgrammingSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import GDPRConsent from '@/components/GDPRConsent';
@@ -40,6 +41,7 @@ const Index = () => {
       <OnlineStoreSection />
       <NewServicesSection />
       <RobotsServicesSection />
+      <RoboticProgrammingSection />
       <ContactSection />
       <Footer />
       <GDPRConsent />
