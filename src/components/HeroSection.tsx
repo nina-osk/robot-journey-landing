@@ -42,15 +42,16 @@ const HeroSection = () => {
         <div className="mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             🏠 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Digitaliza tu negocio
+              Digitaliza tu negocio sin complicaciones
             </span>
           </h1>
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-blue-100 font-light mb-8">
-            con soluciones completas y rentables
+            sin perder tiempo y sin ser experto en tecnología
           </h2>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Transformamos tu empresa con tecnología moderna: automatización, ERP Odoo, 
-            kioscos inteligentes y soluciones robóticas que impulsan tu crecimiento.
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            Soluciones listas para usar que automatizan tu atención, ventas y gestión desde el primer día. 
+            Transformamos tu empresa a través de la tecnología, automatizaciones, ERP, kioscos inteligentes 
+            y soluciones robóticas que impulsan tu crecimiento.
           </p>
         </div>
 
