@@ -45,36 +45,6 @@ const OnlineStoreSection = () => {
       price: '399',
       originalPrice: '449',
       badge: 'Oferta'
-    },
-    {
-      id: 4,
-      name: 'Impresora Térmica 80mm',
-      category: 'impresoras',
-      image: '/lovable-uploads/86febd5b-eda5-4932-990a-d74158a07a0d.png',
-      description: 'Impresora térmica de tickets de alta velocidad',
-      price: '149',
-      originalPrice: null,
-      badge: null
-    },
-    {
-      id: 5,
-      name: 'Lector Código de Barras',
-      category: 'accesorios',
-      image: '/lovable-uploads/0dfddcd1-14f3-4de4-b057-1356b3f4ccfa.png',
-      description: 'Lector láser de código de barras USB',
-      price: '79',
-      originalPrice: '99',
-      badge: null
-    },
-    {
-      id: 6,
-      name: 'Kiosco Compacto 15"',
-      category: 'kioscos',
-      image: '/lovable-uploads/185c69eb-b011-48b3-999d-f598b65e9d63.png',
-      description: 'Kiosco compacto ideal para espacios reducidos',
-      price: '899',
-      originalPrice: null,
-      badge: null
     }
   ];
 
