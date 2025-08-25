@@ -52,7 +52,7 @@ const ProblemSection = () => {
           <div className="flex-1">
             <div className="relative">
               <img 
-                src="/apps-presentation.jpg" 
+                src="/lovable-uploads/apps-presentation.png" 
                 alt="Empresario frustrado con papeles y tecnología"
                 className="rounded-2xl shadow-2xl w-full h-80 object-cover"
               />
