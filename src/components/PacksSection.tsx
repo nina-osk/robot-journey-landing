@@ -143,7 +143,12 @@ const PacksSection = () => {
 
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">¿No encuentras tu sector?</p>
-          <Button variant="outline" size="lg" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+            onClick={() => window.location.href = '/#contacto'}
+          >
             Consulta Personalizada
           </Button>
         </div>
