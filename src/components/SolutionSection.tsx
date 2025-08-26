@@ -84,8 +84,11 @@ const SolutionSection = () => {
             <p className="text-gray-600 mb-6 max-w-md">
               Analizamos tu negocio y te mostramos exactamente cómo digitalizarlo
             </p>
-            <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Diagnóstico Gratuito
+            <Button 
+              className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => window.location.href = '/kioscos-pago'}
+            >
+              Ver Soluciones por Sector
             </Button>
           </div>
         </div>
