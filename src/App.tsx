@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import MobileRobots from "./pages/MobileRobots";
 import KioscosPago from "./pages/KioscosPago";
+import PackRestaurante from "./pages/PackRestaurante";
+import PackHotel from "./pages/PackHotel";
+import PackEcommerce from "./pages/PackEcommerce";
 import AboutMe from "./pages/AboutMe";
 import OdooServices from "./pages/OdooServices";
 import NotFound from "./pages/NotFound";
@@ -23,6 +26,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/robots-moviles" element={<MobileRobots />} />
           <Route path="/kioscos-pago" element={<KioscosPago />} />
+          <Route path="/pack-restaurante" element={<PackRestaurante />} />
+          <Route path="/pack-hotel" element={<PackHotel />} />
+          <Route path="/pack-ecommerce" element={<PackEcommerce />} />
           <Route path="/servicios-odoo" element={<OdooServices />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
