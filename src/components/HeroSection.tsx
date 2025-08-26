@@ -57,19 +57,19 @@ const HeroSection = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="/#packs"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 text-center"
+          <Button
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+            onClick={() => window.location.href = '/kioscos-pago'}
           >
             Ver Soluciones
-          </a>
+          </Button>
           <Button 
-           asChild 
-          variant="default" 
-          className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
-           >
-          <a href="/#contacto">Contactar Ahora</a>
-         </Button>
+            asChild 
+            variant="outline" 
+            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300"
+          >
+            <a href="/#contacto">Contactar Ahora</a>
+          </Button>
         </div>
       </div>
 
