@@ -12,6 +12,7 @@ import PackHotel from "./pages/PackHotel";
 import PackEcommerce from "./pages/PackEcommerce";
 import AboutMe from "./pages/AboutMe";
 import OdooServices from "./pages/OdooServices";
+import TransformacionDigital from "./pages/TransformacionDigital";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/pack-hotel" element={<PackHotel />} />
           <Route path="/pack-ecommerce" element={<PackEcommerce />} />
           <Route path="/servicios-odoo" element={<OdooServices />} />
+          <Route path="/transformacion-digital" element={<TransformacionDigital />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

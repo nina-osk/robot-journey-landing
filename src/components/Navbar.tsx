@@ -58,6 +58,12 @@ const Navbar = () => {
               Servicios Odoo
             </a>
             <a
+              href="./transformacion-digital" 
+              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+            >
+              IA + Automatización
+            </a>
+            <a
               href="./sobre-mi" 
               className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
             >
@@ -120,6 +126,13 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Servicios Odoo
+            </a>
+            <a
+              href="./transformacion-digital" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              IA + Automatización
             </a>
             <a
               href="./sobre-mi" 
