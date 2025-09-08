@@ -59,7 +59,7 @@ const TransformacionDigital = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-foreground/20" />
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
