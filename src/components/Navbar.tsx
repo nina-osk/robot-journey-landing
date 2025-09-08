@@ -35,43 +35,43 @@ const Navbar = () => {
           <nav className="hidden md:flex space-x-8 items-center">
             <a
               href="/" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               Inicio
             </a>
             <a 
               href="./robots-moviles" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               Robots Móviles
             </a>
             <a
               href="./kioscos-pago" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               Packs
             </a>
             <a
               href="./servicios-odoo" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               Servicios Odoo
             </a>
             <a
               href="./transformacion-digital" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               IA + Automatización
             </a>
             <a
               href="./sobre-mi" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               Sobre Mí
             </a>
             <a 
               href="https://robotsconsultant.net/tienda" 
-              className="text-sm font-medium text-gray-700 hover:text-robotics-blue transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               Tienda
             </a>
@@ -88,7 +88,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md text-gray-700 hover:text-robotics-blue"
+              className="p-2 rounded-md text-gray-700 hover:text-primary"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -101,49 +101,49 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
               href="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Inicio
             </a>
             <a
               href="./robots-moviles" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Robots Móviles
             </a>
             <a
               href="./kioscos-pago" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Packs
             </a>
             <a
               href="./servicios-odoo" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Servicios Odoo
             </a>
             <a
               href="./transformacion-digital" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               IA + Automatización
             </a>
             <a
               href="./sobre-mi" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Sobre Mí
             </a>
             <a
               href="https://robotsconsultant.net/tienda" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-robotics-blue"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Tienda

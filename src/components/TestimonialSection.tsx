@@ -83,7 +83,7 @@ const TestimonialSection = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-robotics-blue mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
             Venta y Asesoramiento
           </h2>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
@@ -118,25 +118,25 @@ const TestimonialSection = () => {
                           </div>
                         </div>
                         <div className="w-full md:w-3/5">
-                          <div className="bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-3 py-1 rounded-full inline-block mb-2">
+                          <div className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full inline-block mb-2">
                             {robot.condition}
                           </div>
                           <h3 className="text-2xl font-bold text-robotics-dark mb-2">{robot.name}</h3>
-                          <p className="text-lg font-semibold text-robotics-blue mb-1">
+                          <p className="text-lg font-semibold text-primary mb-1">
                             {robot.price} <span className="text-gray-500 text-sm font-normal">(Año {robot.year})</span>
                           </p>
                           <p className="text-gray-700 mb-4">{robot.description}</p>
                           <div className="flex flex-wrap gap-3">
                             <Button 
                               variant="default" 
-                              className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md flex items-center gap-2"
+                              className="bg-primary hover:bg-primary/90 text-white rounded-md flex items-center gap-2"
                             >
                               <ShoppingCart className="w-4 h-4" />
                               Solicitar Precio
                             </Button>
                             <Button
                               variant="outline"
-                              className="border-robotics-blue text-robotics-blue hover:bg-robotics-blue/10 rounded-md flex items-center gap-2"
+                              className="border-primary text-primary hover:bg-primary/10 rounded-md flex items-center gap-2"
                             >
                               <Headset className="w-4 h-4" />
                               Asesoría Técnica
@@ -168,7 +168,7 @@ const TestimonialSection = () => {
                     onClick={() => setCurrentIndex(index)}
                     className={`h-2 w-2 rounded-full transition-all duration-300 ${
                       currentIndex === index 
-                        ? 'bg-robotics-blue w-8' 
+                        ? 'bg-primary w-8' 
                         : 'bg-gray-300 hover:bg-gray-400'
                     }`}
                     aria-label={`Ir al robot ${index + 1}`}
@@ -192,7 +192,7 @@ const TestimonialSection = () => {
           <div className="mt-20 glass-card rounded-2xl p-8 md:p-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+                <span className="inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
                   Servicio Exclusivo
                 </span>
                 <h3 className="text-2xl font-bold text-robotics-dark mb-4">Asesoría Especializada en Robótica Colaborativa</h3>
@@ -204,32 +204,32 @@ const TestimonialSection = () => {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <div className="rounded-full bg-green-100 p-1 mr-3 mt-1">
-                      <Star className="h-4 w-4 text-robotics-blue" />
+                      <Star className="h-4 w-4 text-primary" />
                     </div>
                     <span className="text-gray-700">Evaluación de necesidades y recomendación personalizada</span>
                   </li>
                   <li className="flex items-start">
                     <div className="rounded-full bg-green-100 p-1 mr-3 mt-1">
-                      <Star className="h-4 w-4 text-robotics-blue" />
+                      <Star className="h-4 w-4 text-primary" />
                     </div>
                     <span className="text-gray-700">Configuración y programación inicial</span>
                   </li>
                   <li className="flex items-start">
                     <div className="rounded-full bg-green-100 p-1 mr-3 mt-1">
-                      <Star className="h-4 w-4 text-robotics-blue" />
+                      <Star className="h-4 w-4 text-primary" />
                     </div>
                     <span className="text-gray-700">Capacitación para tu equipo técnico</span>
                   </li>
                   <li className="flex items-start">
                     <div className="rounded-full bg-green-100 p-1 mr-3 mt-1">
-                      <Star className="h-4 w-4 text-robotics-blue" />
+                      <Star className="h-4 w-4 text-primary" />
                     </div>
                     <span className="text-gray-700">Soporte técnico post-venta</span>
                   </li>
                 </ul>
                 <Button 
                   variant="default" 
-                  className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md flex items-center gap-2"
+                  className="bg-primary hover:bg-primary/90 text-white rounded-md flex items-center gap-2"
                 >
                   <Info className="w-4 h-4" />
                   Consultar disponibilidad

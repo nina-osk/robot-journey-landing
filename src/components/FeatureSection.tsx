@@ -80,7 +80,7 @@ const FeatureSection = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
             Beneficios del Programa
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
@@ -103,7 +103,7 @@ const FeatureSection = () => {
               }`}
             >
               <div className="glass-card rounded-2xl p-8 h-full">
-                <div className="w-16 h-16 rounded-2xl bg-robotics-blue/10 flex items-center justify-center mb-6 text-robotics-blue">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-robotics-dark mb-4">{feature.title}</h3>

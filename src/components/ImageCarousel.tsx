@@ -68,7 +68,7 @@ const ImageCarousel = () => {
           </div>
           
           <Button 
-            className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-8 py-3 text-lg font-semibold rounded-md"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-semibold rounded-md"
           >
        
             

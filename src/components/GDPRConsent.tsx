@@ -69,7 +69,7 @@ const GDPRConsent = () => {
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white">
         <DialogHeader className="space-y-4">
           <div className="flex items-center gap-2">
-            <Shield className="h-6 w-6 text-robotics-blue" />
+            <Shield className="h-6 w-6 text-primary" />
             <DialogTitle className="text-xl font-bold text-robotics-dark">
               Configuración de Privacidad
             </DialogTitle>
@@ -186,7 +186,7 @@ const GDPRConsent = () => {
           </Button>
           <Button 
             onClick={handleAcceptAll}
-            className="w-full sm:w-auto bg-robotics-blue hover:bg-robotics-blue/90 order-1 sm:order-3"
+            className="w-full sm:w-auto bg-primary hover:bg-primary/90 order-1 sm:order-3"
           >
             Aceptar Todo
           </Button>

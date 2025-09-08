@@ -8,7 +8,7 @@ const services = [
   {
     id: 'cobots',
     title: 'Robótica Colaborativa',
-    icon: <Bot className="h-10 w-10 text-robotics-blue" />,
+    icon: <Bot className="h-10 w-10 text-primary" />,
     description: 'Implementación y programación de cobots Universal Robots y KUKA para optimizar procesos productivos y mejorar la eficiencia operativa.',
     benefits: [
       'Mayor flexibilidad en la línea de producción',
@@ -20,7 +20,7 @@ const services = [
   {
     id: 'ros',
     title: 'Desarrollo con ROS 2',
-    icon: <Code className="h-10 w-10 text-robotics-blue" />,
+    icon: <Code className="h-10 w-10 text-primary" />,
     description: 'Creación de aplicaciones robóticas avanzadas utilizando Robot Operating System ROS2 para integración de sensores, visión artificial y control de movimiento.',
     benefits: [
       'Arquitectura modular y escalable',
@@ -32,7 +32,7 @@ const services = [
   {
     id: 'ai',
     title: 'Automatización Inteligente',
-    icon: <Brain className="h-10 w-10 text-robotics-blue" />,
+    icon: <Brain className="h-10 w-10 text-primary" />,
     description: 'Implementación de soluciones de IA para automatizar procesos, análisis de datos y toma de decisiones en tiempo real.',
     benefits: [
       'Optimización de procesos basada en datos',
@@ -44,7 +44,7 @@ const services = [
   {
     id: 'integration',
     title: 'Integración de Sistemas',
-    icon: <Settings className="h-10 w-10 text-robotics-blue" />,
+    icon: <Settings className="h-10 w-10 text-primary" />,
     description: 'Conectamos sus sistemas existentes con nuevas tecnologías para crear flujos de trabajo optimizados y sin interrupciones.',
     benefits: [
       'Comunicación entre sistemas heterogéneos',
@@ -56,7 +56,7 @@ const services = [
   {
     id: 'chatbots',
     title: 'Chatbots y Atención al Cliente',
-    icon: <Server className="h-10 w-10 text-robotics-blue" />,
+    icon: <Server className="h-10 w-10 text-primary" />,
     description: 'Desarrollo de asistentes virtuales inteligentes para mejorar la experiencia del cliente y optimizar el servicio de atención.',
     benefits: [
       'Atención 24/7 sin interrupciones',
@@ -68,7 +68,7 @@ const services = [
   {
     id: 'analytics',
     title: 'Análisis y Optimización',
-    icon: <BarChart3 className="h-10 w-10 text-robotics-blue" />,
+    icon: <BarChart3 className="h-10 w-10 text-primary" />,
     description: 'Implementación de soluciones para análisis de datos y mejora continua de procesos industriales.',
     benefits: [
       'Dashboards personalizados de rendimiento',
@@ -120,7 +120,7 @@ const ServicesSection = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
             Soluciones Empresariales
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
@@ -140,7 +140,7 @@ const ServicesSection = () => {
                 onClick={() => setActiveService(service.id)}
                 className={`px-6 py-3 rounded-full transition-all duration-300 ${
                   activeService === service.id
-                    ? 'bg-robotics-blue text-white shadow-md'
+                    ? 'bg-primary text-white shadow-md'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -163,7 +163,7 @@ const ServicesSection = () => {
                 <ul className="space-y-2">
                   {selectedService.benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-robotics-blue mr-2">•</span>
+                      <span className="text-primary mr-2">•</span>
                       <span className="text-gray-600">{benefit}</span>
                     </li>
                   ))}
@@ -172,7 +172,7 @@ const ServicesSection = () => {
               
               <Button 
                 asChild
-                className="bg-robotics-blue hover:bg-robotics-blue/90"
+                className="bg-primary hover:bg-primary/90"
               >
                 <a href="#contacto">Solicitar consulta</a>
               </Button>
@@ -180,11 +180,11 @@ const ServicesSection = () => {
             
             <div className="order-1 lg:order-2">
               <div className="glass-card rounded-2xl p-8 h-full shadow-lg relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-robotics-blue/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-robotics-accent/10 rounded-full -ml-12 -mb-12"></div>
                 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-robotics-blue/10 flex items-center justify-center mb-6 text-robotics-blue">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
                     {selectedService.icon}
                   </div>
                   
@@ -196,26 +196,26 @@ const ServicesSection = () => {
                   
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-robotics-blue/20 flex items-center justify-center mr-3">
-                        <span className="text-robotics-blue font-semibold">1</span>
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                        <span className="text-primary font-semibold">1</span>
                       </div>
                       <span className="text-gray-700">Análisis inicial y consultoría</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-robotics-blue/20 flex items-center justify-center mr-3">
-                        <span className="text-robotics-blue font-semibold">2</span>
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                        <span className="text-primary font-semibold">2</span>
                       </div>
                       <span className="text-gray-700">Diseño de solución personalizada</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-robotics-blue/20 flex items-center justify-center mr-3">
-                        <span className="text-robotics-blue font-semibold">3</span>
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                        <span className="text-primary font-semibold">3</span>
                       </div>
                       <span className="text-gray-700">Implementación y capacitación</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-robotics-blue/20 flex items-center justify-center mr-3">
-                        <span className="text-robotics-blue font-semibold">4</span>
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                        <span className="text-primary font-semibold">4</span>
                       </div>
                       <span className="text-gray-700">Soporte continuo y optimización</span>
                     </div>
@@ -238,7 +238,7 @@ const ServicesSection = () => {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow glass-card">
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-robotics-blue/10 flex items-center justify-center mb-4 text-robotics-blue">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
                       {service.icon}
                     </div>
                     <CardTitle className="text-xl text-robotics-dark">{service.title}</CardTitle>
@@ -247,7 +247,7 @@ const ServicesSection = () => {
                   <CardContent>
                     <Button 
                       variant="outline"
-                      className="w-full border-robotics-blue text-robotics-blue hover:bg-robotics-blue/10"
+                      className="w-full border-primary text-primary hover:bg-primary/10"
                       asChild
                     >
                       <a href="#contacto">Solicitar consulta</a>

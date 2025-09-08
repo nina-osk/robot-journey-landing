@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: <Cog className="h-8 w-8 text-robotics-blue" />,
+    icon: <Cog className="h-8 w-8 text-primary" />,
     title: "Asesoramos, proveemos robots y equipamiento para robótica y automatizacion industrial.",
     description:
       "Optimizamos procesos productivos mediante soluciones de automatización robótica accesibles y escalables, diseñadas especialmente para pequeñas y medianas empresas.",
@@ -15,7 +15,7 @@ const services = [
     ],
   },
   {
-    icon: <BriefcaseBusiness className="h-8 w-8 text-robotics-blue" />,
+    icon: <BriefcaseBusiness className="h-8 w-8 text-primary" />,
     title: "Visión Artificial",
     description:
       "Incorporamos sistemas de visión por computadora para el control de calidad, inspección automática, conteo, identificación y trazabilidad.",
@@ -34,7 +34,7 @@ const AutomationVisionSection = () => (
   >
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto text-center mb-14">
-        <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+        <span className="inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
           Tecnología para Robotica,
         </span>
         <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
@@ -57,14 +57,14 @@ const AutomationVisionSection = () => (
             <ul className="mb-6 text-sm space-y-2">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start">
-                  <span className="text-robotics-blue mr-2 mt-1">•</span>
+                  <span className="text-primary mr-2 mt-1">•</span>
                   <span className="text-gray-700">{b}</span>
                 </li>
               ))}
             </ul>
             <Button
               size="sm"
-              className="bg-robotics-blue text-white hover:bg-robotics-blue/90"
+              className="bg-primary text-white hover:bg-primary/90"
               asChild
             >
               <a href="#enroll">Solicitar información</a>

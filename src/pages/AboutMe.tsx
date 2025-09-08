@@ -231,21 +231,21 @@ const AboutMe = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-robotics-blue rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-gray-700">Certificación en programación de robots Universal Robots</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-robotics-blue rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-gray-700">Especialización en sistemas KUKA</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-robotics-blue rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-gray-700">Formación avanzada en ROS</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-robotics-blue rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-gray-700">Certificación de AWS Architect</span>
                 </div>
               </div>
@@ -263,7 +263,7 @@ const AboutMe = () => {
             Donde las empresas, independientemente de su tamaño, puedan acceder a tecnología que las haga más 
             competitivas, sostenibles y exitosas en el mercado global.
           </p>
-          <p className="text-xl font-semibold text-robotics-blue">
+          <p className="text-xl font-semibold text-primary">
             Mi trabajo es hacer realidad esa visión, un proyecto a la vez.
           </p>
         </div>
@@ -284,7 +284,7 @@ const AboutMe = () => {
               href="mailto:info@robotsconsultant.net" 
               className="flex items-center justify-center space-x-3 bg-blue-50 hover:bg-blue-100 rounded-lg p-6 transition-colors group"
             >
-              <Mail className="w-6 h-6 text-robotics-blue group-hover:scale-110 transition-transform" />
+              <Mail className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
               <div className="text-left">
                 <p className="font-semibold text-robotics-dark">Email</p>
                 <p className="text-gray-600">info@robotsconsultant.net</p>
@@ -321,7 +321,7 @@ const AboutMe = () => {
           <Button 
             asChild
             size="lg" 
-            className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all"
+            className="bg-primary hover:bg-primary/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all"
           >
             <a href="/#contacto">Contactar Ahora</a>
           </Button>

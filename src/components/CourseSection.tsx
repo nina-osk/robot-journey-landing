@@ -7,7 +7,7 @@ const robotParts = [
   {
     id: "controlador",
     name: "Controlador Programable",
-    icon: <HardDrive className="h-8 w-8 text-robotics-blue" />,
+    icon: <HardDrive className="h-8 w-8 text-primary" />,
     description: "Cerebro central para tu robot: admite múltiples motores, sensores y rutinas personalizadas.",
     specs: [
       "Soporta hasta 6 ejes",
@@ -20,7 +20,7 @@ const robotParts = [
   {
     id: "estructura",
     name: "Estructura Modular de Aluminio",
-    icon: <Box className="h-8 w-8 text-robotics-blue" />,
+    icon: <Box className="h-8 w-8 text-primary" />,
     description: "Perfil extruido de aluminio anodizado, ligero, resistente y expandible.",
     specs: [
       "Perfiles de 30x30mm y 40x40mm",
@@ -33,7 +33,7 @@ const robotParts = [
   {
     id: "actuadores",
     name: "Kit de Actuadores y Motores",
-    icon: <Wrench className="h-8 w-8 text-robotics-blue" />,
+    icon: <Wrench className="h-8 w-8 text-primary" />,
     description: "Motores DC, servos y reductores para todos los movimientos de tu robot.",
     specs: [
       "4 Motores pasoa paso NEMA17",
@@ -46,7 +46,7 @@ const robotParts = [
   {
     id: "sensores",
     name: "Kit de Sensores Inteligentes",
-    icon: <Settings className="h-8 w-8 text-robotics-blue" />,
+    icon: <Settings className="h-8 w-8 text-primary" />,
     description: "Incluye sensores de proximidad, finales de carrera, módulo de fuerza y sensor de distancia.",
     specs: [
       "3 Sensores inductivos",
@@ -87,7 +87,7 @@ const RobotPartsSection = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-robotics-blue/10 text-robotics-blue text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
             Venta de Piezas
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-robotics-dark mb-4">
@@ -105,7 +105,7 @@ const RobotPartsSection = () => {
                 onClick={() => setActivePart(part.id)}
                 className={`px-6 py-3 rounded-full transition-all duration-300 ${
                   activePart === part.id
-                    ? "bg-robotics-blue text-white shadow-md"
+                    ? "bg-primary text-white shadow-md"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -144,7 +144,7 @@ const RobotPartsSection = () => {
                       asChild
                       className={`w-full ${
                         activePart === part.id
-                          ? "bg-robotics-blue hover:bg-robotics-blue/90"
+                          ? "bg-primary hover:bg-primary/90"
                           : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                       }`}
                     >

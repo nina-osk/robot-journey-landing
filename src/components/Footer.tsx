@@ -15,16 +15,16 @@ const Footer = () => {
               Empoderando a profesionales con habilidades avanzadas de programación robótica industrial desde 2018.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=61578024748586" className="text-gray-400 hover:text-robotics-blue transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61578024748586" className="text-gray-400 hover:text-primary transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="https://www.instagram.com/robotsqueen/" className="text-gray-400 hover:text-robotics-blue transition-colors">
+              <a href="https://www.instagram.com/robotsqueen/" className="text-gray-400 hover:text-primary transition-colors">
                 <Instagram size={20} />
               </a>
             </div>
@@ -35,19 +35,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-robotics-blue transition-colors">Inicio</a>
+                <a href="#" className="text-gray-400 hover:text-primary transition-colors">Inicio</a>
               </li>
               <li>
-                <a href="#courses" className="text-gray-400 hover:text-robotics-blue transition-colors">Robot Moviles</a>
+                <a href="#courses" className="text-gray-400 hover:text-primary transition-colors">Robot Moviles</a>
               </li>
               <li>
-                <a href="#features" className="text-gray-400 hover:text-robotics-blue transition-colors">Kiosco de Autoservicio</a>
+                <a href="#features" className="text-gray-400 hover:text-primary transition-colors">Kiosco de Autoservicio</a>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-robotics-blue transition-colors">Servicios</a>  
+                <a href="#services" className="text-gray-400 hover:text-primary transition-colors">Servicios</a>  
               </li>
               <li>
-                <a href="https://robotsconsultant.net/tienda" className="text-gray-400 hover:text-robotics-blue transition-colors">Tienda</a> 
+                <a href="https://robotsconsultant.net/tienda" className="text-gray-400 hover:text-primary transition-colors">Tienda</a> 
               </li>
             </ul>
           </div>
@@ -57,18 +57,18 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contáctanos</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-robotics-blue shrink-0 mr-3 mt-0.5" />
+                <MapPin className="h-5 w-5 text-primary shrink-0 mr-3 mt-0.5" />
                 <span className="text-gray-400">
                   Avenida Cerro del Aguila nº2<br />
                   Madrid, España, 27803
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-robotics-blue shrink-0 mr-3" />
+                <Phone className="h-5 w-5 text-primary shrink-0 mr-3" />
                 <span className="text-gray-400">+34 654 94 27 20</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-robotics-blue shrink-0 mr-3" />
+                <Mail className="h-5 w-5 text-primary shrink-0 mr-3" />
                 <span className="text-gray-400">info@robotsconsultant.net</span>
               </li>
             </ul>
@@ -84,11 +84,11 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Tu correo electrónico"
-                className="px-4 py-2 bg-gray-800 text-gray-200 rounded-l-md focus:outline-none focus:ring-1 focus:ring-robotics-blue w-full"
+                className="px-4 py-2 bg-gray-800 text-gray-200 rounded-l-md focus:outline-none focus:ring-1 focus:ring-primary w-full"
               />
               <button
                 type="submit"
-                className="bg-robotics-blue hover:bg-robotics-blue/90 text-white px-4 py-2 rounded-r-md"
+                className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r-md"
               >
                 Unirse
               </button>

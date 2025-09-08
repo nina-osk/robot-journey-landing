@@ -36,7 +36,7 @@ const ContactCTA = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            ¿LISTO PARA <span className="text-robotics-blue">REVOLUCIONAR</span> SU NEGOCIO?
+            ¿LISTO PARA <span className="text-primary">REVOLUCIONAR</span> SU NEGOCIO?
           </h2>
           <p className="text-lg text-gray-300 mb-6 leading-relaxed">
             En <span className="text-robotics-accent font-semibold">RobotsConsultant</span> ofrecemos soluciones robóticas personalizadas para su empresa. 
@@ -52,7 +52,7 @@ const ContactCTA = () => {
           <Card className="border-0 shadow-2xl overflow-hidden bg-white">
             <CardContent className="p-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
-                <div className="bg-gradient-to-br from-robotics-blue to-robotics-accent p-8 lg:p-10 text-white flex flex-col justify-center">
+                <div className="bg-gradient-to-br from-primary to-primary/80 p-8 lg:p-10 text-white flex flex-col justify-center">
                   <h3 className="text-2xl font-bold mb-4 leading-tight">
                     SOLICITE UNA ASESORÍA GRATUITA
                   </h3>
