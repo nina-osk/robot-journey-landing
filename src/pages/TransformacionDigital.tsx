@@ -59,11 +59,11 @@ const TransformacionDigital = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-foreground/20" />
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Transforma tu Empresa en 90 Días
             </span>
