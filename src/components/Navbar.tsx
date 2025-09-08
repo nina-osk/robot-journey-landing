@@ -79,7 +79,7 @@ const Navbar = () => {
             <Button 
               asChild 
               variant="default" 
-              className="bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-md"
             >
               <a href="/#contacto">Contactar Ahora</a>
             </Button>
@@ -151,7 +151,7 @@ const Navbar = () => {
             <Button 
               asChild 
               variant="default" 
-              className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white rounded-md mt-3"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-md mt-3"
             >
               <a href="/#contacto">Contactar Ahora</a>
             </Button>
