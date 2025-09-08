@@ -60,15 +60,15 @@ const OnlineStorePopup = () => {
 
             <div className="grid grid-cols-1 gap-3 mb-4">
               <div className="text-center">
-                <ShoppingCart className="h-6 w-6 text-robotics-blue mx-auto mb-1" />
+                <ShoppingCart className="h-6 w-6 text-primary mx-auto mb-1" />
                 <span className="text-xs text-gray-600 block">E-commerce Profesional</span>
               </div>
               <div className="text-center">
-                <Cog className="h-6 w-6 text-robotics-blue mx-auto mb-1" />
+                <Cog className="h-6 w-6 text-primary mx-auto mb-1" />
                 <span className="text-xs text-gray-600 block">CRM Integrado</span>
               </div>
               <div className="text-center">
-                <GraduationCap className="h-6 w-6 text-robotics-blue mx-auto mb-1" />
+                <GraduationCap className="h-6 w-6 text-primary mx-auto mb-1" />
                 <span className="text-xs text-gray-600 block">Guía Paso a Paso</span>
               </div>
             </div>
@@ -76,7 +76,7 @@ const OnlineStorePopup = () => {
             <div className="space-y-2">
               <Button 
                 onClick={visitStore}
-                className="w-full bg-robotics-blue hover:bg-robotics-blue/90 text-white font-semibold py-2 text-sm"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-2 text-sm"
               >
                 Descargar Guía GRATIS
               </Button>
