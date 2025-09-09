@@ -76,7 +76,7 @@ const Navbar = () => {
               Tienda
             </a>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col space-y-2">
               <Button asChild variant="ghost" size="sm">
                 <a 
                   href="https://wa.me/34654942720" 
