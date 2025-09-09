@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from './ui/button';
+import { Phone, Mail } from 'lucide-react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,13 +64,24 @@ const HeroSection = () => {
           >
             Ver Soluciones
           </Button>
-          <Button 
-            asChild 
-            variant="outline" 
-            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300"
-          >
-            <a href="/#contacto">Contactar Ahora</a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-3 items-center">
+            <a 
+              href="https://wa.me/34654942720" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl text-lg font-semibold transition-all duration-300"
+            >
+              <Phone className="w-5 h-5" />
+              <span>+34 654 94 27 20</span>
+            </a>
+            <a 
+              href="mailto:info@robotsconsultant.net"
+              className="flex items-center space-x-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl text-lg font-semibold transition-all duration-300"
+            >
+              <Mail className="w-5 h-5" />
+              <span>info@robotsconsultant.net</span>
+            </a>
+          </div>
         </div>
       </div>
 
