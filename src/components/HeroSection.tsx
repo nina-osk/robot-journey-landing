@@ -64,24 +64,24 @@ const HeroSection = () => {
           >
             Ver Soluciones
           </Button>
-          <div className="flex flex-col gap-3 items-center">
-            <Button asChild variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl text-lg font-semibold transition-all duration-300">
+          <div className="flex flex-col gap-2 items-center">
+            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
               <a 
                 href="https://wa.me/34654942720" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 h-4" />
                 <span>+34 654 94 27 20</span>
               </a>
             </Button>
-            <Button asChild variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl text-lg font-semibold transition-all duration-300">
+            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
               <a 
                 href="mailto:info@robotsconsultant.net"
                 className="flex items-center space-x-2"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4" />
                 <span>info@robotsconsultant.net</span>
               </a>
             </Button>

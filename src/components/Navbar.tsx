@@ -76,24 +76,24 @@ const Navbar = () => {
               Tienda
             </a>
 
-            <div className="flex flex-col space-y-2">
-              <Button asChild variant="ghost" size="sm">
+            <div className="flex flex-col space-y-1">
+              <Button asChild variant="ghost" size="sm" className="h-8 px-2">
                 <a 
                   href="https://wa.me/34654942720" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-1 text-primary hover:text-primary/80"
+                  className="flex items-center space-x-1 text-primary hover:text-primary/80 text-xs"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-3 h-3" />
                   <span>+34 654 94 27 20</span>
                 </a>
               </Button>
-              <Button asChild variant="ghost" size="sm">
+              <Button asChild variant="ghost" size="sm" className="h-8 px-2">
                 <a 
                   href="mailto:info@robotsconsultant.net"
-                  className="flex items-center space-x-1 text-primary hover:text-primary/80"
+                  className="flex items-center space-x-1 text-primary hover:text-primary/80 text-xs"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-3 h-3" />
                   <span>info@robotsconsultant.net</span>
                 </a>
               </Button>
