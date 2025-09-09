@@ -77,22 +77,26 @@ const Navbar = () => {
             </a>
 
             <div className="flex items-center space-x-4">
-              <a 
-                href="https://wa.me/34654942720" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-1 text-primary hover:text-primary/80 text-sm font-medium transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                <span>+34 654 94 27 20</span>
-              </a>
-              <a 
-                href="mailto:info@robotsconsultant.net"
-                className="flex items-center space-x-1 text-primary hover:text-primary/80 text-sm font-medium transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                <span>info@robotsconsultant.net</span>
-              </a>
+              <Button asChild variant="ghost" size="sm">
+                <a 
+                  href="https://wa.me/34654942720" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1 text-primary hover:text-primary/80"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+34 654 94 27 20</span>
+                </a>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <a 
+                  href="mailto:info@robotsconsultant.net"
+                  className="flex items-center space-x-1 text-primary hover:text-primary/80"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>info@robotsconsultant.net</span>
+                </a>
+              </Button>
             </div>
           </nav>
 
@@ -160,24 +164,28 @@ const Navbar = () => {
               Tienda
             </a>
             <div className="mt-4 space-y-2">
-              <a 
-                href="https://wa.me/34654942720" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-md py-2 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Phone className="w-4 h-4" />
-                <span>+34 654 94 27 20</span>
-              </a>
-              <a 
-                href="mailto:info@robotsconsultant.net"
-                className="flex items-center justify-center space-x-2 w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-md py-2 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Mail className="w-4 h-4" />
-                <span>info@robotsconsultant.net</span>
-              </a>
+              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <a 
+                  href="https://wa.me/34654942720" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+34 654 94 27 20</span>
+                </a>
+              </Button>
+              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <a 
+                  href="mailto:info@robotsconsultant.net"
+                  className="flex items-center justify-center space-x-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>info@robotsconsultant.net</span>
+                </a>
+              </Button>
             </div>
           </div>
         </div>

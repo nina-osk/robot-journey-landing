@@ -319,22 +319,26 @@ const AboutMe = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://wa.me/34654942720" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 bg-primary hover:bg-primary/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all"
-            >
-              <Phone className="w-5 h-5" />
-              <span>+34 654 94 27 20</span>
-            </a>
-            <a 
-              href="mailto:info@robotsconsultant.net"
-              className="flex items-center justify-center space-x-2 bg-primary hover:bg-primary/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all"
-            >
-              <Mail className="w-5 h-5" />
-              <span>info@robotsconsultant.net</span>
-            </a>
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all">
+              <a 
+                href="https://wa.me/34654942720" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-2"
+              >
+                <Phone className="w-5 h-5" />
+                <span>+34 654 94 27 20</span>
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all">
+              <a 
+                href="mailto:info@robotsconsultant.net"
+                className="flex items-center justify-center space-x-2"
+              >
+                <Mail className="w-5 h-5" />
+                <span>info@robotsconsultant.net</span>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
