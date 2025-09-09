@@ -64,7 +64,7 @@ const HeroSection = () => {
           >
             Ver Soluciones
           </Button>
-          <div className="flex flex-col sm:flex-row gap-3 items-center">
+          <div className="flex flex-col gap-3 items-center">
             <Button asChild variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl text-lg font-semibold transition-all duration-300">
               <a 
                 href="https://wa.me/34654942720" 
