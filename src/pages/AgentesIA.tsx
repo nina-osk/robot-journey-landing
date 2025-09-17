@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Phone, Mail, CheckCircle, Users, Clock, DollarSign, BarChart3, Bot, Globe, Cpu, MessageSquare, Calendar, ShoppingCart, Headphones } from 'lucide-react';
+import { Phone, Mail, CheckCircle, Users, Clock, DollarSign, BarChart3, Bot, Globe, Cpu, MessageSquare, Calendar, ShoppingCart, Headphones, ChefHat } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -403,6 +403,20 @@ const AgentesIA = () => {
       {/* CTA Final */}
       <section className="py-16 bg-gradient-to-br from-primary to-primary/80">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white slide-in-section">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Soluciones Específicas por Sector</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Descubre nuestras soluciones personalizadas para diferentes industrias
+          </p>
+          
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
+              <a href="/agentes-ia/restaurantes" className="flex items-center space-x-2">
+                <ChefHat className="w-5 h-5" />
+                <span>🍽️ Solución para Restaurantes</span>
+              </a>
+            </Button>
+          </div>
+
           <h2 className="text-3xl md:text-4xl font-bold mb-8">¿Listo para el Futuro?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             No esperes a que tu competencia tome la delantera. Los agentes telefónicos IA no son el futuro, son el presente.
