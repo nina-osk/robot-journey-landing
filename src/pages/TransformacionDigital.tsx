@@ -72,7 +72,7 @@ const TransformacionDigital = () => {
           </h1>
           
           <h2 className="text-xl md:text-2xl lg:text-3xl text-blue-100 font-light mb-8 max-w-4xl mx-auto">
-            Implementamos Odoo ERP, automatizamos tus procesos con IA (Make + n8n) y te proporcionamos toda la infraestructura tecnológica. 
+            Implementamos Odoo ERP, automatizamos tus procesos con IA (Make o n8n) y te proporcionamos toda la infraestructura tecnológica. 
             Una solución completa para empresas que quieren liderar su industria.
           </h2>
           
@@ -443,10 +443,10 @@ const TransformacionDigital = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">PAQUETE STARTER</h3>
-                  <p className="text-gray-600">Para empresas de 10-50 empleados</p>
+                  <p className="text-gray-600">Para empresas de 1-5 empleados</p>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold text-blue-600">$25,000</span>
-                    <span className="text-gray-500"> USD</span>
+                    <span className="text-4xl font-bold text-blue-600">Desde 2,000</span>
+                    <span className="text-gray-500"> EUR</span>
                   </div>
                   <p className="text-sm text-gray-500 mt-2">Equivale a 6 meses del salario de 1 empleado</p>
                 </div>
@@ -454,11 +454,11 @@ const TransformacionDigital = () => {
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Odoo ERP completo (5 módulos principales)</span>
+                    <span>Odoo ERP completo (5 módulos principales opcional -Adicional)</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>10 automatizaciones básicas con IA</span>
+                    <span>2 automatizaciones básicas con IA</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
@@ -466,7 +466,7 @@ const TransformacionDigital = () => {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Implementación en 60 días</span>
+                    <span>Implementación en 30 días</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
@@ -493,10 +493,10 @@ const TransformacionDigital = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">PAQUETE PROFESSIONAL</h3>
-                  <p className="text-gray-600">Para empresas de 50-200 empleados</p>
+                  <p className="text-gray-600">Para empresas de 5-10 empleados</p>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold text-blue-600">$45,000</span>
-                    <span className="text-gray-500"> USD</span>
+                    <span className="text-4xl font-bold text-blue-600">Desde 5,000</span>
+                    <span className="text-gray-500"> EUR</span>
                   </div>
                   <p className="text-sm text-gray-500 mt-2">Se paga solo en 8 meses con los ahorros generados</p>
                 </div>
@@ -512,15 +512,11 @@ const TransformacionDigital = () => {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>25 automatizaciones avanzadas con IA</span>
+                    <span>10 automatizaciones avanzadas con IA</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                     <span>Infraestructura cloud premium</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Análisis predictivo e IA personalizada</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
@@ -542,12 +538,12 @@ const TransformacionDigital = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">PAQUETE ENTERPRISE</h3>
-                  <p className="text-gray-600">Para empresas de 200+ empleados</p>
+                  <p className="text-gray-600">Para empresas de 10+ empleados</p>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold text-blue-600">$75,000</span>
-                    <span className="text-gray-500"> USD</span>
+                    <span className="text-4xl font-bold text-blue-600">Consultar</span>
+                    <span className="text-gray-500"> EUR</span>
                   </div>
-                  <p className="text-sm text-gray-500 mt-2">ROI garantizado del 400% en el primer año</p>
+                  <p className="text-sm text-gray-500 mt-2">ROI del 400% en el primer año</p>
                 </div>
                 
                 <ul className="space-y-3 mb-8">
@@ -591,7 +587,7 @@ const TransformacionDigital = () => {
 
       {/* Urgencia y Escasez Section */}
       <section className="py-20 bg-gradient-to-br from-red-600 to-orange-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+       
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             🚨 Oferta Especial por Tiempo Limitado
           </h2>
@@ -625,32 +621,21 @@ const TransformacionDigital = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
               <h4 className="text-xl font-bold mb-2">🎁 Bonos Exclusivos</h4>
-              <p className="text-lg">Valor $25,000 USD</p>
+              <p className="text-lg">Valor 3.000 EUR</p>
               <ul className="text-left mt-4 space-y-2">
-                <li>• Consultoría estratégica personalizada ($5,000)</li>
-                <li>• 6 meses adicionales de soporte premium ($8,000)</li>
-                <li>• Automatizaciones personalizadas extras ($7,000)</li>
-                <li>• Acceso VIP a actualizaciones futuras ($3,000)</li>
-                <li>• Training privado para directivos ($2,000)</li>
+                <li>• Consultoría estratégica personalizada (500)</li>
+                <li>• 3 meses adicionales de soporte premium (800)</li>
+                <li>• Automatizaciones personalizadas extras (700)</li>
+                <li>• Training privado para directivos (2.000)</li>
               </ul>
             </div>
-            
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
-              <h4 className="text-xl font-bold mb-2">⚡ Garantía de Acción Rápida</h4>
-              <p className="text-lg mb-4">Si contratas en las próximas 48 horas:</p>
-              <ul className="text-left space-y-2">
-                <li>• Implementación prioritaria (empezamos en 7 días)</li>
-                <li>• 20% de descuento en servicios adicionales futuros</li>
-                <li>• Consultor dedicado durante toda la implementación</li>
-              </ul>
-            </div>
-          </div>
+          
           
           <div className="bg-yellow-500 text-black p-6 rounded-lg mb-8">
-            <h4 className="text-2xl font-bold mb-2">⚠️ Escasez Real</h4>
+            <h4 className="text-xl font-bold mb-2">⏳ Cupos Limitados</h4>
             <p className="text-lg">
               Solo tenemos capacidad para 5 implementaciones simultáneas.<br />
-              <strong>Actualmente quedan 2 cupos disponibles para iniciar en enero 2025.</strong>
+              <strong>Actualmente quedan 2 cupos disponibles para iniciar en 2025.</strong>
             </p>
           </div>
           
@@ -682,7 +667,7 @@ const TransformacionDigital = () => {
                   ))}
                 </div>
                 <h3 className="text-xl font-bold mb-2">Distribuidora Regional</h3>
-                <p className="text-gray-600 mb-4">150 empleados - Alimentos</p>
+                <p className="text-gray-600 mb-4">15 empleados - Alimentos</p>
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-green-600">
@@ -695,7 +680,7 @@ const TransformacionDigital = () => {
                   </div>
                   <div className="flex items-center text-green-600">
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    <span className="text-sm">Ahorro de $75,000 en costos</span>
+                    <span className="text-sm">Ahorro en costos</span>
                   </div>
                   <div className="flex items-center text-green-600">
                     <CheckCircle className="w-4 h-4 mr-2" />
@@ -719,7 +704,7 @@ const TransformacionDigital = () => {
                   ))}
                 </div>
                 <h3 className="text-xl font-bold mb-2">Cadena de Restaurantes</h3>
-                <p className="text-gray-600 mb-4">8 sucursales - Food Service</p>
+    
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-green-600">
@@ -733,10 +718,6 @@ const TransformacionDigital = () => {
                   <div className="flex items-center text-green-600">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Reducción 50% desperdicio de alimentos</span>
-                  </div>
-                  <div className="flex items-center text-green-600">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    <span className="text-sm">Ahorro $120,000/año</span>
                   </div>
                 </div>
                 
@@ -756,7 +737,7 @@ const TransformacionDigital = () => {
                   ))}
                 </div>
                 <h3 className="text-xl font-bold mb-2">Empresa de Servicios</h3>
-                <p className="text-gray-600 mb-4">75 empleados - Consultoría</p>
+                <p className="text-gray-600 mb-4">7 empleados - Consultoría</p>
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-green-600">

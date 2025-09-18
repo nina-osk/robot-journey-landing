@@ -39,12 +39,6 @@ const Navbar = () => {
             >
               Inicio
             </a>
-            <a 
-              href="./robots-moviles" 
-              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
-            >
-              Robots Móviles
-            </a>
             <a
               href="./kioscos-pago" 
               className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
