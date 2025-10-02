@@ -50,22 +50,6 @@ const PacksSection = () => {
       ],
       priceFrom: '3,299',
       sector: 'hotelero'
-    },
-    {
-      id: 4,
-      icon: '💆‍♀️',
-      name: 'Pack Wellness',
-      image: '/lovable-uploads/c1e36c3f-139a-41f6-a37a-0cf435e2c3a9.png',
-      includes: [
-        'Agenda digital',
-        'Gestión de citas',
-        'Historial de clientes',
-        'Punto de venta',
-        'Marketing automático',
-        'Control de stock'
-      ],
-      priceFrom: '1,699',
-      sector: 'wellness'
     }
   ];
 
