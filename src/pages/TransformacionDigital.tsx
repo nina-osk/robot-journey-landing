@@ -23,30 +23,6 @@ import {
 } from 'lucide-react';
 
 const TransformacionDigital = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 23,
-    minutes: 59,
-    seconds: 59
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   const scrollToCalendly = () => {
     const calendlyElement = document.getElementById('calendly-section');
     if (calendlyElement) {
@@ -592,27 +568,6 @@ const TransformacionDigital = () => {
             🚨 Oferta Especial por Tiempo Limitado
           </h2>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold mb-4">Esta oferta vence en:</h3>
-            <div className="flex justify-center space-x-4 mb-6">
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold">{timeLeft.days}</div>
-                <div className="text-sm">Días</div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold">{timeLeft.hours}</div>
-                <div className="text-sm">Horas</div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold">{timeLeft.minutes}</div>
-                <div className="text-sm">Minutos</div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold">{timeLeft.seconds}</div>
-                <div className="text-sm">Segundos</div>
-              </div>
-            </div>
-          </div>
           
           <h3 className="text-3xl font-bold mb-6">
             POR SER DE LOS PRIMEROS 20 CLIENTES DE 2025:
