@@ -561,48 +561,6 @@ const TransformacionDigital = () => {
         </div>
       </section>
 
-      {/* Urgencia y Escasez Section */}
-      <section className="py-20 bg-gradient-to-br from-red-600 to-orange-600 text-white">
-       
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            🚨 Oferta Especial por Tiempo Limitado
-          </h2>
-          
-          
-          <h3 className="text-3xl font-bold mb-6">
-            POR SER DE LOS PRIMEROS 20 CLIENTES DE 2025:
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
-              <h4 className="text-xl font-bold mb-2">🎁 Bonos Exclusivos</h4>
-              <p className="text-lg">Valor 3.000 EUR</p>
-              <ul className="text-left mt-4 space-y-2">
-                <li>• Consultoría estratégica personalizada (500)</li>
-                <li>• 3 meses adicionales de soporte premium (800)</li>
-                <li>• Automatizaciones personalizadas extras (700)</li>
-                <li>• Training privado para directivos (2.000)</li>
-              </ul>
-            </div>
-          
-          
-          <div className="bg-yellow-500 text-black p-6 rounded-lg mb-8">
-            <h4 className="text-xl font-bold mb-2">⏳ Cupos Limitados</h4>
-            <p className="text-lg">
-              Solo tenemos capacidad para 5 implementaciones simultáneas.<br />
-              <strong>Actualmente quedan 2 cupos disponibles para iniciar en 2025.</strong>
-            </p>
-          </div>
-          
-          <Button
-            onClick={scrollToCalendly}
-            className="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 text-xl font-bold rounded-xl transform hover:scale-105 transition-all duration-300"
-          >
-            🚀 RESERVAR MI CUPO AHORA
-          </Button>
-        </div>
-      </section>
-
       {/* Casos de Éxito Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
