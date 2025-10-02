@@ -64,6 +64,12 @@ const Navbar = () => {
               Agentes IA
             </a>
             <a
+              href="./shopify" 
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+            >
+              Shopify
+            </a>
+            <a
               href="./sobre-mi" 
               className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
@@ -155,6 +161,13 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Agentes IA
+            </a>
+            <a
+              href="./shopify" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Shopify
             </a>
             <a
               href="./sobre-mi" 
