@@ -70,6 +70,12 @@ const Navbar = () => {
               Shopify
             </a>
             <a
+              href="./mentoria-ia" 
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+            >
+              Mentoría IA
+            </a>
+            <a
               href="./sobre-mi" 
               className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
@@ -168,6 +174,13 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Shopify
+            </a>
+            <a
+              href="./mentoria-ia" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Mentoría IA
             </a>
             <a
               href="./sobre-mi" 
