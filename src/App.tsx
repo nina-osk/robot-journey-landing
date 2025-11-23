@@ -16,6 +16,7 @@ import TransformacionDigital from "./pages/TransformacionDigital";
 import AgentesIA from "./pages/AgentesIA";
 import AgentesIARestaurantes from "./pages/AgentesIARestaurantes";
 import ShopifyServices from "./pages/ShopifyServices";
+import MentoriaIA from "./pages/MentoriaIA";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/agentes-ia" element={<AgentesIA />} />
           <Route path="/agentes-ia/restaurantes" element={<AgentesIARestaurantes />} />
           <Route path="/shopify" element={<ShopifyServices />} />
+          <Route path="/mentoria-ia" element={<MentoriaIA />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
