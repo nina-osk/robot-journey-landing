@@ -52,12 +52,6 @@ const Navbar = () => {
               Servicios Odoo
             </a>
             <a
-              href="./transformacion-digital" 
-              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
-            >
-              IA + Automatización
-            </a>
-            <a
               href="./agentes-ia" 
               className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
@@ -85,7 +79,7 @@ const Navbar = () => {
               href="https://robotsconsultant.net/tienda" 
               className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
-              Tienda
+              Cursos
             </a>
 
             <div className="flex flex-col space-y-1">
