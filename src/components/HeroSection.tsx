@@ -28,29 +28,27 @@ const HeroSection = () => {
   return (
     <section 
       id="hero-section"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
+      className="relative min-h-screen flex items-center justify-center bg-[#0a0a0a]"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-foreground/20" />
+      {/* Background gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/3 left-1/5 w-[500px] h-[500px] bg-[#667eea]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/5 w-[500px] h-[500px] bg-[#764ba2]/20 rounded-full blur-3xl" />
+      </div>
       
       <div className={`relative z-10 max-w-4xl mx-auto px-4 text-center transform transition-all duration-1000 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         <div className="mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            🏠 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            🏠 <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
               Digitaliza tu negocio sin complicaciones
             </span>
           </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl text-blue-100 font-light mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-300 font-light mb-8">
             sin perder tiempo y sin ser experto en tecnología
           </h2>
-          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Soluciones listas para usar que automatizan tu atención, ventas y gestión desde el primer día. 
             Transformamos tu empresa a través de la tecnología, automatizaciones, ERP, kioscos inteligentes 
             y soluciones robóticas que impulsan tu crecimiento.
@@ -59,13 +57,13 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-0"
             onClick={() => window.location.href = '/kioscos-pago'}
           >
             Ver Soluciones
           </Button>
           <div className="flex flex-col gap-2 items-center">
-            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
+            <Button asChild size="sm" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
               <a 
                 href="https://wa.me/34654942720" 
                 target="_blank" 
@@ -76,7 +74,7 @@ const HeroSection = () => {
                 <span>+34 654 94 27 20</span>
               </a>
             </Button>
-            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
+            <Button asChild size="sm" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
               <a 
                 href="mailto:info@robotsconsultant.net"
                 className="flex items-center space-x-2"
