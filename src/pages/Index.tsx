@@ -4,8 +4,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProblemSection from '@/components/ProblemSection';
 import SolutionSection from '@/components/SolutionSection';
-import PacksSection from '@/components/PacksSection';
-import OnlineStoreSection from '@/components/OnlineStoreSection';
+import SmartStoreSection from '@/components/SmartStoreSection';
 import NewServicesSection from '@/components/NewServicesSection';
 import RobotsServicesSection from '@/components/RobotsServicesSection';
 import RoboticProgrammingSection from '@/components/RoboticProgrammingSection';
@@ -41,8 +40,7 @@ const Index = () => {
       <HeroSection />
       <ProblemSection />
       <SolutionSection />
-      <PacksSection />
-      <OnlineStoreSection />
+      <SmartStoreSection />
       <NewServicesSection />
       <RobotsServicesSection />
       <RoboticProgrammingSection />
