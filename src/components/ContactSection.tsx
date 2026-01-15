@@ -32,27 +32,33 @@ const ContactCTA = () => {
   }, []);
 
   return (
-    <section id="contacto" className="py-20 bg-gradient-to-b from-robotics-dark to-gray-900 relative">
-      <div className="container mx-auto px-4">
+    <section id="contacto" className="py-20 bg-[#0a0a0a] relative">
+      {/* Background gradients */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#667eea]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#764ba2]/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            ¿LISTO PARA <span className="text-primary">REVOLUCIONAR</span> SU NEGOCIO?
+            ¿LISTO PARA <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">REVOLUCIONAR</span> SU NEGOCIO?
           </h2>
-          <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-            En <span className="text-robotics-accent font-semibold">RobotsConsultant</span> ofrecemos soluciones robóticas personalizadas para su empresa. 
+          <p className="text-lg text-gray-400 mb-6 leading-relaxed">
+            En <span className="text-[#667eea] font-semibold">RobotsConsultant</span> ofrecemos soluciones robóticas personalizadas para su empresa. 
             Desde robots móviles hasta brazos robóticos, tenemos la tecnología que necesita para optimizar sus procesos.
           </p>
-          <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+          <p className="text-lg text-gray-400 mb-8 leading-relaxed">
             No espere más para incorporar el futuro a su establecimiento. 
             Nuestros robots están disponibles en diferentes modalidades adaptadas a sus necesidades.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto mb-16">
-          <Card className="border-0 shadow-2xl overflow-hidden bg-white">
+          <Card className="border border-white/10 shadow-2xl overflow-hidden bg-white/[0.03] backdrop-blur-sm">
             <CardContent className="p-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
-                <div className="bg-gradient-to-br from-primary to-primary/80 p-8 lg:p-10 text-white flex flex-col justify-center">
+                <div className="bg-gradient-to-br from-[#667eea] to-[#764ba2] p-8 lg:p-10 text-white flex flex-col justify-center">
                   <h3 className="text-2xl font-bold mb-4 leading-tight">
                     SOLICITE UNA ASESORÍA GRATUITA
                   </h3>
@@ -102,42 +108,42 @@ const ContactCTA = () => {
         </div>
 
         <div className="max-w-6xl mx-auto text-center">
-          <Card className="border-0 shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+          <Card className="border border-white/10 shadow-xl bg-white/[0.03] backdrop-blur-sm">
             <CardContent className="p-8 lg:p-12">
               <div className="flex flex-col items-center space-y-8">
                 <div className="flex items-center gap-4 mb-4">
                   <Youtube className="w-12 h-12 text-red-500" />
-                  <h3 className="text-3xl font-bold">Canal Educativo YouTube</h3>
+                  <h3 className="text-3xl font-bold text-white">Canal Educativo YouTube</h3>
                 </div>
                 
-                <p className="text-xl leading-relaxed max-w-3xl">
-                  Mantente al día con las últimas tendencias en <strong>automatización</strong>, <strong>robótica</strong> e <strong>inteligencia artificial</strong>. 
+                <p className="text-xl leading-relaxed max-w-3xl text-gray-400">
+                  Mantente al día con las últimas tendencias en <strong className="text-white">automatización</strong>, <strong className="text-white">robótica</strong> e <strong className="text-white">inteligencia artificial</strong>. 
                   Cada semana subimos contenido educativo especializado para PyMEs y noticias interesantes del sector.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <span className="text-lg">Automatizaciones para PyMEs</span>
+                    <span className="text-lg text-gray-300">Automatizaciones para PyMEs</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <span className="text-lg">Tutoriales de Robótica</span>
+                    <span className="text-lg text-gray-300">Tutoriales de Robótica</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <span className="text-lg">Noticias de IA</span>
+                    <span className="text-lg text-gray-300">Noticias de IA</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <span className="text-lg">Videos semanales</span>
+                    <span className="text-lg text-gray-300">Videos semanales</span>
                   </div>
                 </div>
 
                 <div className="w-full mt-8">
-                  <h4 className="text-2xl font-bold mb-6">Últimos Videos</h4>
+                  <h4 className="text-2xl font-bold mb-6 text-white">Últimos Videos</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-white/10 rounded-lg p-4">
+                    <div className="bg-white/[0.05] border border-white/10 rounded-lg p-4">
                       <div className="aspect-video bg-black rounded-lg mb-3 overflow-hidden">
                         <iframe
                           width="100%"
@@ -149,11 +155,11 @@ const ContactCTA = () => {
                           allowFullScreen
                         ></iframe>
                       </div>
-                      <h5 className="font-semibold text-lg mb-2">Los Agentes de IA, ¿Que son, te reemplazarán en 2025?</h5>
-                      <p className="text-sm text-white/80">Descubre cómo los agentes de IA están cambiando el panorama laboral</p>
+                      <h5 className="font-semibold text-lg mb-2 text-white">Los Agentes de IA, ¿Que son, te reemplazarán en 2025?</h5>
+                      <p className="text-sm text-gray-400">Descubre cómo los agentes de IA están cambiando el panorama laboral</p>
                     </div>
                     
-                    <div className="bg-white/10 rounded-lg p-4">
+                    <div className="bg-white/[0.05] border border-white/10 rounded-lg p-4">
                       <div className="aspect-video bg-black rounded-lg mb-3 overflow-hidden">
                         <iframe
                           width="100%"
@@ -165,11 +171,11 @@ const ContactCTA = () => {
                           allowFullScreen
                         ></iframe>
                       </div>
-                      <h5 className="font-semibold text-lg mb-2">Resumen rápido de las ultimas novedades de la Google IO 2025</h5>
-                      <p className="text-sm text-white/80">Las últimas novedades de la Google IO 2025 en un solo lugar</p>
+                      <h5 className="font-semibold text-lg mb-2 text-white">Resumen rápido de las ultimas novedades de la Google IO 2025</h5>
+                      <p className="text-sm text-gray-400">Las últimas novedades de la Google IO 2025 en un solo lugar</p>
                     </div>
                     
-                    <div className="bg-white/10 rounded-lg p-4">
+                    <div className="bg-white/[0.05] border border-white/10 rounded-lg p-4">
                       <div className="aspect-video bg-black rounded-lg mb-3 overflow-hidden">
                         <iframe
                           width="100%"
@@ -181,8 +187,8 @@ const ContactCTA = () => {
                           allowFullScreen
                         ></iframe>
                       </div>
-                      <h5 className="font-semibold text-lg mb-2">¿Por Qué Unos Robots BAILAN y Otros CHOCAN? 🤖 | Tipos de Robots Móviles EXPLICADO</h5>
-                      <p className="text-sm text-white/80">Las últimas tendencias en robots móviles, que son, cuales existen y como se utilizan en la industria</p>
+                      <h5 className="font-semibold text-lg mb-2 text-white">¿Por Qué Unos Robots BAILAN y Otros CHOCAN? 🤖 | Tipos de Robots Móviles EXPLICADO</h5>
+                      <p className="text-sm text-gray-400">Las últimas tendencias en robots móviles, que son, cuales existen y como se utilizan en la industria</p>
                     </div>
                   </div>
                 </div>
@@ -191,7 +197,7 @@ const ContactCTA = () => {
                   href="#" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors shadow-lg mt-6"
+                  className="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition-colors shadow-lg mt-6"
                 >
                   <Youtube className="w-6 h-6" />
                   Suscríbete a Nuestro Canal
