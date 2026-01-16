@@ -41,7 +41,7 @@ const HeroSection = () => {
       }`}>
         <div className="mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            🏠 <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
+            🤖 <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
               Digitaliza tu negocio sin complicaciones
             </span>
           </h1>
