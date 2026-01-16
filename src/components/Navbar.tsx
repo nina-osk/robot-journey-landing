@@ -40,12 +40,6 @@ const Navbar = () => {
               Inicio
             </a>
             <a
-              href="./kioscos-pago" 
-              className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
-            >
-              Packs
-            </a>
-            <a
               href="./servicios-odoo" 
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
             >
