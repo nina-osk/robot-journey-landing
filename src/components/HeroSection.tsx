@@ -55,36 +55,6 @@ const HeroSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button
-            className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-0"
-            onClick={() => window.location.href = '/kioscos-pago'}
-          >
-            Ver Soluciones
-          </Button>
-          <div className="flex flex-col gap-2 items-center">
-            <Button asChild size="sm" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
-              <a 
-                href="https://wa.me/34654942720" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2"
-              >
-                <Phone className="w-4 h-4" />
-                <span>+34 654 94 27 20</span>
-              </a>
-            </Button>
-            <Button asChild size="sm" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
-              <a 
-                href="mailto:info@robotsconsultant.net"
-                className="flex items-center space-x-2"
-              >
-                <Mail className="w-4 h-4" />
-                <span>info@robotsconsultant.net</span>
-              </a>
-            </Button>
-          </div>
-        </div>
       </div>
 
       {/* Scroll indicator */}
