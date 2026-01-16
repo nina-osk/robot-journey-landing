@@ -28,7 +28,7 @@ const Navbar = () => {
             <img 
               src={logo}
               alt="RobotsConsultant" 
-              className="h-12 md:h-14"
+              className="h-12 md:h-14 transition-all duration-300 hover:scale-110 hover:brightness-125"
             />
           </a>
 
