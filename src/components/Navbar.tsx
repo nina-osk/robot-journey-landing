@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import logo from '@/assets/logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,13 +24,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center space-x-3">
+          <a href="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/c1e36c3f-139a-41f6-a37a-0cf435e2c3a9.png" 
-              alt="Robots Consultant Technology" 
-              className="h-16 md:h-20"
+              src={logo}
+              alt="RobotsConsultant" 
+              className="h-12 md:h-14 invert brightness-0 invert"
             />
-          </div>
+          </a>
 
           <nav className="hidden md:flex space-x-8 items-center">
             <a
