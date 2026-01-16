@@ -28,7 +28,7 @@ const Navbar = () => {
             <img 
               src={logo}
               alt="RobotsConsultant" 
-              className="h-12 md:h-14 invert brightness-0 invert"
+              className="h-12 md:h-14"
             />
           </a>
 
