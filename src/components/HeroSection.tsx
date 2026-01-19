@@ -98,9 +98,13 @@ const HeroSection = () => {
             onClick={toggleMute}
             variant="outline"
             size="icon"
-            className="absolute bottom-4 right-4 z-20 bg-black/60 border-white/20 hover:bg-black/80 hover:border-white/40 text-white rounded-full w-12 h-12 backdrop-blur-sm transition-all duration-300"
+            className="absolute bottom-4 right-4 z-20 bg-black/60 border-white/20 hover:bg-gradient-to-r hover:from-[#667eea] hover:to-[#764ba2] hover:border-transparent text-white rounded-full w-12 h-12 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#667eea]/40 group"
           >
-            {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+            {isMuted ? (
+              <VolumeX className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+            ) : (
+              <Volume2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pulse" />
+            )}
           </Button>
         </div>
 
