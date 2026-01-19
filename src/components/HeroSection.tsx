@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from './ui/button';
-import { Phone, Mail } from 'lucide-react';
+import { Volume2, VolumeX } from 'lucide-react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [videoVisible, setVideoVisible] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,10 +46,14 @@ const HeroSection = () => {
     return () => videoObserver.disconnect();
   }, []);
 
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
   return (
     <section 
       id="hero-section"
-      className="relative min-h-screen flex items-center justify-center bg-[#0a0a0a]"
+      className="relative min-h-screen flex items-center justify-center bg-[#0a0a0a] pt-24 md:pt-32"
     >
       {/* Background gradients */}
       <div className="absolute inset-0">
@@ -75,16 +81,27 @@ const HeroSection = () => {
         </div>
 
         {/* Video de presentación */}
-        <div id="presentation-video" className="w-full max-w-4xl mx-auto mt-8">
+        <div id="presentation-video" className="w-full max-w-4xl mx-auto mt-8 relative">
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-[#667eea]/20 border border-white/10">
             <iframe
-              src={`https://www.youtube.com/embed/AhXTVfFxp_o?${videoVisible ? 'autoplay=1&mute=1' : ''}`}
+              ref={iframeRef}
+              src={`https://www.youtube.com/embed/AhXTVfFxp_o?enablejsapi=1&${videoVisible ? 'autoplay=1' : ''}&mute=${isMuted ? 1 : 0}`}
               title="Video de presentación"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 w-full h-full"
             />
           </div>
+          
+          {/* Botón de sonido */}
+          <Button
+            onClick={toggleMute}
+            variant="outline"
+            size="icon"
+            className="absolute bottom-4 right-4 z-20 bg-black/60 border-white/20 hover:bg-black/80 hover:border-white/40 text-white rounded-full w-12 h-12 backdrop-blur-sm transition-all duration-300"
+          >
+            {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+          </Button>
         </div>
 
       </div>
