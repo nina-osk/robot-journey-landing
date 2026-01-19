@@ -55,6 +55,19 @@ const HeroSection = () => {
           </p>
         </div>
 
+        {/* Video de presentación */}
+        <div className="w-full max-w-4xl mx-auto mt-8">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-[#667eea]/20 border border-white/10">
+            <iframe
+              src="https://www.youtube.com/embed/AhXTVfFxp_o"
+              title="Video de presentación"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+
       </div>
 
       {/* Scroll indicator */}
