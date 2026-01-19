@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from './ui/button';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, Calendar, ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -105,6 +105,25 @@ const HeroSection = () => {
             ) : (
               <Volume2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pulse" />
             )}
+          </Button>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <Button 
+            className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-0 rounded-full group"
+            onClick={() => document.getElementById('calendly-section')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            <Calendar className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+            Agendar Consulta Gratuita
+          </Button>
+          <Button 
+            variant="outline"
+            className="border-white/20 text-white hover:bg-white/10 hover:border-[#667eea]/50 px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 rounded-full group"
+            onClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Ver Servicios
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
         </div>
 
