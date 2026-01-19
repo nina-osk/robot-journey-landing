@@ -4,6 +4,7 @@ import { Phone, Mail } from 'lucide-react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [videoVisible, setVideoVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,6 +24,24 @@ const HeroSection = () => {
     }
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setVideoVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const videoElement = document.getElementById('presentation-video');
+    if (videoElement) {
+      videoObserver.observe(videoElement);
+    }
+
+    return () => videoObserver.disconnect();
   }, []);
 
   return (
@@ -56,10 +75,10 @@ const HeroSection = () => {
         </div>
 
         {/* Video de presentación */}
-        <div className="w-full max-w-4xl mx-auto mt-8">
+        <div id="presentation-video" className="w-full max-w-4xl mx-auto mt-8">
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-[#667eea]/20 border border-white/10">
             <iframe
-              src="https://www.youtube.com/embed/AhXTVfFxp_o"
+              src={`https://www.youtube.com/embed/AhXTVfFxp_o?${videoVisible ? 'autoplay=1&mute=1' : ''}`}
               title="Video de presentación"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
