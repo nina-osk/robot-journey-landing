@@ -31,7 +31,7 @@ const SolutionSection = () => {
         <div className="text-center">
           <Button 
             className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-0 rounded-full group"
-            onClick={() => document.getElementById('calendly-section')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.location.href = 'mailto:info@robotsconsultant.net'}
           >
             <Calendar className="mr-2 h-5 w-5 group-hover:animate-pulse" />
             Solicita información aquí
