@@ -98,9 +98,12 @@ const Footer = () => {
         
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              © {currentYear} RobotcsConsultant. Todos los derechos reservados.
-            </p>
+            <div className="text-gray-500 text-sm text-center md:text-left">
+              <p>© {currentYear} RobotsConsultant. Todos los derechos reservados.</p>
+              <p className="mt-1">RKontaktisik on CompanioEstonia OÜ · Registrikood: 14522788</p>
+              <p>Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415, Estonia</p>
+              <p>info@robotsconsultant.net</p>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="/politica-privacidad" className="text-gray-500 hover:text-gray-400 text-sm">Política de Privacidad</a>
               <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Términos de Servicio</a>
