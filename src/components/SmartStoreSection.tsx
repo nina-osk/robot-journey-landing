@@ -69,7 +69,7 @@ const SmartStoreSection = () => {
 
         <div className="relative z-10 text-center px-4 animate-fade-in">
           <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-            Transforma tu Negocio con
+            Transforma tu Negocio con nuestras
             <br />
             <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
               Tiendas Inteligentes
@@ -146,6 +146,35 @@ const SmartStoreSection = () => {
                 <div className="absolute inset-[-50%] bg-[radial-gradient(circle,rgba(102,126,234,0.2)_0%,transparent_70%)]" />
               </div>
               <span className="text-9xl relative z-10">💎</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* YouTube Learning Section */}
+      <section className="py-20 bg-white/[0.02]">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="bg-gradient-to-r from-red-500/20 to-red-600/20 border-2 border-red-500/30 rounded-3xl p-10 md:p-14">
+            <div className="flex items-start gap-6">
+              <svg className="w-16 h-16 text-red-500 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
+              </svg>
+              <div className="flex-1">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  Aprende en nuestro Canal de YouTube
+                </h3>
+                <p className="text-lg text-gray-300 mb-4 leading-relaxed">
+                  ¿Necesitas ayuda? En nuestro canal de YouTube compartimos tutoriales para <span className="font-semibold text-white">E-commerce</span> y estrategias para hacer tu vida más fácil. Desde cómo optimizar tu tienda Shopify hasta integración con IA, encontrarás todo lo que necesitas para dominar tu negocio online.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                  <span className="text-gray-400 font-medium">Nuevos videos cada semana</span>
+                  <span className="hidden sm:block w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                  <span className="text-gray-400 font-medium">Tutoriales paso a paso</span>
+                  <span className="hidden sm:block w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                  <span className="text-gray-400 font-medium">Suscríbete gratis</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
