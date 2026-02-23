@@ -105,6 +105,7 @@ const Footer = () => {
               <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Política de Privacidad</a>
               <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Términos de Servicio</a>
               <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">Política de Cookies</a>
+              <a href="/politica-compras" className="text-gray-500 hover:text-gray-400 text-sm">Política de Compras</a>
             </div>
           </div>
         </div>
