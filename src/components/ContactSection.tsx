@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Youtube } from 'lucide-react';
 
 const ContactCTA = () => {
   useEffect(() => {
@@ -112,7 +111,10 @@ const ContactCTA = () => {
             <CardContent className="p-8 lg:p-12">
               <div className="flex flex-col items-center space-y-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <Youtube className="w-12 h-12 text-red-500" />
+                  <svg className="w-12 h-12 text-red-500" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
+                  </svg>
                   <h3 className="text-3xl font-bold text-white">Canal Educativo YouTube</h3>
                 </div>
                 
@@ -199,7 +201,10 @@ const ContactCTA = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition-colors shadow-lg mt-6"
                 >
-                  <Youtube className="w-6 h-6" />
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
+                  </svg>
                   Suscríbete a Nuestro Canal
                 </a>
               </div>

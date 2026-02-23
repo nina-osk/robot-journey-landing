@@ -187,14 +187,14 @@ const Navbar = () => {
             <div className="mt-4 space-y-2 px-3">
               <Button asChild className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0">
                 <a 
-                  href="https://wa.me/34654942720" 
+                  href="https://wa.me/34641525150" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Phone className="w-4 h-4" />
-                  <span>+34 654 94 27 20</span>
+                  <span>+34 641 52 51 50</span>
                 </a>
               </Button>
               <Button asChild className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0">

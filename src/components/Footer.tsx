@@ -22,7 +22,10 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a href="#" className="text-gray-400 hover:text-[#667eea] transition-colors">
-                <Linkedin size={20} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z"></path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
               </a>
               <a href="https://www.instagram.com/robotsqueen/" className="text-gray-400 hover:text-[#667eea] transition-colors">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -62,7 +65,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-[#667eea] shrink-0 mr-3" />
-                <span className="text-gray-400">+34 654 94 27 20</span>
+                <span className="text-gray-400">+34 641 52 51 50</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-[#667eea] shrink-0 mr-3" />

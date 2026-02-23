@@ -74,9 +74,11 @@ const HeroSection = () => {
             sin perder tiempo y sin ser experto en tecnología
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Soluciones listas para usar que automatizan tu atención, ventas y gestión desde el primer día. 
+            Ofrecemos soluciones que te ayudan a automatizar tu atención, ventas y gestión desde el primer día. 
             Transformamos tu empresa a través de la tecnología, automatizaciones, ERP, kioscos inteligentes 
             y soluciones robóticas que impulsan tu crecimiento.
+            Desarrollamos agentes de inteligencia artificial personalizados y tiendas eCommerce a medida.
+            El servicio incluye análisis, desarrollo, implementación y soporte técnico.
           </p>
         </div>
 
