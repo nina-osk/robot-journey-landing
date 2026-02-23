@@ -1,5 +1,5 @@
 
-import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -25,7 +25,11 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a href="https://www.instagram.com/robotsqueen/" className="text-gray-400 hover:text-[#667eea] transition-colors">
-                <Instagram size={20} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                </svg>
               </a>
             </div>
           </div>
@@ -56,13 +60,6 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Contáctanos</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-[#667eea] shrink-0 mr-3 mt-0.5" />
-                <span className="text-gray-400">
-                  Avenida Cerro del Aguila nº2<br />
-                  Madrid, España, 27803
-                </span>
-              </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-[#667eea] shrink-0 mr-3" />
                 <span className="text-gray-400">+34 654 94 27 20</span>
@@ -70,6 +67,16 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-[#667eea] shrink-0 mr-3" />
                 <span className="text-gray-400">info@robotsconsultant.net</span>
+              </li>
+              <li className="flex items-center">
+                <a href="https://www.instagram.com/robotsqueen/" className="flex items-center text-gray-400 hover:text-[#667eea] transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#667eea] shrink-0 mr-3">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                  </svg>
+                  <span>@robotsqueen</span>
+                </a>
               </li>
             </ul>
           </div>
