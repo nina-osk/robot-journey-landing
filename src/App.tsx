@@ -18,6 +18,8 @@ import AgentesIARestaurantes from "./pages/AgentesIARestaurantes";
 import ShopifyServices from "./pages/ShopifyServices";
 import MentoriaIA from "./pages/MentoriaIA";
 import PoliticaCompras from "./pages/PoliticaCompras";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
+import PoliticaCookies from "./pages/PoliticaCookies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +45,8 @@ const App = () => (
           <Route path="/mentoria-ia" element={<MentoriaIA />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
           <Route path="/politica-compras" element={<PoliticaCompras />} />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/politica-cookies" element={<PoliticaCookies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
