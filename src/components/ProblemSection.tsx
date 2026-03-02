@@ -1,69 +1,119 @@
-import { AlertTriangle } from 'lucide-react';
+import { Settings, Clock, Package, BarChart3, Shield, Users, TrendingUp, Cpu, HeadphonesIcon } from 'lucide-react';
 
 const ProblemSection = () => {
+  const problems = [
+    {
+      icon: <Settings className="h-6 w-6 text-[#667eea]" />,
+      title: 'Caos Operativo',
+      description: 'Procesos manuales y fragmentados que generan ruido crítico en el día a día.'
+    },
+    {
+      icon: <Clock className="h-6 w-6 text-[#667eea]" />,
+      title: 'Pérdida de Tiempo',
+      description: 'Horas interminables desperdiciadas en tareas repetitivas que no aportan valor real.'
+    },
+    {
+      icon: <Package className="h-6 w-6 text-[#667eea]" />,
+      title: 'Errores de Stock',
+      description: 'Desajustes constantes en el inventario que afectan a las ventas y la rentabilidad.'
+    },
+    {
+      icon: <BarChart3 className="h-6 w-6 text-[#667eea]" />,
+      title: 'Falta de Control',
+      description: 'Incapacidad total de ver el estado real de tu negocio en tiempo real.'
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <Shield className="h-6 w-6 text-[#667eea]" />,
+      title: 'Control total',
+      description: 'Visibilidad completa de cada área operativa desde una única pantalla centralizada.'
+    },
+    {
+      icon: <Users className="h-6 w-6 text-[#667eea]" />,
+      title: 'Delegar sin miedo',
+      description: 'Crea sistemas que funcionan con total autonomía, sin necesidad de tu supervisión constante.'
+    },
+    {
+      icon: <TrendingUp className="h-6 w-6 text-[#667eea]" />,
+      title: 'Datos en tiempo real',
+      description: 'Toma decisiones estratégicas basadas en realidades tangibles, no en intuiciones.'
+    },
+    {
+      icon: <Settings className="h-6 w-6 text-[#667eea]" />,
+      title: 'Escalabilidad',
+      description: 'Estructura técnica y operativa lista para absorber el crecimiento sin colapsos.'
+    },
+    {
+      icon: <Cpu className="h-6 w-6 text-[#667eea]" />,
+      title: 'Eficiencia ERP',
+      description: 'Integración perfecta de todos tus procesos bajo un entorno digital unificado.'
+    },
+    {
+      icon: <HeadphonesIcon className="h-6 w-6 text-[#667eea]" />,
+      title: 'Soporte Estratégico',
+      description: 'Acompañamiento personalizado en cada fase de tu transformación digital.'
+    }
+  ];
+
   return (
-    <section className="py-16 bg-[#0a0a0a]">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            ¿Te sientes <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">abrumado</span> por la tecnología?
+    <>
+      {/* Problem Section */}
+      <section className="py-20 bg-[#0a0a0a]">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-14">
+            ¿Tu empresa te tiene{' '}
+            <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">atrapado</span>?
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-              Pierdes ventas, tiempo y oportunidades por no tener tu negocio automatizado.
-              <br />
-              <strong className="text-white">No estás solo. Miles de pymes enfrentan lo mismo.</strong>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {problems.map((item, i) => (
+              <div
+                key={i}
+                className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-[#667eea]/40 hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-12 h-12 mx-auto mb-4 bg-[#667eea]/10 rounded-xl flex items-center justify-center">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-white/[0.02]">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Tu negocio, bajo{' '}
+              <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">control total</span>
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl">
+              Nuestra metodología permite delegar con absoluta confianza gracias a sistemas inteligentes y datos precisos.
             </p>
           </div>
-        </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="flex-1">
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mr-4">
-                  <AlertTriangle className="h-8 w-8 text-red-400" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((item, i) => (
+              <div
+                key={i}
+                className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-[#667eea]/40 hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-10 h-10 mb-4 bg-[#667eea]/10 rounded-lg flex items-center justify-center">
+                  {item.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white">Problemas comunes</h3>
+                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
               </div>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-[#764ba2] mr-3 text-xl">•</span>
-                  <span className="text-gray-400">Gestión manual que consume horas diarias</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#764ba2] mr-3 text-xl">•</span>
-                  <span className="text-gray-400">Clientes perdidos por falta de atención inmediata</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#764ba2] mr-3 text-xl">•</span>
-                  <span className="text-gray-400">Errores en pedidos y facturación</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#764ba2] mr-3 text-xl">•</span>
-                  <span className="text-gray-400">Inventario descontrolado</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#764ba2] mr-3 text-xl">•</span>
-                  <span className="text-gray-400">Competencia con mejor tecnología</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="flex-1">
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/apps-presentation.png" 
-                alt="Empresario frustrado con papeles y tecnología"
-                className="rounded-2xl w-full h-80 object-cover border border-white/10"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 to-transparent rounded-2xl"></div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
