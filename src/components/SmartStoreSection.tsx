@@ -59,35 +59,6 @@ const SmartStoreSection = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-[#0a0a0a] overflow-hidden">
-        {/* Background gradients */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/5 w-96 h-96 bg-[#667eea]/15 rounded-full blur-3xl transform -translate-y-1/2" />
-          <div className="absolute top-1/2 right-1/5 w-96 h-96 bg-[#764ba2]/15 rounded-full blur-3xl transform -translate-y-1/2" />
-        </div>
-
-        <div className="relative z-10 text-center px-4 animate-fade-in">
-          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-            Transforma tu Negocio con nuestras
-            <br />
-            <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
-              Tiendas Inteligentes
-            </span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-            E-commerce potenciado con IA, integración completa con Shopify y Odoo, y publicidad con imágenes hiperrealistas generadas por inteligencia artificial
-          </p>
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-8 py-6 text-lg font-semibold transition-all hover:-translate-y-1"
-            onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Descubre Cómo
-          </Button>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section className="py-24 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4">
