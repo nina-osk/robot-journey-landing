@@ -203,6 +203,16 @@ const SmartStoreSection = () => {
             </div>
           </div>
 
+          {/* Precio */}
+          <div className="text-center mb-6">
+            <p className="text-sm text-gray-500 line-through mb-1">Valor real: 997€</p>
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">399€</span>
+              <span className="inline-block px-3 py-1 rounded-full bg-green-500/20 border border-green-500/40 text-green-400 text-sm font-semibold">Precio de lanzamiento</span>
+            </div>
+            <p className="text-gray-500 text-sm mt-2">Oferta por tiempo limitado</p>
+          </div>
+
           {/* CTA */}
           <div className="text-center">
             <Button
@@ -210,37 +220,52 @@ const SmartStoreSection = () => {
               className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-10 py-6 text-lg font-semibold transition-all hover:-translate-y-1"
               onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Quiero mi Agente IA Pro
+              Quiero mi Agente IA Pro — 399€
             </Button>
           </div>
         </div>
       </section>
 
       {/* YouTube Learning Section */}
-      <section className="py-20 bg-white/[0.02]">
+      <section className="py-20 bg-[#0a0a0a]">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-red-500/20 to-red-600/20 border-2 border-red-500/30 rounded-3xl p-10 md:p-14">
-            <div className="flex items-start gap-6">
-              <svg className="w-16 h-16 text-red-500 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z"></path>
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
-              </svg>
-              <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                  Aprende en nuestro Canal de YouTube
-                </h3>
-                <p className="text-lg text-gray-300 mb-4 leading-relaxed">
-                  ¿Necesitas ayuda? En nuestro canal de YouTube compartimos tutoriales para <span className="font-semibold text-white">E-commerce</span> y estrategias para hacer tu vida más fácil. Desde cómo optimizar tu tienda Shopify hasta integración con IA, encontrarás todo lo que necesitas para dominar tu negocio online.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-                  <span className="text-gray-400 font-medium">Nuevos videos cada semana</span>
-                  <span className="hidden sm:block w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                  <span className="text-gray-400 font-medium">Tutoriales paso a paso</span>
-                  <span className="hidden sm:block w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                  <span className="text-gray-400 font-medium">Suscríbete gratis</span>
-                </div>
+          <div className="text-center mb-10">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              Aprende gratis en{' '}
+              <span className="text-red-500">YouTube</span>
+            </h3>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Tutoriales, estrategias y casos reales para que domines el e-commerce con IA — aunque estés empezando.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {[
+              { icon: '🎓', title: 'Tutoriales paso a paso', desc: 'Desde crear tu agente IA hasta conectarlo con Shopify' },
+              { icon: '📈', title: 'Estrategias de venta', desc: 'Automatización, funnels y técnicas que funcionan' },
+              { icon: '🔴', title: 'Nuevos videos cada semana', desc: 'Contenido actualizado con las últimas tendencias en IA' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-red-500/30 transition-all duration-300">
+                <span className="text-4xl mb-3 block">{item.icon}</span>
+                <h4 className="text-white font-bold mb-1">{item.title}</h4>
+                <p className="text-sm text-gray-500">{item.desc}</p>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="https://www.youtube.com/@robotsconsultant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-red-600/30"
+            >
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z" />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white" />
+              </svg>
+              Suscríbete al canal
+            </a>
           </div>
         </div>
       </section>
