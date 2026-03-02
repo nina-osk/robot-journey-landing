@@ -83,41 +83,135 @@ const SmartStoreSection = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Content */}
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-                Soluciones <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">360°</span> para tu Empresa
-              </h2>
+      {/* Pack Agente IA Pro */}
+      <section className="py-24 bg-[#0a0a0a]">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-[#667eea]/20 to-[#764ba2]/20 border border-[#667eea]/30 text-sm font-medium text-[#667eea] mb-6">
+              🚀 Sistema de Agente IA para Ecommerce
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              Agente IA Pro para{' '}
+              <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Ecommerce</span>
+            </h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Implementa tu propio agente de IA en WhatsApp para vender, responder clientes y automatizar atención sin depender de agencias ni técnicos.
+            </p>
+          </div>
 
+          {/* 3 Pilares */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {/* Pilar 1 */}
+            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-[#667eea]/40 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl flex items-center justify-center text-2xl mb-5">📋</div>
+              <h3 className="text-xl font-bold text-white mb-2">Arquitectura Conversacional</h3>
+              <p className="text-sm text-gray-500 mb-4">Plantillas estratégicas optimizadas para ventas</p>
               <div className="space-y-4">
-                {services.map((service, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start p-5 rounded-2xl transition-all duration-300 hover:bg-white/[0.03]"
-                  >
-                    <span className="text-3xl font-bold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent mr-5 min-w-[50px]">
-                      {service.number}
-                    </span>
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-2">{service.title}</h4>
-                      <p className="text-gray-400">{service.description}</p>
-                    </div>
-                  </div>
-                ))}
+                <div>
+                  <h4 className="text-sm font-semibold text-[#667eea] mb-2">Módulo Ventas</h4>
+                  <ul className="space-y-1.5 text-sm text-gray-400">
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Flujos de bienvenida</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Respuestas para objeciones</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Recuperación de carrito</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Cross-selling / Upselling</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-[#667eea] mb-2">Módulo Atención al Cliente</h4>
+                  <ul className="space-y-1.5 text-sm text-gray-400">
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Atención automatizada 24/7</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Psicología de venta aplicada</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-[#667eea] mb-2">Módulo Postventa</h4>
+                  <ul className="space-y-1.5 text-sm text-gray-400">
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Seguimiento post-compra</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Fidelización automatizada</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            {/* Visual */}
-            <div className="flex-1 h-[500px] bg-gradient-to-br from-[#667eea]/10 to-[#764ba2]/10 rounded-3xl border border-white/10 flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 animate-spin-slow">
-                <div className="absolute inset-[-50%] bg-[radial-gradient(circle,rgba(102,126,234,0.2)_0%,transparent_70%)]" />
-              </div>
-              <span className="text-9xl relative z-10">💎</span>
+            {/* Pilar 2 */}
+            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-[#667eea]/40 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl flex items-center justify-center text-2xl mb-5">🎥</div>
+              <h3 className="text-xl font-bold text-white mb-2">Implementación Técnica Guiada</h3>
+              <p className="text-sm text-gray-500 mb-4">Videos paso a paso — sin fricción</p>
+              <ul className="space-y-2.5 text-sm text-gray-400">
+                <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Cómo crear el agente IA</li>
+                <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Cómo conectarlo a WhatsApp</li>
+                <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Cómo entrenarlo con tus datos</li>
+                <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Integración con Shopify / WooCommerce</li>
+                <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Cómo testearlo antes de lanzar</li>
+                <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">✔️</span>Optimización de respuestas</li>
+              </ul>
             </div>
+
+            {/* Pilar 3 */}
+            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-[#667eea]/40 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl flex items-center justify-center text-2xl mb-5">🧠</div>
+              <h3 className="text-xl font-bold text-white mb-2">2 Sesiones Estratégicas 1:1</h3>
+              <p className="text-sm text-gray-500 mb-4">Consultoría personalizada para tu negocio</p>
+              <div className="space-y-4">
+                <div className="bg-white/[0.03] rounded-xl p-4 border border-white/5">
+                  <h4 className="text-sm font-semibold text-white mb-2">Sesión 1: Diseño del Sistema</h4>
+                  <ul className="space-y-1.5 text-sm text-gray-400">
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">•</span>Definimos objetivos</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">•</span>Revisamos flujo de ventas</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">•</span>Adaptamos plantillas a tu negocio</li>
+                  </ul>
+                </div>
+                <div className="bg-white/[0.03] rounded-xl p-4 border border-white/5">
+                  <h4 className="text-sm font-semibold text-white mb-2">Sesión 2: Optimización</h4>
+                  <ul className="space-y-1.5 text-sm text-gray-400">
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">•</span>Revisamos métricas</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">•</span>Mejoramos prompts</li>
+                    <li className="flex items-start gap-2"><span className="text-[#667eea] mt-0.5">•</span>Detectamos oportunidades</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Ideal para */}
+          <div className="bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 border border-[#667eea]/20 rounded-2xl p-8 md:p-10 mb-16">
+            <h3 className="text-xl font-bold text-white mb-5">🎯 Ideal para ecommerce que:</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-3 text-gray-300">
+                <span className="w-2 h-2 bg-[#667eea] rounded-full flex-shrink-0" />Ya venden online
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <span className="w-2 h-2 bg-[#667eea] rounded-full flex-shrink-0" />Tienen volumen de mensajes en WhatsApp
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <span className="w-2 h-2 bg-[#667eea] rounded-full flex-shrink-0" />Quieren escalar sin contratar más equipo
+              </div>
+            </div>
+          </div>
+
+          {/* Bonus */}
+          <div className="mb-16">
+            <h3 className="text-lg font-bold text-white mb-5">🔥 Bonus incluidos</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+              {['Checklist de optimización', 'Banco de prompts optimizados', 'Mini módulo de métricas', 'Acceso a actualizaciones', 'Comunidad privada'].map((bonus, i) => (
+                <div key={i} className="bg-white/[0.04] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-300 text-center">
+                  {bonus}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-10 py-6 text-lg font-semibold transition-all hover:-translate-y-1"
+              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Quiero mi Agente IA Pro
+            </Button>
           </div>
         </div>
       </section>
