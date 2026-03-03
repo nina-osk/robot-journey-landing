@@ -31,29 +31,32 @@ const TransformacionDigital = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-foreground/20" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#667eea]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#764ba2]/10 rounded-full blur-3xl" />
+        </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
               Transforma tu Empresa en 90 Días
             </span>
             <br />
             con Odoo + Automatización IA
           </h1>
           
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-blue-100 font-light mb-8 max-w-4xl mx-auto">
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 font-light mb-8 max-w-4xl mx-auto">
             Implementamos Odoo ERP, automatizamos tus procesos con IA (Make o n8n) y te proporcionamos toda la infraestructura tecnológica. 
             Una solución completa para empresas que quieren liderar su industria.
           </h2>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-8 max-w-4xl mx-auto">
-            <p className="text-lg md:text-xl text-gray-200 mb-6">
+          <div className="bg-[#0a0a0a]/[0.05] border border-white/10 backdrop-blur-md rounded-2xl p-8 mb-8 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-300 mb-6">
               ¿Cansado de perder tiempo en tareas repetitivas mientras tus competidores avanzan más rápido?
             </p>
             <p className="text-base md:text-lg text-gray-300 mb-8">
@@ -84,7 +87,7 @@ const TransformacionDigital = () => {
 
           <Button
             onClick={scrollToCalendly}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 rounded-xl text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 mb-4"
+            className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white px-8 py-6 rounded-xl text-lg font-semibold border-0 transition-all duration-300 transform hover:scale-105 mb-4"
           >
             SOLICITA TU CONSULTA GRATUITA - Ahorra $50,000+ al Año
           </Button>
@@ -96,39 +99,39 @@ const TransformacionDigital = () => {
       </section>
 
       {/* Problema/Agitación Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-white/[0.03] to-white/[0.03]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               ¿Tu Empresa Sigue Perdiendo Dinero por Procesos Obsoletos?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               Cada día que tu empresa opera con sistemas desconectados y procesos manuales, estás perdiendo:
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <Card className="bg-white shadow-lg">
+            <Card className="bg-[#0a0a0a] transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-6 text-center">
                 <DollarSign className="w-12 h-12 text-red-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">$2,000-5,000 mensuales</h3>
-                <p className="text-gray-600">en errores humanos y reprocesos</p>
+                <p className="text-gray-400">en errores humanos y reprocesos</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-white shadow-lg">
+            <Card className="bg-[#0a0a0a] transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-6 text-center">
                 <Clock className="w-12 h-12 text-red-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">40+ horas semanales</h3>
-                <p className="text-gray-600">de tu equipo en tareas repetitivas</p>
+                <p className="text-gray-400">de tu equipo en tareas repetitivas</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-white shadow-lg">
+            <Card className="bg-[#0a0a0a] transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-6 text-center">
                 <Users className="w-12 h-12 text-red-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Clientes potenciales</h3>
-                <p className="text-gray-600">por respuestas lentas y desorganización</p>
+                <p className="text-gray-400">por respuestas lentas y desorganización</p>
               </CardContent>
             </Card>
           </div>
@@ -150,10 +153,10 @@ const TransformacionDigital = () => {
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               La Única Plataforma que Necesitas para Automatizar Completamente tu Empresa
             </h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
               Combinamos el poder de Odoo ERP con automatización inteligente y la infraestructura más avanzada 
               para crear el sistema empresarial del futuro.
             </p>
@@ -162,33 +165,33 @@ const TransformacionDigital = () => {
           {/* Tres Pilares */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Pilar 1: Odoo ERP */}
-            <Card className="bg-white shadow-xl">
+            <Card className="bg-[#0a0a0a] shadow-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <Building2 className="w-16 h-16 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold mb-2">PILAR 1: ODOO ERP COMPLETO</h3>
-                  <p className="text-gray-600">Tu centro de comando empresarial</p>
+                  <p className="text-gray-400">Tu centro de comando empresarial</p>
                 </div>
                 
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3 mt-0.5 flex-shrink-0" />
                     <span><strong>CRM Avanzado:</strong> Gestión completa de clientes y ventas</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3 mt-0.5 flex-shrink-0" />
                     <span><strong>Inventario Inteligente:</strong> Control automático de stock y compras</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3 mt-0.5 flex-shrink-0" />
                     <span><strong>Contabilidad Integrada:</strong> Facturación y reportes financieros en tiempo real</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3 mt-0.5 flex-shrink-0" />
                     <span><strong>RRHH y Nómina:</strong> Gestión completa de personal</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3 mt-0.5 flex-shrink-0" />
                     <span><strong>E-commerce:</strong> Tienda online integrada con todo el sistema</span>
                   </li>
                 </ul>
@@ -202,12 +205,12 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Pilar 2: Automatización IA */}
-            <Card className="bg-white shadow-xl">
+            <Card className="bg-[#0a0a0a] shadow-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <Cpu className="w-16 h-16 text-purple-600 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold mb-2">PILAR 2: AUTOMATIZACIÓN IA</h3>
-                  <p className="text-gray-600">Tu equipo de trabajo digital 24/7</p>
+                  <p className="text-gray-400">Tu equipo de trabajo digital 24/7</p>
                 </div>
                 
                 <ul className="space-y-3">
@@ -242,12 +245,12 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Pilar 3: Infraestructura */}
-            <Card className="bg-white shadow-xl">
+            <Card className="bg-[#0a0a0a] shadow-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
-                  <Cloud className="w-16 h-16 text-green-600 mx-auto mb-4" />
+                  <Cloud className="w-16 h-16 text-[#667eea] mx-auto mb-4" />
                   <h3 className="text-2xl font-bold mb-2">PILAR 3: INFRAESTRUCTURA IA</h3>
-                  <p className="text-gray-600">La base tecnológica que necesitas</p>
+                  <p className="text-gray-400">La base tecnológica que necesitas</p>
                 </div>
                 
                 <ul className="space-y-3">
@@ -285,35 +288,35 @@ const TransformacionDigital = () => {
       </section>
 
       {/* Beneficios/Transformación Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Los Resultados que Obtienes en los Primeros 90 Días
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {/* Impacto Financiero */}
-            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 shadow-lg">
+            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
-                <DollarSign className="w-12 h-12 text-green-600 mb-4" />
+                <DollarSign className="w-12 h-12 text-[#667eea] mb-4" />
                 <h3 className="text-2xl font-bold mb-4 text-green-800">IMPACTO FINANCIERO</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center">
-                    <TrendingUp className="w-5 h-5 text-green-600 mr-3" />
+                    <TrendingUp className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Ahorro de $50,000+/año en costos operativos</span>
                   </li>
                   <li className="flex items-center">
-                    <TrendingUp className="w-5 h-5 text-green-600 mr-3" />
+                    <TrendingUp className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Incremento del 35% en eficiencia de ventas</span>
                   </li>
                   <li className="flex items-center">
-                    <TrendingUp className="w-5 h-5 text-green-600 mr-3" />
+                    <TrendingUp className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Reducción del 80% en errores administrativos</span>
                   </li>
                   <li className="flex items-center">
-                    <TrendingUp className="w-5 h-5 text-green-600 mr-3" />
+                    <TrendingUp className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>ROI del 400% en el primer año</span>
                   </li>
                 </ul>
@@ -321,7 +324,7 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Impacto Operativo */}
-            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 shadow-lg">
+            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <Zap className="w-12 h-12 text-blue-600 mb-4" />
                 <h3 className="text-2xl font-bold mb-4 text-blue-800">IMPACTO OPERATIVO</h3>
@@ -347,7 +350,7 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Impacto Estratégico */}
-            <Card className="bg-gradient-to-br from-purple-50 to-pink-50 shadow-lg">
+            <Card className="bg-gradient-to-br from-white/[0.03] to-white/[0.03] transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <Target className="w-12 h-12 text-purple-600 mb-4" />
                 <h3 className="text-2xl font-bold mb-4 text-purple-800">IMPACTO ESTRATÉGICO</h3>
@@ -408,18 +411,18 @@ const TransformacionDigital = () => {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Invierte Menos de lo que Gastas en un Empleado y Obtén el Poder de 20
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Paquete Starter */}
-            <Card className="bg-white shadow-xl">
+            <Card className="bg-[#0a0a0a] shadow-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">PAQUETE STARTER</h3>
-                  <p className="text-gray-600">Para empresas de 1-5 empleados</p>
+                  <p className="text-gray-400">Para empresas de 1-5 empleados</p>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-blue-600">Desde 2,000</span>
                     <span className="text-gray-500"> EUR</span>
@@ -429,30 +432,30 @@ const TransformacionDigital = () => {
                 
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Odoo ERP completo (5 módulos principales opcional -Adicional)</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>2 automatizaciones básicas con IA</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Infraestructura cloud básica</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Implementación en 30 días</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>3 meses de soporte incluido</span>
                   </li>
                 </ul>
                 
                 <Button 
                   onClick={scrollToCalendly}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:bg-blue-700 text-white"
                 >
                   Comenzar Ahora
                 </Button>
@@ -460,7 +463,7 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Paquete Professional - Más Popular */}
-            <Card className="bg-white shadow-2xl border-4 border-blue-500 relative">
+            <Card className="bg-[#0a0a0a] shadow-2xl border-4 border-white/500 relative bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold">
                   ⭐ MÁS POPULAR
@@ -469,7 +472,7 @@ const TransformacionDigital = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">PAQUETE PROFESSIONAL</h3>
-                  <p className="text-gray-600">Para empresas de 5-10 empleados</p>
+                  <p className="text-gray-400">Para empresas de 5-10 empleados</p>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-blue-600">Desde 5,000</span>
                     <span className="text-gray-500"> EUR</span>
@@ -479,30 +482,30 @@ const TransformacionDigital = () => {
                 
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Todo del Starter +</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Odoo ERP avanzado (módulos ilimitados)</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>10 automatizaciones avanzadas con IA</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Infraestructura cloud premium</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>6 meses de soporte premium</span>
                   </li>
                 </ul>
                 
                 <Button 
                   onClick={scrollToCalendly}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                  className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-blue-700 hover:to-purple-700 text-white"
                 >
                   Elegir Professional
                 </Button>
@@ -510,11 +513,11 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Paquete Enterprise */}
-            <Card className="bg-white shadow-xl">
+            <Card className="bg-[#0a0a0a] shadow-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">PAQUETE ENTERPRISE</h3>
-                  <p className="text-gray-600">Para empresas de 10+ empleados</p>
+                  <p className="text-gray-400">Para empresas de 10+ empleados</p>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-blue-600">Consultar</span>
                     <span className="text-gray-500"> EUR</span>
@@ -524,27 +527,27 @@ const TransformacionDigital = () => {
                 
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Todo del Professional +</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Personalización completa sin límites</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Automatizaciones ilimitadas y IA avanzada</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Infraestructura dedicada de clase mundial</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>12 meses de soporte enterprise</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-[#667eea] mr-3" />
                     <span>Consultor dedicado permanente</span>
                   </li>
                 </ul>
@@ -562,17 +565,17 @@ const TransformacionDigital = () => {
       </section>
 
       {/* Casos de Éxito Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.03]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Empresas Reales, Resultados Reales, Transformaciones Reales
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Caso 1 */}
-            <Card className="bg-white shadow-lg">
+            <Card className="bg-[#0a0a0a] transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -580,28 +583,28 @@ const TransformacionDigital = () => {
                   ))}
                 </div>
                 <h3 className="text-xl font-bold mb-2">Distribuidora Regional</h3>
-                <p className="text-gray-600 mb-4">15 empleados - Alimentos</p>
+                <p className="text-gray-400 mb-4">15 empleados - Alimentos</p>
                 
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Reducción de 60% en procesamiento de pedidos</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Incremento de 45% en ventas</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Ahorro en costos</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Zero errores en facturación</span>
                   </div>
                 </div>
                 
-                <blockquote className="text-sm italic text-gray-700 border-l-4 border-blue-500 pl-4">
+                <blockquote className="text-sm italic text-gray-300 border-l-4 border-white/500 pl-4">
                   "Pasamos de procesar 50 pedidos diarios a 200, con la mitad del equipo administrativo"
                 </blockquote>
                 <p className="text-xs text-gray-500 mt-2">- Director de Operaciones</p>
@@ -609,7 +612,7 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Caso 2 */}
-            <Card className="bg-white shadow-lg">
+            <Card className="bg-[#0a0a0a] transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -620,21 +623,21 @@ const TransformacionDigital = () => {
     
                 
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Optimización de 35% en inventario</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Satisfacción del cliente 95%</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Reducción 50% desperdicio de alimentos</span>
                   </div>
                 </div>
                 
-                <blockquote className="text-sm italic text-gray-700 border-l-4 border-blue-500 pl-4">
+                <blockquote className="text-sm italic text-gray-300 border-l-4 border-white/500 pl-4">
                   "La IA predice exactamente qué y cuánto necesitamos cada día. Nunca habíamos sido tan eficientes"
                 </blockquote>
                 <p className="text-xs text-gray-500 mt-2">- CEO</p>
@@ -642,7 +645,7 @@ const TransformacionDigital = () => {
             </Card>
 
             {/* Caso 3 */}
-            <Card className="bg-white shadow-lg">
+            <Card className="bg-[#0a0a0a] transition-all bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -650,28 +653,28 @@ const TransformacionDigital = () => {
                   ))}
                 </div>
                 <h3 className="text-xl font-bold mb-2">Empresa de Servicios</h3>
-                <p className="text-gray-600 mb-4">7 empleados - Consultoría</p>
+                <p className="text-gray-400 mb-4">7 empleados - Consultoría</p>
                 
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Incremento 80% en productividad</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Reducción 90% tareas administrativas</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Crecimiento 65% en facturación</span>
                   </div>
-                  <div className="flex items-center text-green-600">
+                  <div className="flex items-center text-[#667eea]">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     <span className="text-sm">Perfect score satisfacción cliente</span>
                   </div>
                 </div>
                 
-                <blockquote className="text-sm italic text-gray-700 border-l-4 border-blue-500 pl-4">
+                <blockquote className="text-sm italic text-gray-300 border-l-4 border-white/500 pl-4">
                   "Ahora nuestro equipo se enfoca 100% en generar valor para clientes. La automatización maneja todo lo demás"
                 </blockquote>
                 <p className="text-xs text-gray-500 mt-2">- Fundador</p>
@@ -688,7 +691,7 @@ const TransformacionDigital = () => {
             Tu Empresa Puede Seguir Igual... o Puede Liderar su Industria
           </h2>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-8">
+          <div className="bg-[#0a0a0a]/10 backdrop-blur-md rounded-2xl p-8 mb-8">
             <p className="text-xl mb-6">
               La decisión que tomes hoy definirá el futuro de tu empresa.
             </p>
@@ -704,7 +707,7 @@ const TransformacionDigital = () => {
           
           <Button
             onClick={scrollToCalendly}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-2xl font-bold rounded-xl transform hover:scale-105 transition-all duration-300 mb-8"
+            className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-2xl font-bold rounded-xl transform hover:scale-105 transition-all duration-300 mb-8"
           >
             🚀 SÍ, QUIERO TRANSFORMAR MI EMPRESA AHORA
           </Button>
@@ -720,22 +723,22 @@ const TransformacionDigital = () => {
       </section>
 
       {/* Calendly Section */}
-      <section id="calendly-section" className="py-20 bg-white">
+      <section id="calendly-section" className="py-20 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Agenda Tu Consulta Gratuita
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-400">
               Hablemos sobre cómo transformar tu empresa en los próximos 90 días
             </p>
           </div>
           
           <div className="bg-gray-100 rounded-2xl p-8 text-center">
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-300 mb-4">
               📅 Calendly Widget se cargará aquí
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-400">
               Selecciona el horario que mejor te convenga para tu consulta personalizada
             </p>
           </div>

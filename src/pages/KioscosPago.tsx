@@ -17,22 +17,22 @@ const PacksPorSector = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
       <div className="pt-20">
         {/* Header Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 transition-colors">
+            <Link to="/" className="inline-flex items-center text-[#667eea] hover:text-blue-700 mb-8 transition-colors">
               <ArrowLeft className="mr-2 h-5 w-5" />
               Volver al inicio
             </Link>
             
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 🧩 Soluciones por tipo de negocio
               </h1>
-              <div className="max-w-4xl mx-auto space-y-4 text-lg text-gray-600">
+              <div className="max-w-4xl mx-auto space-y-4 text-lg text-gray-400">
                 <p>
                   <strong>Otros negocios se están digitalizando y tú te sientes estancado y sin tiempo.</strong>
                 </p>
@@ -53,11 +53,11 @@ const PacksPorSector = () => {
         </section>
 
         {/* Packs Grid Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8">
               {/* Pack Restaurantes */}
-              <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-green-400 bg-gradient-to-br from-green-50 to-emerald-50">
+              <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-green-400 bg-gradient-to-br from-green-50 to-emerald-50 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
                 <CardHeader className="text-center">
                   <div className="text-6xl mb-4">🍽️</div>
                   <CardTitle className="text-2xl font-bold text-green-800">
@@ -66,35 +66,35 @@ const PacksPorSector = () => {
                   <CardDescription className="text-lg font-semibold text-green-700">
                     Supervivencia Rentable para Restaurantes
                   </CardDescription>
-                  <p className="text-green-600 mt-2">
+                  <p className="text-[#667eea] mt-2">
                     Automatiza pedidos, atención y gestión sin depender del dueño.
                   </p>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>TPV + cocina + menú QR</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>WhatsApp Bot</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Gestión de mesas</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Sistema de fidelización</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Reservas y reportes</span>
                     </div>
                   </div>
                   <Button 
-                    className="w-full bg-green-600 hover:bg-green-700"
+                    className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40"
                     onClick={() => scrollToSection('pack-restaurantes')}
                   >
                     Ver detalles
@@ -103,7 +103,7 @@ const PacksPorSector = () => {
               </Card>
 
               {/* Pack Hoteles */}
-              <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-400 bg-gradient-to-br from-blue-50 to-sky-50">
+              <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-400 bg-gradient-to-br from-blue-50 to-sky-50 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
                 <CardHeader className="text-center">
                   <div className="text-6xl mb-4">🏨</div>
                   <CardTitle className="text-2xl font-bold text-blue-800">
@@ -112,43 +112,43 @@ const PacksPorSector = () => {
                   <CardDescription className="text-lg font-semibold text-blue-700">
                     Supervivencia Rentable para Hoteles
                   </CardDescription>
-                  <p className="text-blue-600 mt-2">
+                  <p className="text-[#667eea] mt-2">
                     Moderniza la recepción, reservas y atención al huésped.
                   </p>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Motor de reservas + check-in digital</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>WhatsApp Bot</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Sistema de fidelización</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Gestión de reservas y servicios</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Facturación integrada</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Portal del huésped</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#667eea] mr-3" />
                       <span>Gestión interna y reportes</span>
                     </div>
                   </div>
                   <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700"
+                    className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40"
                     onClick={() => scrollToSection('pack-hoteles')}
                   >
                     Ver detalles
@@ -157,7 +157,7 @@ const PacksPorSector = () => {
               </Card>
 
               {/* Pack eCommerce */}
-              <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50">
+              <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-yellow-400 bg-gradient-to-br from-yellow-50 to-white/[0.03] bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
                 <CardHeader className="text-center">
                   <div className="text-6xl mb-4">🛒</div>
                   <CardTitle className="text-2xl font-bold text-orange-800">
@@ -166,43 +166,43 @@ const PacksPorSector = () => {
                   <CardDescription className="text-lg font-semibold text-orange-700">
                     Supervivencia Rentable para eCommerce
                   </CardDescription>
-                  <p className="text-orange-600 mt-2">
+                  <p className="text-[#764ba2] mt-2">
                     Automatiza ventas, atención, pagos y envíos para escalar.
                   </p>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#764ba2] mr-3" />
                       <span>Tienda online profesional</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#764ba2] mr-3" />
                       <span>WhatsApp Bot</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#764ba2] mr-3" />
                       <span>Gestión de stock</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#764ba2] mr-3" />
                       <span>CRM Integrado</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#764ba2] mr-3" />
                       <span>E-commerce conectado</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#764ba2] mr-3" />
                       <span>Sistema de fidelización</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-[#764ba2] mr-3" />
                       <span>Integración con pagos y envíos</span>
                     </div>
                   </div>
                   <Button 
-                    className="w-full bg-orange-600 hover:bg-orange-700"
+                    className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40"
                     onClick={() => scrollToSection('pack-ecommerce')}
                   >
                     Ver detalles
@@ -227,14 +227,14 @@ const PacksPorSector = () => {
                 Transforma tu restaurante en una operación eficiente y automatizada que mejora la experiencia del cliente, 
                 reduce errores y aumenta la rentabilidad… sin depender de ti todo el tiempo.
               </p>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold">
+              <Button className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white px-8 py-4 text-lg font-semibold">
                 👉 Quiero digitalizar mi restaurante ahora
               </Button>
             </div>
 
             {/* Problemas */}
             <div className="grid lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center">
                   😩 ¿Te suena familiar?
                 </h3>
@@ -270,43 +270,43 @@ const PacksPorSector = () => {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-green-600 mb-6 flex items-center">
+              <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl">
+                <h3 className="text-2xl font-bold text-[#667eea] mb-6 flex items-center">
                   ✅ Tenemos la solución perfecta para ti
                 </h3>
                 <div className="mb-6">
                   <h4 className="text-xl font-semibold text-green-700 mb-4">Pack de Digitalización para Restaurantes</h4>
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-gray-300 mb-4">
                     Automatiza tu atención, ventas y gestión con herramientas simples, efectivas y listas para usar.
                   </p>
-                  <div className="text-sm font-semibold text-green-600 mb-4">Incluye:</div>
+                  <div className="text-sm font-semibold text-[#667eea] mb-4">Incluye:</div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                       <span>TPV conectado con cocina y caja.</span>
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                       <span>Menú digital con código QR.</span>
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                       <span>Pedidos automatizados por WhatsApp.</span>
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                       <span>Gestión de reservas y entregas.</span>
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                       <span>Control de inventario y compras.</span>
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                       <span>Reportes de ventas en tiempo real.</span>
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                       <span>Integración con Odoo + Make/n8n.</span>
                     </li>
                   </ul>
@@ -315,8 +315,8 @@ const PacksPorSector = () => {
             </div>
 
             {/* Testimonios */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 💬 Lo que dicen nuestros clientes
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
@@ -326,11 +326,11 @@ const PacksPorSector = () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-4">
+                  <p className="text-gray-300 italic mb-4">
                     "Antes tenía que estar en el restaurante todo el día. Ahora todo fluye solo. 
                     Las reservas, los pedidos, la caja… ¡hasta los reportes me llegan al móvil!"
                   </p>
-                  <p className="font-semibold text-green-600">— Laura, dueña de restaurante en Valencia</p>
+                  <p className="font-semibold text-[#667eea]">— Laura, dueña de restaurante en Valencia</p>
                 </div>
                 <div className="text-center">
                   <div className="flex justify-center mb-4">
@@ -338,16 +338,16 @@ const PacksPorSector = () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-4">
+                  <p className="text-gray-300 italic mb-4">
                     "Automatizamos la atención por WhatsApp y aumentamos las ventas un 30% en dos meses."
                   </p>
-                  <p className="font-semibold text-green-600">— Carlos, restaurante de comida rápida en Madrid</p>
+                  <p className="font-semibold text-[#667eea]">— Carlos, restaurante de comida rápida en Madrid</p>
                 </div>
               </div>
             </div>
 
             {/* Por qué elegirnos */}
-            <div className="bg-green-600 text-white rounded-2xl p-8 shadow-xl mb-16">
+            <div className="bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-2xl p-8 shadow-xl mb-16">
               <h3 className="text-2xl font-bold text-center mb-8">
                 🎯 ¿Por qué elegirnos?
               </h3>
@@ -376,8 +376,8 @@ const PacksPorSector = () => {
             </div>
 
             {/* Tabla de funciones */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 📦 ¿Qué incluye el Pack "Supervivencia Rentable"?
               </h3>
               <div className="overflow-x-auto">
@@ -419,22 +419,22 @@ const PacksPorSector = () => {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 ❓ Preguntas Frecuentes
               </h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Necesito saber de tecnología?</h4>
-                  <p className="text-gray-700">No. Nosotros lo dejamos todo listo para que solo tengas que usarlo.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Necesito saber de tecnología?</h4>
+                  <p className="text-gray-300">No. Nosotros lo dejamos todo listo para que solo tengas que usarlo.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Cuánto tarda la instalación?</h4>
-                  <p className="text-gray-700">Desde 3 a 7 días, dependiendo del tamaño de tu restaurante.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Cuánto tarda la instalación?</h4>
+                  <p className="text-gray-300">Desde 3 a 7 días, dependiendo del tamaño de tu restaurante.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Puedo pagar en cuotas?</h4>
-                  <p className="text-gray-700">Sí, ofrecemos opciones de financiación.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Puedo pagar en cuotas?</h4>
+                  <p className="text-gray-300">Sí, ofrecemos opciones de financiación.</p>
                 </div>
               </div>
             </div>
@@ -447,7 +447,7 @@ const PacksPorSector = () => {
               <p className="text-green-100 mb-6">
                 Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
               </p>
-              <Button className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+              <Button className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 👉 Solicitar diagnóstico gratuito
               </Button>
             </div>
@@ -466,14 +466,14 @@ const PacksPorSector = () => {
                 Transforma tu eCommerce en una plataforma profesional que integra ventas, atención, pagos y envíos,
                 para escalar sin perder tiempo en tareas manuales ni depender de terceros.
               </p>
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg font-semibold">
+              <Button className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white px-8 py-4 text-lg font-semibold">
                 👉 Quiero automatizar mi tienda ahora
               </Button>
             </div>
 
             {/* Problemas y Soluciones */}
             <div className="grid lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold text-red-600 mb-6">
                   😩 ¿Tu tienda enfrenta estos problemas?
                 </h3>
@@ -505,37 +505,37 @@ const PacksPorSector = () => {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-orange-600 mb-6">
+              <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl">
+                <h3 className="text-2xl font-bold text-[#764ba2] mb-6">
                   ✅ Solución lista para escalar: Pack de Digitalización para eCommerce
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-300 mb-4">
                   Automatiza tu tienda online con herramientas que trabajan por ti, mientras tú te enfocas en vender más.
                 </p>
-                <div className="text-sm font-semibold text-orange-600 mb-4">Incluye:</div>
+                <div className="text-sm font-semibold text-[#764ba2] mb-4">Incluye:</div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#764ba2] mr-2" />
                     <span>Tienda online profesional con diseño responsive.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#764ba2] mr-2" />
                     <span>Atención automatizada por WhatsApp.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#764ba2] mr-2" />
                     <span>Integración con pasarelas de pago y envíos.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#764ba2] mr-2" />
                     <span>Gestión de productos, stock y pedidos.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#764ba2] mr-2" />
                     <span>Facturación automática y reportes de ventas.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#764ba2] mr-2" />
                     <span>Integración con Odoo + Make/n8n.</span>
                   </li>
                 </ul>
@@ -543,8 +543,8 @@ const PacksPorSector = () => {
             </div>
 
             {/* Testimonios */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 💬 Lo que dicen nuestros clientes
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
@@ -554,10 +554,10 @@ const PacksPorSector = () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-4">
+                  <p className="text-gray-300 italic mb-4">
                     "Antes tenía que hacer todo manual. Ahora los pedidos se procesan solos, los pagos se confirman y los envíos se gestionan automáticamente."
                   </p>
-                  <p className="font-semibold text-orange-600">— Lucía, tienda de cosmética natural</p>
+                  <p className="font-semibold text-[#764ba2]">— Lucía, tienda de cosmética natural</p>
                 </div>
                 <div className="text-center">
                   <div className="flex justify-center mb-4">
@@ -565,16 +565,16 @@ const PacksPorSector = () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-4">
+                  <p className="text-gray-300 italic mb-4">
                     "Automatizamos la atención por WhatsApp y duplicamos las conversiones en menos de un mes."
                   </p>
-                  <p className="font-semibold text-orange-600">— David, tienda de gadgets tecnológicos</p>
+                  <p className="font-semibold text-[#764ba2]">— David, tienda de gadgets tecnológicos</p>
                 </div>
               </div>
             </div>
 
             {/* Por qué elegirnos */}
-            <div className="bg-orange-600 text-white rounded-2xl p-8 shadow-xl mb-16">
+            <div className="bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-2xl p-8 shadow-xl mb-16">
               <h3 className="text-2xl font-bold text-center mb-8">
                 🎯 ¿Por qué elegirnos?
               </h3>
@@ -603,8 +603,8 @@ const PacksPorSector = () => {
             </div>
 
             {/* Tabla de funciones */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 📦 ¿Qué incluye el Pack "Supervivencia Rentable" para eCommerce?
               </h3>
               <div className="overflow-x-auto">
@@ -646,22 +646,22 @@ const PacksPorSector = () => {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 ❓ Preguntas Frecuentes
               </h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Necesito saber de tecnología?</h4>
-                  <p className="text-gray-700">No. Nosotros lo dejamos todo listo para que solo tengas que usarlo.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Necesito saber de tecnología?</h4>
+                  <p className="text-gray-300">No. Nosotros lo dejamos todo listo para que solo tengas que usarlo.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Cuánto tarda la instalación?</h4>
-                  <p className="text-gray-700">Desde 3 a 7 días, dependiendo del tamaño de tu catálogo.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Cuánto tarda la instalación?</h4>
+                  <p className="text-gray-300">Desde 3 a 7 días, dependiendo del tamaño de tu catálogo.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Puedo pagar en cuotas?</h4>
-                  <p className="text-gray-700">Sí, ofrecemos opciones de financiación.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Puedo pagar en cuotas?</h4>
+                  <p className="text-gray-300">Sí, ofrecemos opciones de financiación.</p>
                 </div>
               </div>
             </div>
@@ -673,7 +673,7 @@ const PacksPorSector = () => {
               <p className="text-orange-100 mb-6">
                 Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
               </p>
-              <Button className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+              <Button className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] text-[#764ba2] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 👉 Solicitar diagnóstico gratuito
               </Button>
             </div>
@@ -692,14 +692,14 @@ const PacksPorSector = () => {
                 Automatiza la recepción, reservas y atención al huésped para ofrecer una experiencia moderna y fluida,
                 mientras optimizas la gestión interna sin depender de expertos ni perder tiempo.
               </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold">
+              <Button className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white px-8 py-4 text-lg font-semibold">
                 👉 Quiero modernizar mi hotel ahora
               </Button>
             </div>
 
             {/* Problemas y Soluciones */}
             <div className="grid lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold text-red-600 mb-6">
                   😩 ¿Tu hotel enfrenta estos problemas?
                 </h3>
@@ -735,37 +735,37 @@ const PacksPorSector = () => {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-blue-600 mb-6">
+              <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl">
+                <h3 className="text-2xl font-bold text-[#667eea] mb-6">
                   ✅ Solución lista para usar: Pack de Digitalización para Hoteles
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-300 mb-4">
                   Automatiza tu hotel desde la recepción hasta la gestión interna con herramientas simples, efectivas y adaptadas a tu tamaño.
                 </p>
-                <div className="text-sm font-semibold text-blue-600 mb-4">Incluye:</div>
+                <div className="text-sm font-semibold text-[#667eea] mb-4">Incluye:</div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                     <span>Motor de reservas online integrado.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                     <span>Atención automatizada por WhatsApp.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                     <span>Check-in y check-out digital.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                     <span>Gestión de habitaciones, limpieza y mantenimiento.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                     <span>Facturación automática y reportes en tiempo real.</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                     <span>Integración con Odoo + Make/n8n.</span>
                   </li>
                 </ul>
@@ -773,8 +773,8 @@ const PacksPorSector = () => {
             </div>
 
             {/* Testimonios */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 💬 Lo que dicen nuestros clientes
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
@@ -784,10 +784,10 @@ const PacksPorSector = () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-4">
+                  <p className="text-gray-300 italic mb-4">
                     "Ahora los huéspedes reservan online, reciben atención por WhatsApp y hacen check-in sin pasar por recepción. ¡Mi hotel parece de 5 estrellas!"
                   </p>
-                  <p className="font-semibold text-blue-600">— Ana, hotel boutique en Málaga</p>
+                  <p className="font-semibold text-[#667eea]">— Ana, hotel boutique en Málaga</p>
                 </div>
                 <div className="text-center">
                   <div className="flex justify-center mb-4">
@@ -795,16 +795,16 @@ const PacksPorSector = () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-4">
+                  <p className="text-gray-300 italic mb-4">
                     "Automatizamos todo y ahora tengo más tiempo para mejorar la experiencia del cliente."
                   </p>
-                  <p className="font-semibold text-blue-600">— Jorge, hostal en Salamanca</p>
+                  <p className="font-semibold text-[#667eea]">— Jorge, hostal en Salamanca</p>
                 </div>
               </div>
             </div>
 
             {/* Por qué elegirnos */}
-            <div className="bg-blue-600 text-white rounded-2xl p-8 shadow-xl mb-16">
+            <div className="bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-2xl p-8 shadow-xl mb-16">
               <h3 className="text-2xl font-bold text-center mb-8">
                 🎯 ¿Por qué elegirnos?
               </h3>
@@ -833,8 +833,8 @@ const PacksPorSector = () => {
             </div>
 
             {/* Tabla de funciones */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 📦 ¿Qué incluye el Pack "Supervivencia Rentable" para Hoteles?
               </h3>
               <div className="overflow-x-auto">
@@ -876,22 +876,22 @@ const PacksPorSector = () => {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-16">
-              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <div className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] rounded-2xl p-8 shadow-xl mb-16">
+              <h3 className="text-2xl font-bold text-center text-white mb-8">
                 ❓ Preguntas Frecuentes
               </h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Necesito saber de tecnología?</h4>
-                  <p className="text-gray-700">No. Nosotros lo dejamos todo listo para que solo tengas que usarlo.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Necesito saber de tecnología?</h4>
+                  <p className="text-gray-300">No. Nosotros lo dejamos todo listo para que solo tengas que usarlo.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Cuánto tarda la instalación?</h4>
-                  <p className="text-gray-700">Desde 3 a 7 días, dependiendo del tamaño de tu hotel.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Cuánto tarda la instalación?</h4>
+                  <p className="text-gray-300">Desde 3 a 7 días, dependiendo del tamaño de tu hotel.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">¿Puedo pagar en cuotas?</h4>
-                  <p className="text-gray-700">Sí, ofrecemos opciones de financiación.</p>
+                  <h4 className="font-semibold text-white mb-2">¿Puedo pagar en cuotas?</h4>
+                  <p className="text-gray-300">Sí, ofrecemos opciones de financiación.</p>
                 </div>
               </div>
             </div>
@@ -903,7 +903,7 @@ const PacksPorSector = () => {
               <p className="text-blue-100 mb-6">
                 Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
               </p>
-              <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+              <Button className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 👉 Solicitar diagnóstico gratuito
               </Button>
             </div>

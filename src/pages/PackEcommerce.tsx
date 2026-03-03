@@ -6,30 +6,30 @@ import Footer from '@/components/Footer';
 
 const PackEcommerce = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="pt-24 pb-16 bg-[#0a0a0a] to-white/[0.03]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-6xl mb-6">🛒</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Convierte tu Tienda Online en una Máquina de Ventas Automatizada
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
             Transforma tu eCommerce en una plataforma profesional que integra ventas, atención, pagos y envíos,
             para escalar sin perder tiempo en tareas manuales ni depender de terceros.
           </p>
-          <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
+          <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white">
             👉 Quiero automatizar mi tienda ahora
           </Button>
         </div>
       </section>
 
       {/* Problem Section */}
-      <section className="py-16 bg-red-50">
+      <section className="py-16 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.03]">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">😩 ¿Tu tienda enfrenta estos problemas?</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-4">😩 ¿Tu tienda enfrenta estos problemas?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               'Tienes que responder manualmente cada mensaje o pedido',
@@ -40,8 +40,8 @@ const PackEcommerce = () => {
               'No sabes cómo conectar todo sin gastar una fortuna'
             ].map((problem, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-700">{problem}</span>
+                <div className="w-2 h-2 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.03]0 rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-gray-300">{problem}</span>
               </div>
             ))}
           </div>
@@ -49,13 +49,13 @@ const PackEcommerce = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="py-16 bg-green-50">
+      <section className="py-16 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.03]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               ✅ Solución lista para escalar: Pack de Digitalización para eCommerce
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               Automatiza tu tienda online con herramientas que trabajan por ti, mientras tú te enfocas en vender más.
             </p>
           </div>
@@ -69,9 +69,9 @@ const PackEcommerce = () => {
               'Facturación automática y reportes de ventas',
               'Integración con Odoo + Make/n8n'
             ].map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700">{feature}</span>
+              <div key={index} className="flex items-center space-x-3 bg-[#0a0a0a] p-4 rounded-lg shadow-sm">
+                <CheckCircle className="w-5 h-5 text-[#667eea] flex-shrink-0" />
+                <span className="text-gray-300">{feature}</span>
               </div>
             ))}
           </div>
@@ -79,9 +79,9 @@ const PackEcommerce = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.03]">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">💬 Lo que dicen nuestros clientes</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-12">💬 Lo que dicen nuestros clientes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card>
               <CardContent className="p-6">
@@ -90,10 +90,10 @@ const PackEcommerce = () => {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-400 mb-4">
                   "Antes tenía que hacer todo manual. Ahora los pedidos se procesan solos, los pagos se confirman y los envíos se gestionan automáticamente."
                 </p>
-                <p className="font-semibold text-gray-900">— Lucía, tienda de cosmética natural</p>
+                <p className="font-semibold text-white">— Lucía, tienda de cosmética natural</p>
               </CardContent>
             </Card>
             
@@ -104,10 +104,10 @@ const PackEcommerce = () => {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-400 mb-4">
                   "Automatizamos la atención por WhatsApp y duplicamos las conversiones en menos de un mes."
                 </p>
-                <p className="font-semibold text-gray-900">— David, tienda de gadgets tecnológicos</p>
+                <p className="font-semibold text-white">— David, tienda de gadgets tecnológicos</p>
               </CardContent>
             </Card>
           </div>
@@ -115,15 +115,15 @@ const PackEcommerce = () => {
       </section>
 
       {/* Features Table */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             📦 ¿Qué incluye el Pack "Supervivencia Rentable" para eCommerce?
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.03]">
                   <th className="border border-gray-300 p-4 text-left font-semibold">Módulo</th>
                   <th className="border border-gray-300 p-4 text-left font-semibold">Función</th>
                 </tr>
@@ -137,7 +137,7 @@ const PackEcommerce = () => {
                   ['Reportes', 'Ventas, clientes y productos en tiempo real'],
                   ['Soporte', 'Te acompañamos paso a paso']
                 ].map(([module, func], index) => (
-                  <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <tr key={index} className={index % 2 === 0 ? 'bg-[#0a0a0a]' : 'bg-white/[0.03]'}>
                     <td className="border border-gray-300 p-4 font-medium">{module}</td>
                     <td className="border border-gray-300 p-4">{func}</td>
                   </tr>
@@ -149,9 +149,9 @@ const PackEcommerce = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.03]">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">❓ Preguntas Frecuentes</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-12">❓ Preguntas Frecuentes</h2>
           <div className="space-y-6">
             {[
               {
@@ -169,8 +169,8 @@ const PackEcommerce = () => {
             ].map((faq, index) => (
               <Card key={index}>
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                  <p className="text-gray-600">{faq.a}</p>
+                  <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                  <p className="text-gray-400">{faq.a}</p>
                 </CardContent>
               </Card>
             ))}
@@ -179,13 +179,13 @@ const PackEcommerce = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-purple-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">📞 ¿Listo para escalar tu tienda online?</h2>
           <p className="text-xl mb-8">
             Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
           </p>
-          <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+          <Button size="lg" className="bg-[#0a0a0a] text-purple-600 hover:bg-gray-100">
             👉 Solicitar diagnóstico gratuito
           </Button>
         </div>

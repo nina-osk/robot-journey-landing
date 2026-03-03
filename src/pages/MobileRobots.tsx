@@ -81,26 +81,30 @@ const MobileRobots = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-20 pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#667eea]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#764ba2]/10 rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-robotics-dark mb-6">
-              Robots Móviles para <span className="text-primary">Construcción y Logística</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+              Robots Móviles para <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Construcción y Logística</span>
             </h1>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Revoluciona tu industria con robots móviles autónomos. Aumenta la productividad, 
               reduce costos operativos y mejora la seguridad en construcción y logística.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0">
                 <Construction className="mr-2 h-5 w-5" />
                 Ver Robots Construcción
               </Button>
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+              <Button size="lg" className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-white">
                 <Truck className="mr-2 h-5 w-5" />
                 Ver Robots Logística
               </Button>
@@ -110,77 +114,83 @@ const MobileRobots = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-white slide-in-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative slide-in-section">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-[#764ba2]/5 rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-robotics-dark mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               ¿Por qué Robots Móviles?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Los robots móviles transforman las operaciones industriales con beneficios medibles
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-primary" />
+              <div className="bg-[#667eea]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-[#667eea]" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Reducción de Personal</h3>
-              <p className="text-gray-600">Hasta 70% menos personal necesario para tareas repetitivas</p>
+              <h3 className="text-xl font-semibold mb-2 text-white">Reducción de Personal</h3>
+              <p className="text-gray-400">Hasta 70% menos personal necesario para tareas repetitivas</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-robotics-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-robotics-blue" />
+              <div className="bg-[#764ba2]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-[#764ba2]" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Operación 24/7</h3>
-              <p className="text-gray-600">Trabajo continuo sin descansos, aumentando productividad</p>
+              <h3 className="text-xl font-semibold mb-2 text-white">Operación 24/7</h3>
+              <p className="text-gray-400">Trabajo continuo sin descansos, aumentando productividad</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-robotics-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-robotics-blue" />
+              <div className="bg-[#667eea]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-[#667eea]" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Mayor Seguridad</h3>
-              <p className="text-gray-600">Reducción de accidentes laborales en un 85%</p>
+              <h3 className="text-xl font-semibold mb-2 text-white">Mayor Seguridad</h3>
+              <p className="text-gray-400">Reducción de accidentes laborales en un 85%</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Construction Robots Section */}
-      <section id="construccion" className="py-16 bg-gray-50 slide-in-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="construccion" className="py-16 relative slide-in-section">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-[#667eea]/5 rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Construction className="h-12 w-12 text-robotics-blue mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-robotics-dark mb-4">
+            <Construction className="h-12 w-12 text-[#764ba2] mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-white mb-4">
               Robots para Construcción
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               Automatiza tareas de construcción con precisión y eficiencia
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {constructionRobots.map((robot, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
                 <CardHeader>
-                  <CardTitle className="text-robotics-dark">{robot.name}</CardTitle>
-                  <CardDescription>{robot.description}</CardDescription>
+                  <CardTitle className="text-white">{robot.name}</CardTitle>
+                  <CardDescription className="text-gray-400">{robot.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-4">
                     {robot.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      <li key={idx} className="flex items-center text-sm text-gray-400">
+                        <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-4 border-t">
-                    <p className="text-lg font-semibold text-robotics-blue mb-3">{robot.price}</p>
-                    <Button className="w-full" variant="outline" asChild>
+                  <div className="pt-4 border-t border-white/10">
+                    <p className="text-lg font-semibold text-[#667eea] mb-3">{robot.price}</p>
+                    <Button className="w-full bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-white" asChild>
                       <a href="/#contacto">
                         Solicitar Información
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -195,37 +205,40 @@ const MobileRobots = () => {
       </section>
 
       {/* Logistics Robots Section */}
-      <section id="logistica" className="py-16 bg-white slide-in-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="logistica" className="py-16 relative slide-in-section">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/3 w-[400px] h-[400px] bg-[#764ba2]/5 rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Truck className="h-12 w-12 text-robotics-blue mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-robotics-dark mb-4">
+            <Truck className="h-12 w-12 text-[#667eea] mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-white mb-4">
               Robots para Logística
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               Optimiza tu cadena de suministro con automatización inteligente
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {logisticsRobots.map((robot, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
                 <CardHeader>
-                  <CardTitle className="text-robotics-dark">{robot.name}</CardTitle>
-                  <CardDescription>{robot.description}</CardDescription>
+                  <CardTitle className="text-white">{robot.name}</CardTitle>
+                  <CardDescription className="text-gray-400">{robot.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-4">
                     {robot.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      <li key={idx} className="flex items-center text-sm text-gray-400">
+                        <CheckCircle className="h-4 w-4 text-[#667eea] mr-2" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-4 border-t">
-                    <p className="text-lg font-semibold text-robotics-blue mb-3">{robot.price}</p>
-                    <Button className="w-full" variant="outline" asChild>
+                  <div className="pt-4 border-t border-white/10">
+                    <p className="text-lg font-semibold text-[#764ba2] mb-3">{robot.price}</p>
+                    <Button className="w-full bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-white" asChild>
                       <a href="/#contacto">
                         Solicitar Información
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -240,10 +253,13 @@ const MobileRobots = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-robotics-dark text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#667eea]/30 to-[#764ba2]/30">
+          <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[#667eea]/20 rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl font-bold mb-4 text-white">
               ¿Listo para Automatizar tu Industria?
             </h2>
             <p className="text-xl mb-8 text-gray-300">
@@ -254,7 +270,7 @@ const MobileRobots = () => {
           {/* HubSpot Form */}
           <div className="max-w-2xl mx-auto">
             <div 
-              className="hs-form-frame bg-white p-8 rounded-lg" 
+              className="hs-form-frame bg-white/[0.05] border border-white/10 p-8 rounded-lg" 
               data-region="eu1" 
               data-form-id="3ed163b6-4dee-4555-8c12-943c18ade29a" 
               data-portal-id="146031285"
