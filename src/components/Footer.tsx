@@ -114,11 +114,13 @@ const Footer = () => {
               <p>Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415, Estonia</p>
               <p>info@robotsconsultant.net</p>
             </div>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex flex-wrap space-x-6 mt-4 md:mt-0 justify-center md:justify-end gap-y-2">
               <a href="/politica-privacidad" className="text-gray-500 hover:text-gray-400 text-sm">Política de Privacidad</a>
               <a href="/terminos-servicio" className="text-gray-500 hover:text-gray-400 text-sm">Términos de Servicio</a>
               <a href="/politica-cookies" className="text-gray-500 hover:text-gray-400 text-sm">Política de Cookies</a>
               <a href="/politica-compras" className="text-gray-500 hover:text-gray-400 text-sm">Política de Compras</a>
+              <a href="/politica-entrega" className="text-gray-500 hover:text-gray-400 text-sm">Política de Entrega</a>
+              <a href="/politica-reembolso" className="text-gray-500 hover:text-gray-400 text-sm">Reembolsos y Cancelaciones</a>
             </div>
           </div>
         </div>

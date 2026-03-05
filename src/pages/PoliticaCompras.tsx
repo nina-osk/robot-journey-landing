@@ -16,10 +16,10 @@ const PoliticaCompras = () => {
           <h2 className="text-xl font-bold text-white mb-3">1. Identificación del Vendedor</h2>
           <p className="mb-2">Este sitio web es operado por:</p>
           <ul className="space-y-1 ml-4">
-            <li><strong className="text-white">RKontaktisik on CompanioEstonia OÜ</strong></li>
+            <li><strong className="text-white">RobotsAdvisors OÜ</strong></li>
             <li>Registrikood: 14522788</li>
             <li>Dirección: Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415, Estonia</li>
-            <li>Correo electrónico: <a href="mailto:legal@companio.email" className="text-[#667eea] hover:underline">legal@companio.email</a></li>
+            <li>Correo electrónico: <a href="mailto:info@robotsconsultant.net" className="text-[#667eea] hover:underline">info@robotsconsultant.net</a></li>
           </ul>
           <p className="mt-2">En adelante, "la Empresa".</p>
         </section>

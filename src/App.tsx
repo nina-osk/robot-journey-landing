@@ -21,6 +21,8 @@ import PoliticaCompras from "./pages/PoliticaCompras";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import PoliticaCookies from "./pages/PoliticaCookies";
 import TerminosServicio from "./pages/TerminosServicio";
+import PoliticaEntrega from "./pages/PoliticaEntrega";
+import PoliticaReembolso from "./pages/PoliticaReembolso";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +51,8 @@ const App = () => (
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/politica-cookies" element={<PoliticaCookies />} />
           <Route path="/terminos-servicio" element={<TerminosServicio />} />
+          <Route path="/politica-entrega" element={<PoliticaEntrega />} />
+          <Route path="/politica-reembolso" element={<PoliticaReembolso />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

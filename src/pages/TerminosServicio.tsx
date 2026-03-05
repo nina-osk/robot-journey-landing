@@ -17,8 +17,8 @@ const TerminosServicio = () => {
           <h2 className="text-xl font-bold text-white mb-3">1. Identificación de las Partes</h2>
           <p className="mb-2"><strong className="text-white">Prestador del Servicio:</strong> La entidad que ofrece y presta los servicios a través de este sitio web es RobotAdvisors OÜ, sociedad constituida y registrada en Estonia, con código de registro 17425904, inscrita en el Tartu Maakohtu registriosakonna.</p>
           <p className="mb-2"><strong className="text-white">Domicilio social:</strong> Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415.</p>
-          <p className="mb-2"><strong className="text-white">Correo electrónico de contacto:</strong> <a href="mailto:info@robotsconsultant.com" className="text-[#667eea] hover:underline">info@robotsconsultant.com</a>.</p>
-          <p className="mb-2"><strong className="text-white">Contacto legal en Estonia:</strong> CompanioEstonia OÜ, con código de registro 14522788. (En adelante, "RobotsAdvisors").</p>
+          <p className="mb-2"><strong className="text-white">Correo electrónico de contacto:</strong> <a href="mailto:info@robotsconsultant.net" className="text-[#667eea] hover:underline">info@robotsconsultant.net</a>.</p>
+          <p className="mb-2"><strong className="text-white">Contacto legal en Estonia:</strong> RobotsAdvisors OÜ, con código de registro 14522788. (En adelante, "RobotsAdvisors").</p>
           <p className="mb-2"><strong className="text-white">Cliente:</strong> La persona física o jurídica que contrata los servicios ofrecidos por RobotsAdvisors a través del sitio web. El Cliente declara ser mayor de edad y tener la capacidad legal necesaria para contratar los servicios. (En adelante, el "Cliente").</p>
         </section>
 
