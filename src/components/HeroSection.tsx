@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
@@ -35,12 +37,12 @@ const HeroSection = () => {
               Es un autoempleo.
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-xl mb-8 leading-relaxed">
-              Especialistas en automatización ERP para PYMES españolas. 
+              Especialistas en automatización ERP. 
               Transforma tu caos operativo en una estructura escalable y recupera tu libertad.
             </p>
             <Button 
               className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-0 rounded-full group"
-              onClick={() => document.getElementById('calendly-section')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => navigate('/transformacion-digital')}
             >
               Agenda tu sesión estratégica
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

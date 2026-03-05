@@ -63,12 +63,6 @@ const Navbar = () => {
             >
               Mentoría IA
             </a>
-            <a
-              href="./sobre-mi" 
-              className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
-            >
-              Sobre Mí
-            </a>
             <a 
               href="https://robotsconsultant.net/tienda" 
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
