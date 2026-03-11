@@ -183,8 +183,8 @@ const OdooServices = () => {
                     Te ayudamos a instalarlo, configurarlo y personalizarlo para exprimir todo su 
                     potencial sin costes de licencia.
                   </p>
-                  <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
-                    Conocer Community
+                  <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10" asChild>
+                    <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">Conocer Community</a>
                   </Button>
                 </CardContent>
               </Card>
