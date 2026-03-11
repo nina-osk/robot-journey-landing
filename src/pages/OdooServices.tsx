@@ -59,9 +59,11 @@ const OdooServices = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white" onClick={scrollToCalendly}>
-              Agenda tu Diagnóstico Gratuito
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white" asChild>
+              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                Agenda tu Diagnóstico Gratuito
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
           
@@ -181,8 +183,8 @@ const OdooServices = () => {
                     Te ayudamos a instalarlo, configurarlo y personalizarlo para exprimir todo su 
                     potencial sin costes de licencia.
                   </p>
-                  <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
-                    Conocer Community
+                  <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10" asChild>
+                    <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">Conocer Community</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -201,8 +203,8 @@ const OdooServices = () => {
                     escalabilidad sin precedentes. Como partners, te damos acceso a la versión más 
                     completa y nos encargamos de todo.
                   </p>
-                  <Button className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white hover:shadow-lg hover:shadow-[#667eea]/40">
-                    Conocer Enterprise
+                  <Button className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white hover:shadow-lg hover:shadow-[#667eea]/40" asChild>
+                    <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">Conocer Enterprise</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -419,9 +421,11 @@ const OdooServices = () => {
             y te mostraremos en vivo cómo Odoo puede transformar tu negocio. Saldrás de la llamada 
             con un plan de acción claro.
           </p>
-          <Button size="lg" className="text-lg px-12 py-6 bg-white text-[#667eea] hover:bg-white/90" onClick={scrollToCalendly}>
-            SÍ, QUIERO MI DIAGNÓSTICO GRATUITO
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button size="lg" className="text-lg px-12 py-6 bg-white text-[#667eea] hover:bg-white/90" asChild>
+            <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+              SÍ, QUIERO MI DIAGNÓSTICO GRATUITO
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </Button>
         </div>
       </section>

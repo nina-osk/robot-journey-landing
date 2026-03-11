@@ -49,8 +49,10 @@ const ShopifyServices = () => {
               Transformamos tu visión en una tienda Shopify de alto rendimiento con diseño exclusivo, 
               funcionalidades a medida y automatizaciones inteligentes que impulsan tus ventas.
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              Solicita tu Presupuesto Personalizado
+            <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105" asChild>
+              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                Solicita tu Presupuesto Personalizado
+              </a>
             </Button>
           </div>
         </div>
