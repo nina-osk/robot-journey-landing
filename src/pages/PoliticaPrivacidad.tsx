@@ -28,10 +28,10 @@ const PoliticaPrivacidad = () => {
               <h2 className="text-2xl font-bold text-white">1. Responsable del Tratamiento</h2>
               <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                 <ul className="space-y-2 text-gray-300">
-                  <li><strong className="text-white">Empresa:</strong> RKontaktisik on CompanioEstonia OÜ</li>
+                  <li><strong className="text-white">Empresa:</strong> RobotsAdvisors OÜ</li>
                   <li><strong className="text-white">Registrikood:</strong> 14522788</li>
                   <li><strong className="text-white">Dirección:</strong> Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415, Estonia</li>
-                  <li><strong className="text-white">Correo electrónico:</strong> legal@companio.email</li>
+                  <li><strong className="text-white">Correo electrónico:</strong> info@robotsconsultant.net</li>
                 </ul>
               </div>
             </section>

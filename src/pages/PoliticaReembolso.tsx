@@ -83,7 +83,7 @@ const PoliticaReembolso = () => {
           <h2 className="text-xl font-bold text-white mb-3">7. Contacto para Consultas y Reclamaciones</h2>
           <p className="mb-2">Si tienes alguna pregunta sobre esta política o deseas presentar una reclamación, puedes contactarnos en:</p>
           <ul className="space-y-1 ml-4">
-            <li><strong className="text-white">Correo electrónico:</strong> <a href="mailto:oscarina.hernandezgarcia@gmail.com" className="text-[#667eea] hover:underline">oscarina.hernandezgarcia@gmail.com</a></li>
+            <li><strong className="text-white">Correo electrónico:</strong> <a href="mailto:info@robotsconsultant.net" className="text-[#667eea] hover:underline">info@robotsconsultant.net</a></li>
             <li><strong className="text-white">Entidad:</strong> RobotsAdvisors OÜ</li>
           </ul>
         </section>
