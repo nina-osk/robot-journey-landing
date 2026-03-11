@@ -42,7 +42,12 @@ const HeroSection = () => {
             </p>
             <Button 
               className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-0 rounded-full group"
-              onClick={() => navigate('/transformacion-digital')}
+              onClick={() => {
+                const calendly = document.querySelector('.calendly-inline-widget');
+                if (calendly) {
+                  calendly.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+              }}
             >
               Agenda tu sesión estratégica
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
