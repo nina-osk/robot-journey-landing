@@ -203,8 +203,8 @@ const OdooServices = () => {
                     escalabilidad sin precedentes. Como partners, te damos acceso a la versión más 
                     completa y nos encargamos de todo.
                   </p>
-                  <Button className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white hover:shadow-lg hover:shadow-[#667eea]/40">
-                    Conocer Enterprise
+                  <Button className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white hover:shadow-lg hover:shadow-[#667eea]/40" asChild>
+                    <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">Conocer Enterprise</a>
                   </Button>
                 </CardContent>
               </Card>
