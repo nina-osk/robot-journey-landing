@@ -59,9 +59,11 @@ const OdooServices = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white" onClick={scrollToCalendly}>
-              Agenda tu Diagnóstico Gratuito
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white" asChild>
+              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                Agenda tu Diagnóstico Gratuito
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
           
