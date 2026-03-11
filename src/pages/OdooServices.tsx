@@ -421,9 +421,11 @@ const OdooServices = () => {
             y te mostraremos en vivo cómo Odoo puede transformar tu negocio. Saldrás de la llamada 
             con un plan de acción claro.
           </p>
-          <Button size="lg" className="text-lg px-12 py-6 bg-white text-[#667eea] hover:bg-white/90" onClick={scrollToCalendly}>
-            SÍ, QUIERO MI DIAGNÓSTICO GRATUITO
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button size="lg" className="text-lg px-12 py-6 bg-white text-[#667eea] hover:bg-white/90" asChild>
+            <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+              SÍ, QUIERO MI DIAGNÓSTICO GRATUITO
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </Button>
         </div>
       </section>
