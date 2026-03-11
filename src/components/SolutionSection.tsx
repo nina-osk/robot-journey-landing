@@ -49,9 +49,18 @@ const SolutionSection = () => {
 
         {/* Características técnicas */}
         <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-6">
             Características <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Técnicas</span>
           </h3>
+
+          {/* Integración destacada */}
+          <div className="max-w-3xl mx-auto mb-10">
+            <div className="bg-gradient-to-r from-[#667eea]/20 to-[#764ba2]/20 border border-[#667eea]/30 rounded-2xl p-6 text-center">
+              <p className="text-lg md:text-xl text-white font-medium leading-relaxed">
+                Este equipo lo podemos configurar para que trabaje con <span className="text-[#667eea] font-bold">Odoo</span> y con tu <span className="text-[#667eea] font-bold">TPV</span> para evitar errores humanos que producen <span className="text-red-400 font-bold">descuadres de cajas</span>.
+              </p>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
             {/* Columna izquierda */}
