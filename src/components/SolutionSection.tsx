@@ -170,7 +170,7 @@ const SolutionSection = () => {
         <div className="text-center">
           <Button 
             className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-0 rounded-full group"
-            onClick={() => window.location.href = 'mailto:info@robotsconsultant.net'}
+            onClick={() => window.open('https://wa.me/34624377029?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20el%20caj%C3%B3n%20de%20cobro%20autom%C3%A1tico%20SITECO', '_blank')}
           >
             <Calendar className="mr-2 h-5 w-5 group-hover:animate-pulse" />
             Solicita información aquí
