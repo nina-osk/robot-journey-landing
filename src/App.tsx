@@ -17,6 +17,7 @@ import AgentesIA from "./pages/AgentesIA";
 import AgentesIARestaurantes from "./pages/AgentesIARestaurantes";
 import ShopifyServices from "./pages/ShopifyServices";
 import MentoriaIA from "./pages/MentoriaIA";
+import Contacto from "./pages/Contacto";
 import PoliticaCompras from "./pages/PoliticaCompras";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import PoliticaCookies from "./pages/PoliticaCookies";
