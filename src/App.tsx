@@ -48,6 +48,7 @@ const App = () => (
           <Route path="/shopify" element={<ShopifyServices />} />
           <Route path="/mentoria-ia" element={<MentoriaIA />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
+          <Route path="/contacto" element={<Contacto />} />
           <Route path="/politica-compras" element={<PoliticaCompras />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/politica-cookies" element={<PoliticaCookies />} />
