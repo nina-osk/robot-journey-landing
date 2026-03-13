@@ -69,6 +69,12 @@ const Navbar = () => {
             >
               Cursos
             </a>
+            <a
+              href="./contacto" 
+              className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
+            >
+              Contacto
+            </a>
 
             <div className="flex flex-col space-y-1">
               <Button asChild variant="ghost" size="sm" className="h-8 px-2 hover:bg-white/10">
