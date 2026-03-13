@@ -61,7 +61,13 @@ const Contacto = () => {
       `\nMensaje: ${formData.mensaje.trim()}`
     );
 
-    window.open(`https://wa.me/34654942720?text=${message}`, '_blank');
+    const link = document.createElement('a');
+    link.href = `https://wa.me/34654942720?text=${message}`;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
     toast({
       title: '¡Mensaje preparado!',
