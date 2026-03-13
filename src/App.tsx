@@ -17,6 +17,7 @@ import AgentesIA from "./pages/AgentesIA";
 import AgentesIARestaurantes from "./pages/AgentesIARestaurantes";
 import ShopifyServices from "./pages/ShopifyServices";
 import MentoriaIA from "./pages/MentoriaIA";
+import Contacto from "./pages/Contacto";
 import PoliticaCompras from "./pages/PoliticaCompras";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import PoliticaCookies from "./pages/PoliticaCookies";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/shopify" element={<ShopifyServices />} />
           <Route path="/mentoria-ia" element={<MentoriaIA />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
+          <Route path="/contacto" element={<Contacto />} />
           <Route path="/politica-compras" element={<PoliticaCompras />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/politica-cookies" element={<PoliticaCookies />} />

@@ -69,6 +69,12 @@ const Navbar = () => {
             >
               Cursos
             </a>
+            <a
+              href="./contacto" 
+              className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
+            >
+              Contacto
+            </a>
 
             <div className="flex flex-col space-y-1">
               <Button asChild variant="ghost" size="sm" className="h-8 px-2 hover:bg-white/10">
@@ -177,6 +183,13 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Tienda
+            </a>
+            <a
+              href="./contacto" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contacto
             </a>
             <div className="mt-4 space-y-2 px-3">
               <Button asChild className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0">
