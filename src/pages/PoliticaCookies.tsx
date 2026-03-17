@@ -130,7 +130,7 @@ const PoliticaCookies = () => {
               <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                 <p className="text-gray-300">
                   Si tienes preguntas sobre nuestra política de cookies, contacta con nosotros en:{' '}
-                  <a href="mailto:legal@companio.email" className="text-[#667eea] hover:underline">legal@companio.email</a>
+                  <a href="mailto:info@robotsconsultant.net" className="text-[#667eea] hover:underline">info@robotsconsultant.net</a>
                 </p>
               </div>
             </section>

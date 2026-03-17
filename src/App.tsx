@@ -17,9 +17,13 @@ import AgentesIA from "./pages/AgentesIA";
 import AgentesIARestaurantes from "./pages/AgentesIARestaurantes";
 import ShopifyServices from "./pages/ShopifyServices";
 import MentoriaIA from "./pages/MentoriaIA";
+import Contacto from "./pages/Contacto";
 import PoliticaCompras from "./pages/PoliticaCompras";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import PoliticaCookies from "./pages/PoliticaCookies";
+import TerminosServicio from "./pages/TerminosServicio";
+import PoliticaEntrega from "./pages/PoliticaEntrega";
+import PoliticaReembolso from "./pages/PoliticaReembolso";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,9 +48,13 @@ const App = () => (
           <Route path="/shopify" element={<ShopifyServices />} />
           <Route path="/mentoria-ia" element={<MentoriaIA />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
+          <Route path="/contacto" element={<Contacto />} />
           <Route path="/politica-compras" element={<PoliticaCompras />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/politica-cookies" element={<PoliticaCookies />} />
+          <Route path="/terminos-servicio" element={<TerminosServicio />} />
+          <Route path="/politica-entrega" element={<PoliticaEntrega />} />
+          <Route path="/politica-reembolso" element={<PoliticaReembolso />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

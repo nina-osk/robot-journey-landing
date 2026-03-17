@@ -47,8 +47,10 @@ const AgentesIA = () => {
             <p className="text-lg mb-12 max-w-5xl mx-auto leading-relaxed text-gray-400">
               Imagina un mundo donde tus clientes reciben atención instantánea, personalizada y profesional las 24 horas del día, los 7 días de la semana, sin costos adicionales de personal ni tiempos de espera frustrantes. Esa realidad es hoy posible con nuestra solución de Agentes Telefónicos IA.
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0">
-              Agenda tu Demo Gratuita
+            <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0" asChild>
+              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                Agenda tu Demo Gratuita
+              </a>
             </Button>
           </div>
         </div>

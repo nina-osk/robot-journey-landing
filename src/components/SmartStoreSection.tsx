@@ -207,7 +207,7 @@ const SmartStoreSection = () => {
           <div className="text-center mb-6">
             <p className="text-sm text-gray-500 line-through mb-1">Valor real: 997€</p>
             <div className="flex items-center justify-center gap-3 flex-wrap">
-              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">399€</span>
+              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">490€</span>
               <span className="inline-block px-3 py-1 rounded-full bg-green-500/20 border border-green-500/40 text-green-400 text-sm font-semibold">Precio de lanzamiento</span>
             </div>
             <p className="text-gray-500 text-sm mt-2">Oferta por tiempo limitado</p>
@@ -220,7 +220,7 @@ const SmartStoreSection = () => {
               className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-10 py-6 text-lg font-semibold transition-all hover:-translate-y-1"
               onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Quiero mi Agente IA Pro — 399€
+              Quiero mi Agente IA Pro — 490€
             </Button>
           </div>
         </div>
