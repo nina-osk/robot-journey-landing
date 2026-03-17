@@ -4,9 +4,41 @@ import { CheckCircle, Clock, Users, Star } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Necesito saber de tecnología para automatizar mi tienda online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Nosotros lo dejamos todo listo para que solo tengas que usarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda la instalación del pack eCommerce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde 3 a 7 días, dependiendo del tamaño de tu catálogo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo pagar en cuotas el pack eCommerce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos opciones de financiación."
+      }
+    }
+  ]
+};
+
 const PackEcommerce = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       
       {/* Hero Section */}

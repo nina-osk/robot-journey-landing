@@ -16,8 +16,56 @@ const PacksPorSector = () => {
     }
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Necesito saber de tecnología para usar vuestros packs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Nosotros lo dejamos todo listo para que solo tengas que usarlo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tarda la instalación en un restaurante?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Desde 3 a 7 días, dependiendo del tamaño de tu restaurante."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tarda la instalación en una tienda online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Desde 3 a 7 días, dependiendo del tamaño de tu catálogo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tarda la instalación en un hotel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Desde 3 a 7 días, dependiendo del tamaño de tu hotel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo pagar en cuotas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, ofrecemos opciones de financiación."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <div className="pt-20">
         {/* Header Section */}

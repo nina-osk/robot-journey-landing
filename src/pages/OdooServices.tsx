@@ -40,8 +40,97 @@ const OdooServices = () => {
       }
     };
   }, []);
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta implementar Odoo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende totalmente de la complejidad de tu empresa y la versión elegida (Community o Enterprise). Por eso, nuestro primer paso es siempre un diagnóstico gratuito para darte un presupuesto cerrado y sin sorpresas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda el proceso de implementación de Odoo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una implementación básica puede tardar unas pocas semanas, mientras que proyectos más complejos pueden llevar varios meses. En nuestra hoja de ruta inicial te daremos una estimación de tiempo precisa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mi equipo no es muy tecnológico, ¿será difícil para ellos usar Odoo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Odoo es conocido por su interfaz amigable. Además, nuestro servicio incluye una formación completa y práctica para asegurar que todo tu equipo se sienta cómodo y aproveche la herramienta al máximo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué diferencias hay entre Odoo Community y Enterprise?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Odoo Community es gratuito y de código abierto, ideal para PyMES con funcionalidades básicas. Odoo Enterprise incluye módulos avanzados, soporte oficial, hosting en la nube y mayor escalabilidad. Te ayudamos a elegir la versión que mejor se adapte a tu presupuesto y necesidades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo migrar mis datos desde mi sistema actual a Odoo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, ofrecemos servicios de migración completos. Podemos transferir datos desde Excel, Access, otros ERPs o sistemas contables. Garantizamos la integridad de tus datos y minimizamos el tiempo de inactividad durante la transición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tipo de soporte ofrecen después de la implementación de Odoo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ofrecemos soporte técnico continuo, actualizaciones, mantenimiento y nuevas personalizaciones. También disponemos de planes de soporte mensual y formación adicional según las necesidades de tu equipo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Odoo funciona en la nube o necesito servidores propios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Odoo puede funcionar en ambos modos. Podemos instalarlo en tus servidores locales para mayor control, o configurarlo en la nube (Odoo.sh, AWS, Azure) para mayor flexibilidad y menor mantenimiento. Te asesoramos sobre la mejor opción según tu caso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué módulos de Odoo necesita mi empresa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada empresa es diferente. En nuestro diagnóstico gratuito analizamos tus procesos actuales y te recomendamos exactamente qué módulos necesitas: CRM, Ventas, Inventario, Contabilidad, Proyectos, eCommerce, etc. Solo implementamos lo que realmente vas a usar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo integrar Odoo con mis herramientas actuales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, Odoo tiene una excelente capacidad de integración. Podemos conectarlo con tu software de facturación, pasarelas de pago, tiendas online, herramientas de marketing, sistemas bancarios y muchas otras aplicaciones que ya uses en tu negocio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si mi negocio crece? ¿Odoo puede escalarse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutamente. Odoo está diseñado para crecer contigo. Puedes añadir nuevos usuarios, módulos y funcionalidades sin límites. Muchas empresas empiezan con funciones básicas y van expandiendo el sistema según van creciendo sus necesidades."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       
       {/* Hero Section */}

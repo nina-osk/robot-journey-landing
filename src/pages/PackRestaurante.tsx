@@ -4,9 +4,41 @@ import { CheckCircle, Clock, Users, Star } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Necesito saber de tecnología para digitalizar mi restaurante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Nosotros lo dejamos todo listo para que solo tengas que usarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda la instalación en un restaurante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde 3 a 7 días, dependiendo del tamaño de tu restaurante."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo pagar en cuotas el pack para restaurante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos opciones de financiación."
+      }
+    }
+  ]
+};
+
 const PackRestaurante = () => {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       
       {/* Hero Section */}
