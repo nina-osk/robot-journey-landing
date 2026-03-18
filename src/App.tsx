@@ -25,6 +25,7 @@ import TerminosServicio from "./pages/TerminosServicio";
 import PoliticaEntrega from "./pages/PoliticaEntrega";
 import PoliticaReembolso from "./pages/PoliticaReembolso";
 import NotFound from "./pages/NotFound";
+import N8nChat from "./components/N8nChat";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <N8nChat />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
