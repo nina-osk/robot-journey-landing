@@ -166,28 +166,32 @@ const N8nChat = () => {
     style.textContent = N8N_CHAT_STYLES;
     document.head.appendChild(style);
 
-    createChat({
-      webhookUrl: 'https://miwebhookn8n.proyectoiluminacion.com/webhook/9f8f7196-2ff5-4f6b-8645-68778ad293ee/chat',
-      mode: 'window',
-      chatInputKey: 'chatInput',
-      chatSessionKey: 'sessionId',
-      loadPreviousSession: true,
-      showWelcomeScreen: false,
-      defaultLanguage: 'en',
-      initialMessages: [
-        '¡Hola! 👋',
-        'Soy el asistente de Robots Consultant. ¿En qué puedo ayudarte?',
-      ],
-      i18n: {
-        en: {
-          title: '¡Hola! 👋',
-          subtitle: 'Chatea con nosotros. Estamos aquí para ayudarte.',
-          footer: '',
-          getStarted: 'Nueva conversación',
-          inputPlaceholder: 'Escribe tu pregunta...',
+    try {
+      createChat({
+        webhookUrl: 'https://miwebhookn8n.proyectoiluminacion.com/webhook/9f8f7196-2ff5-4f6b-8645-68778ad293ee/chat',
+        mode: 'window',
+        chatInputKey: 'chatInput',
+        chatSessionKey: 'sessionId',
+        loadPreviousSession: true,
+        showWelcomeScreen: false,
+        defaultLanguage: 'en',
+        initialMessages: [
+          '¡Hola! 👋',
+          'Soy el asistente de Robots Consultant. ¿En qué puedo ayudarte?',
+        ],
+        i18n: {
+          en: {
+            title: '¡Hola! 👋',
+            subtitle: 'Chatea con nosotros. Estamos aquí para ayudarte.',
+            footer: '',
+            getStarted: 'Nueva conversación',
+            inputPlaceholder: 'Escribe tu pregunta...',
+          },
         },
-      },
-    });
+      });
+    } catch (e) {
+      console.error('N8nChat initialization failed:', e);
+    }
 
     return () => {
       document.head.removeChild(style);

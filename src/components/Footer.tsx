@@ -110,7 +110,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-500 text-sm text-center md:text-left">
               <p>© {currentYear} RobotsConsultant. Todos los derechos reservados.</p>
-              <p className="mt-1"><RobotsAdvisors></RobotsAdvisors> OÜ · Registrikood: 14522788</p>
+              <p className="mt-1">RobotsAdvisors OÜ · Registrikood: 14522788</p>
               <p>Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415, Estonia</p>
               <p>info@robotsconsultant.net</p>
             </div>

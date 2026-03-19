@@ -1,0 +1,22 @@
+# Fix MIME type for JS modules (LiteSpeed serves application/x-javascript which blocks ES modules)
+<IfModule mod_mime.c>
+  RemoveType .js
+  AddType application/javascript .js
+  AddType application/javascript .mjs
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Do NOT rewrite files that actually exist (assets, images, etc.)
+  RewriteCond %{REQUEST_URI} \.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot|map|json|txt)$ [NC]
+  RewriteRule ^ - [L]
+
+  # Do NOT rewrite existing files or directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Redirect all other routes to index.html (SPA routing)
+  RewriteRule ^ index.html [QSA,L]
+</IfModule>
