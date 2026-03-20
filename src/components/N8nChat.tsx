@@ -154,8 +154,57 @@ const N8N_CHAT_STYLES = `
   }
 
   /* Input focus ring */
-  .chat-input textarea:focus {
+  .n8n-input textarea:focus {
     box-shadow: 0 0 0 1px #667eea, 0 0 12px rgba(102, 126, 234, 0.2) !important;
+  }
+
+  /* Fix: ensure chat input is visible (Tailwind base resets can hide it) */
+  .chat-footer {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 0.5rem !important;
+    background: var(--chat--footer--background, #0a0a0a) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+    min-height: 60px !important;
+  }
+
+  .n8n-input {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 1 !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .n8n-input textarea {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 50px !important;
+    height: auto !important;
+    width: 100% !important;
+    flex: 1 !important;
+    color: #e0e0e8 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 0.8rem 1rem !important;
+    font-size: 0.9375rem !important;
+    resize: none !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .n8n-input button,
+  .chat-footer button {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
   }
 `;
 
