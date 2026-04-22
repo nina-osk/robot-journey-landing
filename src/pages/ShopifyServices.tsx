@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, CheckCircle, Zap, Code, Palette, ShoppingBag, Bot, Sparkles, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -28,6 +29,19 @@ const ShopifyServices = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <Helmet>
+        <title>Desarrollo Shopify: Temas y Apps Personalizadas | RobotsConsultant</title>
+        <meta name="description" content="Desarrollamos temas y apps personalizadas para Shopify con IA integrada. Tiendas de alto rendimiento, integraciones avanzadas y automatización de ventas. Consulta gratuita." />
+        <link rel="canonical" href="https://robotsconsultant.net/shopify" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Desarrollo Shopify: Temas y Apps",
+          "provider": { "@type": "Organization", "name": "RobotsConsultant Agency" },
+          "description": "Desarrollo de temas Shopify y apps personalizadas con IA para tiendas online de alto rendimiento.",
+          "areaServed": "ES"
+        })}</script>
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}

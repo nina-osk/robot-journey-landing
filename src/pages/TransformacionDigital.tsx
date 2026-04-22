@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
@@ -32,6 +33,11 @@ const TransformacionDigital = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <Helmet>
+        <title>Transformación Digital con IA y Automatización | RobotsConsultant</title>
+        <meta name="description" content="Transforma tu negocio con IA y automatización. Reducimos tareas repetitivas, integramos sistemas y multiplicamos tu eficiencia operativa sin contratar más personal." />
+        <link rel="canonical" href="https://robotsconsultant.net/transformacion-digital" />
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}

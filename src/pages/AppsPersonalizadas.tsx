@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -134,6 +135,19 @@ const AppsPersonalizadas = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] overflow-x-hidden">
+      <Helmet>
+        <title>Apps con IA Personalizadas para Negocios | RobotsConsultant Agency</title>
+        <meta name="description" content="Desarrollamos apps personalizadas con inteligencia artificial para tu negocio: apps móviles, dashboards, chatbots, automatizaciones y más. Tecnología a medida sin complicaciones." />
+        <link rel="canonical" href="https://robotsconsultant.net/apps-personalizadas" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Apps Personalizadas con IA",
+          "provider": { "@type": "Organization", "name": "RobotsConsultant Agency" },
+          "description": "Desarrollo de apps personalizadas con inteligencia artificial: apps móviles, dashboards, chatbots y automatizaciones para negocios.",
+          "areaServed": "ES"
+        })}</script>
+      </Helmet>
       <style>{`
         @keyframes fadeUp   { from { opacity:0; transform:translateY(32px) } to { opacity:1; transform:translateY(0) } }
         @keyframes fadeLeft { from { opacity:0; transform:translateX(-36px) } to { opacity:1; transform:translateX(0) } }

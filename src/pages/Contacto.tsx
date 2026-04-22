@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -81,6 +82,23 @@ const Contacto = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <Helmet>
+        <title>Contacto | RobotsConsultant Agency</title>
+        <meta name="description" content="Habla con nuestro equipo de IA y automatización. Consulta gratuita sin compromiso. Llámanos al +34 654 94 27 20 o escríbenos a info@robotsconsultant.net." />
+        <link rel="canonical" href="https://robotsconsultant.net/contacto" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contacto RobotsConsultant Agency",
+          "url": "https://robotsconsultant.net/contacto",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "RobotsConsultant Agency",
+            "telephone": "+34-654-942-720",
+            "email": "info@robotsconsultant.net"
+          }
+        })}</script>
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

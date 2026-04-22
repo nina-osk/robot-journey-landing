@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Truck, Construction, ArrowRight, CheckCircle, Users, Clock, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -82,6 +83,11 @@ const MobileRobots = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <Helmet>
+        <title>Robots Móviles para Empresas | RobotsConsultant Agency</title>
+        <meta name="description" content="Robots móviles autónomos para restaurantes, hoteles y retail. Servicio, reparto, atención al cliente y logística interna automatizados. Aumenta eficiencia y reduce costes." />
+        <link rel="canonical" href="https://robotsconsultant.net/robots-moviles" />
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}

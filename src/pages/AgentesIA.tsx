@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, CheckCircle, Users, Clock, DollarSign, BarChart3, Bot, Globe, Cpu, MessageSquare, Calendar, ShoppingCart, Headphones, ChefHat } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -28,8 +29,21 @@ const AgentesIA = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <Helmet>
+        <title>Agentes de IA para Empresas | RobotsConsultant Agency</title>
+        <meta name="description" content="Implementamos agentes de inteligencia artificial que atienden clientes 24/7, gestionan reservas, ventas y soporte sin intervención humana. Ahorra hasta un 70% en costes operativos." />
+        <link rel="canonical" href="https://robotsconsultant.net/agentes-ia" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Agentes de IA para Empresas",
+          "provider": { "@type": "Organization", "name": "RobotsConsultant Agency" },
+          "description": "Agentes de inteligencia artificial que atienden clientes 24/7, gestionan reservas, pedidos y soporte sin intervención humana.",
+          "areaServed": "ES"
+        })}</script>
+      </Helmet>
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0">
