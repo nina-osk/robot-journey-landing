@@ -170,6 +170,240 @@ const ShopifyServices = () => {
         </div>
       </section>
 
+      {/* ══════════════════════════════════════════════════════
+          DESARROLLO DE TEMAS Y APPS SHOPIFY — SECCIÓN DETALLADA
+          ══════════════════════════════════════════════════════ */}
+      <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#667eea]/6 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#764ba2]/6 rounded-full blur-[100px]" />
+        </div>
+        <div className="container mx-auto max-w-7xl relative z-10">
+
+          {/* Header */}
+          <div className="text-center mb-16 slide-in-section">
+            <span className="inline-block bg-gradient-to-r from-[#667eea]/15 to-[#764ba2]/15 border border-[#667eea]/20 text-[#667eea] px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
+              Desarrollo propio · Desde cero · A tu medida
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+              Temas y Apps Shopify{' '}
+              <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
+                100% personalizados
+              </span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              No plantillas genéricas. Construimos exactamente lo que tu negocio necesita,
+              con código limpio, escalable y documentado.
+            </p>
+          </div>
+
+          {/* Two main columns */}
+          <div className="grid lg:grid-cols-2 gap-8">
+
+            {/* ── Temas ── */}
+            <div className="slide-in-section group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-[#667eea]/30 transition-all duration-300">
+              {/* Top accent bar */}
+              <div className="h-1 bg-gradient-to-r from-[#667eea] to-[#764ba2]" />
+              <div className="p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-[#667eea]/15 border border-[#667eea]/25 flex items-center justify-center flex-shrink-0">
+                    <Palette className="w-7 h-7 text-[#667eea]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-white">Temas Shopify a Medida</h3>
+                    <p className="text-[#667eea] text-sm font-medium">Diseño exclusivo · Liquid · Dawn</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  Tu tienda merece una identidad única. Desarrollamos temas Shopify desde cero o
+                  personalizamos profundamente los existentes, adaptando cada detalle a tu marca y
+                  optimizando cada página para convertir visitas en ventas.
+                </p>
+
+                {/* What's included */}
+                <div className="space-y-3 mb-7">
+                  {[
+                    { icon: '🎨', title: 'Diseño UI/UX exclusivo',        desc: 'Wireframes, mockups y diseño final adaptado a tu marca' },
+                    { icon: '📱', title: 'Responsive perfecto',            desc: 'Experiencia impecable en móvil, tablet y escritorio' },
+                    { icon: '⚡', title: 'Velocidad Core Web Vitals',      desc: 'Optimizado para Google. Carga ultra-rápida.' },
+                    { icon: '🛒', title: 'Flujo de compra optimizado',     desc: 'Checkout, cart y product pages diseñados para convertir' },
+                    { icon: '✏️', title: 'Editor personalizado',           desc: 'Tu equipo puede editar contenido sin tocar código' },
+                    { icon: '🔌', title: 'Compatible con apps populares',  desc: 'Klaviyo, Reviews, Loyalty y todas las apps que uses' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors">
+                      <span className="text-lg mt-0.5 flex-shrink-0">{item.icon}</span>
+                      <div>
+                        <p className="text-white text-sm font-semibold">{item.title}</p>
+                        <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Tech tags */}
+                <div className="flex flex-wrap gap-2 mb-7">
+                  {['Liquid', 'HTML/CSS', 'JavaScript', 'Dawn', 'Shopify CLI', 'Figma'].map((t, i) => (
+                    <span key={i} className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#667eea]/12 text-[#667eea] border border-[#667eea]/20">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Fake theme preview */}
+                <div className="rounded-xl overflow-hidden border border-white/[0.08] bg-[#0d0d18] p-3 mb-7">
+                  <div className="flex items-center gap-1.5 mb-2">
+                    {['#ff5f57','#febc2e','#28c840'].map((c,i)=><div key={i} className="w-2 h-2 rounded-full" style={{background:c}}/>)}
+                    <div className="flex-1 h-3 bg-white/[0.05] rounded ml-2 flex items-center px-2">
+                      <span className="text-[7px] text-gray-600 font-mono">yourstore.myshopify.com</span>
+                    </div>
+                  </div>
+                  {/* Fake product page */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="rounded-lg bg-gradient-to-br from-[#667eea]/10 to-[#764ba2]/10 border border-white/[0.06]" style={{height:'70px'}} />
+                    <div className="space-y-1.5 py-1">
+                      <div className="h-2 bg-white/10 rounded w-3/4" />
+                      <div className="h-2 bg-white/10 rounded w-1/2" />
+                      <div className="h-2 bg-[#667eea]/30 rounded w-1/3 mt-2" />
+                      <div className="h-5 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-full w-full mt-2" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Price range */}
+                <div className="flex items-center justify-between p-4 rounded-xl bg-[#667eea]/8 border border-[#667eea]/15 mb-6">
+                  <div>
+                    <p className="text-xs text-gray-500">Desde</p>
+                    <p className="text-2xl font-extrabold text-white">1.500 €</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-gray-500">Incluye</p>
+                    <p className="text-xs text-gray-300">Diseño + Desarrollo + Formación</p>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/30 text-white border-0 rounded-full font-semibold group" asChild>
+                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                    Quiero un tema personalizado
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* ── Apps ── */}
+            <div className="slide-in-section group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-[#764ba2]/30 transition-all duration-300">
+              {/* Top accent bar */}
+              <div className="h-1 bg-gradient-to-r from-[#764ba2] to-[#f093fb]" />
+              <div className="p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-[#764ba2]/15 border border-[#764ba2]/25 flex items-center justify-center flex-shrink-0">
+                    <Code className="w-7 h-7 text-[#764ba2]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-white">Apps Shopify Personalizadas</h3>
+                    <p className="text-[#764ba2] text-sm font-medium">App Bridge · Admin API · Webhooks</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  Cuando las apps del marketplace no hacen exactamente lo que necesitas,
+                  desarrollamos la tuya. Integrada nativamente en Shopify, con la lógica de
+                  negocio que tu tienda requiere y sin pagar comisiones de por vida.
+                </p>
+
+                {/* Types of apps */}
+                <div className="space-y-3 mb-7">
+                  {[
+                    { icon: '🔗', title: 'Integraciones con ERP/CRM',        desc: 'Conecta Shopify con Odoo, SAP, HubSpot o cualquier sistema' },
+                    { icon: '💰', title: 'Calculadoras de precio dinámico',   desc: 'Presupuestadores, configuradores y precios por volumen' },
+                    { icon: '🔄', title: 'Sistemas de suscripción propios',   desc: 'Suscripciones sin depender de apps de terceros' },
+                    { icon: '📦', title: 'Gestión de inventario avanzada',    desc: 'Multi-almacén, alertas, reposición automática' },
+                    { icon: '🏢', title: 'Portales B2B y mayoristas',         desc: 'Precios por cliente, pedidos mínimos, aprobaciones' },
+                    { icon: '🤖', title: 'Apps con IA integrada',             desc: 'Recomendaciones, chatbots y análisis predictivo' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors">
+                      <span className="text-lg mt-0.5 flex-shrink-0">{item.icon}</span>
+                      <div>
+                        <p className="text-white text-sm font-semibold">{item.title}</p>
+                        <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Tech tags */}
+                <div className="flex flex-wrap gap-2 mb-7">
+                  {['Node.js', 'React', 'App Bridge', 'Admin API', 'Webhooks', 'Polaris'].map((t, i) => (
+                    <span key={i} className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#764ba2]/12 text-[#764ba2] border border-[#764ba2]/20">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Fake app preview */}
+                <div className="rounded-xl overflow-hidden border border-white/[0.08] bg-[#0d0d18] p-3 mb-7">
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <div className="w-4 h-4 rounded bg-gradient-to-br from-[#764ba2] to-[#f093fb]" />
+                    <span className="text-[8px] font-mono text-[#764ba2]">My Custom App · Shopify Admin</span>
+                    <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  </div>
+                  <div className="grid grid-cols-3 gap-1.5 mb-2">
+                    {[
+                      { l:'Pedidos sync', v:'1.248', c:'#764ba2' },
+                      { l:'Stock alerts', v:'3', c:'#f093fb' },
+                      { l:'B2B clients', v:'47', c:'#4facfe' },
+                    ].map((m,i)=>(
+                      <div key={i} className="rounded-lg p-2 bg-white/[0.05]" style={{borderLeft:`2px solid ${m.c}`}}>
+                        <p className="text-[7px] text-gray-500">{m.l}</p>
+                        <p className="text-[10px] font-bold text-white">{m.v}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="h-2 bg-white/[0.04] rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#764ba2] to-[#f093fb] rounded-full" style={{width:'78%'}} />
+                  </div>
+                  <p className="text-[7px] text-gray-600 mt-1">Sincronización ERP — 78% completada</p>
+                </div>
+
+                {/* Price range */}
+                <div className="flex items-center justify-between p-4 rounded-xl bg-[#764ba2]/8 border border-[#764ba2]/15 mb-6">
+                  <div>
+                    <p className="text-xs text-gray-500">Desde</p>
+                    <p className="text-2xl font-extrabold text-white">2.500 €</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-gray-500">Incluye</p>
+                    <p className="text-xs text-gray-300">Desarrollo + Integración + Soporte</p>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-gradient-to-r from-[#764ba2] to-[#f093fb] hover:shadow-lg hover:shadow-[#764ba2]/30 text-white border-0 rounded-full font-semibold group" asChild>
+                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                    Quiero una app personalizada
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom trust bar */}
+          <div className="mt-10 flex flex-wrap justify-center gap-8 text-sm text-gray-500 slide-in-section">
+            {[
+              '✅ Código limpio y documentado',
+              '✅ Cumple las políticas de Shopify',
+              '✅ Mantenimiento y actualizaciones',
+              '✅ Presupuesto sin compromiso',
+            ].map((item, i) => (
+              <span key={i} className="text-gray-400">{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Por qué elegirnos */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -161,6 +161,410 @@ const OdooServices = () => {
         </div>
       </section>
 
+      {/* ════════════════════════════════════════════════════════
+          SERVICIO DESTACADO: KIOSCOS & MENÚS INTERACTIVOS
+          ════════════════════════════════════════════════════════ */}
+
+      {/* — Intro — */}
+      <section className="py-20 px-4 border-t border-white/[0.06]">
+        <div className="container mx-auto max-w-4xl text-center">
+          <span className="inline-block bg-gradient-to-r from-[#667eea]/15 to-[#764ba2]/15 text-[#667eea] border border-[#667eea]/20 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+            🖥️ Servicio destacado
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+            Vende más sin contratar más personal
+          </h2>
+          <p className="text-xl text-gray-200 mb-4 leading-relaxed">
+            El sistema de kioscos y menús interactivos que usan los restaurantes y tiendas modernas
+          </p>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+            Reduce colas, aumenta el ticket medio y recupera el control de tu negocio con un sistema
+            de pedidos y cobro automatizado, conectado a tu gestión.
+          </p>
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            {['Instalación rápida', 'Sin complicaciones', 'Resultados reales'].map((tag, i) => (
+              <span key={i} className="flex items-center gap-2 text-[#667eea] font-medium">
+                <span className="w-2 h-2 rounded-full bg-[#667eea]" />
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* — Problemas — */}
+      <section className="py-16 px-4 bg-white/[0.025]">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              ¿Te suena alguno de estos problemas?
+            </h3>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {[
+              { icon: '⏳', text: 'Colas en horas punta' },
+              { icon: '🚶', text: 'Clientes que se marchan sin comprar' },
+              { icon: '😓', text: 'Personal saturado o difícil de encontrar' },
+              { icon: '❌', text: 'Errores en pedidos o cobros' },
+              { icon: '📊', text: 'Poco control real de ventas y stock' },
+            ].map((p, i) => (
+              <div key={i}
+                className="flex items-center gap-3 bg-red-500/[0.06] border border-red-400/10 rounded-xl px-5 py-4">
+                <span className="text-2xl">{p.icon}</span>
+                <span className="text-gray-200 font-medium text-sm">{p.text}</span>
+              </div>
+            ))}
+            <div className="flex items-center justify-center bg-[#667eea]/[0.08] border border-[#667eea]/20 rounded-xl px-5 py-4">
+              <p className="text-[#667eea] font-semibold text-sm text-center">
+                El problema no es tu producto. Es el sistema.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* — Solución — */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              La solución que ya están usando los negocios rentables
+            </h3>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Un sistema de kioscos de autoservicio y menús interactivos, donde:
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              'El cliente pide o paga solo',
+              'El sistema sugiere extras y packs automáticamente',
+              'El pedido o la venta se registra en tiempo real',
+              'Tu equipo se dedica a atender y vender mejor',
+              'Toda la información se centraliza en la gestión',
+            ].map((item, i) => (
+              <div key={i}
+                className="flex items-start gap-3 bg-white/[0.04] border border-white/10 rounded-xl p-5 hover:bg-white/[0.07] transition-colors">
+                <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-200 text-sm leading-relaxed">{item}</span>
+              </div>
+            ))}
+            <div className="bg-gradient-to-br from-[#667eea]/10 to-[#764ba2]/10 border border-[#667eea]/20 rounded-xl p-5 flex items-center justify-center">
+              <p className="text-center text-white font-semibold text-sm leading-relaxed">
+                Resultado: más ventas, menos colas y menos dependencia del personal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* — Para quién + Resultados — */}
+      <section className="py-20 px-4 bg-white/[0.025]">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-14">
+
+            {/* Para quién */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-8">
+                ¿Para quién es este sistema?
+              </h3>
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-2xl">🍽️</span>
+                    <h4 className="font-semibold text-white">Restaurantes</h4>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {['Cafeterías', 'Hamburgueserías', 'Pizzerías', 'Fast food', 'Restaurantes pequeños y medianos'].map((t, i) => (
+                      <li key={i} className="flex items-center gap-2 text-gray-400 text-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#667eea] flex-shrink-0" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-2xl">🏪</span>
+                    <h4 className="font-semibold text-white">Tiendas</h4>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {['Alimentación', 'Panaderías', 'Tiendas de conveniencia', 'Tiendas especializadas', 'Franquicias pequeñas'].map((t, i) => (
+                      <li key={i} className="flex items-center gap-2 text-gray-400 text-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#764ba2] flex-shrink-0" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Resultados */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-8">
+                Resultados habituales
+              </h3>
+              <div className="space-y-3">
+                {[
+                  { icon: '📈', label: '+10% a +30%', sub: 'de ticket medio' },
+                  { icon: '⏱', label: 'Menos tiempo de espera', sub: 'para tus clientes' },
+                  { icon: '💸', label: 'Ahorro real', sub: 'en costes de personal' },
+                  { icon: '⭐', label: 'Mejor experiencia', sub: 'de cliente' },
+                  { icon: '🧠', label: 'Control total', sub: 'del negocio en tiempo real' },
+                ].map((r, i) => (
+                  <div key={i}
+                    className="flex items-center gap-4 bg-white/[0.04] border border-white/10 rounded-xl px-5 py-4 hover:bg-white/[0.07] transition-colors">
+                    <span className="text-2xl">{r.icon}</span>
+                    <div>
+                      <span className="text-white font-bold">{r.label}</span>
+                      <span className="text-gray-400"> {r.sub}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* — Packs de precios — */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              Elige el pack que mejor se adapta a tu negocio
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 items-start">
+
+            {/* Pack Esencial */}
+            <Card className="p-8 bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] transition-all">
+              <CardContent className="p-0">
+                <div className="mb-6">
+                  <span className="inline-block w-3 h-3 rounded-full bg-green-400 mb-3" />
+                  <h4 className="text-xl font-bold text-white">Pack Esencial</h4>
+                  <p className="text-green-400 text-sm font-semibold mt-1">"Pedidos o cobros sin colas"</p>
+                  <p className="text-gray-500 text-xs mt-1">Ideal para empezar sin complicaciones</p>
+                </div>
+                <ul className="space-y-2.5 mb-8">
+                  {[
+                    '1 kiosco de pedidos o cobro',
+                    'Menú o catálogo digital',
+                    'Configuración de productos y precios',
+                    'Integración básica',
+                    'Formación inicial',
+                  ].map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
+                      <CheckCircle className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-t border-white/10 pt-6 mb-6">
+                  <p className="text-white font-bold text-2xl">1.200 €</p>
+                  <p className="text-gray-400 text-sm mt-1">+ 99 €/mes</p>
+                </div>
+                <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20" asChild>
+                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                    Quiero este pack
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Pack Profesional — destacado */}
+            <Card className="p-8 bg-gradient-to-b from-[#667eea]/10 to-[#764ba2]/10 border border-[#667eea]/40 hover:border-[#667eea]/60 transition-all relative">
+              <CardContent className="p-0">
+                <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                  <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg">
+                    ⭐ El más contratado
+                  </span>
+                </div>
+                <div className="mb-6 mt-3">
+                  <span className="inline-block w-3 h-3 rounded-full bg-yellow-400 mb-3" />
+                  <h4 className="text-xl font-bold text-white">Pack Profesional</h4>
+                  <p className="text-yellow-400 text-sm font-semibold mt-1">"Vende más en automático"</p>
+                  <p className="text-gray-500 text-xs mt-1">El pack más contratado</p>
+                </div>
+                <ul className="space-y-2.5 mb-8">
+                  {[
+                    '1–2 kioscos',
+                    'Menú o catálogo con sugerencias y packs',
+                    'Pedidos y pagos automatizados',
+                    'Integración completa con ventas y stock',
+                    'Panel de control',
+                    'Optimización del ticket medio',
+                    'Formación + acompañamiento',
+                  ].map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-gray-200 text-sm">
+                      <CheckCircle className="h-4 w-4 text-[#667eea] mt-0.5 flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-t border-white/10 pt-6 mb-6">
+                  <p className="text-white font-bold text-2xl">2.500 €</p>
+                  <p className="text-gray-400 text-sm mt-1">+ 149 €/mes</p>
+                </div>
+                <Button
+                  className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0"
+                  asChild>
+                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                    Quiero este pack
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Pack Escala */}
+            <Card className="p-8 bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] transition-all">
+              <CardContent className="p-0">
+                <div className="mb-6">
+                  <span className="inline-block w-3 h-3 rounded-full bg-blue-400 mb-3" />
+                  <h4 className="text-xl font-bold text-white">Pack Escala</h4>
+                  <p className="text-blue-400 text-sm font-semibold mt-1">"Negocio inteligente"</p>
+                  <p className="text-gray-500 text-xs mt-1">Para crecer sin perder control</p>
+                </div>
+                <ul className="space-y-2.5 mb-8">
+                  {[
+                    'Varios kioscos',
+                    'Gestión centralizada multi-local',
+                    'Control avanzado de stock y ventas',
+                    'Informes y análisis detallados',
+                    'Automatizaciones personalizadas',
+                    'Soporte continuo',
+                  ].map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
+                      <CheckCircle className="h-4 w-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-t border-white/10 pt-6 mb-6">
+                  <p className="text-white font-bold text-2xl">5.000 €</p>
+                  <p className="text-gray-400 text-sm mt-1">+ 299 €/mes</p>
+                </div>
+                <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20" asChild>
+                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                    Quiero este pack
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* — Por qué nosotros + CTA análisis gratuito — */}
+      <section className="py-20 px-4 bg-white/[0.025]">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+            {/* Por qué nosotros */}
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
+                ¿Por qué trabajar con nosotros?
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { icon: '⚡', title: 'Implantación rápida y guiada', desc: 'Sin semanas de espera ni interrupciones en tu negocio.' },
+                  { icon: '🎯', title: 'Pensado para negocios reales', desc: 'No para técnicos. Soluciones prácticas desde el primer día.' },
+                  { icon: '🤝', title: 'Acompañamiento continuo', desc: 'Estamos contigo después de la instalación.' },
+                  { icon: '📈', title: 'Sistema escalable', desc: 'Crece cuando tú crezcas, sin empezar desde cero.' },
+                  { icon: '🔑', title: 'Un único proveedor para todo', desc: 'Hardware, software, integración y soporte.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08]">
+                    <span className="text-2xl mt-0.5">{item.icon}</span>
+                    <div>
+                      <p className="font-semibold text-white text-sm">{item.title}</p>
+                      <p className="text-gray-400 text-sm mt-0.5">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA análisis gratuito */}
+            <div className="bg-gradient-to-br from-[#667eea]/10 to-[#764ba2]/10 border border-[#667eea]/20 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-3">
+                ¿Encajará este sistema en tu negocio?
+              </h3>
+              <p className="text-gray-300 mb-2 leading-relaxed">
+                En la mayoría de casos, sí. Pero cada local es diferente.
+              </p>
+              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                Por eso ofrecemos un <span className="text-white font-semibold">análisis gratuito</span>, donde:
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Revisamos tu negocio',
+                  'Calculamos el impacto real',
+                  'Vemos qué pack te encaja',
+                  'Explicamos cómo sería la instalación',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-gray-200 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gray-500 text-xs mb-6 text-center">Sin compromiso.</p>
+              <Button
+                size="lg"
+                className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-xl hover:shadow-[#667eea]/40 text-white border-0 py-6 text-base font-semibold"
+                asChild>
+                <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                  📲 Quiero mi análisis gratuito
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <p className="text-center text-gray-500 text-xs mt-4">
+                Descubre cuánto podrías vender más con kioscos y menús interactivos
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* — FAQ Kioscos — */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-3xl">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              Preguntas frecuentes
+            </h3>
+          </div>
+          <Accordion type="single" collapsible>
+            {[
+              { q: '¿Es complicado de usar?', a: 'No. El sistema es intuitivo tanto para clientes como para el personal. En horas ya funciona sin ayuda.' },
+              { q: '¿Cuánto tarda la instalación?', a: 'Normalmente entre uno y tres días. Planificamos todo para que no interrumpir tu actividad.' },
+              { q: '¿Necesito conocimientos técnicos?', a: 'No. Nos encargamos de todo: hardware, software, configuración e integración con tu gestión.' },
+              { q: '¿Funciona con varios locales?', a: 'Sí, el sistema está preparado para escalar. Con el Pack Escala gestionas todos los locales desde un único panel.' },
+            ].map((faq, i) => (
+              <AccordionItem key={i} value={`kiosco-${i}`}>
+                <AccordionTrigger className="text-left text-white hover:text-[#667eea]">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-400">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* — Tagline final — */}
+      <div className="py-8 bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 border-y border-white/[0.06]">
+        <div className="container mx-auto text-center">
+          <p className="text-white text-lg font-semibold tracking-wide">
+            ✅ Menos colas · Más ventas · Más control
+          </p>
+        </div>
+      </div>
+
       {/* Sección de Problema */}
       <section className="py-20 px-4">
         <div className="container mx-auto">

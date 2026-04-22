@@ -11,6 +11,7 @@ import PackRestaurante from "./pages/PackRestaurante";
 import PackHotel from "./pages/PackHotel";
 import PackEcommerce from "./pages/PackEcommerce";
 import AboutMe from "./pages/AboutMe";
+import AppsPersonalizadas from "./pages/AppsPersonalizadas";
 import OdooServices from "./pages/OdooServices";
 import TransformacionDigital from "./pages/TransformacionDigital";
 import AgentesIA from "./pages/AgentesIA";
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/shopify" element={<ShopifyServices />} />
           <Route path="/mentoria-ia" element={<MentoriaIA />} />
           <Route path="/sobre-mi" element={<AboutMe />} />
+          <Route path="/apps-personalizadas" element={<AppsPersonalizadas />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/politica-compras" element={<PoliticaCompras />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />

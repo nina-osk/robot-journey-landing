@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.svg';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,7 +28,7 @@ const Navbar = () => {
             <img 
               src={logo}
               alt="RobotsConsultant" 
-              className="h-12 md:h-14 transition-all duration-300 hover:scale-110 hover:brightness-125"
+              className="h-10 md:h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110"
             />
           </a>
 
@@ -58,19 +58,22 @@ const Navbar = () => {
               Shopify
             </a>
             <a
-              href="./mentoria-ia" 
-              className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
+              href="./apps-personalizadas"
+              className="text-sm font-semibold text-[#667eea] hover:text-[#764ba2] transition-colors relative group"
             >
-              Mentoría IA
+              Apps con IA
+              <span className="absolute -top-1 -right-6 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                NEW
+              </span>
             </a>
-            <a 
-              href="https://robotsconsultant.net/tienda" 
+            <a
+              href="https://robotsconsultant.net/tienda"
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
             >
               Cursos
             </a>
             <a
-              href="./contacto" 
+              href="./contacto"
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
             >
               Contacto
@@ -164,18 +167,12 @@ const Navbar = () => {
               Shopify
             </a>
             <a
-              href="./mentoria-ia" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
+              href="./apps-personalizadas"
+              className="block px-3 py-2 rounded-md text-base font-semibold text-[#667eea] hover:bg-white/5 flex items-center gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Mentoría IA
-            </a>
-            <a
-              href="./sobre-mi" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Sobre Mí
+              Apps con IA
+              <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white text-[9px] font-bold px-2 py-0.5 rounded-full">NEW</span>
             </a>
             <a
               href="https://robotsconsultant.net/tienda" 

@@ -16,22 +16,10 @@ const SolutionSection = () => {
             Ayudamos a las <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">PYMEs</span> en sus procesos de digitalización y automatización de procesos clave
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Si tienes manejo de efectivo, probablemente tienes descuadres de caja. Mira cómo solucionarlo:
+            Si tienes un negocio y manejas efectivo, sabias que ?, el 80% de los errores de descuadre de caja ocurren en horas puntas.  Mira cómo solucionarlo:
           </p>
         </div>
 
-        {/* Video YouTube Short */}
-        <div className="max-w-md mx-auto mb-16">
-          <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl shadow-[#667eea]/20 border border-white/10">
-            <iframe
-              src="https://www.youtube.com/embed/qOdJPMJivEM"
-              title="Descuadres de caja - Solución"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
-          </div>
-        </div>
 
         {/* Galería de fotos */}
         <div className="mb-16">
