@@ -1,0 +1,116 @@
+{
+  "name": "Kioscos — Leads Registro",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kioscos-lead",
+        "responseMode": "onReceived",
+        "responseData": "noData",
+        "options": {}
+      },
+      "id": "a1b2c3d4-e5f6-7890-abcd-000000000001",
+      "name": "Recibe Lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "kioscos-lead"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1wLLjiHXAg3pm6Ya7dw-EYvBBbTHeUcQTQs3WQUQBgbA",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $json.nombre }}",
+            "Email": "={{ $json.email }}",
+            "WhatsApp": "={{ $json.whatsapp }}",
+            "Fuente": "={{ $json.fuente }}",
+            "Fecha": "={{ $json.fecha }}",
+            "Pagina": "={{ $json.pagina }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            { "id": "Nombre",   "displayName": "Nombre",   "required": false, "defaultMatch": false, "display": true, "type": "string" },
+            { "id": "Email",    "displayName": "Email",    "required": false, "defaultMatch": false, "display": true, "type": "string" },
+            { "id": "WhatsApp", "displayName": "WhatsApp", "required": false, "defaultMatch": false, "display": true, "type": "string" },
+            { "id": "Fuente",   "displayName": "Fuente",   "required": false, "defaultMatch": false, "display": true, "type": "string" },
+            { "id": "Fecha",    "displayName": "Fecha",    "required": false, "defaultMatch": false, "display": true, "type": "string" },
+            { "id": "Pagina",   "displayName": "Pagina",   "required": false, "defaultMatch": false, "display": true, "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-e5f6-7890-abcd-000000000002",
+      "name": "Guardar en Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [480, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets — Robots Consultant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "oscarina.hernandezgarcia@gmail.com",
+        "subject": "={{ '🔔 Nuevo lead kioscos: ' + $('Recibe Lead').item.json.nombre }}",
+        "emailType": "html",
+        "message": "={{ '<div style=\"font-family:sans-serif;max-width:520px\"><h2 style=\"color:#0c123b;border-bottom:3px solid #ffd233;padding-bottom:8px\">🎯 Nuevo lead — Kioscos Restaurante</h2><table style=\"font-size:15px;width:100%;border-collapse:collapse\"><tr style=\"border-bottom:1px solid #eee\"><td style=\"padding:10px 16px 10px 0;color:#666;width:100px\"><b>Nombre</b></td><td style=\"padding:10px 0\">' + $('Recibe Lead').item.json.nombre + '</td></tr><tr style=\"border-bottom:1px solid #eee\"><td style=\"padding:10px 16px 10px 0;color:#666\"><b>Email</b></td><td style=\"padding:10px 0\">' + $('Recibe Lead').item.json.email + '</td></tr><tr style=\"border-bottom:1px solid #eee\"><td style=\"padding:10px 16px 10px 0;color:#666\"><b>WhatsApp</b></td><td style=\"padding:10px 0\">' + $('Recibe Lead').item.json.whatsapp + '</td></tr><tr><td style=\"padding:10px 16px 10px 0;color:#666\"><b>Fecha</b></td><td style=\"padding:10px 0\">' + $('Recibe Lead').item.json.fecha + '</td></tr></table><br><a href=\"https://wa.me/' + $('Recibe Lead').item.json.whatsapp.replace('+','') + '?text=Hola%20' + encodeURIComponent($('Recibe Lead').item.json.nombre) + '%2C%20acabo%20de%20ver%20que%20te%20registraste%20para%20ver%20el%20v%C3%ADdeo%20sobre%20kioscos.%20%C2%BFTienes%20unos%20minutos%20para%20hablar%3F\" style=\"display:inline-block;background:#25D366;color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px\">💬 Escribirle por WhatsApp</a></div>' }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "a1b2c3d4-e5f6-7890-abcd-000000000003",
+      "name": "Notificacion Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [720, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "",
+          "name": "Gmail — Robots Consultant"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Recibe Lead": {
+      "main": [
+        [
+          { "node": "Guardar en Sheets", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Guardar en Sheets": {
+      "main": [
+        [
+          { "node": "Notificacion Email", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a1b2c3d4-e5f6-7890-abcd-000000000099",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": ""
+  },
+  "id": "kioscos-lead-001",
+  "tags": []
+}

@@ -75,13 +75,17 @@ async function prerender() {
     await page.setViewport({ width: 1280, height: 800 })
 
     try {
-      await page.goto(`http://localhost:${PORT}${route}`, {
-        waitUntil: 'networkidle0',
-        timeout: 30000,
-      })
+      try {
+        await page.goto(`http://localhost:${PORT}${route}`, {
+          waitUntil: 'networkidle2',
+          timeout: 20000,
+        })
+      } catch (_) {
+        // timeout or network never settled — still capture what rendered
+      }
 
-      // Wait extra for React animations to settle
-      await new Promise(r => setTimeout(r, 1500))
+      // Wait extra for React to finish rendering
+      await new Promise(r => setTimeout(r, 2000))
 
       const html = await page.content()
 

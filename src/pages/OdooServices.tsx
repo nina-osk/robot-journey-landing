@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,13 +7,62 @@ import { CheckCircle, ArrowRight, Search, Settings, Users, LifeBuoy, Zap, Trendi
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const ODOO_MODULES = [
+  { label: 'CRM',         color: '#667eea', angle: 0   },
+  { label: 'Ventas',      color: '#764ba2', angle: 51  },
+  { label: 'Inventario',  color: '#667eea', angle: 102 },
+  { label: 'Contabilidad',color: '#764ba2', angle: 153 },
+  { label: 'RRHH',        color: '#667eea', angle: 204 },
+  { label: 'Proyectos',   color: '#764ba2', angle: 255 },
+  { label: 'eCommerce',   color: '#667eea', angle: 306 },
+];
+
 const OdooServices = () => {
+  const [activeModule, setActiveModule] = useState(0);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [counted, setCounted] = useState(false);
+
   const scrollToCalendly = () => {
     const calendlySection = document.querySelector('.calendly-inline-widget');
     if (calendlySection) {
       calendlySection.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
+
+  // Cycle active module highlight
+  useEffect(() => {
+    const iv = setInterval(() => setActiveModule(p => (p + 1) % ODOO_MODULES.length), 1200);
+    return () => clearInterval(iv);
+  }, []);
+
+  // Scroll-reveal for data-anim elements
+  useEffect(() => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const el = e.target as HTMLElement;
+          const delay = el.dataset.delay ?? '0';
+          el.style.animationDelay = delay + 'ms';
+          el.classList.add('anim-visible');
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
+
+    // Stats counter
+    if (statsRef.current) {
+      const sObs = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !counted) {
+          setCounted(true);
+          sObs.disconnect();
+        }
+      }, { threshold: 0.5 });
+      sObs.observe(statsRef.current);
+      return () => { obs.disconnect(); sObs.disconnect(); };
+    }
+    return () => obs.disconnect();
+  }, [counted]);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -135,43 +184,192 @@ const OdooServices = () => {
       </Helmet>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-white/[0.03]">
-        <div className="container mx-auto text-center">
-          <div className="mb-6">
-            <img 
-              src="https://www.odoo.com/web/image/website/1/logo/Odoo?unique=689cb1c" 
-              alt="Odoo Official Partner" 
-              className="mx-auto h-12 mb-4"
-            />
-            <span className="inline-block bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 text-[#667eea] px-3 py-1 rounded-full text-sm font-medium">
-              Partner Oficial de Odoo
-            </span>
+
+      <style>{`
+        /* ── Scroll-reveal base ── */
+        [data-anim] { opacity: 0; transform: translateY(28px); transition: none; }
+        .anim-visible { animation: odooFadeUp 0.65s cubic-bezier(.22,1,.36,1) both; }
+        [data-anim="left"].anim-visible  { animation: odooFadeLeft  0.65s cubic-bezier(.22,1,.36,1) both; }
+        [data-anim="right"].anim-visible { animation: odooFadeRight 0.65s cubic-bezier(.22,1,.36,1) both; }
+        [data-anim="scale"].anim-visible { animation: odooScale     0.65s cubic-bezier(.22,1,.36,1) both; }
+
+        @keyframes odooFadeUp   { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes odooFadeLeft { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes odooFadeRight{ from{opacity:0;transform:translateX(30px)}  to{opacity:1;transform:translateX(0)} }
+        @keyframes odooScale    { from{opacity:0;transform:scale(.88)}         to{opacity:1;transform:scale(1)} }
+
+        /* ── Hero orbs ── */
+        @keyframes orbDrift { 0%,100%{transform:translate(0,0) scale(1)} 40%{transform:translate(40px,-30px) scale(1.08)} 70%{transform:translate(-20px,20px) scale(.94)} }
+        .orb-1 { animation: orbDrift 12s ease-in-out infinite; }
+        .orb-2 { animation: orbDrift 16s ease-in-out infinite reverse; }
+        .orb-3 { animation: orbDrift 10s ease-in-out infinite 3s; }
+
+        /* ── Module orbit ── */
+        @keyframes floatBadge { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-6px) scale(1.04)} }
+
+        /* ── Dashboard pulse ── */
+        @keyframes dashPulse { 0%,100%{opacity:.7} 50%{opacity:1} }
+        @keyframes barFill    { from{width:0} to{width:var(--w)} }
+        @keyframes blinkDot   { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+        .dash-bar { animation: barFill 1.4s cubic-bezier(.22,1,.36,1) 0.6s both; }
+        .dash-dot { animation: blinkDot 1.2s ease-in-out infinite; }
+
+        /* ── Float slow ── */
+        @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        .float-slow  { animation: floatSlow 4s ease-in-out infinite; }
+        .float-slow2 { animation: floatSlow 5s ease-in-out infinite 1s; }
+        .float-slow3 { animation: floatSlow 6s ease-in-out infinite 2s; }
+
+        /* ── Counter ── */
+        @keyframes countPop { from{opacity:0;transform:scale(.7)} to{opacity:1;transform:scale(1)} }
+        .count-pop { animation: countPop .5s cubic-bezier(.34,1.56,.64,1) both; }
+
+        /* ── Card hover glow ── */
+        .odoo-card { transition: transform .25s, box-shadow .25s; }
+        .odoo-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(102,126,234,.18); }
+
+        /* ── Gradient text sweep ── */
+        @keyframes gradSweep { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        .grad-sweep { background-size:200% 200%; animation:gradSweep 4s ease infinite; }
+
+        /* ── Timeline line draw ── */
+        @keyframes lineGrow { from{height:0} to{height:100%} }
+        .line-grow.anim-visible { animation: lineGrow 1.2s cubic-bezier(.22,1,.36,1) .3s both; }
+      `}</style>
+
+      {/* ══════════ HERO ══════════ */}
+      <section className="pt-28 pb-20 px-4 relative overflow-hidden">
+        {/* Orbs */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="orb-1 absolute top-10 left-10 w-[500px] h-[500px] rounded-full bg-[#667eea]/10 blur-[90px]" />
+          <div className="orb-2 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#764ba2]/12 blur-[80px]" />
+          <div className="orb-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#667eea]/6 blur-[70px]" />
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left — text */}
+            <div>
+              <div className="mb-5" data-anim data-delay="0">
+                <span className="inline-flex items-center gap-2 bg-gradient-to-r from-[#667eea]/15 to-[#764ba2]/15 border border-[#667eea]/25 text-[#667eea] px-4 py-1.5 rounded-full text-sm font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-[#667eea] dash-dot" />
+                  Partner Oficial de Odoo
+                </span>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight" data-anim data-delay="80">
+                Transforma tu Empresa.{' '}
+                <span className="bg-gradient-to-r from-[#667eea] via-[#9b6dff] to-[#764ba2] bg-clip-text text-transparent grad-sweep">
+                  Crece sin Límites.
+                </span>
+              </h1>
+
+              <p className="text-lg text-gray-400 mb-4 leading-relaxed" data-anim data-delay="160">
+                Todo con un único sistema: <span className="text-white font-semibold">Odoo</span>
+              </p>
+              <p className="text-gray-500 mb-8 leading-relaxed" data-anim data-delay="200">
+                Como Partners Oficiales de Odoo, convertimos tus procesos complejos en un sistema integrado,
+                eficiente y hecho a la medida de tu negocio.
+              </p>
+
+              <div className="flex flex-wrap gap-3 mb-8" data-anim data-delay="260">
+                <Button size="lg" className="text-base px-7 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full" asChild>
+                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                    Diagnóstico Gratuito <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+
+              {/* Mini stats */}
+              <div className="flex flex-wrap gap-6" data-anim data-delay="320" ref={statsRef}>
+                {[
+                  { n: '50+', label: 'Implementaciones' },
+                  { n: '100%', label: 'Satisfacción' },
+                  { n: '10+', label: 'Años experiencia' },
+                ].map((s, i) => (
+                  <div key={i} className={`text-center ${counted ? 'count-pop' : 'opacity-0'}`} style={{ animationDelay: i * 100 + 'ms' }}>
+                    <p className="text-2xl font-extrabold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">{s.n}</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — animated Odoo ERP visual */}
+            <div className="relative flex items-center justify-center min-h-[380px]" data-anim="scale" data-delay="100">
+
+              {/* Central hub */}
+              <div className="relative z-10 w-28 h-28 rounded-2xl bg-gradient-to-br from-[#667eea] to-[#764ba2] flex flex-col items-center justify-center shadow-[0_0_60px_rgba(102,126,234,.45)] float-slow">
+                <span className="text-3xl font-black text-white leading-none">O</span>
+                <span className="text-[10px] font-bold text-white/80 tracking-widest">ERP</span>
+              </div>
+
+              {/* Orbit ring */}
+              <div className="absolute w-72 h-72 rounded-full border border-[#667eea]/20 border-dashed" style={{ animation: 'spin 30s linear infinite' }} />
+              <div className="absolute w-56 h-56 rounded-full border border-[#764ba2]/15 border-dashed" style={{ animation: 'spin 20s linear infinite reverse' }} />
+
+              {/* Module badges orbiting */}
+              {ODOO_MODULES.map((mod, i) => {
+                const rad = (mod.angle * Math.PI) / 180;
+                const r = 130;
+                const x = Math.cos(rad) * r;
+                const y = Math.sin(rad) * r;
+                const isActive = i === activeModule;
+                return (
+                  <div
+                    key={i}
+                    className="absolute flex items-center justify-center transition-all duration-500"
+                    style={{
+                      transform: `translate(${x}px, ${y}px)`,
+                      animation: `floatBadge ${3 + i * 0.4}s ease-in-out infinite`,
+                    }}
+                  >
+                    <div className={`px-3 py-1.5 rounded-full text-[11px] font-bold border transition-all duration-500 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-[#667eea] to-[#764ba2] border-transparent text-white shadow-[0_0_20px_rgba(102,126,234,.6)] scale-110'
+                        : 'bg-white/[0.06] border-white/15 text-gray-400'
+                    }`}>
+                      {mod.label}
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* Fake dashboard card */}
+              <div className="absolute bottom-0 right-0 w-52 bg-[#111120] border border-white/[0.08] rounded-xl p-3 shadow-2xl float-slow2">
+                <div className="flex items-center gap-1.5 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-green-400 dash-dot" />
+                  <span className="text-[9px] font-mono text-gray-500">Odoo Live Dashboard</span>
+                </div>
+                {[
+                  { label: 'Ventas', val: '€ 48.200', w: '82%' },
+                  { label: 'Pedidos', val: '312', w: '65%' },
+                  { label: 'Clientes', val: '1.840', w: '91%' },
+                ].map((row, i) => (
+                  <div key={i} className="mb-2">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-[9px] text-gray-500">{row.label}</span>
+                      <span className="text-[9px] font-bold text-white">{row.val}</span>
+                    </div>
+                    <div className="h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full dash-bar"
+                        style={{ '--w': row.w, background: 'linear-gradient(90deg,#667eea,#764ba2)', animationDelay: `${0.6 + i * 0.2}s` } as React.CSSProperties}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Top-left floating badge */}
+              <div className="absolute top-4 left-0 bg-[#111120] border border-[#667eea]/20 rounded-xl px-3 py-2 shadow-xl float-slow3">
+                <p className="text-[9px] text-gray-500">Automatización activa</p>
+                <p className="text-sm font-bold text-[#667eea]">+30% eficiencia</p>
+              </div>
+            </div>
+
           </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            Transforma tu Empresa. Crece sin Límites.
-            <span className="block bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Todo con un Único Sistema: Odoo</span>
-          </h1>
-          
-          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-            Como Partners Oficiales de Odoo, convertimos tus procesos complejos en un sistema integrado, 
-            eficiente y hecho a la medida de tu negocio. Deja que la tecnología trabaje para ti.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white" asChild>
-              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
-                Agenda tu Diagnóstico Gratuito
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
-          
-          <p className="text-sm text-gray-400">
-            Más de 50+ implementaciones exitosas | Experiencia en Odoo Community y Enterprise
-          </p>
         </div>
       </section>
 
@@ -182,10 +380,10 @@ const OdooServices = () => {
       {/* — Intro — */}
       <section className="py-20 px-4 border-t border-white/[0.06]">
         <div className="container mx-auto max-w-4xl text-center">
-          <span className="inline-block bg-gradient-to-r from-[#667eea]/15 to-[#764ba2]/15 text-[#667eea] border border-[#667eea]/20 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          <span data-anim data-delay="0" className="inline-block bg-gradient-to-r from-[#667eea]/15 to-[#764ba2]/15 text-[#667eea] border border-[#667eea]/20 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
             🖥️ Servicio destacado
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+          <h2 data-anim data-delay="80" className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
             Vende más sin contratar más personal
           </h2>
           <p className="text-xl text-gray-200 mb-4 leading-relaxed">
@@ -210,7 +408,7 @@ const OdooServices = () => {
       <section className="py-16 px-4 bg-white/[0.025]">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+            <h3 data-anim className="text-2xl md:text-3xl font-bold text-white mb-2">
               ¿Te suena alguno de estos problemas?
             </h3>
           </div>
@@ -222,7 +420,7 @@ const OdooServices = () => {
               { icon: '❌', text: 'Errores en pedidos o cobros' },
               { icon: '📊', text: 'Poco control real de ventas y stock' },
             ].map((p, i) => (
-              <div key={i}
+              <div key={i} data-anim data-delay={i * 80}
                 className="flex items-center gap-3 bg-red-500/[0.06] border border-red-400/10 rounded-xl px-5 py-4">
                 <span className="text-2xl">{p.icon}</span>
                 <span className="text-gray-200 font-medium text-sm">{p.text}</span>
@@ -353,7 +551,7 @@ const OdooServices = () => {
           <div className="grid md:grid-cols-3 gap-6 items-start">
 
             {/* Pack Esencial */}
-            <Card className="p-8 bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] transition-all">
+            <Card data-anim="scale" data-delay="0" className="p-8 bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] transition-all odoo-card">
               <CardContent className="p-0">
                 <div className="mb-6">
                   <span className="inline-block w-3 h-3 rounded-full bg-green-400 mb-3" />
@@ -388,7 +586,7 @@ const OdooServices = () => {
             </Card>
 
             {/* Pack Profesional — destacado */}
-            <Card className="p-8 bg-gradient-to-b from-[#667eea]/10 to-[#764ba2]/10 border border-[#667eea]/40 hover:border-[#667eea]/60 transition-all relative">
+            <Card data-anim="scale" data-delay="120" className="p-8 bg-gradient-to-b from-[#667eea]/10 to-[#764ba2]/10 border border-[#667eea]/40 hover:border-[#667eea]/60 transition-all relative odoo-card">
               <CardContent className="p-0">
                 <div className="absolute -top-4 left-0 right-0 flex justify-center">
                   <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg">
@@ -433,7 +631,7 @@ const OdooServices = () => {
             </Card>
 
             {/* Pack Escala */}
-            <Card className="p-8 bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] transition-all">
+            <Card data-anim="scale" data-delay="240" className="p-8 bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] transition-all odoo-card">
               <CardContent className="p-0">
                 <div className="mb-6">
                   <span className="inline-block w-3 h-3 rounded-full bg-blue-400 mb-3" />
@@ -730,7 +928,7 @@ const OdooServices = () => {
           
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
+              <Card data-anim data-delay="0" className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08] odoo-card">
                 <CardContent className="p-0">
                   <div className="bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Search className="h-8 w-8 text-[#667eea]" />
@@ -743,7 +941,7 @@ const OdooServices = () => {
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
+              <Card data-anim data-delay="100" className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08] odoo-card">
                 <CardContent className="p-0">
                   <div className="bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Settings className="h-8 w-8 text-[#667eea]" />
@@ -756,7 +954,7 @@ const OdooServices = () => {
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
+              <Card data-anim data-delay="200" className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08] odoo-card">
                 <CardContent className="p-0">
                   <div className="bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Users className="h-8 w-8 text-[#667eea]" />
@@ -769,7 +967,7 @@ const OdooServices = () => {
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
+              <Card data-anim data-delay="300" className="text-center p-6 bg-white/[0.05] border-white/10 hover:bg-white/[0.08] odoo-card">
                 <CardContent className="p-0">
                   <div className="bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <LifeBuoy className="h-8 w-8 text-[#667eea]" />
