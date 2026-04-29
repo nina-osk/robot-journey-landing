@@ -74,6 +74,16 @@ async function prerender() {
     const page = await browser.newPage()
     await page.setViewport({ width: 1280, height: 800 })
 
+    // Pre-set localStorage so GDPR dialog and other consent popups
+    // don't appear open in the pre-rendered HTML
+    await page.evaluateOnNewDocument(() => {
+      localStorage.setItem('gdpr-consent', JSON.stringify({
+        necessary: true, analytics: true, marketing: true, functional: true,
+        timestamp: new Date().toISOString(),
+      }))
+      localStorage.setItem('cookie-consent', 'accepted')
+    })
+
     try {
       try {
         await page.goto(`http://localhost:${PORT}${route}`, {
