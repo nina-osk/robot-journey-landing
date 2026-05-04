@@ -100,7 +100,7 @@
   .video-thumb {
     width: 100%; aspect-ratio: 16/9;
     border-radius: 14px; overflow: hidden; position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     border: 1px solid rgba(255,255,255,0.10);
     user-select: none; pointer-events: none;
     box-shadow: 0 32px 80px rgba(0,0,0,0.6);
@@ -310,7 +310,7 @@
 
   <div class="pill">
     <span class="pill-dot"></span>
-    Sistema para restaurantes · Vídeo gratuito
+    Sistema para restaurantes y cafeterías · Vídeo gratuito
   </div>
 
   <h1>
@@ -334,6 +334,21 @@
       </div>
       <span class="video-label">Regístrate abajo para ver el vídeo</span>
     </div>
+  </div>
+
+  <div style="text-align:center; padding: 28px 0 40px;">
+    <a onclick="document.getElementById('nombre').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>document.getElementById('nombre').focus(),400);" style="
+      display:inline-flex; align-items:center; gap:10px; cursor:pointer;
+      background:var(--accent); color:var(--dark);
+      font-family:'Syne',sans-serif; font-weight:800; font-size:16px;
+      padding:18px 40px; border-radius:10px; text-decoration:none;
+      box-shadow:0 8px 32px rgba(255,210,51,0.4);
+      transition:all 0.2s;
+    " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 40px rgba(255,210,51,0.5)'"
+       onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px rgba(255,210,51,0.4)'">
+      Regístrate — accede al vídeo gratis
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0;"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
   </div>
 
   <div class="divider"></div>
@@ -444,7 +459,7 @@
     <span class="s-label">Quién está detrás</span>
     <h2>Soy Oscarina</h2>
     <div class="oscarina-card">
-      <img class="oscarina-img" src="/fotomia.png" alt="Oscarina — Robots Consultant">
+      <img class="oscarina-img" src="/lovable-uploads/Captura%20de%20pantalla%20VSL%20videos.png" alt="Oscarina — Robots Consultant">
       <div class="oscarina-info">
         <div class="oscarina-name">Oscarina</div>
         <div class="oscarina-role">Ingeniera en sistemas · Experta en IA y automatización</div>
@@ -468,7 +483,7 @@
     <h2>Regístrate y accede<br>al vídeo ahora</h2>
     <p class="form-sub">Sin coste. Sin spam. Solo introduce tus datos y te llevamos directo al vídeo.</p>
 
-    <div class="form-card">
+    <div class="form-card" id="form-card">
       <div id="form-content">
         <div class="field">
           <label for="nombre">Nombre</label>
@@ -570,6 +585,176 @@
   }
 
   document.addEventListener('keydown', e => { if (e.key === 'Enter') handleSubmit(); });
+</script>
+
+<!-- ===================== EXIT INTENT POPUPS ===================== -->
+
+<!-- POPUP 1 — Urgencia -->
+<div id="exit-p1" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.78); z-index:9999; backdrop-filter:blur(5px); align-items:center; justify-content:center; padding:20px;">
+  <div style="
+    background:#111845; border:1px solid rgba(255,210,51,0.25);
+    border-radius:20px; max-width:460px; width:100%;
+    padding:48px 36px 36px; position:relative; text-align:center;
+    box-shadow:0 40px 100px rgba(0,0,0,0.8);
+    animation:exitPop 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+  ">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,transparent,#ffd233,transparent);"></div>
+
+    <button onclick="closeP1(true)" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.35);font-size:20px;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">✕</button>
+
+    <div style="font-size:44px;margin-bottom:14px;">🚨</div>
+
+    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(18px,4vw,24px);letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:12px;">
+      ¿Seguro que quieres irte sin<br>ver el vídeo?
+    </h2>
+
+    <p style="font-size:14px;color:#c8c0d8;line-height:1.7;margin-bottom:8px;">
+      Restaurantes como el tuyo ya están usando esta tecnología para
+      <strong style="color:#fff">vender más, reducir colas y trabajar con menos estrés.</strong>
+    </p>
+    <p style="font-size:14px;color:#c8c0d8;line-height:1.7;margin-bottom:24px;">
+      El vídeo es gratis. Solo necesitas 30 segundos para registrarte.
+    </p>
+
+    <!-- CTA principal → scroll al formulario -->
+    <button onclick="goToForm()" style="
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      width:100%;background:#ffd233;color:#0c123b;
+      font-family:'Syne',sans-serif;font-weight:800;font-size:15px;
+      padding:16px 28px;border-radius:10px;border:none;cursor:pointer;
+      box-shadow:0 8px 28px rgba(255,210,51,0.3);
+      margin-bottom:14px;transition:all 0.2s;
+    " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 36px rgba(255,210,51,0.4)'"
+       onmouseout="this.style.transform='';this.style.boxShadow='0 8px 28px rgba(255,210,51,0.3)'">
+      ▶ Quiero ver el vídeo — es gratis
+    </button>
+
+    <button onclick="closeP1(true)" style="
+      background:none;border:none;cursor:pointer;
+      font-size:13px;color:rgba(255,255,255,0.28);text-decoration:underline;
+      transition:color 0.2s;
+    " onmouseover="this.style.color='rgba(255,255,255,0.55)'"
+       onmouseout="this.style.color='rgba(255,255,255,0.28)'">
+      No me interesa esta tecnología
+    </button>
+  </div>
+</div>
+
+<!-- POPUP 2 — Canal YouTube (suave) -->
+<div id="exit-p2" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.72); z-index:9999; backdrop-filter:blur(5px); align-items:center; justify-content:center; padding:20px;">
+  <div style="
+    background:#111845; border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px; max-width:420px; width:100%;
+    padding:44px 32px 32px; position:relative; text-align:center;
+    box-shadow:0 40px 100px rgba(0,0,0,0.8);
+    animation:exitPop 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+  ">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,transparent,#FF0000,transparent);"></div>
+
+    <button onclick="closeP2()" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.35);font-size:20px;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">✕</button>
+
+    <div style="font-size:44px;margin-bottom:14px;">👋</div>
+
+    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(17px,4vw,22px);letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:12px;">
+      Si ahora no es el momento,<br>te entiendo.
+    </h2>
+
+    <p style="font-size:14px;color:#c8c0d8;line-height:1.7;margin-bottom:24px;">
+      En mi canal de YouTube comparto todo sobre
+      <strong style="color:#fff">automatización, kioscos y cómo modernizar tu negocio.</strong>
+      Cuando estés listo, ahí estaré.
+    </p>
+
+    <a href="https://www.youtube.com/@RobotsConsultants" target="_blank" onclick="closeP2()" style="
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      width:100%;background:#FF0000;color:#fff;
+      font-family:'Syne',sans-serif;font-weight:800;font-size:15px;
+      padding:15px 28px;border-radius:10px;text-decoration:none;
+      box-shadow:0 8px 28px rgba(255,0,0,0.3);
+      margin-bottom:14px;transition:all 0.2s;
+    " onmouseover="this.style.opacity='0.88';this.style.transform='translateY(-2px)'"
+       onmouseout="this.style.opacity='1';this.style.transform=''">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;">
+        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      Ver el canal de YouTube
+    </a>
+
+    <button onclick="closeP2()" style="
+      background:none;border:none;cursor:pointer;
+      font-size:12px;color:rgba(255,255,255,0.25);text-decoration:underline;transition:color 0.2s;
+    " onmouseover="this.style.color='rgba(255,255,255,0.5)'"
+       onmouseout="this.style.color='rgba(255,255,255,0.25)'">
+      Salir sin ver el canal
+    </button>
+  </div>
+</div>
+
+<style>
+  @keyframes exitPop {
+    from { opacity:0; transform:scale(0.88) translateY(20px); }
+    to   { opacity:1; transform:scale(1) translateY(0); }
+  }
+</style>
+
+<script>
+  let exitShown = false;
+
+  function showP1() {
+    if (exitShown || sessionStorage.getItem('exit-shown')) return;
+    exitShown = true;
+    sessionStorage.setItem('exit-shown', '1');
+    const el = document.getElementById('exit-p1');
+    el.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeP1(showNext) {
+    const el = document.getElementById('exit-p1');
+    el.style.opacity = '0'; el.style.transition = 'opacity 0.2s';
+    setTimeout(() => {
+      el.style.display = 'none'; el.style.opacity = ''; el.style.transition = '';
+      document.body.style.overflow = '';
+      if (showNext) setTimeout(showP2, 200);
+    }, 200);
+  }
+
+  function showP2() {
+    const el = document.getElementById('exit-p2');
+    el.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeP2() {
+    const el = document.getElementById('exit-p2');
+    el.style.opacity = '0'; el.style.transition = 'opacity 0.2s';
+    setTimeout(() => {
+      el.style.display = 'none'; el.style.opacity = ''; el.style.transition = '';
+      document.body.style.overflow = '';
+    }, 200);
+  }
+
+  function goToForm() {
+    closeP1(false);
+    setTimeout(() => {
+      document.getElementById('nombre').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('nombre').focus();
+    }, 250);
+  }
+
+  // Exit intent
+  document.addEventListener('mouseleave', e => { if (e.clientY <= 0) showP1(); });
+
+  // Cerrar al clic fuera
+  document.getElementById('exit-p1').addEventListener('click', e => { if (e.target === document.getElementById('exit-p1')) closeP1(true); });
+  document.getElementById('exit-p2').addEventListener('click', e => { if (e.target === document.getElementById('exit-p2')) closeP2(); });
+
+  // ESC
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (document.getElementById('exit-p1').style.display === 'flex') closeP1(true);
+    else if (document.getElementById('exit-p2').style.display === 'flex') closeP2();
+  });
 </script>
 
 </body>

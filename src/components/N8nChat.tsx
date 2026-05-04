@@ -158,20 +158,41 @@ const N8N_CHAT_STYLES = `
     box-shadow: 0 0 0 1px #667eea, 0 0 12px rgba(102, 126, 234, 0.2) !important;
   }
 
-  /* Fix: ensure chat input is visible (Tailwind base resets can hide it) */
-  .chat-footer {
+  /* Fix: ensure chat window layout keeps footer visible */
+  .chat-window {
     display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .chat-messages-list {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Footer — múltiples selectores para cubrir distintas versiones del widget */
+  .chat-footer,
+  [class*="chat-footer"],
+  [class*="chatFooter"] {
+    display: flex !important;
+    flex: 0 0 auto !important;
     visibility: visible !important;
     opacity: 1 !important;
     padding: 0.5rem !important;
-    background: var(--chat--footer--background, #0a0a0a) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: #0a0a0a !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
     align-items: flex-end !important;
     gap: 0.5rem !important;
-    min-height: 60px !important;
+    min-height: 64px !important;
+    width: 100% !important;
   }
 
-  .n8n-input {
+  /* Input wrapper */
+  .n8n-input,
+  [class*="n8n-input"],
+  [class*="chatInput"],
+  [class*="chat-input"]:not(textarea) {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -181,30 +202,55 @@ const N8N_CHAT_STYLES = `
     width: 100% !important;
   }
 
-  .n8n-input textarea {
+  /* Textarea */
+  .n8n-input textarea,
+  .chat-footer textarea,
+  [class*="chat"] textarea {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    min-height: 50px !important;
-    height: auto !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    max-height: 120px !important;
     width: 100% !important;
     flex: 1 !important;
-    color: #e0e0e8 !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 0.8rem 1rem !important;
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+    background: #1e1e2e !important;
+    border: 1px solid rgba(102,126,234,0.4) !important;
+    padding: 0.7rem 1rem !important;
     font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
     resize: none !important;
     border-radius: 0.75rem !important;
+    overflow-y: auto !important;
   }
 
+  .n8n-input textarea::placeholder,
+  .chat-footer textarea::placeholder,
+  [class*="chat"] textarea::placeholder {
+    color: rgba(255,255,255,0.35) !important;
+  }
+
+  .n8n-input textarea:focus,
+  .chat-footer textarea:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.2) !important;
+  }
+
+  /* Botones del footer */
   .n8n-input button,
-  .chat-footer button {
+  .chat-footer button,
+  [class*="chat-footer"] button,
+  [class*="sendButton"],
+  [class*="send-button"] {
     display: inline-flex !important;
     visibility: visible !important;
     opacity: 1 !important;
     min-width: 36px !important;
     min-height: 36px !important;
+    flex-shrink: 0 !important;
   }
 `;
 
@@ -221,7 +267,7 @@ const N8nChat = () => {
         mode: 'window',
         chatInputKey: 'chatInput',
         chatSessionKey: 'sessionId',
-        loadPreviousSession: true,
+        loadPreviousSession: false,
         showWelcomeScreen: false,
         defaultLanguage: 'en',
         initialMessages: [
@@ -242,8 +288,31 @@ const N8nChat = () => {
       console.error('N8nChat initialization failed:', e);
     }
 
+    // MutationObserver: aplica estilos inline directamente al textarea
+    // para ganar a cualquier CSS del widget
+    const observer = new MutationObserver(() => {
+      const textarea = document.querySelector<HTMLTextAreaElement>(
+        '.chat-footer textarea, .n8n-input textarea, [class*="chat"] textarea'
+      );
+      if (textarea) {
+        textarea.style.color = '#ffffff';
+        textarea.style.caretColor = '#ffffff';
+        textarea.style.background = '#1e1e2e';
+        textarea.style.border = '1px solid rgba(102,126,234,0.4)';
+        textarea.style.borderRadius = '0.75rem';
+        textarea.style.padding = '0.7rem 1rem';
+        textarea.style.fontSize = '0.9375rem';
+        textarea.style.resize = 'none';
+        textarea.style.width = '100%';
+        textarea.style.minHeight = '44px';
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
     return () => {
       document.head.removeChild(style);
+      observer.disconnect();
     };
   }, []);
 
