@@ -40,25 +40,25 @@ const Navbar = () => {
               Inicio
             </a>
             <a
-              href="./servicios-odoo" 
+              href="/servicios-odoo"
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
             >
               Servicios Odoo
             </a>
             <a
-              href="./agentes-ia" 
+              href="/agentes-ia"
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
             >
               Agentes IA
             </a>
             <a
-              href="./shopify" 
+              href="/shopify"
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
             >
               Shopify
             </a>
             <a
-              href="./apps-personalizadas"
+              href="/apps-personalizadas"
               className="text-sm font-semibold text-[#667eea] hover:text-[#764ba2] transition-colors relative group"
             >
               Apps con IA
@@ -73,7 +73,7 @@ const Navbar = () => {
               Cursos
             </a>
             <a
-              href="./contacto"
+              href="/contacto"
               className="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors"
             >
               Contacto
@@ -125,49 +125,49 @@ const Navbar = () => {
               Inicio
             </a>
             <a
-              href="./robots-moviles" 
+              href="/robots-moviles"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
               Robots Móviles
             </a>
             <a
-              href="./kioscos-pago" 
+              href="/kioscos-pago"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
               Packs
             </a>
             <a
-              href="./servicios-odoo" 
+              href="/servicios-odoo"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
               Servicios Odoo
             </a>
             <a
-              href="./transformacion-digital" 
+              href="/transformacion-digital"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
               IA + Automatización
             </a>
             <a
-              href="./agentes-ia" 
+              href="/agentes-ia"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
               Agentes IA
             </a>
             <a
-              href="./shopify" 
+              href="/shopify"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
               Shopify
             </a>
             <a
-              href="./apps-personalizadas"
+              href="/apps-personalizadas"
               className="block px-3 py-2 rounded-md text-base font-semibold text-[#667eea] hover:bg-white/5 flex items-center gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -182,7 +182,7 @@ const Navbar = () => {
               Tienda
             </a>
             <a
-              href="./contacto" 
+              href="/contacto"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#667eea] hover:bg-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
