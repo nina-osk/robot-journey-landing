@@ -256,40 +256,10 @@ const N8N_CHAT_STYLES = `
 
 const N8nChat = () => {
   useEffect(() => {
-    // Inject custom styles
     const style = document.createElement('style');
     style.textContent = N8N_CHAT_STYLES;
     document.head.appendChild(style);
 
-    try {
-      createChat({
-        webhookUrl: 'https://miwebhookn8n.proyectoiluminacion.com/webhook/9f8f7196-2ff5-4f6b-8645-68778ad293ee/chat',
-        mode: 'window',
-        chatInputKey: 'chatInput',
-        chatSessionKey: 'sessionId',
-        loadPreviousSession: false,
-        showWelcomeScreen: false,
-        defaultLanguage: 'en',
-        initialMessages: [
-          '¡Hola! 👋',
-          'Soy el asistente de Robots Consultant. ¿En qué puedo ayudarte?',
-        ],
-        i18n: {
-          en: {
-            title: '¡Hola! 👋',
-            subtitle: 'Chatea con nosotros. Estamos aquí para ayudarte.',
-            footer: '',
-            getStarted: 'Nueva conversación',
-            inputPlaceholder: 'Escribe tu pregunta...',
-          },
-        },
-      });
-    } catch (e) {
-      console.error('N8nChat initialization failed:', e);
-    }
-
-    // MutationObserver: aplica estilos inline directamente al textarea
-    // para ganar a cualquier CSS del widget
     const observer = new MutationObserver(() => {
       const textarea = document.querySelector<HTMLTextAreaElement>(
         '.chat-footer textarea, .n8n-input textarea, [class*="chat"] textarea'
@@ -310,7 +280,38 @@ const N8nChat = () => {
 
     observer.observe(document.body, { childList: true, subtree: true });
 
+    // El botón del chat aparece después de 10 s para no interferir con la lectura
+    const timer = setTimeout(() => {
+      try {
+        createChat({
+          webhookUrl: 'https://miwebhookn8n.proyectoiluminacion.com/webhook/9f8f7196-2ff5-4f6b-8645-68778ad293ee/chat',
+          mode: 'window',
+          chatInputKey: 'chatInput',
+          chatSessionKey: 'sessionId',
+          loadPreviousSession: false,
+          showWelcomeScreen: false,
+          defaultLanguage: 'en',
+          initialMessages: [
+            '¡Hola! 👋',
+            'Soy el asistente de Robots Consultant. ¿En qué puedo ayudarte?',
+          ],
+          i18n: {
+            en: {
+              title: '¡Hola! 👋',
+              subtitle: 'Chatea con nosotros. Estamos aquí para ayudarte.',
+              footer: '',
+              getStarted: 'Nueva conversación',
+              inputPlaceholder: 'Escribe tu pregunta...',
+            },
+          },
+        });
+      } catch (e) {
+        console.error('N8nChat initialization failed:', e);
+      }
+    }, 10000);
+
     return () => {
+      clearTimeout(timer);
       document.head.removeChild(style);
       observer.disconnect();
     };
