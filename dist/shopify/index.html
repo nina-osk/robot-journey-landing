@@ -1,0 +1,607 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Shopify: Temas y Apps Personalizadas | RobotsConsultant</title>
+    <meta name="description" content="Agencia de IA y automatización para negocios. Desarrollamos agentes de IA, apps personalizadas, integraciones Odoo y tiendas Shopify que multiplican tu productividad sin contratar más personal.">
+    <meta name="keywords" content="agentes IA, automatización empresarial, Odoo, Shopify, apps personalizadas, inteligencia artificial, robots, España">
+    <meta name="author" content="RobotsConsultant Agency">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://robotsconsultant.net/">
+
+    <meta property="og:site_name" content="RobotsConsultant Agency">
+    <meta property="og:title" content="RobotsConsultant Agency | IA, Automatización y Apps para Negocios">
+    <meta property="og:description" content="Agencia de IA y automatización. Agentes IA, apps personalizadas, Odoo y Shopify para empresas que quieren crecer sin contratar más personal.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robotsconsultant.net/">
+    <meta property="og:image" content="https://robotsconsultant.net/og-image.png">
+    <meta property="og:locale" content="es_ES">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@robotsconsultant">
+    <meta name="twitter:title" content="RobotsConsultant Agency | IA y Automatización">
+    <meta name="twitter:description" content="Agentes IA, apps personalizadas, Odoo y Shopify para empresas.">
+    <meta name="twitter:image" content="https://robotsconsultant.net/og-image.png">
+    
+    <script src="https://connect.facebook.net/signals/config/923611763946934?v=2.9.326&amp;r=stable&amp;domain=localhost&amp;hme=af8aa31887db259becaf70277daef60bd8bc35c2df82c2acd4258de27ecac4b5&amp;ex_m=104%2C207%2C155%2C22%2C72%2C73%2C146%2C68%2C67%2C11%2C164%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C160%2C166%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C167%2C172%2C221%2C62%2C188%2C189%2C55%2C279%2C30%2C74%2C233%2C232%2C231%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C156%2C76%2C159%2C157%2C158%2C50%2C60%2C123%2C15%2C163%2C45%2C266%2C267%2C265%2C26%2C27%2C28%2C48%2C147%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C145%2C148%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C150%2C149%2C151%2C142%2C140%2C25%2C35%2C59%2C109%2C162%2C70%2C17%2C153%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C139%2C161%2C34%2C281%2C297%2C214%2C203%2C204%2C202%2C300%2C291%2C52%2C215%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C125%2C58%2C64%2C152%2C115%2C37%2C32%2C53%2C56%2C100%2C165%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C168%2C169%2C94%2C95%2C9%2C102%2C51%2C143%2C87%2C79%2C71%2C117%2C106%2C43%2C144%2C0%2C82%2C137%2C141%2C154%2C38%2C108%2C13%2C170" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script src="https://connect.facebook.net/signals/config/923611763946934?v=2.9.326&amp;r=stable&amp;domain=localhost&amp;hme=af8aa31887db259becaf70277daef60bd8bc35c2df82c2acd4258de27ecac4b5&amp;ex_m=104%2C207%2C155%2C22%2C72%2C73%2C146%2C68%2C67%2C11%2C164%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C160%2C166%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C167%2C172%2C221%2C62%2C188%2C189%2C55%2C279%2C30%2C74%2C233%2C232%2C231%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C156%2C76%2C159%2C157%2C158%2C50%2C60%2C123%2C15%2C163%2C45%2C266%2C267%2C265%2C26%2C27%2C28%2C48%2C147%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C145%2C148%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C150%2C149%2C151%2C142%2C140%2C25%2C35%2C59%2C109%2C162%2C70%2C17%2C153%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C139%2C161%2C34%2C281%2C297%2C214%2C203%2C204%2C202%2C300%2C291%2C52%2C215%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C125%2C58%2C64%2C152%2C115%2C37%2C32%2C53%2C56%2C100%2C165%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C168%2C169%2C94%2C95%2C9%2C102%2C51%2C143%2C87%2C79%2C71%2C117%2C106%2C43%2C144%2C0%2C82%2C137%2C141%2C154%2C38%2C108%2C13%2C170" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script src="https://js-eu1.hsforms.net/forms/embed/146031285.js" defer=""></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '923611763946934');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+    <script type="module" crossorigin="" src="/assets/index-CYqlLYtI.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-yIqlJI6U.css">
+  <style type="text/css">:where(html[dir="ltr"]),:where([data-sonner-toaster][dir="ltr"]){--toast-icon-margin-start: -3px;--toast-icon-margin-end: 4px;--toast-svg-margin-start: -1px;--toast-svg-margin-end: 0px;--toast-button-margin-start: auto;--toast-button-margin-end: 0;--toast-close-button-start: 0;--toast-close-button-end: unset;--toast-close-button-transform: translate(-35%, -35%)}:where(html[dir="rtl"]),:where([data-sonner-toaster][dir="rtl"]){--toast-icon-margin-start: 4px;--toast-icon-margin-end: -3px;--toast-svg-margin-start: 0px;--toast-svg-margin-end: -1px;--toast-button-margin-start: 0;--toast-button-margin-end: auto;--toast-close-button-start: unset;--toast-close-button-end: 0;--toast-close-button-transform: translate(35%, -35%)}:where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1: hsl(0, 0%, 99%);--gray2: hsl(0, 0%, 97.3%);--gray3: hsl(0, 0%, 95.1%);--gray4: hsl(0, 0%, 93%);--gray5: hsl(0, 0%, 90.9%);--gray6: hsl(0, 0%, 88.7%);--gray7: hsl(0, 0%, 85.8%);--gray8: hsl(0, 0%, 78%);--gray9: hsl(0, 0%, 56.1%);--gray10: hsl(0, 0%, 52.3%);--gray11: hsl(0, 0%, 43.5%);--gray12: hsl(0, 0%, 9%);--border-radius: 8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999}:where([data-sonner-toaster][data-x-position="right"]){right:max(var(--offset),env(safe-area-inset-right))}:where([data-sonner-toaster][data-x-position="left"]){left:max(var(--offset),env(safe-area-inset-left))}:where([data-sonner-toaster][data-x-position="center"]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position="top"]){top:max(var(--offset),env(safe-area-inset-top))}:where([data-sonner-toaster][data-y-position="bottom"]){bottom:max(var(--offset),env(safe-area-inset-bottom))}:where([data-sonner-toast]){--y: translateY(100%);--lift-amount: calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);filter:blur(0);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:none;overflow-wrap:anywhere}:where([data-sonner-toast][data-styled="true"]){padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px #0000001a;width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}:where([data-sonner-toast]:focus-visible){box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast][data-y-position="top"]){top:0;--y: translateY(-100%);--lift: 1;--lift-amount: calc(1 * var(--gap))}:where([data-sonner-toast][data-y-position="bottom"]){bottom:0;--y: translateY(100%);--lift: -1;--lift-amount: calc(var(--lift) * var(--gap))}:where([data-sonner-toast]) :where([data-description]){font-weight:400;line-height:1.4;color:inherit}:where([data-sonner-toast]) :where([data-title]){font-weight:500;line-height:1.5;color:inherit}:where([data-sonner-toast]) :where([data-icon]){display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}:where([data-sonner-toast]) :where([data-icon])>*{flex-shrink:0}:where([data-sonner-toast]) :where([data-icon]) svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}:where([data-sonner-toast]) :where([data-content]){display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;cursor:pointer;outline:none;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}:where([data-sonner-toast]) :where([data-button]):focus-visible{box-shadow:0 0 0 2px #0006}:where([data-sonner-toast]) :where([data-button]):first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}:where([data-sonner-toast]) :where([data-cancel]){color:var(--normal-text);background:rgba(0,0,0,.08)}:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]){background:rgba(255,255,255,.3)}:where([data-sonner-toast]) :where([data-close-button]){position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;background:var(--gray1);color:var(--gray12);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}:where([data-sonner-toast]) :where([data-close-button]):focus-visible{box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast]) :where([data-disabled="true"]){cursor:not-allowed}:where([data-sonner-toast]):hover :where([data-close-button]):hover{background:var(--gray2);border-color:var(--gray5)}:where([data-sonner-toast][data-swiping="true"]):before{content:"";position:absolute;left:0;right:0;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before{content:"";position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:"";position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted="true"]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded="false"][data-front="false"]){--scale: var(--toasts-before) * .05 + 1;--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}:where([data-sonner-toast])>*{transition:opacity .4s}:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>*{opacity:0}:where([data-sonner-toast][data-visible="false"]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]){--y: translateY(calc(var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed="true"][data-front="false"]):before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount, 0px));transition:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation:swipe-out .2s ease-out forwards}@keyframes swipe-out{0%{transform:translateY(calc(var(--lift) * var(--offset) + var(--swipe-amount)));opacity:1}to{transform:translateY(calc(var(--lift) * var(--offset) + var(--swipe-amount) + var(--lift) * -100%));opacity:0}}@media (max-width: 600px){[data-sonner-toaster]{position:fixed;--mobile-offset: 16px;right:var(--mobile-offset);left:var(--mobile-offset);width:100%}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset)}[data-sonner-toaster][data-y-position=bottom]{bottom:20px}[data-sonner-toaster][data-y-position=top]{top:20px}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset);right:var(--mobile-offset);transform:none}}[data-sonner-toaster][data-theme=light]{--normal-bg: #fff;--normal-border: var(--gray4);--normal-text: var(--gray12);--success-bg: hsl(143, 85%, 96%);--success-border: hsl(145, 92%, 91%);--success-text: hsl(140, 100%, 27%);--info-bg: hsl(208, 100%, 97%);--info-border: hsl(221, 91%, 91%);--info-text: hsl(210, 92%, 45%);--warning-bg: hsl(49, 100%, 97%);--warning-border: hsl(49, 91%, 91%);--warning-text: hsl(31, 92%, 45%);--error-bg: hsl(359, 100%, 97%);--error-border: hsl(359, 100%, 94%);--error-text: hsl(360, 100%, 45%)}[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg: #fff;--normal-border: var(--gray3);--normal-text: var(--gray12)}[data-sonner-toaster][data-theme=dark]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1);--success-bg: hsl(150, 100%, 6%);--success-border: hsl(147, 100%, 12%);--success-text: hsl(150, 86%, 65%);--info-bg: hsl(215, 100%, 6%);--info-border: hsl(223, 100%, 12%);--info-text: hsl(216, 87%, 65%);--warning-bg: hsl(64, 100%, 6%);--warning-border: hsl(60, 100%, 12%);--warning-text: hsl(46, 87%, 65%);--error-bg: hsl(358, 76%, 10%);--error-border: hsl(357, 89%, 16%);--error-text: hsl(358, 100%, 81%)}[data-rich-colors=true][data-sonner-toast][data-type=success],[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info],[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning],[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error],[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size: 16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:nth-child(1){animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}to{opacity:.15}}@media (prefers-reduced-motion){[data-sonner-toast],[data-sonner-toast]>*,.sonner-loading-bar{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
+</style><style>
+  :root {
+    /* Primary: indigo-purple gradient base */
+    --chat--color--primary: #667eea;
+    --chat--color--primary-shade-50: #5a6fd6;
+    --chat--color--primary--shade-100: #4e60c2;
+    --chat--color--secondary: #764ba2;
+    --chat--color-secondary-shade-50: #6a4392;
+
+    /* Dark theme colors */
+    --chat--color-white: #ffffff;
+    --chat--color-light: #1a1a2e;
+    --chat--color-light-shade-50: #16162a;
+    --chat--color-light-shade-100: #2a2a3e;
+    --chat--color-medium: #3a3a4e;
+    --chat--color-dark: #0a0a0a;
+    --chat--color-disabled: #3a3a4e;
+    --chat--color-typing: #a0a0b8;
+
+    /* Layout */
+    --chat--spacing: 1rem;
+    --chat--border-radius: 0.75rem;
+    --chat--transition-duration: 0.3s;
+    --chat--font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+      'Helvetica Neue', sans-serif;
+
+    /* Window */
+    --chat--window--width: 400px;
+    --chat--window--height: 600px;
+    --chat--window--bottom: 1.5rem;
+    --chat--window--right: 1.5rem;
+    --chat--window--z-index: 9999;
+    --chat--window--border: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--window--border-radius: 1rem;
+
+    /* Header */
+    --chat--header--padding: 1.25rem;
+    --chat--header--background: #0a0a0a;
+    --chat--header--color: #f0f0f0;
+    --chat--header--border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--header--border-top: none;
+    --chat--header--border-left: none;
+    --chat--header--border-right: none;
+    --chat--heading--font-size: 1.5em;
+    --chat--subtitle--font-size: 0.875rem;
+    --chat--subtitle--line-height: 1.6;
+
+    /* Messages */
+    --chat--message--font-size: 0.9375rem;
+    --chat--message--padding: 0.875rem 1rem;
+    --chat--message--border-radius: 0.75rem;
+    --chat--message-line-height: 1.6;
+    --chat--message--bot--background: rgba(255, 255, 255, 0.06);
+    --chat--message--bot--color: #e0e0e8;
+    --chat--message--bot--border: 1px solid rgba(255, 255, 255, 0.08);
+    --chat--message--user--background: linear-gradient(135deg, #667eea, #764ba2);
+    --chat--message--user--color: #ffffff;
+    --chat--message--user--border: none;
+    --chat--message--pre--background: rgba(0, 0, 0, 0.3);
+    --chat--messages-list--padding: 1rem;
+
+    /* Toggle button */
+    --chat--toggle--size: 60px;
+    --chat--toggle--width: var(--chat--toggle--size);
+    --chat--toggle--height: var(--chat--toggle--size);
+    --chat--toggle--border-radius: 50%;
+    --chat--toggle--background: linear-gradient(135deg, #667eea, #764ba2);
+    --chat--toggle--hover--background: linear-gradient(135deg, #5a6fd6, #6a4392);
+    --chat--toggle--active--background: linear-gradient(135deg, #4e60c2, #5e3d82);
+    --chat--toggle--color: #ffffff;
+
+    /* Input */
+    --chat--textarea--height: 50px;
+    --chat--input--font-size: 0.9375rem;
+    --chat--input--border: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--input--border-radius: 0.75rem;
+    --chat--input--padding: 0.8rem 1rem;
+    --chat--input--background: rgba(255, 255, 255, 0.05);
+    --chat--input--text-color: #e0e0e8;
+    --chat--input--border-active: 1px solid #667eea;
+
+    /* Buttons */
+    --chat--button--border-radius: 9999px;
+    --chat--button--font-size: 0.9375rem;
+    --chat--button--color--primary: #ffffff;
+    --chat--button--background--primary: linear-gradient(135deg, #667eea, #764ba2);
+    --chat--button--border--primary: none;
+    --chat--button--color--primary--hover: #ffffff;
+    --chat--button--background--primary--hover: linear-gradient(135deg, #5a6fd6, #6a4392);
+    --chat--button--border--primary--hover: none;
+    --chat--button--color--secondary: #e0e0e8;
+    --chat--button--background--secondary: rgba(255, 255, 255, 0.08);
+    --chat--button--border--secondary: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--button--color--secondary--hover: #ffffff;
+    --chat--button--background--secondary--hover: rgba(255, 255, 255, 0.12);
+    --chat--button--border--secondary--hover: 1px solid rgba(255, 255, 255, 0.15);
+    --chat--close--button--color-hover: #667eea;
+
+    /* Send & File buttons */
+    --chat--input--send--button--background: transparent;
+    --chat--input--send--button--color: #667eea;
+    --chat--input--send--button--background-hover: rgba(102, 126, 234, 0.15);
+    --chat--input--send--button--color-hover: #764ba2;
+    --chat--input--file--button--background: transparent;
+    --chat--input--file--button--color: #667eea;
+    --chat--input--file--button--background-hover: rgba(102, 126, 234, 0.15);
+    --chat--input--file--button--color-hover: #764ba2;
+
+    /* Body & Footer */
+    --chat--body--background: #0f0f1a;
+    --chat--footer--background: #0a0a0a;
+    --chat--footer--color: #8888a0;
+  }
+
+  /* Toggle button glow effect */
+  .chat-window-toggle {
+    box-shadow: 0 4px 24px rgba(102, 126, 234, 0.4) !important;
+    transition: all 0.3s ease !important;
+  }
+  .chat-window-toggle:hover {
+    box-shadow: 0 6px 32px rgba(102, 126, 234, 0.55) !important;
+    transform: scale(1.05) !important;
+  }
+
+  /* Chat window shadow & backdrop */
+  .chat-window {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 80px rgba(102, 126, 234, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* Scrollbar styling */
+  .chat-messages-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  .chat-messages-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .chat-messages-list::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 3px;
+  }
+  .chat-messages-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+  }
+
+  /* User message gradient */
+  .chat-message-user .chat-message-body {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  }
+
+  /* Input focus ring */
+  .n8n-input textarea:focus {
+    box-shadow: 0 0 0 1px #667eea, 0 0 12px rgba(102, 126, 234, 0.2) !important;
+  }
+
+  /* Fix: ensure chat window layout keeps footer visible */
+  .chat-window {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .chat-messages-list {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Footer — múltiples selectores para cubrir distintas versiones del widget */
+  .chat-footer,
+  [class*="chat-footer"],
+  [class*="chatFooter"] {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 0.5rem !important;
+    background: #0a0a0a !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+    min-height: 64px !important;
+    width: 100% !important;
+  }
+
+  /* Input wrapper */
+  .n8n-input,
+  [class*="n8n-input"],
+  [class*="chatInput"],
+  [class*="chat-input"]:not(textarea) {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 1 !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  /* Textarea */
+  .n8n-input textarea,
+  .chat-footer textarea,
+  [class*="chat"] textarea {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    max-height: 120px !important;
+    width: 100% !important;
+    flex: 1 !important;
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+    background: #1e1e2e !important;
+    border: 1px solid rgba(102,126,234,0.4) !important;
+    padding: 0.7rem 1rem !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+    resize: none !important;
+    border-radius: 0.75rem !important;
+    overflow-y: auto !important;
+  }
+
+  .n8n-input textarea::placeholder,
+  .chat-footer textarea::placeholder,
+  [class*="chat"] textarea::placeholder {
+    color: rgba(255,255,255,0.35) !important;
+  }
+
+  .n8n-input textarea:focus,
+  .chat-footer textarea:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.2) !important;
+  }
+
+  /* Botones del footer */
+  .n8n-input button,
+  .chat-footer button,
+  [class*="chat-footer"] button,
+  [class*="sendButton"],
+  [class*="send-button"] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    flex-shrink: 0 !important;
+  }
+</style><script src="https://assets.calendly.com/assets/external/widget.js" async=""></script><style type="text/css">:where(html[dir="ltr"]),:where([data-sonner-toaster][dir="ltr"]){--toast-icon-margin-start: -3px;--toast-icon-margin-end: 4px;--toast-svg-margin-start: -1px;--toast-svg-margin-end: 0px;--toast-button-margin-start: auto;--toast-button-margin-end: 0;--toast-close-button-start: 0;--toast-close-button-end: unset;--toast-close-button-transform: translate(-35%, -35%)}:where(html[dir="rtl"]),:where([data-sonner-toaster][dir="rtl"]){--toast-icon-margin-start: 4px;--toast-icon-margin-end: -3px;--toast-svg-margin-start: 0px;--toast-svg-margin-end: -1px;--toast-button-margin-start: 0;--toast-button-margin-end: auto;--toast-close-button-start: unset;--toast-close-button-end: 0;--toast-close-button-transform: translate(35%, -35%)}:where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1: hsl(0, 0%, 99%);--gray2: hsl(0, 0%, 97.3%);--gray3: hsl(0, 0%, 95.1%);--gray4: hsl(0, 0%, 93%);--gray5: hsl(0, 0%, 90.9%);--gray6: hsl(0, 0%, 88.7%);--gray7: hsl(0, 0%, 85.8%);--gray8: hsl(0, 0%, 78%);--gray9: hsl(0, 0%, 56.1%);--gray10: hsl(0, 0%, 52.3%);--gray11: hsl(0, 0%, 43.5%);--gray12: hsl(0, 0%, 9%);--border-radius: 8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999}:where([data-sonner-toaster][data-x-position="right"]){right:max(var(--offset),env(safe-area-inset-right))}:where([data-sonner-toaster][data-x-position="left"]){left:max(var(--offset),env(safe-area-inset-left))}:where([data-sonner-toaster][data-x-position="center"]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position="top"]){top:max(var(--offset),env(safe-area-inset-top))}:where([data-sonner-toaster][data-y-position="bottom"]){bottom:max(var(--offset),env(safe-area-inset-bottom))}:where([data-sonner-toast]){--y: translateY(100%);--lift-amount: calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);filter:blur(0);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:none;overflow-wrap:anywhere}:where([data-sonner-toast][data-styled="true"]){padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px #0000001a;width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}:where([data-sonner-toast]:focus-visible){box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast][data-y-position="top"]){top:0;--y: translateY(-100%);--lift: 1;--lift-amount: calc(1 * var(--gap))}:where([data-sonner-toast][data-y-position="bottom"]){bottom:0;--y: translateY(100%);--lift: -1;--lift-amount: calc(var(--lift) * var(--gap))}:where([data-sonner-toast]) :where([data-description]){font-weight:400;line-height:1.4;color:inherit}:where([data-sonner-toast]) :where([data-title]){font-weight:500;line-height:1.5;color:inherit}:where([data-sonner-toast]) :where([data-icon]){display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}:where([data-sonner-toast]) :where([data-icon])>*{flex-shrink:0}:where([data-sonner-toast]) :where([data-icon]) svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}:where([data-sonner-toast]) :where([data-content]){display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;cursor:pointer;outline:none;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}:where([data-sonner-toast]) :where([data-button]):focus-visible{box-shadow:0 0 0 2px #0006}:where([data-sonner-toast]) :where([data-button]):first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}:where([data-sonner-toast]) :where([data-cancel]){color:var(--normal-text);background:rgba(0,0,0,.08)}:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]){background:rgba(255,255,255,.3)}:where([data-sonner-toast]) :where([data-close-button]){position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;background:var(--gray1);color:var(--gray12);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}:where([data-sonner-toast]) :where([data-close-button]):focus-visible{box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast]) :where([data-disabled="true"]){cursor:not-allowed}:where([data-sonner-toast]):hover :where([data-close-button]):hover{background:var(--gray2);border-color:var(--gray5)}:where([data-sonner-toast][data-swiping="true"]):before{content:"";position:absolute;left:0;right:0;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before{content:"";position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:"";position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted="true"]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded="false"][data-front="false"]){--scale: var(--toasts-before) * .05 + 1;--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}:where([data-sonner-toast])>*{transition:opacity .4s}:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>*{opacity:0}:where([data-sonner-toast][data-visible="false"]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]){--y: translateY(calc(var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed="true"][data-front="false"]):before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount, 0px));transition:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation:swipe-out .2s ease-out forwards}@keyframes swipe-out{0%{transform:translateY(calc(var(--lift) * var(--offset) + var(--swipe-amount)));opacity:1}to{transform:translateY(calc(var(--lift) * var(--offset) + var(--swipe-amount) + var(--lift) * -100%));opacity:0}}@media (max-width: 600px){[data-sonner-toaster]{position:fixed;--mobile-offset: 16px;right:var(--mobile-offset);left:var(--mobile-offset);width:100%}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset)}[data-sonner-toaster][data-y-position=bottom]{bottom:20px}[data-sonner-toaster][data-y-position=top]{top:20px}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset);right:var(--mobile-offset);transform:none}}[data-sonner-toaster][data-theme=light]{--normal-bg: #fff;--normal-border: var(--gray4);--normal-text: var(--gray12);--success-bg: hsl(143, 85%, 96%);--success-border: hsl(145, 92%, 91%);--success-text: hsl(140, 100%, 27%);--info-bg: hsl(208, 100%, 97%);--info-border: hsl(221, 91%, 91%);--info-text: hsl(210, 92%, 45%);--warning-bg: hsl(49, 100%, 97%);--warning-border: hsl(49, 91%, 91%);--warning-text: hsl(31, 92%, 45%);--error-bg: hsl(359, 100%, 97%);--error-border: hsl(359, 100%, 94%);--error-text: hsl(360, 100%, 45%)}[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg: #fff;--normal-border: var(--gray3);--normal-text: var(--gray12)}[data-sonner-toaster][data-theme=dark]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1);--success-bg: hsl(150, 100%, 6%);--success-border: hsl(147, 100%, 12%);--success-text: hsl(150, 86%, 65%);--info-bg: hsl(215, 100%, 6%);--info-border: hsl(223, 100%, 12%);--info-text: hsl(216, 87%, 65%);--warning-bg: hsl(64, 100%, 6%);--warning-border: hsl(60, 100%, 12%);--warning-text: hsl(46, 87%, 65%);--error-bg: hsl(358, 76%, 10%);--error-border: hsl(357, 89%, 16%);--error-text: hsl(358, 100%, 81%)}[data-rich-colors=true][data-sonner-toast][data-type=success],[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info],[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning],[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error],[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size: 16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:nth-child(1){animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}to{opacity:.15}}@media (prefers-reduced-motion){[data-sonner-toast],[data-sonner-toast]>*,.sonner-loading-bar{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
+</style><style>
+  :root {
+    /* Primary: indigo-purple gradient base */
+    --chat--color--primary: #667eea;
+    --chat--color--primary-shade-50: #5a6fd6;
+    --chat--color--primary--shade-100: #4e60c2;
+    --chat--color--secondary: #764ba2;
+    --chat--color-secondary-shade-50: #6a4392;
+
+    /* Dark theme colors */
+    --chat--color-white: #ffffff;
+    --chat--color-light: #1a1a2e;
+    --chat--color-light-shade-50: #16162a;
+    --chat--color-light-shade-100: #2a2a3e;
+    --chat--color-medium: #3a3a4e;
+    --chat--color-dark: #0a0a0a;
+    --chat--color-disabled: #3a3a4e;
+    --chat--color-typing: #a0a0b8;
+
+    /* Layout */
+    --chat--spacing: 1rem;
+    --chat--border-radius: 0.75rem;
+    --chat--transition-duration: 0.3s;
+    --chat--font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+      'Helvetica Neue', sans-serif;
+
+    /* Window */
+    --chat--window--width: 400px;
+    --chat--window--height: 600px;
+    --chat--window--bottom: 1.5rem;
+    --chat--window--right: 1.5rem;
+    --chat--window--z-index: 9999;
+    --chat--window--border: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--window--border-radius: 1rem;
+
+    /* Header */
+    --chat--header--padding: 1.25rem;
+    --chat--header--background: #0a0a0a;
+    --chat--header--color: #f0f0f0;
+    --chat--header--border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--header--border-top: none;
+    --chat--header--border-left: none;
+    --chat--header--border-right: none;
+    --chat--heading--font-size: 1.5em;
+    --chat--subtitle--font-size: 0.875rem;
+    --chat--subtitle--line-height: 1.6;
+
+    /* Messages */
+    --chat--message--font-size: 0.9375rem;
+    --chat--message--padding: 0.875rem 1rem;
+    --chat--message--border-radius: 0.75rem;
+    --chat--message-line-height: 1.6;
+    --chat--message--bot--background: rgba(255, 255, 255, 0.06);
+    --chat--message--bot--color: #e0e0e8;
+    --chat--message--bot--border: 1px solid rgba(255, 255, 255, 0.08);
+    --chat--message--user--background: linear-gradient(135deg, #667eea, #764ba2);
+    --chat--message--user--color: #ffffff;
+    --chat--message--user--border: none;
+    --chat--message--pre--background: rgba(0, 0, 0, 0.3);
+    --chat--messages-list--padding: 1rem;
+
+    /* Toggle button */
+    --chat--toggle--size: 60px;
+    --chat--toggle--width: var(--chat--toggle--size);
+    --chat--toggle--height: var(--chat--toggle--size);
+    --chat--toggle--border-radius: 50%;
+    --chat--toggle--background: linear-gradient(135deg, #667eea, #764ba2);
+    --chat--toggle--hover--background: linear-gradient(135deg, #5a6fd6, #6a4392);
+    --chat--toggle--active--background: linear-gradient(135deg, #4e60c2, #5e3d82);
+    --chat--toggle--color: #ffffff;
+
+    /* Input */
+    --chat--textarea--height: 50px;
+    --chat--input--font-size: 0.9375rem;
+    --chat--input--border: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--input--border-radius: 0.75rem;
+    --chat--input--padding: 0.8rem 1rem;
+    --chat--input--background: rgba(255, 255, 255, 0.05);
+    --chat--input--text-color: #e0e0e8;
+    --chat--input--border-active: 1px solid #667eea;
+
+    /* Buttons */
+    --chat--button--border-radius: 9999px;
+    --chat--button--font-size: 0.9375rem;
+    --chat--button--color--primary: #ffffff;
+    --chat--button--background--primary: linear-gradient(135deg, #667eea, #764ba2);
+    --chat--button--border--primary: none;
+    --chat--button--color--primary--hover: #ffffff;
+    --chat--button--background--primary--hover: linear-gradient(135deg, #5a6fd6, #6a4392);
+    --chat--button--border--primary--hover: none;
+    --chat--button--color--secondary: #e0e0e8;
+    --chat--button--background--secondary: rgba(255, 255, 255, 0.08);
+    --chat--button--border--secondary: 1px solid rgba(255, 255, 255, 0.1);
+    --chat--button--color--secondary--hover: #ffffff;
+    --chat--button--background--secondary--hover: rgba(255, 255, 255, 0.12);
+    --chat--button--border--secondary--hover: 1px solid rgba(255, 255, 255, 0.15);
+    --chat--close--button--color-hover: #667eea;
+
+    /* Send & File buttons */
+    --chat--input--send--button--background: transparent;
+    --chat--input--send--button--color: #667eea;
+    --chat--input--send--button--background-hover: rgba(102, 126, 234, 0.15);
+    --chat--input--send--button--color-hover: #764ba2;
+    --chat--input--file--button--background: transparent;
+    --chat--input--file--button--color: #667eea;
+    --chat--input--file--button--background-hover: rgba(102, 126, 234, 0.15);
+    --chat--input--file--button--color-hover: #764ba2;
+
+    /* Body & Footer */
+    --chat--body--background: #0f0f1a;
+    --chat--footer--background: #0a0a0a;
+    --chat--footer--color: #8888a0;
+  }
+
+  /* Toggle button glow effect */
+  .chat-window-toggle {
+    box-shadow: 0 4px 24px rgba(102, 126, 234, 0.4) !important;
+    transition: all 0.3s ease !important;
+  }
+  .chat-window-toggle:hover {
+    box-shadow: 0 6px 32px rgba(102, 126, 234, 0.55) !important;
+    transform: scale(1.05) !important;
+  }
+
+  /* Chat window shadow & backdrop */
+  .chat-window {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 80px rgba(102, 126, 234, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* Scrollbar styling */
+  .chat-messages-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  .chat-messages-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .chat-messages-list::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 3px;
+  }
+  .chat-messages-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+  }
+
+  /* User message gradient */
+  .chat-message-user .chat-message-body {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  }
+
+  /* Input focus ring */
+  .n8n-input textarea:focus {
+    box-shadow: 0 0 0 1px #667eea, 0 0 12px rgba(102, 126, 234, 0.2) !important;
+  }
+
+  /* Fix: ensure chat window layout keeps footer visible */
+  .chat-window {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .chat-messages-list {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Footer — múltiples selectores para cubrir distintas versiones del widget */
+  .chat-footer,
+  [class*="chat-footer"],
+  [class*="chatFooter"] {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 0.5rem !important;
+    background: #0a0a0a !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+    min-height: 64px !important;
+    width: 100% !important;
+  }
+
+  /* Input wrapper */
+  .n8n-input,
+  [class*="n8n-input"],
+  [class*="chatInput"],
+  [class*="chat-input"]:not(textarea) {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 1 !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  /* Textarea */
+  .n8n-input textarea,
+  .chat-footer textarea,
+  [class*="chat"] textarea {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    max-height: 120px !important;
+    width: 100% !important;
+    flex: 1 !important;
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+    background: #1e1e2e !important;
+    border: 1px solid rgba(102,126,234,0.4) !important;
+    padding: 0.7rem 1rem !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+    resize: none !important;
+    border-radius: 0.75rem !important;
+    overflow-y: auto !important;
+  }
+
+  .n8n-input textarea::placeholder,
+  .chat-footer textarea::placeholder,
+  [class*="chat"] textarea::placeholder {
+    color: rgba(255,255,255,0.35) !important;
+  }
+
+  .n8n-input textarea:focus,
+  .chat-footer textarea:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.2) !important;
+  }
+
+  /* Botones del footer */
+  .n8n-input button,
+  .chat-footer button,
+  [class*="chat-footer"] button,
+  [class*="sendButton"],
+  [class*="send-button"] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    flex-shrink: 0 !important;
+  }
+</style><link rel="canonical" href="https://robotsconsultant.net/shopify" data-rh="true"><meta name="description" content="Desarrollamos temas y apps personalizadas para Shopify con IA integrada. Tiendas de alto rendimiento, integraciones avanzadas y automatización de ventas. Consulta gratuita." data-rh="true"><script type="application/ld+json" data-rh="true">{"@context":"https://schema.org","@type":"Service","name":"Desarrollo Shopify: Temas y Apps","provider":{"@type":"Organization","name":"RobotsConsultant Agency"},"description":"Desarrollo de temas Shopify y apps personalizadas con IA para tiendas online de alto rendimiento.","areaServed":"ES"}</script></head>
+
+  <body>
+    <!-- Meta Pixel noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=923611763946934&ev=PageView&noscript=1"></noscript>
+    <div id="root"><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol></div><div id="n8n-chat"></div><div class="min-h-screen bg-[#0a0a0a]"><header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16 md:h-20"><a href="/" class="flex items-center space-x-3"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMTM4IiBmaWxsPSJub25lIj4KICA8IS0tIFJvYm90OiBsYXJnZSBjcmVhbSBjaXJjbGUgLS0+CiAgPGNpcmNsZSBjeD0iNjciIGN5PSI2MiIgcj0iNTYiIGZpbGw9IiNlM2Q5YzMiLz4KCiAgPCEtLSBSb2JvdCBmYWNlIHBsYXRlIChkYXJrIG92YWwgb3ZlcmxhcHBpbmcgcmlnaHQgb2YgY2lyY2xlKSAtLT4KICA8ZWxsaXBzZSBjeD0iODgiIGN5PSI2OSIgcng9IjM1IiByeT0iMzAiIGZpbGw9IiMwZDEwMjAiLz4KCiAgPCEtLSBBbnRlbm5hOiBsaW5lICsgYmFsbCAtLT4KICA8bGluZSB4MT0iNzQiIHkxPSI0MiIgeDI9IjUzIiB5Mj0iMTMiIHN0cm9rZT0iIzBkMTAyMCIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSI1MSIgY3k9IjExIiByPSI3IiBmaWxsPSIjMGQxMDIwIi8+CgogIDwhLS0gTGVmdCBzZW5zb3IgY2lyY2xlIChpbnNpZGUgbWFpbiBjaXJjbGUsIGxlZnQgb2YgZmFjZSBwbGF0ZSkgLS0+CiAgPGNpcmNsZSBjeD0iNTIiIGN5PSI3MiIgcj0iMTAiIGZpbGw9IiMwZDEwMjAiLz4KCiAgPCEtLSBFeWVzIG9uIGZhY2UgcGxhdGUgLS0+CiAgPGNpcmNsZSBjeD0iODIiIGN5PSI2OSIgcj0iNiIgZmlsbD0iI2NlYzJhOCIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjY5IiByPSI2IiBmaWxsPSIjY2VjMmE4Ii8+CgogIDwhLS0gUk9CT1RTIHRleHQgLS0+CiAgPHRleHQKICAgIHg9IjE0MyIgeT0iNjAiCiAgICBmb250LWZhbWlseT0iJ0FyaWFsIEJsYWNrJywgJ0ltcGFjdCcsICdIYWV0dGVuc2Nod2VpbGVyJywgQXJpYWwsIHNhbnMtc2VyaWYiCiAgICBmb250LXdlaWdodD0iOTAwIgogICAgZm9udC1zaXplPSI0OCIKICAgIGZpbGw9IndoaXRlIgogID5ST0JPVFM8L3RleHQ+CgogIDwhLS0gQ09OU1VMVEFOVCB0ZXh0IC0tPgogIDx0ZXh0CiAgICB4PSIxNDMiIHk9IjExMiIKICAgIGZvbnQtZmFtaWx5PSInQXJpYWwgQmxhY2snLCAnSW1wYWN0JywgJ0hhZXR0ZW5zY2h3ZWlsZXInLCBBcmlhbCwgc2Fucy1zZXJpZiIKICAgIGZvbnQtd2VpZ2h0PSI5MDAiCiAgICBmb250LXNpemU9IjQ4IgogICAgZmlsbD0id2hpdGUiCiAgPkNPTlNVTFRBTlQ8L3RleHQ+CgogIDwhLS0gQUdFTkNZIGxhYmVsIHdpdGggbGluZXMgLS0+CiAgPGxpbmUgeDE9IjE0MyIgeTE9IjEyNiIgeDI9IjI2MiIgeTI9IjEyNiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMzgpIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDx0ZXh0CiAgICB4PSIzMTgiIHk9IjEzMSIKICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIKICAgIGZvbnQtc2l6ZT0iMTIiCiAgICBmb250LXdlaWdodD0iMzAwIgogICAgbGV0dGVyLXNwYWNpbmc9IjYiCiAgICBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTgpIgogID5BR0VOQ1k8L3RleHQ+CiAgPGxpbmUgeDE9IjM3MiIgeTE9IjEyNiIgeDI9IjQ5MCIgeTI9IjEyNiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMzgpIiBzdHJva2Utd2lkdGg9IjEuNCIvPgo8L3N2Zz4K" alt="RobotsConsultant" class="h-10 md:h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110"></a><nav class="hidden md:flex space-x-8 items-center"><a href="/" class="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors">Inicio</a><a href="./servicios-odoo" class="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors">Servicios Odoo</a><a href="./agentes-ia" class="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors">Agentes IA</a><a href="./shopify" class="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors">Shopify</a><a href="./apps-personalizadas" class="text-sm font-semibold text-[#667eea] hover:text-[#764ba2] transition-colors relative group">Apps con IA<span class="absolute -top-1 -right-6 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full leading-none">NEW</span></a><a href="https://robotsconsultant.net/tienda" class="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors">Cursos</a><a href="./contacto" class="text-sm font-medium text-gray-300 hover:text-[#667eea] transition-colors">Contacto</a><div class="flex flex-col space-y-1"><a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground rounded-md h-8 px-2 hover:bg-white/10 flex items-center space-x-1 text-[#667eea] hover:text-[#764ba2] text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-3 h-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>+34 654 94 27 20</span></a><a href="mailto:info@robotsconsultant.net" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground rounded-md h-8 px-2 hover:bg-white/10 flex items-center space-x-1 text-[#667eea] hover:text-[#764ba2] text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span>info@robotsconsultant.net</span></a></div></nav><div class="md:hidden"><button class="p-2 rounded-md text-gray-300 hover:text-[#667eea]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></div></div></header><style>
+        /* ── Scroll-reveal ── */
+        [data-sh], .slide-in-section { opacity:0; transform:translateY(26px); }
+        .sh-visible, .slide-in-section.visible { animation: shFadeUp 0.6s cubic-bezier(.22,1,.36,1) both; }
+        [data-sh="left"].sh-visible  { animation: shLeft  0.6s cubic-bezier(.22,1,.36,1) both; }
+        [data-sh="right"].sh-visible { animation: shRight 0.6s cubic-bezier(.22,1,.36,1) both; }
+        [data-sh="scale"].sh-visible { animation: shScale 0.6s cubic-bezier(.22,1,.36,1) both; }
+
+        @keyframes shFadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes shLeft   { from{opacity:0;transform:translateX(-28px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes shRight  { from{opacity:0;transform:translateX(28px)}  to{opacity:1;transform:translateX(0)} }
+        @keyframes shScale  { from{opacity:0;transform:scale(.86)}         to{opacity:1;transform:scale(1)} }
+
+        /* ── Hero orbs ── */
+        @keyframes shOrb { 0%,100%{transform:translate(0,0)} 40%{transform:translate(30px,-25px)} 70%{transform:translate(-15px,18px)} }
+        .sh-orb1 { animation: shOrb 14s ease-in-out infinite; }
+        .sh-orb2 { animation: shOrb 18s ease-in-out infinite reverse; }
+        .sh-orb3 { animation: shOrb 11s ease-in-out infinite 4s; }
+
+        /* ── Floating product cards ── */
+        @keyframes shFloat { 0%,100%{transform:translateY(0) rotate(var(--rot,0deg))} 50%{transform:translateY(-12px) rotate(var(--rot,0deg))} }
+        .sh-float-1 { animation: shFloat 3.5s ease-in-out infinite; --rot:-3deg; }
+        .sh-float-2 { animation: shFloat 4.2s ease-in-out infinite 0.6s; --rot:2deg; }
+        .sh-float-3 { animation: shFloat 3.8s ease-in-out infinite 1.1s; --rot:-1.5deg; }
+        .sh-float-4 { animation: shFloat 4.6s ease-in-out infinite 0.3s; --rot:3deg; }
+
+        /* ── Shopping cart pulse ── */
+        @keyframes cartPulse { 0%,100%{box-shadow:0 0 0 0 rgba(102,126,234,0)} 50%{box-shadow:0 0 40px 8px rgba(102,126,234,.35)} }
+        .cart-pulse { animation: cartPulse 2.5s ease-in-out infinite; }
+
+        /* ── Gradient sweep ── */
+        @keyframes shGrad { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        .sh-grad { background-size:200% auto; animation: shGrad 4s ease infinite; }
+
+        /* ── Counter pop ── */
+        @keyframes shPop { from{opacity:0;transform:scale(.6) translateY(10px)} to{opacity:1;transform:scale(1) translateY(0)} }
+        .sh-pop { animation: shPop .5s cubic-bezier(.34,1.56,.64,1) both; }
+
+        /* ── Card hover ── */
+        .sh-card { transition: transform .25s, box-shadow .25s; }
+        .sh-card:hover { transform: translateY(-5px); box-shadow: 0 20px 44px rgba(102,126,234,.2); }
+
+        /* ── Blinking dot ── */
+        @keyframes shBlink { 0%,100%{opacity:1} 50%{opacity:.3} }
+        .sh-blink { animation: shBlink 1.4s ease-in-out infinite; }
+
+        /* ── Progress bars ── */
+        @keyframes shBar { from{width:0} to{width:var(--w)} }
+        .sh-bar { animation: shBar 1.4s cubic-bezier(.22,1,.36,1) 0.4s both; }
+      </style><section class="pt-28 pb-16 relative overflow-hidden"><div class="pointer-events-none absolute inset-0"><div class="sh-orb1 absolute -top-10 left-1/4 w-[600px] h-[600px] rounded-full bg-[#667eea]/10 blur-[100px]"></div><div class="sh-orb2 absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-[#764ba2]/12 blur-[90px]"></div><div class="sh-orb3 absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-[#f093fb]/6 blur-[70px]"></div></div><div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div class="grid lg:grid-cols-2 gap-12 items-center"><div><div data-sh="true" data-delay="0" class="mb-5 sh-visible visible" style="animation-delay: 0ms;"><span class="inline-flex items-center gap-2 bg-gradient-to-r from-[#667eea]/15 to-[#764ba2]/15 border border-[#667eea]/25 text-[#667eea] px-4 py-1.5 rounded-full text-sm font-semibold"><span class="w-2 h-2 rounded-full bg-green-400 sh-blink"></span>Shopify Expert Partner</span></div><h1 data-sh="true" data-delay="80" class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight sh-visible visible" style="animation-delay: 80ms;">Desarrollo <span class="bg-gradient-to-r from-[#667eea] via-[#a855f7] to-[#f093fb] bg-clip-text text-transparent sh-grad">Shopify</span> Personalizado</h1><p data-sh="true" data-delay="160" class="text-lg text-gray-400 mb-3 leading-relaxed sh-visible visible" style="animation-delay: 160ms;">Temas únicos, Apps personalizadas y Automatizaciones con IA para tu tienda.</p><p data-sh="true" data-delay="200" class="text-gray-500 mb-8 leading-relaxed sh-visible visible" style="animation-delay: 200ms;">Transformamos tu visión en una tienda de alto rendimiento con diseño exclusivo, funcionalidades a medida y ventas en piloto automático.</p><div data-sh="true" data-delay="260" class="flex flex-wrap gap-3 mb-8 sh-visible visible" style="animation-delay: 260ms;"><a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-8 text-base font-semibold transition-all hover:scale-105">Solicita tu Presupuesto Personalizado</a></div><div id="sh-stats" data-sh="true" data-delay="320" class="flex flex-wrap gap-6 sh-visible visible" style="animation-delay: 320ms;"><div class="text-center sh-pop" style="animation-delay: 0ms;"><p class="text-2xl font-extrabold bg-gradient-to-r from-[#667eea] to-[#f093fb] bg-clip-text text-transparent">120+</p><p class="text-xs text-gray-500 mt-0.5">Tiendas lanzadas</p></div><div class="text-center sh-pop" style="animation-delay: 100ms;"><p class="text-2xl font-extrabold bg-gradient-to-r from-[#667eea] to-[#f093fb] bg-clip-text text-transparent">+40%</p><p class="text-xs text-gray-500 mt-0.5">Conv. media</p></div><div class="text-center sh-pop" style="animation-delay: 200ms;"><p class="text-2xl font-extrabold bg-gradient-to-r from-[#667eea] to-[#f093fb] bg-clip-text text-transparent">48h</p><p class="text-xs text-gray-500 mt-0.5">Presupuesto</p></div></div></div><div data-sh="scale" data-delay="100" class="relative flex items-center justify-center min-h-[400px] sh-visible visible" style="animation-delay: 100ms;"><div class="relative z-10 w-36 h-44 rounded-2xl bg-[#111120] border border-white/[0.08] shadow-2xl cart-pulse flex flex-col overflow-hidden"><div class="flex items-center gap-1 px-2 py-1.5 bg-white/[0.04] border-b border-white/[0.06]"><div class="w-1.5 h-1.5 rounded-full" style="background: rgb(255, 95, 87);"></div><div class="w-1.5 h-1.5 rounded-full" style="background: rgb(254, 188, 46);"></div><div class="w-1.5 h-1.5 rounded-full" style="background: rgb(40, 200, 64);"></div></div><div class="h-6 bg-gradient-to-r from-[#667eea]/30 to-[#764ba2]/30 flex items-center px-2"><div class="w-8 h-1.5 bg-white/20 rounded-full"></div></div><div class="flex-1 p-2 grid grid-cols-2 gap-1"><div class="rounded bg-white/[0.05] overflow-hidden" style="height: 36px;"><div class="h-3/4 rounded-t" style="background: rgba(102, 126, 234, 0.133);"></div><div class="px-1 py-0.5"><div class="h-1 bg-white/10 rounded-full w-3/4"></div></div></div><div class="rounded bg-white/[0.05] overflow-hidden" style="height: 36px;"><div class="h-3/4 rounded-t" style="background: rgba(118, 75, 162, 0.133);"></div><div class="px-1 py-0.5"><div class="h-1 bg-white/10 rounded-full w-3/4"></div></div></div><div class="rounded bg-white/[0.05] overflow-hidden" style="height: 36px;"><div class="h-3/4 rounded-t" style="background: rgba(240, 147, 251, 0.133);"></div><div class="px-1 py-0.5"><div class="h-1 bg-white/10 rounded-full w-3/4"></div></div></div><div class="rounded bg-white/[0.05] overflow-hidden" style="height: 36px;"><div class="h-3/4 rounded-t" style="background: rgba(79, 172, 254, 0.133);"></div><div class="px-1 py-0.5"><div class="h-1 bg-white/10 rounded-full w-3/4"></div></div></div></div><div class="p-1.5"><div class="h-5 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-full flex items-center justify-center"><span class="text-[7px] font-bold text-white">Add to cart ✓</span></div></div></div><div class="absolute top-4 left-0 sh-float-1 z-20"><div class="bg-[#111120] border border-white/[0.1] rounded-xl px-3 py-2 shadow-xl min-w-[110px]" style="border-color: rgba(102, 126, 234, 0.19);"><div class="flex items-center gap-2 mb-1"><span class="text-lg">👟</span><div><p class="text-[9px] text-gray-400 leading-none">Sneaker Pro</p><p class="text-[11px] font-bold" style="color: rgb(102, 126, 234);">€129</p></div></div><div class="h-1 bg-white/[0.06] rounded-full overflow-hidden"><div class="sh-bar h-full rounded-full" style="--w: 55%; background: rgba(102, 126, 234, 0.6);"></div></div></div></div><div class="absolute top-4 right-0 sh-float-2 z-20"><div class="bg-[#111120] border border-white/[0.1] rounded-xl px-3 py-2 shadow-xl min-w-[110px]" style="border-color: rgba(118, 75, 162, 0.19);"><div class="flex items-center gap-2 mb-1"><span class="text-lg">⌚</span><div><p class="text-[9px] text-gray-400 leading-none">Luxury Watch</p><p class="text-[11px] font-bold" style="color: rgb(118, 75, 162);">€890</p></div></div><div class="h-1 bg-white/[0.06] rounded-full overflow-hidden"><div class="sh-bar h-full rounded-full" style="--w: 67%; background: rgba(118, 75, 162, 0.6);"></div></div></div></div><div class="absolute bottom-8 left-2 sh-float-3 z-20"><div class="bg-[#111120] border border-white/[0.1] rounded-xl px-3 py-2 shadow-xl min-w-[110px]" style="border-color: rgba(240, 147, 251, 0.19);"><div class="flex items-center gap-2 mb-1"><span class="text-lg">👜</span><div><p class="text-[9px] text-gray-400 leading-none">Handmade Bag</p><p class="text-[11px] font-bold" style="color: rgb(240, 147, 251);">€245</p></div></div><div class="h-1 bg-white/[0.06] rounded-full overflow-hidden"><div class="sh-bar h-full rounded-full" style="--w: 79%; background: rgba(240, 147, 251, 0.6);"></div></div></div></div><div class="absolute bottom-4 right-0 sh-float-4 z-20"><div class="bg-[#111120] border border-white/[0.1] rounded-xl px-3 py-2 shadow-xl min-w-[110px]" style="border-color: rgba(79, 172, 254, 0.19);"><div class="flex items-center gap-2 mb-1"><span class="text-lg">💡</span><div><p class="text-[9px] text-gray-400 leading-none">Smart Lamp</p><p class="text-[11px] font-bold" style="color: rgb(79, 172, 254);">€79</p></div></div><div class="h-1 bg-white/[0.06] rounded-full overflow-hidden"><div class="sh-bar h-full rounded-full" style="--w: 91%; background: rgba(79, 172, 254, 0.6);"></div></div></div></div><div class="absolute bottom-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#667eea]/20 to-[#764ba2]/20 border border-[#667eea]/25 rounded-full px-4 py-1.5 flex items-center gap-2 sh-float-2"><span class="w-1.5 h-1.5 rounded-full bg-[#667eea] sh-blink"></span><span class="text-[11px] font-semibold text-[#667eea]">IA activa · +40% conversión</span></div></div></div></div></section><section class="py-20"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><h2 data-sh="true" class="text-3xl md:text-4xl font-extrabold text-center mb-16 text-white sh-visible visible" style="animation-delay: 0ms;">Nuestros Servicios <span class="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Shopify</span></h2><div class="grid md:grid-cols-3 gap-8"><div class="rounded-lg text-card-foreground shadow-sm bg-white/[0.04] border border-white/10 hover:border-[#667eea]/30 transition-all duration-300 sh-card" data-sh="true" data-delay="0"><div class="flex flex-col space-y-1.5 p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette w-12 h-12 text-[#667eea] mb-4"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg><h3 class="font-semibold tracking-tight text-2xl text-white">🎨 Temas Personalizados</h3></div><div class="p-6 pt-0"><p class="text-gray-400 mb-4">Diseñamos y desarrollamos temas Shopify únicos que reflejan perfectamente tu marca</p><ul class="space-y-3 text-gray-300"><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Diseño 100% personalizado y responsive</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Optimizado para conversiones y SEO</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Compatible con todas las apps de Shopify</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Velocidad de carga ultrarrápida</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Editor personalizado para tu equipo</span></li></ul></div></div><div class="rounded-lg text-card-foreground shadow-sm bg-white/[0.04] border border-white/10 hover:border-[#764ba2]/30 transition-all duration-300 sh-card" data-sh="true" data-delay="120"><div class="flex flex-col space-y-1.5 p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code w-12 h-12 text-[#764ba2] mb-4"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg><h3 class="font-semibold tracking-tight text-2xl text-white">⚙️ Apps Personalizadas</h3></div><div class="p-6 pt-0"><p class="text-gray-400 mb-4">Creamos aplicaciones a medida para añadir funcionalidades específicas a tu tienda</p><ul class="space-y-3 text-gray-300"><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Integraciones con sistemas externos (ERP, CRM)</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Calculadoras de precios personalizadas</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Sistemas de suscripciones avanzados</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Gestión de inventario personalizada</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Soluciones B2B y mayoristas</span></li></ul></div></div><div class="rounded-lg text-card-foreground shadow-sm bg-white/[0.04] border border-white/10 hover:border-[#667eea]/30 transition-all duration-300 sh-card" data-sh="true" data-delay="240"><div class="flex flex-col space-y-1.5 p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot w-12 h-12 text-[#667eea] mb-4"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg><h3 class="font-semibold tracking-tight text-2xl text-white">🤖 Automatizaciones con IA</h3></div><div class="p-6 pt-0"><p class="text-gray-400 mb-4">Implementamos inteligencia artificial para automatizar y optimizar tu negocio</p><ul class="space-y-3 text-gray-300"><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Chatbots IA para atención al cliente 24/7</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Recomendaciones de productos inteligentes</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Optimización de precios dinámica</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Automatización de marketing y emails</span></li><li class="flex items-start space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg><span>Análisis predictivo de ventas</span></li></ul></div></div></div></div></section><section class="py-24 px-4 relative overflow-hidden"><div class="absolute inset-0 pointer-events-none"><div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#667eea]/6 rounded-full blur-[100px]"></div><div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#764ba2]/6 rounded-full blur-[100px]"></div></div><div class="container mx-auto max-w-7xl relative z-10"><div class="text-center mb-16 slide-in-section"><span class="inline-block bg-gradient-to-r from-[#667eea]/15 to-[#764ba2]/15 border border-[#667eea]/20 text-[#667eea] px-4 py-1.5 rounded-full text-sm font-semibold mb-4">Desarrollo propio · Desde cero · A tu medida</span><h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Temas y Apps Shopify <span class="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">100% personalizados</span></h2><p class="text-gray-400 max-w-2xl mx-auto text-lg">No plantillas genéricas. Construimos exactamente lo que tu negocio necesita, con código limpio, escalable y documentado.</p></div><div class="grid lg:grid-cols-2 gap-8"><div class="slide-in-section group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-[#667eea]/30 transition-all duration-300"><div class="h-1 bg-gradient-to-r from-[#667eea] to-[#764ba2]"></div><div class="p-8"><div class="flex items-center gap-4 mb-6"><div class="w-14 h-14 rounded-xl bg-[#667eea]/15 border border-[#667eea]/25 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette w-7 h-7 text-[#667eea]"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg></div><div><h3 class="text-2xl font-extrabold text-white">Temas Shopify a Medida</h3><p class="text-[#667eea] text-sm font-medium">Diseño exclusivo · Liquid · Dawn</p></div></div><p class="text-gray-400 mb-6 leading-relaxed">Tu tienda merece una identidad única. Desarrollamos temas Shopify desde cero o personalizamos profundamente los existentes, adaptando cada detalle a tu marca y optimizando cada página para convertir visitas en ventas.</p><div class="space-y-3 mb-7"><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">🎨</span><div><p class="text-white text-sm font-semibold">Diseño UI/UX exclusivo</p><p class="text-gray-500 text-xs mt-0.5">Wireframes, mockups y diseño final adaptado a tu marca</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">📱</span><div><p class="text-white text-sm font-semibold">Responsive perfecto</p><p class="text-gray-500 text-xs mt-0.5">Experiencia impecable en móvil, tablet y escritorio</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">⚡</span><div><p class="text-white text-sm font-semibold">Velocidad Core Web Vitals</p><p class="text-gray-500 text-xs mt-0.5">Optimizado para Google. Carga ultra-rápida.</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">🛒</span><div><p class="text-white text-sm font-semibold">Flujo de compra optimizado</p><p class="text-gray-500 text-xs mt-0.5">Checkout, cart y product pages diseñados para convertir</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">✏️</span><div><p class="text-white text-sm font-semibold">Editor personalizado</p><p class="text-gray-500 text-xs mt-0.5">Tu equipo puede editar contenido sin tocar código</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">🔌</span><div><p class="text-white text-sm font-semibold">Compatible con apps populares</p><p class="text-gray-500 text-xs mt-0.5">Klaviyo, Reviews, Loyalty y todas las apps que uses</p></div></div></div><div class="flex flex-wrap gap-2 mb-7"><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#667eea]/12 text-[#667eea] border border-[#667eea]/20">Liquid</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#667eea]/12 text-[#667eea] border border-[#667eea]/20">HTML/CSS</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#667eea]/12 text-[#667eea] border border-[#667eea]/20">JavaScript</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#667eea]/12 text-[#667eea] border border-[#667eea]/20">Dawn</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#667eea]/12 text-[#667eea] border border-[#667eea]/20">Shopify CLI</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#667eea]/12 text-[#667eea] border border-[#667eea]/20">Figma</span></div><div class="rounded-xl overflow-hidden border border-white/[0.08] bg-[#0d0d18] p-3 mb-7"><div class="flex items-center gap-1.5 mb-2"><div class="w-2 h-2 rounded-full" style="background: rgb(255, 95, 87);"></div><div class="w-2 h-2 rounded-full" style="background: rgb(254, 188, 46);"></div><div class="w-2 h-2 rounded-full" style="background: rgb(40, 200, 64);"></div><div class="flex-1 h-3 bg-white/[0.05] rounded ml-2 flex items-center px-2"><span class="text-[7px] text-gray-600 font-mono">yourstore.myshopify.com</span></div></div><div class="grid grid-cols-2 gap-2"><div class="rounded-lg bg-gradient-to-br from-[#667eea]/10 to-[#764ba2]/10 border border-white/[0.06]" style="height: 70px;"></div><div class="space-y-1.5 py-1"><div class="h-2 bg-white/10 rounded w-3/4"></div><div class="h-2 bg-white/10 rounded w-1/2"></div><div class="h-2 bg-[#667eea]/30 rounded w-1/3 mt-2"></div><div class="h-5 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-full w-full mt-2"></div></div></div></div><div class="flex items-center justify-between p-4 rounded-xl bg-[#667eea]/8 border border-[#667eea]/15 mb-6"><div><p class="text-xs text-gray-500">Desde</p><p class="text-2xl font-extrabold text-white">1.500 €</p></div><div class="text-right"><p class="text-xs text-gray-500">Incluye</p><p class="text-xs text-gray-300">Diseño + Desarrollo + Formación</p></div></div><a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 px-4 py-2 w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/30 text-white border-0 rounded-full font-semibold group">Quiero un tema personalizado<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div><div class="slide-in-section group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-[#764ba2]/30 transition-all duration-300"><div class="h-1 bg-gradient-to-r from-[#764ba2] to-[#f093fb]"></div><div class="p-8"><div class="flex items-center gap-4 mb-6"><div class="w-14 h-14 rounded-xl bg-[#764ba2]/15 border border-[#764ba2]/25 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code w-7 h-7 text-[#764ba2]"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div><div><h3 class="text-2xl font-extrabold text-white">Apps Shopify Personalizadas</h3><p class="text-[#764ba2] text-sm font-medium">App Bridge · Admin API · Webhooks</p></div></div><p class="text-gray-400 mb-6 leading-relaxed">Cuando las apps del marketplace no hacen exactamente lo que necesitas, desarrollamos la tuya. Integrada nativamente en Shopify, con la lógica de negocio que tu tienda requiere y sin pagar comisiones de por vida.</p><div class="space-y-3 mb-7"><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">🔗</span><div><p class="text-white text-sm font-semibold">Integraciones con ERP/CRM</p><p class="text-gray-500 text-xs mt-0.5">Conecta Shopify con Odoo, SAP, HubSpot o cualquier sistema</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">💰</span><div><p class="text-white text-sm font-semibold">Calculadoras de precio dinámico</p><p class="text-gray-500 text-xs mt-0.5">Presupuestadores, configuradores y precios por volumen</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">🔄</span><div><p class="text-white text-sm font-semibold">Sistemas de suscripción propios</p><p class="text-gray-500 text-xs mt-0.5">Suscripciones sin depender de apps de terceros</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">📦</span><div><p class="text-white text-sm font-semibold">Gestión de inventario avanzada</p><p class="text-gray-500 text-xs mt-0.5">Multi-almacén, alertas, reposición automática</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">🏢</span><div><p class="text-white text-sm font-semibold">Portales B2B y mayoristas</p><p class="text-gray-500 text-xs mt-0.5">Precios por cliente, pedidos mínimos, aprobaciones</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] transition-colors"><span class="text-lg mt-0.5 flex-shrink-0">🤖</span><div><p class="text-white text-sm font-semibold">Apps con IA integrada</p><p class="text-gray-500 text-xs mt-0.5">Recomendaciones, chatbots y análisis predictivo</p></div></div></div><div class="flex flex-wrap gap-2 mb-7"><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#764ba2]/12 text-[#764ba2] border border-[#764ba2]/20">Node.js</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#764ba2]/12 text-[#764ba2] border border-[#764ba2]/20">React</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#764ba2]/12 text-[#764ba2] border border-[#764ba2]/20">App Bridge</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#764ba2]/12 text-[#764ba2] border border-[#764ba2]/20">Admin API</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#764ba2]/12 text-[#764ba2] border border-[#764ba2]/20">Webhooks</span><span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#764ba2]/12 text-[#764ba2] border border-[#764ba2]/20">Polaris</span></div><div class="rounded-xl overflow-hidden border border-white/[0.08] bg-[#0d0d18] p-3 mb-7"><div class="flex items-center gap-1.5 mb-2"><div class="w-4 h-4 rounded bg-gradient-to-br from-[#764ba2] to-[#f093fb]"></div><span class="text-[8px] font-mono text-[#764ba2]">My Custom App · Shopify Admin</span><div class="ml-auto w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div></div><div class="grid grid-cols-3 gap-1.5 mb-2"><div class="rounded-lg p-2 bg-white/[0.05]" style="border-left: 2px solid rgb(118, 75, 162);"><p class="text-[7px] text-gray-500">Pedidos sync</p><p class="text-[10px] font-bold text-white">1.248</p></div><div class="rounded-lg p-2 bg-white/[0.05]" style="border-left: 2px solid rgb(240, 147, 251);"><p class="text-[7px] text-gray-500">Stock alerts</p><p class="text-[10px] font-bold text-white">3</p></div><div class="rounded-lg p-2 bg-white/[0.05]" style="border-left: 2px solid rgb(79, 172, 254);"><p class="text-[7px] text-gray-500">B2B clients</p><p class="text-[10px] font-bold text-white">47</p></div></div><div class="h-2 bg-white/[0.04] rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-[#764ba2] to-[#f093fb] rounded-full" style="width: 78%;"></div></div><p class="text-[7px] text-gray-600 mt-1">Sincronización ERP — 78% completada</p></div><div class="flex items-center justify-between p-4 rounded-xl bg-[#764ba2]/8 border border-[#764ba2]/15 mb-6"><div><p class="text-xs text-gray-500">Desde</p><p class="text-2xl font-extrabold text-white">2.500 €</p></div><div class="text-right"><p class="text-xs text-gray-500">Incluye</p><p class="text-xs text-gray-300">Desarrollo + Integración + Soporte</p></div></div><a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 px-4 py-2 w-full bg-gradient-to-r from-[#764ba2] to-[#f093fb] hover:shadow-lg hover:shadow-[#764ba2]/30 text-white border-0 rounded-full font-semibold group">Quiero una app personalizada<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div></div><div class="mt-10 flex flex-wrap justify-center gap-8 text-sm text-gray-500 slide-in-section"><span class="text-gray-400">✅ Código limpio y documentado</span><span class="text-gray-400">✅ Cumple las políticas de Shopify</span><span class="text-gray-400">✅ Mantenimiento y actualizaciones</span><span class="text-gray-400">✅ Presupuesto sin compromiso</span></div></div></section><section class="py-20"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-extrabold text-center mb-16 text-white slide-in-section">¿Por Qué <span class="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Elegirnos</span>?</h2><div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#667eea]/30 transition-all duration-300"><div class="p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-10 h-10 text-[#667eea] mb-4"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg><h3 class="text-xl font-bold mb-3 text-white">Experiencia Especializada</h3><p class="text-gray-400">Somos expertos certificados en Shopify con años de experiencia desarrollando soluciones para todo tipo de negocios, desde pequeñas boutiques hasta grandes retailers.</p></div></div><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#764ba2]/30 transition-all duration-300"><div class="p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-10 h-10 text-[#764ba2] mb-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg><h3 class="text-xl font-bold mb-3 text-white">Enfoque en Resultados</h3><p class="text-gray-400">No solo creamos código bonito, creamos soluciones que aumentan tus ventas, mejoran la experiencia del cliente y reducen tus costos operativos.</p></div></div><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#667eea]/30 transition-all duration-300"><div class="p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code w-10 h-10 text-[#667eea] mb-4"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg><h3 class="text-xl font-bold mb-3 text-white">Código de Calidad</h3><p class="text-gray-400">Seguimos las mejores prácticas de Shopify y escribimos código limpio, documentado y fácil de mantener para que tu tienda sea escalable.</p></div></div><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#764ba2]/30 transition-all duration-300"><div class="p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot w-10 h-10 text-[#764ba2] mb-4"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg><h3 class="text-xl font-bold mb-3 text-white">Innovación con IA</h3><p class="text-gray-400">Integramos las últimas tecnologías de inteligencia artificial para automatizar procesos y ofrecer experiencias de compra únicas a tus clientes.</p></div></div></div></div></section><section class="py-20 relative"><div class="absolute inset-0"><div class="absolute top-0 right-1/4 w-[400px] h-[400px] bg-[#764ba2]/5 rounded-full blur-3xl"></div></div><div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><h2 class="text-3xl md:text-4xl font-extrabold text-center mb-8 text-white slide-in-section">Casos de Uso de <span class="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">IA en Shopify</span></h2><p class="text-center text-gray-400 mb-12 max-w-3xl mx-auto">Descubre cómo la inteligencia artificial puede transformar tu tienda Shopify</p><div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto"><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#667eea]/30 transition-all duration-300"><div class="flex flex-col space-y-1.5 p-6"><h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot w-6 h-6 text-[#667eea]"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg><span>Asistente de Ventas IA</span></h3></div><div class="p-6 pt-0"><p class="text-gray-400 mb-4">Un chatbot inteligente que atiende consultas, recomienda productos y ayuda a completar la compra, aumentando la conversión hasta un 40%.</p><ul class="space-y-2 text-sm text-gray-300"><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#667eea]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Respuestas instantáneas 24/7</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#667eea]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Recomendaciones personalizadas</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#667eea]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Gestión de carritos abandonados</span></li></ul></div></div><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#764ba2]/30 transition-all duration-300"><div class="flex flex-col space-y-1.5 p-6"><h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 text-[#764ba2]"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg><span>Generación de Contenido</span></h3></div><div class="p-6 pt-0"><p class="text-gray-400 mb-4">IA que genera descripciones de productos optimizadas para SEO, emails de marketing personalizados y contenido para redes sociales.</p><ul class="space-y-2 text-sm text-gray-300"><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#764ba2]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Descripciones SEO optimizadas</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#764ba2]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Emails automáticos personalizados</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#764ba2]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Posts para redes sociales</span></li></ul></div></div><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#667eea]/30 transition-all duration-300"><div class="flex flex-col space-y-1.5 p-6"><h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-6 h-6 text-[#667eea]"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg><span>Optimización de Precios</span></h3></div><div class="p-6 pt-0"><p class="text-gray-400 mb-4">Algoritmos de IA que ajustan precios dinámicamente según demanda, competencia y otros factores para maximizar tus ganancias.</p><ul class="space-y-2 text-sm text-gray-300"><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#667eea]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Precios dinámicos automáticos</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#667eea]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Análisis de competencia</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#667eea]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Maximización de márgenes</span></li></ul></div></div><div class="rounded-lg text-card-foreground shadow-sm slide-in-section bg-white/[0.04] border border-white/10 hover:border-[#764ba2]/30 transition-all duration-300"><div class="flex flex-col space-y-1.5 p-6"><h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag w-6 h-6 text-[#764ba2]"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span>Búsqueda Visual Inteligente</span></h3></div><div class="p-6 pt-0"><p class="text-gray-400 mb-4">Los clientes pueden buscar productos subiendo fotos, y la IA encuentra artículos similares en tu catálogo.</p><ul class="space-y-2 text-sm text-gray-300"><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#764ba2]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Búsqueda por imagen</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#764ba2]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Reconocimiento de productos</span></li><li class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-[#764ba2]"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>Experiencia de compra mejorada</span></li></ul></div></div></div></div></section><section class="py-20"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-extrabold text-center mb-16 text-white slide-in-section">Nuestro <span class="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Proceso</span></h2><div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto"><div class="rounded-lg text-card-foreground shadow-sm text-center bg-white/[0.04] border border-white/10 sh-card" data-sh="true" data-delay="0"><div class="p-6"><div class="w-16 h-16 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl font-bold text-white">1</span></div><h3 class="text-lg font-bold mb-2 text-white">Consulta Inicial</h3><p class="text-sm text-gray-400">Entendemos tus necesidades, objetivos y visión para tu tienda Shopify</p></div></div><div class="rounded-lg text-card-foreground shadow-sm text-center bg-white/[0.04] border border-white/10 sh-card" data-sh="true" data-delay="100"><div class="p-6"><div class="w-16 h-16 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl font-bold text-white">2</span></div><h3 class="text-lg font-bold mb-2 text-white">Propuesta &amp; Diseño</h3><p class="text-sm text-gray-400">Creamos mockups y una propuesta técnica detallada con presupuesto</p></div></div><div class="rounded-lg text-card-foreground shadow-sm text-center bg-white/[0.04] border border-white/10 sh-card" data-sh="true" data-delay="200"><div class="p-6"><div class="w-16 h-16 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl font-bold text-white">3</span></div><h3 class="text-lg font-bold mb-2 text-white">Desarrollo</h3><p class="text-sm text-gray-400">Desarrollamos tu solución con actualizaciones regulares y feedback</p></div></div><div class="rounded-lg text-card-foreground shadow-sm text-center bg-white/[0.04] border border-white/10 sh-card" data-sh="true" data-delay="300"><div class="p-6"><div class="w-16 h-16 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl font-bold text-white">4</span></div><h3 class="text-lg font-bold mb-2 text-white">Lanzamiento &amp; Soporte</h3><p class="text-sm text-gray-400">Implementamos y te acompañamos con soporte continuo</p></div></div></div></div></section><section class="py-20 relative overflow-hidden"><div class="absolute inset-0"><div class="absolute inset-0 bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10"></div></div><div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 slide-in-section"><h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-white">¿Listo para Llevar tu Tienda Shopify al <span class="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Siguiente Nivel</span>?</h2><p class="text-xl mb-8 max-w-3xl mx-auto text-gray-300">Contáctanos hoy y descubre cómo podemos transformar tu visión en una tienda Shopify exitosa</p><div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-8"><a href="mailto:info@robotsconsultant.net" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300 flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span>info@robotsconsultant.net</span></a><a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 bg-white/[0.05] border border-white/20 hover:bg-white/10 text-white rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300 flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>+34 654 94 27 20</span></a></div><p class="text-lg font-semibold text-gray-400">Consulta gratuita sin compromiso • Presupuesto personalizado en 48h</p></div></section><footer class="bg-[#050505] text-white border-t border-white/10"><div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"><div><h3 class="text-xl font-bold mb-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">RobotsConsultant</h3><p class="text-gray-400 mb-6">Empoderando a profesionales con habilidades avanzadas de programación robótica industrial desde 2018.</p><div class="flex space-x-4"><a href="https://www.facebook.com/profile.php?id=61578024748586" class="text-gray-400 hover:text-[#667eea] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="#" class="text-gray-400 hover:text-[#667eea] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a><a href="#" class="text-gray-400 hover:text-[#667eea] transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a><a href="https://www.instagram.com/robotsqueen/" class="text-gray-400 hover:text-[#667eea] transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg></a></div></div><div><h3 class="text-lg font-semibold mb-4 text-white">Enlaces Rápidos</h3><ul class="space-y-2"><li><a href="#" class="text-gray-400 hover:text-[#667eea] transition-colors">Inicio</a></li><li><a href="#courses" class="text-gray-400 hover:text-[#667eea] transition-colors">Robot Moviles</a></li><li><a href="#features" class="text-gray-400 hover:text-[#667eea] transition-colors">Kiosco de Autoservicio</a></li><li><a href="#services" class="text-gray-400 hover:text-[#667eea] transition-colors">Servicios</a></li><li><a href="https://robotsconsultant.net/tienda" class="text-gray-400 hover:text-[#667eea] transition-colors">Tienda</a></li></ul></div><div><h3 class="text-lg font-semibold mb-4 text-white">Contáctanos</h3><ul class="space-y-3"><li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-5 w-5 text-[#667eea] shrink-0 mr-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span class="text-gray-400">+34 641 52 51 50</span></li><li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-5 w-5 text-[#667eea] shrink-0 mr-3"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span class="text-gray-400">info@robotsconsultant.net</span></li><li class="flex items-center"><a href="https://www.instagram.com/robotsqueen/" class="flex items-center text-gray-400 hover:text-[#667eea] transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#667eea] shrink-0 mr-3"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg><span>@robotsqueen</span></a></li></ul></div><div><h3 class="text-lg font-semibold mb-4 text-white">Mantente Actualizado</h3><p class="text-gray-400 mb-4">Suscríbete a nuestro boletín para recibir las últimas actualizaciones de cursos y noticias de la industria.</p><form class="flex"><input type="email" placeholder="Tu correo electrónico" class="px-4 py-2 bg-white/[0.05] border border-white/10 text-gray-200 rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#667eea] w-full placeholder-gray-500"><button type="submit" class="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-4 py-2 rounded-r-md transition-all">Unirse</button></form></div></div><div class="border-t border-white/10 mt-12 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><div class="text-gray-500 text-sm text-center md:text-left"><p>© 2026 RobotsConsultant. Todos los derechos reservados.</p><p class="mt-1">RobotsAdvisors OÜ · Registrikood: 14522788</p><p>Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415, Estonia</p><p>info@robotsconsultant.net</p></div><div class="flex flex-wrap space-x-6 mt-4 md:mt-0 justify-center md:justify-end gap-y-2"><a href="/politica-privacidad" class="text-gray-500 hover:text-gray-400 text-sm">Política de Privacidad</a><a href="/terminos-servicio" class="text-gray-500 hover:text-gray-400 text-sm">Términos de Servicio</a><a href="/politica-cookies" class="text-gray-500 hover:text-gray-400 text-sm">Política de Cookies</a><a href="/politica-compras" class="text-gray-500 hover:text-gray-400 text-sm">Política de Compras</a><a href="/politica-entrega" class="text-gray-500 hover:text-gray-400 text-sm">Política de Entrega</a><a href="/politica-reembolso" class="text-gray-500 hover:text-gray-400 text-sm">Reembolsos y Cancelaciones</a></div></div></div></div></footer></div></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+
+     <!-- Tracking Metricool -->
+    <img src="https://tracker.metricool.com/c3po.jpg?hash=627b64d75da00e2fdbd4b4fe54267c55" style="display:none" alt="">
+  
+
+</body></html>
