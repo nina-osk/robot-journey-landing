@@ -3,6 +3,7 @@ import {
   ArrowRight, Bot, Boxes, HandPlatter, Cpu, Cog, ScanEye, Zap, Wrench,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
 import Roberta from '@/components/Roberta';
 import Seo from '@/components/Seo';
@@ -39,6 +40,8 @@ const serviceSchema = {
 };
 
 const Robotica = () => {
+  useScrollReveal();
+
   const ctaHero = whatsappUrl('Hola, quiero información sobre robótica y automatización.');
   const ctaTecnico = whatsappUrl('Hola, necesito programación ROS2 / cobots.');
 
@@ -71,7 +74,7 @@ const Robotica = () => {
               </a>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <Roberta pose="saludando" width={420} priority />
+              <Roberta pose="saludando" width={420} priority className="animate-float" />
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import {
   Monitor, Receipt, ChefHat, BarChart3, UtensilsCrossed, ShoppingBag, Youtube,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
 import Roberta from '@/components/Roberta';
 import Seo from '@/components/Seo';
@@ -52,6 +53,8 @@ const ECOSYSTEM = [
 const YOUTUBE_VIDEOS = ['sOLfQvYjSNs', 'kh0oYd_EkZk', 'rTa7yggFCKU'];
 
 const Index = () => {
+  useScrollReveal();
+
   const ctaHero = whatsappUrl('Hola, quiero mi diagnóstico gratuito.');
   const ctaFinal = whatsappUrl('Hola, quiero automatizar mi negocio con RobotsConsultant.');
 
@@ -97,7 +100,7 @@ const Index = () => {
 
             {/* En móvil, Roberta debajo del H1 */}
             <div className="flex justify-center lg:justify-end">
-              <Roberta pose="saludando" width={460} priority />
+              <Roberta pose="saludando" width={460} priority className="animate-float" />
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import {
   Lightbulb, TrendingUp, Map,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import { whatsappUrl, SITE_URL } from '@/config/contact';
@@ -155,6 +156,8 @@ const serviceSchema = {
 };
 
 const MentoriaIA = () => {
+  useScrollReveal();
+
   const ctaInfo = whatsappUrl('Hola, quiero información sobre la mentoría en IA.');
 
   return (

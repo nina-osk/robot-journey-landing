@@ -4,6 +4,7 @@ import {
   ShoppingCart, BarChart3, ArrowRight, Quote,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
 import Roberta from '@/components/Roberta';
 import Seo from '@/components/Seo';
@@ -91,6 +92,8 @@ const FeatureCard = ({
 );
 
 const OdooHosteleria = () => {
+  useScrollReveal();
+
   const ctaHero = whatsappUrl('Hola, quiero esto en mi negocio de hostelería.');
   const ctaMedio = whatsappUrl('Hola, quiero recuperar mi tiempo con Odoo.');
   const ctaFinal = whatsappUrl('Hola, quiero mi diagnóstico gratuito para mi restaurante.');
@@ -136,7 +139,7 @@ const OdooHosteleria = () => {
 
             {/* En móvil Roberta va debajo del H1, nunca compitiendo en horizontal */}
             <div className="flex justify-center lg:justify-end">
-              <Roberta pose="saludando" width={480} priority />
+              <Roberta pose="saludando" width={480} priority className="animate-float" />
             </div>
           </div>
         </div>

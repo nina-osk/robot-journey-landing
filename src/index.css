@@ -166,7 +166,15 @@
   }
 
   .card-roberta {
-    @apply rounded-card border border-greige bg-white p-7 shadow-[0_1px_3px_rgba(23,23,27,0.04),0_8px_24px_-12px_rgba(23,23,27,0.10)];
+    @apply rounded-card border border-greige bg-white p-7 shadow-[0_1px_3px_rgba(23,23,27,0.04),0_8px_24px_-12px_rgba(23,23,27,0.10)]
+           transition-shadow duration-300;
+  }
+
+  /* Micro-interacción: la tarjeta responde al ratón con una sombra más honda */
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .card-roberta:hover {
+      @apply shadow-[0_2px_6px_rgba(23,23,27,0.06),0_18px_40px_-14px_rgba(23,23,27,0.18)];
+    }
   }
 
   .section-dark {
@@ -193,6 +201,13 @@
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Con movimiento reducido, Roberta se queda quieta */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
 }
 
 @keyframes spin-slow {

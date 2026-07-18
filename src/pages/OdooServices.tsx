@@ -5,6 +5,7 @@ import {
   RefreshCw, UtensilsCrossed, ShoppingBag, Store,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
 import Roberta from '@/components/Roberta';
 import Seo from '@/components/Seo';
@@ -128,6 +129,8 @@ const TESTIMONIOS = [
 ];
 
 const OdooServices = () => {
+  useScrollReveal();
+
   const ctaImplantacion = whatsappUrl('Hola, quiero mi diagnóstico gratuito de implantación de Odoo.');
   const ctaMigracion = whatsappUrl('Hola, quiero migrar mi sistema actual a Odoo.');
 

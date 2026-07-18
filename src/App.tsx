@@ -30,6 +30,7 @@ import TerminosServicio from "./pages/TerminosServicio";
 import PoliticaEntrega from "./pages/PoliticaEntrega";
 import PoliticaReembolso from "./pages/PoliticaReembolso";
 import NotFound from "./pages/NotFound";
+import WhatsAppSticky from "./components/WhatsAppSticky";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <WhatsAppSticky />
         <Routes>
           <Route path="/" element={<Index />} />
 

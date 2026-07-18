@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, ShieldCheck, Coins, Clock, TrendingUp } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
 import Roberta from '@/components/Roberta';
 import Seo from '@/components/Seo';
@@ -78,6 +79,8 @@ const productSchema = {
 };
 
 const CajonCobroAutomatico = () => {
+  useScrollReveal();
+
   const ctaHero = whatsappUrl('Hola, quiero información del cajón de cobro automático.');
 
   return (

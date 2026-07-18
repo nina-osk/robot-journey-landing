@@ -3,6 +3,7 @@ import {
   ArrowRight, Check, TrendingUp, RefreshCw, Truck, MessageCircle,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import {
@@ -122,6 +123,8 @@ const ChannelBar = ({ label, value, pct }: { label: string; value: string; pct: 
 );
 
 const OdooEcommerce = () => {
+  useScrollReveal();
+
   const ctaAuditoria = whatsappUrl('Hola, quiero mi auditoría gratuita de ecommerce.');
 
   return (
