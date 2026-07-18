@@ -10,16 +10,25 @@ const PORT = 4173
 
 const routes = [
   '/',
-  '/robots-moviles',
-  '/kioscos-pago',
+
+  // Arquitectura de URLs del rediseño (brief sección 3).
+  // Las rutas antiguas (/servicios-odoo, /shopify, /kioscos-pago,
+  // /robots-moviles) ya no se prerenderizan: las sirve un 301 desde
+  // public/.htaccess, y un fichero prerenderizado en la ruta vieja
+  // competiría con la redirección.
+  '/odoo',
+  '/odoo/hosteleria',
+  '/odoo/ecommerce',
+  '/odoo/integracion-shopify',
+  '/kioscos-autoservicio',
+  '/cajon-cobro-automatico',
+  '/robotica',
+
   '/pack-restaurante',
   '/pack-hotel',
   '/pack-ecommerce',
-  '/servicios-odoo',
   '/transformacion-digital',
-  '/agentes-ia',
   '/agentes-ia/restaurantes',
-  '/shopify',
   '/mentoria-ia',
   '/sobre-mi',
   '/apps-personalizadas',

@@ -1,7 +1,22 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "mcp__8c89155c-8fb3-415b-a74c-62d9c10114fe__search_files",
+      "mcp__8c89155c-8fb3-415b-a74c-62d9c10114fe__read_file_content",
+      "Bash(npx vite *)",
+      "Bash(sort -u -t: -k3)",
+      "Bash(grep -o \"isReact19[^;]\\\\{0,120\\\\}\" node_modules/react-helmet-async/lib/index.esm.js)",
+      "Bash(node -p \"require\\('react/package.json'\\).version\")",
+      "Bash(grep -o \"major *=[^;]\\\\{0,140\\\\}\" node_modules/react-helmet-async/lib/index.esm.js)",
+      "Bash(grep -o \"canUseDOM[^;]\\\\{0,100\\\\}\" node_modules/react-helmet-async/lib/index.esm.js)",
+      "Bash(grep -o \"isDocument *=[^;]\\\\{0,160\\\\}\" node_modules/react-helmet-async/lib/index.esm.js)",
+      "Bash(npm install *)",
+      "Bash(node -p \"require\\('react-helmet-async/package.json'\\).version\")",
+      "Bash(node -p \"'instalada: '+require\\('react-helmet-async/package.json'\\).version\")",
+      "Bash(rm -rf node_modules/.vite)",
+      "Bash(npm run *)",
+      "Bash(node -e ' *)"
     ]
   }
 }

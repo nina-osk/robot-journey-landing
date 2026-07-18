@@ -4,9 +4,29 @@
 @tailwind utilities;
 
 @layer base {
+  /*
+   * Tokens de marca «Roberta» — brief-rediseno-robotsconsultant.md, sección 1.
+   * Se declaran en HSL sin envolver para poder usarlos desde Tailwind
+   * (hsl(var(--token))) igual que el resto de variables shadcn.
+   */
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --teal: 174 34% 46%;         /* #4E9D96 */
+    --teal-dark: 186 42% 32%;    /* #2F6E74 */
+    --coral: 11 80% 68%;         /* #F0836C */
+    --greige: 40 15% 77%;        /* #CDC6BA */
+    --hueso: 40 12% 94%;         /* #F2F1EE */
+    --pantalla: 240 8% 10%;      /* #17171B */
+    --cian-glow: 184 80% 66%;    /* #63E5EF — SOLO sobre fondo --pantalla */
+
+    /* Radios generosos: nada de esquinas duras */
+    --radius-card: 1.5rem;       /* 24px */
+    --radius-card-sm: 1.25rem;   /* 20px */
+  }
+
+  :root {
+    /* El fondo general es hueso, nunca blanco puro */
+    --background: 40 12% 94%;
+    --foreground: 240 8% 10%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -90,12 +110,15 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    font-size: 1.125rem;   /* 18px mínimo */
+    line-height: 1.6;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight;
+    @apply font-display font-bold tracking-tight;
+    line-height: 1.15;
   }
 
   .glass-card {
@@ -104,6 +127,55 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/*
+ * Componentes de marca «Roberta». Todo redondeado, cero esquinas duras.
+ * El cian solo existe dentro de .section-dark (la "cara-pantalla" de Roberta).
+ */
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-teal-dark;
+  }
+
+  .section-dark .eyebrow {
+    @apply text-cian-glow;
+  }
+
+  .btn-coral {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-coral
+           px-7 py-3.5 font-body font-semibold text-pantalla
+           border-2 border-coral-dark shadow-sm
+           transition-all duration-200
+           hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/30
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral-dark focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-transparent
+           px-7 py-3.5 font-body font-semibold text-teal
+           border-2 border-teal
+           transition-all duration-200
+           hover:-translate-y-0.5 hover:bg-teal hover:text-white
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2;
+  }
+
+  .section-dark .btn-secondary {
+    @apply text-cian-glow border-cian-glow hover:bg-cian-glow hover:text-pantalla;
+  }
+
+  .card-roberta {
+    @apply rounded-card border border-greige bg-white p-7 shadow-[0_1px_3px_rgba(23,23,27,0.04),0_8px_24px_-12px_rgba(23,23,27,0.10)];
+  }
+
+  .section-dark {
+    @apply bg-pantalla text-hueso;
+  }
+
+  /* Tarjeta dentro de una sección oscura: borde y glow cian sutil */
+  .section-dark .card-roberta {
+    @apply border-white/10 bg-white/[0.04] text-hueso shadow-none backdrop-blur-sm;
   }
 }
 

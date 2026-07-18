@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
-    "@n8n/chat": "^1.13.1",
     "@nestjs/cli": "^11.0.6",
     "@nestjs/mapped-types": "^2.1.0",
     "@nestjs/passport": "^11.0.5",
@@ -87,6 +86,7 @@
     "lovable-tagger": "^1.1.7",
     "postcss": "^8.4.47",
     "puppeteer": "^24.42.0",
+    "sharp": "^0.35.3",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",

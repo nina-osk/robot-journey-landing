@@ -9,6 +9,17 @@
   RewriteEngine On
   RewriteBase /
 
+  # ---------------------------------------------------------------
+  # 301 de la reestructuración de URLs (brief sección 4, fix 5).
+  # Van ANTES del fallback SPA para que ganen a los ficheros
+  # prerenderizados que todavía puedan existir en las rutas viejas.
+  # ---------------------------------------------------------------
+  RewriteRule ^servicios-odoo/?$        /odoo                        [R=301,L]
+  RewriteRule ^shopify/?$               /odoo/integracion-shopify    [R=301,L]
+  RewriteRule ^agentes-ia/?$            /odoo/ecommerce              [R=301,L]
+  RewriteRule ^kioscos-pago/?$          /kioscos-autoservicio        [R=301,L]
+  RewriteRule ^robots-moviles/?$        /robotica                    [R=301,L]
+
   # Do NOT rewrite files that actually exist (assets, images, etc.)
   RewriteCond %{REQUEST_URI} \.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot|map|json|txt)$ [NC]
   RewriteRule ^ - [L]

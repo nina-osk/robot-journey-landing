@@ -24,11 +24,18 @@ import {
 } from 'lucide-react';
 
 const TransformacionDigital = () => {
+  /*
+   * Todos los CTA de la web van a WhatsApp. El nombre se conserva para no
+   * tocar los cinco puntos de llamada; la sección de Calendly sigue embebida
+   * más abajo para quien prefiera agendar directamente.
+   */
   const scrollToCalendly = () => {
-    const calendlyElement = document.getElementById('calendly-section');
-    if (calendlyElement) {
-      calendlyElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.open(
+      'https://wa.me/34654942720?text=' +
+        encodeURIComponent('Hola, quiero información sobre transformación digital.'),
+      '_blank',
+      'noopener,noreferrer'
+    );
   };
 
   return (

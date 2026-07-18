@@ -52,8 +52,10 @@ const PackEcommerce = () => {
             Transforma tu eCommerce en una plataforma profesional que integra ventas, atención, pagos y envíos,
             para escalar sin perder tiempo en tareas manuales ni depender de terceros.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white">
+          <Button asChild size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white">
+            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20automatizar%20mi%20tienda%20con%20el%20pack%20ecommerce." target="_blank" rel="noopener noreferrer">
             👉 Quiero automatizar mi tienda ahora
+            </a>
           </Button>
         </div>
       </section>
@@ -217,8 +219,10 @@ const PackEcommerce = () => {
           <p className="text-xl mb-8">
             Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
           </p>
-          <Button size="lg" className="bg-[#0a0a0a] text-purple-600 hover:bg-gray-100">
+          <Button asChild size="lg" className="bg-[#0a0a0a] text-purple-600 hover:bg-gray-100">
+            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20del%20pack%20ecommerce." target="_blank" rel="noopener noreferrer">
             👉 Solicitar diagnóstico gratuito
+            </a>
           </Button>
         </div>
       </section>

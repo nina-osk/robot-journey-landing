@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet-async";
+import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -169,20 +169,24 @@ const OdooServices = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
-      <Helmet>
-        <title>Servicios Odoo ERP | Implementación y Personalización | RobotsConsultant</title>
-        <meta name="description" content="Implementación, personalización y soporte de Odoo ERP para empresas. Gestiona ventas, inventario, contabilidad, RRHH y más en un solo sistema. Consulta gratuita." />
-        <link rel="canonical" href="https://robotsconsultant.net/servicios-odoo" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Servicios Odoo ERP",
-          "provider": { "@type": "Organization", "name": "RobotsConsultant Agency" },
-          "description": "Implementación, personalización, migración y soporte de Odoo para empresas en España.",
-          "areaServed": "ES"
-        })}</script>
-      </Helmet>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Seo
+        title="Servicios Odoo ERP | Implementación y Personalización | RobotsConsultant"
+        description="Implementación, personalización y soporte de Odoo ERP para empresas. Gestiona ventas, inventario, contabilidad, RRHH y más en un solo sistema. Consulta gratuita."
+        path="/odoo"
+        schemas={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'Servicios Odoo ERP',
+            provider: { '@type': 'Organization', name: 'RobotsConsultant' },
+            description:
+              'Implementación, personalización, migración y soporte de Odoo para empresas en España.',
+            areaServed: 'ES',
+            url: 'https://robotsconsultant.net/odoo',
+          },
+          faqSchema,
+        ]}
+      />
       <Navbar />
 
       <style>{`

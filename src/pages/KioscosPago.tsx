@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { useState } from 'react';
 
 const PacksPorSector = () => {
@@ -65,7 +66,12 @@ const PacksPorSector = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Seo
+        title="Kioscos de autoservicio para hostelería y retail | RobotsConsultant"
+        description="Kioscos de autoservicio que suben el ticket medio y reducen colas. Integrados con tu TPV y Odoo. Packs por sector con instalación y formación incluidas."
+        path="/kioscos-autoservicio"
+        schemas={[faqSchema]}
+      />
       <Navbar />
       <div className="pt-20">
         {/* Header Section */}
@@ -495,8 +501,14 @@ const PacksPorSector = () => {
               <p className="text-green-100 mb-6">
                 Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
               </p>
-              <Button className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                👉 Solicitar diagnóstico gratuito
+              <Button asChild className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+                <a
+                  href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  👉 Solicitar diagnóstico gratuito
+                </a>
               </Button>
             </div>
           </div>
@@ -721,8 +733,14 @@ const PacksPorSector = () => {
               <p className="text-orange-100 mb-6">
                 Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
               </p>
-              <Button className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] text-[#764ba2] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                👉 Solicitar diagnóstico gratuito
+              <Button asChild className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-[#764ba2] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+                <a
+                  href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  👉 Solicitar diagnóstico gratuito
+                </a>
               </Button>
             </div>
           </div>
@@ -951,8 +969,14 @@ const PacksPorSector = () => {
               <p className="text-blue-100 mb-6">
                 Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
               </p>
-              <Button className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08]/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                👉 Solicitar diagnóstico gratuito
+              <Button asChild className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+                <a
+                  href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  👉 Solicitar diagnóstico gratuito
+                </a>
               </Button>
             </div>
           </div>

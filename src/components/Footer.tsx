@@ -1,126 +1,186 @@
 
-import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Linkedin, Mail, Phone, Youtube, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { PHONE_DISPLAY, WHATSAPP_URL } from '@/config/contact';
+
+/** Arquitectura de enlaces del footer — brief sección 2. Todas las rutas absolutas. */
+const COLUMNS: { title: string; links: { label: string; to: string; external?: boolean }[] }[] = [
+  {
+    title: 'Servicios',
+    links: [
+      { label: 'Implantación Odoo', to: '/odoo' },
+      { label: 'Kioscos de autoservicio', to: '/kioscos-autoservicio' },
+      { label: 'Cajón de cobro automático', to: '/cajon-cobro-automatico' },
+      { label: 'Apps con IA', to: '/apps-personalizadas' },
+      { label: 'Robótica', to: '/robotica' },
+    ],
+  },
+  {
+    title: 'Sectores',
+    links: [
+      { label: 'Hostelería', to: '/odoo/hosteleria' },
+      { label: 'Ecommerce', to: '/odoo/ecommerce' },
+      { label: 'Transformación digital', to: '/transformacion-digital' },
+    ],
+  },
+  {
+    title: 'Recursos',
+    links: [
+      { label: 'Cursos y mentoría', to: '/mentoria-ia' },
+      { label: 'Canal de YouTube', to: 'https://www.youtube.com/@robotsconsultant', external: true },
+      { label: 'Tienda', to: 'https://robotsconsultant.net/tienda', external: true },
+      { label: 'Sobre mí', to: '/sobre-mi' },
+      { label: 'Contacto', to: '/contacto' },
+    ],
+  },
+];
+
+const LEGAL = [
+  { label: 'Política de Privacidad', to: '/politica-privacidad' },
+  { label: 'Términos de Servicio', to: '/terminos-servicio' },
+  { label: 'Política de Cookies', to: '/politica-cookies' },
+  { label: 'Política de Compras', to: '/politica-compras' },
+  { label: 'Política de Entrega', to: '/politica-entrega' },
+  { label: 'Reembolsos y Cancelaciones', to: '/politica-reembolso' },
+];
+
+const linkClass = 'text-greige/80 hover:text-cian-glow transition-colors';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="bg-[#050505] text-white border-t border-white/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">RobotsConsultant</h3>
-            <p className="text-gray-400 mb-6">
-              Empoderando a profesionales con habilidades avanzadas de programación robótica industrial desde 2018.
+    <footer className="section-dark border-t border-white/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Marca + contacto */}
+          <div className="lg:col-span-2">
+            <h3 className="font-display text-2xl font-extrabold text-hueso mb-3">RobotsConsultant</h3>
+            <p className="text-greige/80 text-base mb-6 max-w-sm">
+              Partner oficial de Odoo. Automatización e IA para pymes de hostelería y ecommerce.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=61578024748586" className="text-gray-400 hover:text-[#667eea] transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-[#667eea] transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-[#667eea] transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22.54 6.42c-.26-.83-1.04-1.48-1.94-1.63-.98-.16-4.94-.16-4.94-.16s-3.96 0-4.94.16c-.9.15-1.68.8-1.94 1.63-.38 1.23-.58 2.52-.58 3.85 0 1.33.2 2.62.58 3.85.26.83 1.04 1.48 1.94 1.63.98.16 4.94.16 4.94.16s3.96 0 4.94-.16c.9-.15 1.68-.8 1.94-1.63.38-1.23.58-2.52.58-3.85 0-1.33-.2-2.62-.58-3.85z"></path>
-                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                </svg>
-              </a>
-              <a href="https://www.instagram.com/robotsqueen/" className="text-gray-400 hover:text-[#667eea] transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <circle cx="17.5" cy="6.5" r="1.5"></circle>
-                </svg>
-              </a>
-            </div>
-          </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Enlaces Rápidos</h3>
-            <ul className="space-y-2">
+
+            <ul className="space-y-3 mb-6 text-base">
               <li>
-                <a href="#" className="text-gray-400 hover:text-[#667eea] transition-colors">Inicio</a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`flex items-center ${linkClass}`}>
+                  <Phone className="h-5 w-5 text-cian-glow shrink-0 mr-3" />
+                  <span>{PHONE_DISPLAY}</span>
+                </a>
               </li>
               <li>
-                <a href="#courses" className="text-gray-400 hover:text-[#667eea] transition-colors">Robot Moviles</a>
-              </li>
-              <li>
-                <a href="#features" className="text-gray-400 hover:text-[#667eea] transition-colors">Kiosco de Autoservicio</a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-400 hover:text-[#667eea] transition-colors">Servicios</a>  
-              </li>
-              <li>
-                <a href="https://robotsconsultant.net/tienda" className="text-gray-400 hover:text-[#667eea] transition-colors">Tienda</a> 
-              </li>
-            </ul>
-          </div>
-          
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Contáctanos</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-[#667eea] shrink-0 mr-3" />
-                <span className="text-gray-400">+34 641 52 51 50</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 text-[#667eea] shrink-0 mr-3" />
-                <span className="text-gray-400">info@robotsconsultant.net</span>
-              </li>
-              <li className="flex items-center">
-                <a href="https://www.instagram.com/robotsqueen/" className="flex items-center text-gray-400 hover:text-[#667eea] transition-colors">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#667eea] shrink-0 mr-3">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <circle cx="17.5" cy="6.5" r="1.5"></circle>
-                  </svg>
-                  <span>@robotsqueen</span>
+                <a href="mailto:info@robotsconsultant.net" className={`flex items-center ${linkClass}`}>
+                  <Mail className="h-5 w-5 text-cian-glow shrink-0 mr-3" />
+                  <span>info@robotsconsultant.net</span>
                 </a>
               </li>
             </ul>
+
+            <div className="flex space-x-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=61578024748586"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className={linkClass}
+              >
+                <Facebook size={20} />
+              </a>
+              <a
+                href="https://www.youtube.com/@robotsconsultant"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className={linkClass}
+              >
+                <Youtube size={20} />
+              </a>
+              <a
+                href="https://www.instagram.com/robotsqueen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className={linkClass}
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/robotsconsultant"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className={linkClass}
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
-          
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Mantente Actualizado</h3>
-            <p className="text-gray-400 mb-4">
-              Suscríbete a nuestro boletín para recibir las últimas actualizaciones de cursos y noticias de la industria.
-            </p>
-            <form className="flex">
+
+          {/* Columnas de navegación */}
+          {COLUMNS.map((column) => (
+            <div key={column.title}>
+              <h3 className="eyebrow mb-4">{column.title}</h3>
+              <ul className="space-y-2.5 text-base">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    {link.external ? (
+                      <a href={link.to} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link to={link.to} className={linkClass}>
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Newsletter */}
+        <div className="mt-12 rounded-card border border-white/10 bg-white/[0.04] p-7">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+            <div>
+              <h3 className="font-display text-xl font-bold text-hueso mb-1">Mantente actualizado</h3>
+              <p className="text-greige/80 text-base">
+                Novedades de Odoo, automatización e IA para tu negocio. Sin spam.
+              </p>
+            </div>
+            <form className="flex w-full lg:w-auto lg:min-w-[380px]">
+              <label htmlFor="footer-email" className="sr-only">
+                Tu correo electrónico
+              </label>
               <input
+                id="footer-email"
                 type="email"
                 placeholder="Tu correo electrónico"
-                className="px-4 py-2 bg-white/[0.05] border border-white/10 text-gray-200 rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#667eea] w-full placeholder-gray-500"
+                className="w-full rounded-l-full border border-white/15 bg-white/[0.06] px-5 py-3 text-hueso placeholder-greige/50 focus:outline-none focus:ring-2 focus:ring-cian-glow"
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white px-4 py-2 rounded-r-md transition-all"
+                className="rounded-r-full bg-coral px-6 py-3 font-semibold text-pantalla transition-all hover:brightness-105"
               >
                 Unirse
               </button>
             </form>
           </div>
         </div>
-        
+
+        {/* Legal + datos fiscales */}
         <div className="border-t border-white/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-500 text-sm text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+            <div className="text-greige/60 text-sm">
               <p>© {currentYear} RobotsConsultant. Todos los derechos reservados.</p>
               <p className="mt-1">RobotsAdvisors OÜ · Registrikood: 14522788</p>
               <p>Harju maakond, Tallinn, Lasnamäe linnaosa, Lõõtsa tn 5, 11415, Estonia</p>
-              <p>info@robotsconsultant.net</p>
             </div>
-            <div className="flex flex-wrap space-x-6 mt-4 md:mt-0 justify-center md:justify-end gap-y-2">
-              <a href="/politica-privacidad" className="text-gray-500 hover:text-gray-400 text-sm">Política de Privacidad</a>
-              <a href="/terminos-servicio" className="text-gray-500 hover:text-gray-400 text-sm">Términos de Servicio</a>
-              <a href="/politica-cookies" className="text-gray-500 hover:text-gray-400 text-sm">Política de Cookies</a>
-              <a href="/politica-compras" className="text-gray-500 hover:text-gray-400 text-sm">Política de Compras</a>
-              <a href="/politica-entrega" className="text-gray-500 hover:text-gray-400 text-sm">Política de Entrega</a>
-              <a href="/politica-reembolso" className="text-gray-500 hover:text-gray-400 text-sm">Reembolsos y Cancelaciones</a>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end">
+              {LEGAL.map((item) => (
+                <Link key={item.to} to={item.to} className="text-greige/60 hover:text-cian-glow text-sm transition-colors">
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

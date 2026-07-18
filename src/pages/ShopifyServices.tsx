@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '@/components/Seo';
 import { Phone, Mail, CheckCircle, Zap, Code, Palette, ShoppingBag, Bot, Sparkles, ArrowRight, TrendingUp, Star } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -47,19 +47,21 @@ const ShopifyServices = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
-      <Helmet>
-        <title>Desarrollo Shopify: Temas y Apps Personalizadas | RobotsConsultant</title>
-        <meta name="description" content="Desarrollamos temas y apps personalizadas para Shopify con IA integrada. Tiendas de alto rendimiento, integraciones avanzadas y automatización de ventas. Consulta gratuita." />
-        <link rel="canonical" href="https://robotsconsultant.net/shopify" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Desarrollo Shopify: Temas y Apps",
-          "provider": { "@type": "Organization", "name": "RobotsConsultant Agency" },
-          "description": "Desarrollo de temas Shopify y apps personalizadas con IA para tiendas online de alto rendimiento.",
-          "areaServed": "ES"
-        })}</script>
-      </Helmet>
+      <Seo
+        title="Integración de Shopify con Odoo | Temas y Apps a medida"
+        description="Integramos tu tienda Shopify con Odoo y desarrollamos temas y apps personalizadas con IA. Stock, pedidos y catálogo sincronizados. Consulta gratuita."
+        path="/odoo/integracion-shopify"
+        schemas={[{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Integración de Shopify con Odoo',
+          provider: { '@type': 'Organization', name: 'RobotsConsultant' },
+          description:
+            'Integración de Shopify con Odoo y desarrollo de temas y apps personalizadas con IA para tiendas online de alto rendimiento.',
+          areaServed: 'ES',
+          url: 'https://robotsconsultant.net/odoo/integracion-shopify',
+        }]}
+      />
       <Navbar />
 
       <style>{`

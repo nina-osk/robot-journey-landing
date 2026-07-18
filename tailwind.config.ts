@@ -19,7 +19,27 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+				body: ['Figtree', 'system-ui', 'sans-serif'],
+				mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace']
+			},
 			colors: {
+				/* Paleta de marca «Roberta» — ver brief sección 1 */
+				teal: {
+					DEFAULT: 'hsl(var(--teal))',
+					dark: 'hsl(var(--teal-dark))'
+				},
+				coral: {
+					DEFAULT: 'hsl(var(--coral))',
+					/* borde 2px más oscuro del CTA */
+					dark: 'hsl(11 62% 55%)'
+				},
+				greige: 'hsl(var(--greige))',
+				hueso: 'hsl(var(--hueso))',
+				pantalla: 'hsl(var(--pantalla))',
+				'cian-glow': 'hsl(var(--cian-glow))',
+
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -74,7 +94,10 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				/* Radios de marca: tarjetas 20-24px */
+				card: 'var(--radius-card)',
+				'card-sm': 'var(--radius-card-sm)'
 			},
 			keyframes: {
 				'accordion-down': {

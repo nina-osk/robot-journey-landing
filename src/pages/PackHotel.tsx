@@ -52,8 +52,10 @@ const PackHotel = () => {
             Automatiza la recepción, reservas y atención al huésped para ofrecer una experiencia moderna y fluida,
             mientras optimizas la gestión interna sin depender de expertos ni perder tiempo.
           </p>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+          <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20modernizar%20mi%20hotel%20con%20el%20pack%20hotel." target="_blank" rel="noopener noreferrer">
             👉 Quiero modernizar mi hotel ahora
+            </a>
           </Button>
         </div>
       </section>
@@ -219,8 +221,10 @@ const PackHotel = () => {
           <p className="text-xl mb-8">
             Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
           </p>
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+          <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20del%20pack%20hotel." target="_blank" rel="noopener noreferrer">
             👉 Solicitar diagnóstico gratuito
+            </a>
           </Button>
         </div>
       </section>
