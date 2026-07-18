@@ -24,12 +24,8 @@ import {
 } from 'lucide-react';
 
 const TransformacionDigital = () => {
-  /*
-   * Todos los CTA de la web van a WhatsApp. El nombre se conserva para no
-   * tocar los cinco puntos de llamada; la sección de Calendly sigue embebida
-   * más abajo para quien prefiera agendar directamente.
-   */
-  const scrollToCalendly = () => {
+  /* Todos los CTA de la web van a WhatsApp. */
+  const openWhatsApp = () => {
     window.open(
       'https://wa.me/34654942720?text=' +
         encodeURIComponent('Hola, quiero información sobre transformación digital.'),
@@ -99,7 +95,7 @@ const TransformacionDigital = () => {
           </div>
 
           <Button
-            onClick={scrollToCalendly}
+            onClick={openWhatsApp}
             className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:transition-all hover:shadow-[#667eea]/40 text-white px-8 py-6 rounded-xl text-lg font-semibold border-0 transition-all duration-300 transform hover:scale-105 mb-4"
           >
             SOLICITA TU CONSULTA GRATUITA - Ahorra $50,000+ al Año
@@ -467,7 +463,7 @@ const TransformacionDigital = () => {
                 </ul>
                 
                 <Button 
-                  onClick={scrollToCalendly}
+                  onClick={openWhatsApp}
                   className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:bg-blue-700 text-white"
                 >
                   Comenzar Ahora
@@ -517,7 +513,7 @@ const TransformacionDigital = () => {
                 </ul>
                 
                 <Button 
-                  onClick={scrollToCalendly}
+                  onClick={openWhatsApp}
                   className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-blue-700 hover:to-purple-700 text-white"
                 >
                   Elegir Professional
@@ -566,7 +562,7 @@ const TransformacionDigital = () => {
                 </ul>
                 
                 <Button 
-                  onClick={scrollToCalendly}
+                  onClick={openWhatsApp}
                   className="w-full bg-purple-600 hover:bg-purple-700 text-white"
                 >
                   Contactar Enterprise
@@ -719,7 +715,7 @@ const TransformacionDigital = () => {
           </div>
           
           <Button
-            onClick={scrollToCalendly}
+            onClick={openWhatsApp}
             className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-2xl font-bold rounded-xl transform hover:scale-105 transition-all duration-300 mb-8"
           >
             🚀 SÍ, QUIERO TRANSFORMAR MI EMPRESA AHORA
@@ -735,28 +731,6 @@ const TransformacionDigital = () => {
         </div>
       </section>
 
-      {/* Calendly Section */}
-      <section id="calendly-section" className="py-20 bg-white/[0.05] border-white/10 hover:bg-white/[0.08]">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Agenda Tu Consulta Gratuita
-            </h2>
-            <p className="text-xl text-gray-400">
-              Hablemos sobre cómo transformar tu empresa en los próximos 90 días
-            </p>
-          </div>
-          
-          <div className="bg-gray-100 rounded-2xl p-8 text-center">
-            <p className="text-lg text-gray-300 mb-4">
-              📅 Calendly Widget se cargará aquí
-            </p>
-            <p className="text-gray-400">
-              Selecciona el horario que mejor te convenga para tu consulta personalizada
-            </p>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>
