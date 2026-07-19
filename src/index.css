@@ -203,9 +203,20 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Con movimiento reducido, Roberta se queda quieta */
+/* Balanceo sutil del brazo robótico en reposo */
+@keyframes arm-idle {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(-1.2deg) translateY(-4px); }
+}
+
+.arm-idle {
+  animation: arm-idle 4.5s ease-in-out infinite;
+}
+
+/* Con movimiento reducido, Roberta y su brazo se quedan quietos */
 @media (prefers-reduced-motion: reduce) {
-  .animate-float {
+  .animate-float,
+  .arm-idle {
     animation: none;
   }
 }
