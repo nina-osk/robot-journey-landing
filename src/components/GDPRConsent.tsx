@@ -32,6 +32,7 @@ const GDPRConsent = () => {
       timestamp: new Date().toISOString()
     };
     localStorage.setItem('gdpr-consent', JSON.stringify(consent));
+    window.dispatchEvent(new Event('gdpr-consent-saved'));
     setIsOpen(false);
   };
 
@@ -41,6 +42,7 @@ const GDPRConsent = () => {
       timestamp: new Date().toISOString()
     };
     localStorage.setItem('gdpr-consent', JSON.stringify(consent));
+    window.dispatchEvent(new Event('gdpr-consent-saved'));
     setIsOpen(false);
   };
 
@@ -53,6 +55,7 @@ const GDPRConsent = () => {
       timestamp: new Date().toISOString()
     };
     localStorage.setItem('gdpr-consent', JSON.stringify(consent));
+    window.dispatchEvent(new Event('gdpr-consent-saved'));
     setIsOpen(false);
   };
 
@@ -66,11 +69,11 @@ const GDPRConsent = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={() => {}} modal>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-card">
         <DialogHeader className="space-y-4">
           <div className="flex items-center gap-2">
-            <Shield className="h-6 w-6 text-primary" />
-            <DialogTitle className="text-xl font-bold text-robotics-dark">
+            <Shield className="h-6 w-6 text-teal" />
+            <DialogTitle className="font-display text-xl font-bold text-pantalla">
               Configuración de Privacidad
             </DialogTitle>
           </div>
@@ -84,8 +87,8 @@ const GDPRConsent = () => {
           {/* Cookies Necesarias */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <FileText className="h-5 w-5 text-green-600" />
-              <h3 className="font-semibold text-robotics-dark">Cookies Necesarias</h3>
+              <FileText className="h-5 w-5 text-teal" />
+              <h3 className="font-display font-bold text-pantalla">Cookies Necesarias</h3>
             </div>
             <div className="flex items-start gap-3">
               <Checkbox checked={true} disabled className="mt-1" />
@@ -101,8 +104,8 @@ const GDPRConsent = () => {
           {/* Cookies de Análisis */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <Cookie className="h-5 w-5 text-blue-600" />
-              <h3 className="font-semibold text-robotics-dark">Cookies de Análisis</h3>
+              <Cookie className="h-5 w-5 text-teal" />
+              <h3 className="font-display font-bold text-pantalla">Cookies de Análisis</h3>
             </div>
             <div className="flex items-start gap-3">
               <Checkbox 
@@ -122,8 +125,8 @@ const GDPRConsent = () => {
           {/* Cookies de Marketing */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-purple-600" />
-              <h3 className="font-semibold text-robotics-dark">Cookies de Marketing</h3>
+              <Users className="h-5 w-5 text-teal" />
+              <h3 className="font-display font-bold text-pantalla">Cookies de Marketing</h3>
             </div>
             <div className="flex items-start gap-3">
               <Checkbox 
@@ -143,8 +146,8 @@ const GDPRConsent = () => {
           {/* Cookies Funcionales */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-orange-600" />
-              <h3 className="font-semibold text-robotics-dark">Cookies Funcionales</h3>
+              <Shield className="h-5 w-5 text-teal" />
+              <h3 className="font-display font-bold text-pantalla">Cookies Funcionales</h3>
             </div>
             <div className="flex items-start gap-3">
               <Checkbox 
@@ -161,7 +164,7 @@ const GDPRConsent = () => {
             </div>
           </div>
 
-          <div className="bg-gray-50 p-4 rounded-lg text-sm text-gray-600">
+          <div className="bg-hueso p-4 rounded-card-sm text-sm text-gray-600">
             <p>
               <strong>Tus derechos:</strong> Puedes ejercer tus derechos de acceso, rectificación, supresión, 
               portabilidad y oposición contactándonos. Puedes cambiar tus preferencias en cualquier momento.
@@ -173,20 +176,20 @@ const GDPRConsent = () => {
           <Button 
             variant="outline" 
             onClick={handleRejectNonEssential}
-            className="w-full sm:w-auto order-3 sm:order-1"
+            className="w-full sm:w-auto order-3 sm:order-1 rounded-full border-2 border-teal text-teal hover:bg-teal hover:text-white"
           >
             Solo Esenciales
           </Button>
           <Button 
             variant="outline" 
             onClick={handleAcceptSelected}
-            className="w-full sm:w-auto order-2"
+            className="w-full sm:w-auto order-2 rounded-full border-2 border-teal text-teal hover:bg-teal hover:text-white"
           >
             Guardar Selección
           </Button>
           <Button 
             onClick={handleAcceptAll}
-            className="w-full sm:w-auto bg-primary hover:bg-primary/90 order-1 sm:order-3"
+            className="w-full sm:w-auto order-1 sm:order-3 rounded-full bg-coral text-pantalla border-2 border-coral-dark hover:brightness-105"
           >
             Aceptar Todo
           </Button>

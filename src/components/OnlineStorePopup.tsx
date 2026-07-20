@@ -1,23 +1,40 @@
-
 import { useState, useEffect } from 'react';
-import { X, ShoppingCart, Wrench, GraduationCap, Cog } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { X, ShoppingCart, Cog, GraduationCap } from 'lucide-react';
+import Roberta from '@/components/Roberta';
+
+/**
+ * Lead magnet «Crea tu página web gratis».
+ *
+ * Coreografía de popups: este NUNCA aparece mientras el aviso de cookies
+ * está pendiente. Espera a que el consentimiento quede resuelto (evento
+ * `gdpr-consent-saved` o valor ya guardado) y, a partir de ahí, deja al
+ * usuario navegar POPUP_DELAY_MS antes de asomarse. Una vez cerrado, no
+ * vuelve en toda la sesión.
+ */
+const POPUP_DELAY_MS = 15000;
 
 const OnlineStorePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if popup was already shown in this session
-    const popupShown = sessionStorage.getItem('onlineStorePopupShown');
-    
-    if (!popupShown) {
-      // Show popup after 3 seconds
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 3000);
+    if (sessionStorage.getItem('onlineStorePopupShown')) return;
 
-      return () => clearTimeout(timer);
+    let timer: number | undefined;
+    const armTimer = () => {
+      if (timer !== undefined) return;
+      timer = window.setTimeout(() => setIsVisible(true), POPUP_DELAY_MS);
+    };
+
+    if (localStorage.getItem('gdpr-consent')) {
+      armTimer();
+    } else {
+      window.addEventListener('gdpr-consent-saved', armTimer);
     }
+
+    return () => {
+      window.removeEventListener('gdpr-consent-saved', armTimer);
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
   }, []);
 
   const closePopup = () => {
@@ -33,61 +50,58 @@ const OnlineStorePopup = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 animate-fade-in">
-      <div className={`fixed right-0 top-1/2 transform -translate-y-1/2 h-1/2 w-80 bg-white shadow-2xl transition-transform duration-500 ease-in-out rounded-l-lg ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="p-8 h-full flex flex-col">
+    <div className="fixed inset-0 z-50 bg-pantalla/50 animate-fade-in" onClick={closePopup}>
+      <div
+        role="dialog"
+        aria-label="Crea tu página web gratis"
+        onClick={(e) => e.stopPropagation()}
+        className="fixed right-0 top-1/2 w-[21rem] max-w-[92vw] -translate-y-1/2 rounded-l-card border border-greige border-r-0 bg-hueso shadow-2xl animate-fade-in"
+      >
+        <div className="relative p-7">
           <button
             onClick={closePopup}
-            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Cerrar"
+            className="absolute right-4 top-4 rounded-full p-1.5 text-pantalla/50 transition-colors hover:bg-greige/40 hover:text-pantalla"
           >
-            <X size={24} />
+            <X size={20} />
           </button>
-          
-          <div className="text-center flex-1 flex flex-col justify-center">
-            <div className="mb-4">
-              <img 
-                src="/lovable-uploads/c1e36c3f-139a-41f6-a37a-0cf435e2c3a9.png" 
-                alt="Robots Consultant Technology" 
-                className="h-8 mx-auto mb-2"
-              />
-              <h2 className="text-lg font-bold text-robotics-dark mb-1">
-                ¡Crea tu Página Web GRATIS!
-              </h2>
-              <p className="text-sm text-gray-600">
-                Aprende a hacer tu página web profesional con Odoo
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 gap-3 mb-4">
-              <div className="text-center">
-                <ShoppingCart className="h-6 w-6 text-primary mx-auto mb-1" />
-                <span className="text-xs text-gray-600 block">E-commerce Profesional</span>
-              </div>
-              <div className="text-center">
-                <Cog className="h-6 w-6 text-primary mx-auto mb-1" />
-                <span className="text-xs text-gray-600 block">CRM Integrado</span>
-              </div>
-              <div className="text-center">
-                <GraduationCap className="h-6 w-6 text-primary mx-auto mb-1" />
-                <span className="text-xs text-gray-600 block">Guía Paso a Paso</span>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Button 
-                onClick={visitStore}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-2 text-sm"
-              >
-                Descargar Guía GRATIS
-              </Button>
-              <button
-                onClick={closePopup}
-                className="w-full text-gray-500 hover:text-gray-700 text-xs transition-colors"
-              >
-                Continuar navegando
-              </button>
-            </div>
+          <div className="mb-4 flex justify-center">
+            <Roberta pose="cara-feliz" width={90} />
           </div>
+
+          <p className="eyebrow text-center mb-2">Guía gratuita</p>
+          <h2 className="font-display text-2xl font-bold text-pantalla text-center mb-2">
+            Crea tu página web gratis
+          </h2>
+          <p className="text-center text-base text-pantalla/70 mb-6">
+            Aprende a hacer tu página web profesional con Odoo, paso a paso.
+          </p>
+
+          <ul className="space-y-3 mb-6">
+            {[
+              { icon: ShoppingCart, label: 'E-commerce profesional' },
+              { icon: Cog, label: 'CRM integrado' },
+              { icon: GraduationCap, label: 'Guía paso a paso' },
+            ].map((item) => (
+              <li key={item.label} className="flex items-center gap-3">
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal/12 text-teal">
+                  <item.icon className="h-4 w-4" />
+                </span>
+                <span className="text-base text-pantalla/80">{item.label}</span>
+              </li>
+            ))}
+          </ul>
+
+          <button onClick={visitStore} className="btn-coral w-full !py-3 mb-2">
+            Descargar la guía gratis
+          </button>
+          <button
+            onClick={closePopup}
+            className="w-full text-center text-sm text-pantalla/50 transition-colors hover:text-pantalla"
+          >
+            Seguir navegando
+          </button>
         </div>
       </div>
     </div>
