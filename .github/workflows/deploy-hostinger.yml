@@ -26,9 +26,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # GitHub no permite leer secrets en el `if` de un job: se comprueba aquí
+  # y el job de deploy depende del resultado.
+  check-secrets:
+    runs-on: ubuntu-latest
+    outputs:
+      configured: ${{ steps.check.outputs.configured }}
+    steps:
+      - id: check
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: echo "configured=${{ env.FTP_SERVER != '' }}" >> "$GITHUB_OUTPUT"
+
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ secrets.FTP_SERVER != '' }}
+    needs: check-secrets
+    if: needs.check-secrets.outputs.configured == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
