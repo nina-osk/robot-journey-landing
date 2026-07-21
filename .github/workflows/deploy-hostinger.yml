@@ -12,6 +12,7 @@
 # server-dir (p. ej. "public_html/" o "domains/robotsconsultant.net/public_html/").
 #
 # Mientras los secrets no existan, el workflow se salta sin fallar.
+# (Se activa automáticamente al detectar FTP_SERVER: no requiere variables.)
 
 name: Deploy a Hostinger
 
@@ -27,7 +28,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ vars.FTP_DEPLOY_ENABLED == 'true' }}
+    if: ${{ secrets.FTP_SERVER != '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
