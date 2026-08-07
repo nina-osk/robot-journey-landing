@@ -12,6 +12,13 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
 import { whatsappUrl, SITE_URL } from '@/config/contact';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Inicio', path: '/' },
+  { name: 'Odoo', path: '/odoo' },
+  { name: 'Hostelería', path: '/odoo/hosteleria' },
+]);
 
 const PAGE_URL = `${SITE_URL}/odoo/hosteleria`;
 const TITLE = 'Odoo para Hostelería | Gestión Integral de tu Restaurante';
@@ -106,7 +113,7 @@ const OdooHosteleria = () => {
         path="/odoo/hosteleria"
         type="article"
         image="/roberta/saludando.png"
-        schemas={[faqSchema, serviceSchema]}
+        schemas={[faqSchema, serviceSchema, breadcrumb]}
       />
 
       <Navbar />
@@ -219,6 +226,9 @@ const OdooHosteleria = () => {
                 <strong>Resultado:</strong> el cliente pide mejor, espera menos y vuelve más.
               </p>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <Link to="/tpv-hosteleria" className="font-semibold text-teal hover:text-teal-dark">
+                  → TPV para restaurantes
+                </Link>
                 <Link to="/kioscos-autoservicio" className="font-semibold text-teal hover:text-teal-dark">
                   → Kioscos de autoservicio
                 </Link>

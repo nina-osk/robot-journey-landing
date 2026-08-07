@@ -94,7 +94,7 @@ const Contacto = () => {
           "mainEntity": {
             "@type": "Organization",
             "name": "RobotsConsultant Agency",
-            "telephone": "+34-654-942-720",
+            "telephone": "+34654942720",
             "email": "info@robotsconsultant.net"
           }
         })}</script>

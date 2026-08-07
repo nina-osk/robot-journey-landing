@@ -5,7 +5,7 @@ import logo from '@/assets/logo.svg';
 import { whatsappUrl } from '@/config/contact';
 
 /** Menú del brief, sección 2. Todas las rutas absolutas. */
-type NavItem = { label: string; to: string; children?: { label: string; to: string }[] };
+type NavItem = { label: string; to: string; external?: boolean; children?: { label: string; to: string }[] };
 
 const NAV: NavItem[] = [
   { label: 'Inicio', to: '/' },
@@ -17,12 +17,26 @@ const NAV: NavItem[] = [
       { label: 'Migración', to: '/odoo#migracion' },
     ],
   },
-  { label: 'Hostelería', to: '/odoo/hosteleria' },
-  { label: 'Ecommerce', to: '/odoo/ecommerce' },
-  { label: 'Kioscos', to: '/kioscos-autoservicio' },
+  {
+    label: 'Hostelería',
+    to: '/tpv-hosteleria',
+    children: [
+      { label: 'TPV Restaurantes', to: '/tpv-hosteleria' },
+      { label: 'Método 5 Estrellas', to: '/metodo-5-estrellas' },
+      { label: 'Cajón de cobro automático', to: '/cajon-cobro-automatico' },
+    ],
+  },
+  {
+    label: 'Ecommerce',
+    to: '/odoo/ecommerce',
+    children: [
+      { label: 'TPV Inteligente', to: '/tpv-inteligente' },
+      { label: 'Odoo Ecommerce', to: '/odoo/ecommerce' },
+    ],
+  },
   { label: 'Apps con IA', to: '/apps-personalizadas' },
   { label: 'Robótica', to: '/robotica' },
-  { label: 'Cursos', to: '/mentoria-ia' },
+  { label: 'Tienda', to: 'https://cursos.robotsconsultant.net/', external: true },
 ];
 
 const CTA_HREF = whatsappUrl('Hola, quiero mi diagnóstico gratuito.');
@@ -124,6 +138,16 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
+              ) : item.external ? (
+                <a
+                  key={item.to}
+                  href={item.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass(item.to)}
+                >
+                  {item.label}
+                </a>
               ) : (
                 <Link key={item.to} to={item.to} className={linkClass(item.to)}>
                   {item.label}
@@ -164,14 +188,25 @@ const Navbar = () => {
           <ul className="space-y-1">
             {NAV.map((item) => (
               <li key={item.label}>
-                <Link
-                  to={item.to}
-                  className={`block rounded-full px-4 py-3 ${
-                    isActive(item.to) ? 'bg-teal/10 text-teal-dark' : 'text-pantalla/80 hover:bg-greige/40'
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-full px-4 py-3 text-pantalla/80 hover:bg-greige/40"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.to}
+                    className={`block rounded-full px-4 py-3 ${
+                      isActive(item.to) ? 'bg-teal/10 text-teal-dark' : 'text-pantalla/80 hover:bg-greige/40'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
                 {item.children && (
                   <ul className="ml-4 border-l-2 border-greige pl-3">
                     {item.children.map((child) => (

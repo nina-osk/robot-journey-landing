@@ -11,6 +11,7 @@ import Seo from '@/components/Seo';
 import GDPRConsent from '@/components/GDPRConsent';
 import OnlineStorePopup from '@/components/OnlineStorePopup';
 import { whatsappUrl, SITE_URL, PHONE_TEL } from '@/config/contact';
+import { localBusinessSchema } from '@/lib/schema';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -65,7 +66,7 @@ const Index = () => {
         description="Partner oficial de Odoo. Automatizamos tu restaurante o tienda online: TPV, kioscos, stock, ecommerce y apps con IA. Diagnóstico gratuito."
         path="/"
         image="/roberta/saludando.png"
-        schemas={[organizationSchema]}
+        schemas={[organizationSchema, localBusinessSchema]}
       />
       <Navbar />
 

@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, Linkedin, Youtube } from 'lucide-react';
+import Seo from '@/components/Seo';
+import { whatsappUrl, PHONE_DISPLAY } from '@/config/contact';
 
 const AboutMe = () => {
   useEffect(() => {
@@ -28,6 +30,11 @@ const AboutMe = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Seo
+        title="Sobre Mí | Ing. Oscarina Hernández · RobotsConsultant"
+        description="Ingeniera especializada en automatización e IA para pymes de hostelería y comercio. Partner oficial de Odoo. Conóceme y hablemos de tu negocio."
+        path="/sobre-mi"
+      />
       <Navbar />
       
       {/* Hero Section */}
@@ -291,16 +298,16 @@ const AboutMe = () => {
               </div>
             </a>
             
-            <a 
-              href="https://wa.me/34602632981" 
-              target="_blank" 
+            <a
+              href={whatsappUrl()}
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-3 bg-green-50 hover:bg-green-100 rounded-lg p-6 transition-colors group"
             >
               <Phone className="w-6 h-6 text-green-600 group-hover:scale-110 transition-transform" />
               <div className="text-left">
                 <p className="font-semibold text-robotics-dark">WhatsApp</p>
-                <p className="text-gray-600">+34 602 63 29 81</p>
+                <p className="text-gray-600">{PHONE_DISPLAY}</p>
               </div>
             </a>
             
@@ -320,14 +327,14 @@ const AboutMe = () => {
           
           <div className="flex flex-col gap-4 justify-center">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all">
-              <a 
-                href="https://wa.me/34654942720" 
-                target="_blank" 
+              <a
+                href={whatsappUrl()}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
-                <span>+34 654 94 27 20</span>
+                <span>{PHONE_DISPLAY}</span>
               </a>
             </Button>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all">

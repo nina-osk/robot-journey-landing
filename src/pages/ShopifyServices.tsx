@@ -5,6 +5,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Inicio', path: '/' },
+  { name: 'Odoo', path: '/odoo' },
+  { name: 'Integración Shopify', path: '/odoo/integracion-shopify' },
+]);
 
 const FLOATING_PRODUCTS = [
   { name: 'Sneaker Pro', price: '€129', emoji: '👟', color: '#667eea' },
@@ -60,7 +67,7 @@ const ShopifyServices = () => {
             'Integración de Shopify con Odoo y desarrollo de temas y apps personalizadas con IA para tiendas online de alto rendimiento.',
           areaServed: 'ES',
           url: 'https://robotsconsultant.net/odoo/integracion-shopify',
-        }]}
+        }, breadcrumb]}
       />
       <Navbar />
 

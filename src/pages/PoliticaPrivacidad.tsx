@@ -1,11 +1,17 @@
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { Shield } from 'lucide-react';
 
 const PoliticaPrivacidad = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white">
+      <Seo
+        title="Política de Privacidad | RobotsConsultant"
+        description="Cómo recopilamos, usamos y protegemos tus datos personales en RobotsConsultant, conforme al RGPD."
+        path="/politica-privacidad"
+      />
       <Navbar />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto">

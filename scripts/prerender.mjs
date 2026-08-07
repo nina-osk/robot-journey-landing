@@ -3,43 +3,11 @@ import { spawn } from 'child_process'
 import { writeFileSync, mkdirSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { routePaths as routes } from './routes.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DIST = join(__dirname, '../dist')
 const PORT = 4173
-
-const routes = [
-  '/',
-
-  // Arquitectura de URLs del rediseño (brief sección 3).
-  // Las rutas antiguas (/servicios-odoo, /shopify, /kioscos-pago,
-  // /robots-moviles) ya no se prerenderizan: las sirve un 301 desde
-  // public/.htaccess, y un fichero prerenderizado en la ruta vieja
-  // competiría con la redirección.
-  '/odoo',
-  '/odoo/hosteleria',
-  '/odoo/ecommerce',
-  '/odoo/integracion-shopify',
-  '/kioscos-autoservicio',
-  '/cajon-cobro-automatico',
-  '/robotica',
-
-  '/pack-restaurante',
-  '/pack-hotel',
-  '/pack-ecommerce',
-  '/transformacion-digital',
-  '/agentes-ia/restaurantes',
-  '/mentoria-ia',
-  '/sobre-mi',
-  '/apps-personalizadas',
-  '/contacto',
-  '/politica-compras',
-  '/politica-privacidad',
-  '/politica-cookies',
-  '/terminos-servicio',
-  '/politica-entrega',
-  '/politica-reembolso',
-]
 
 function startServer() {
   return new Promise((resolve, reject) => {

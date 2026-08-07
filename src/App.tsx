@@ -16,6 +16,9 @@ import OdooServices from "./pages/OdooServices";
 import OdooHosteleria from "./pages/OdooHosteleria";
 import OdooEcommerce from "./pages/OdooEcommerce";
 import CajonCobroAutomatico from "./pages/CajonCobroAutomatico";
+import TpvHosteleria from "./pages/TpvHosteleria";
+import TpvInteligente from "./pages/TpvInteligente";
+import Metodo5Estrellas from "./pages/Metodo5Estrellas";
 import Robotica from "./pages/Robotica";
 import TransformacionDigital from "./pages/TransformacionDigital";
 import AgentesIA from "./pages/AgentesIA";
@@ -50,6 +53,9 @@ const App = () => (
           <Route path="/odoo/hosteleria" element={<OdooHosteleria />} />
           <Route path="/odoo/ecommerce" element={<OdooEcommerce />} />
           <Route path="/odoo/integracion-shopify" element={<ShopifyServices />} />
+          <Route path="/tpv-hosteleria" element={<TpvHosteleria />} />
+          <Route path="/tpv-inteligente" element={<TpvInteligente />} />
+          <Route path="/metodo-5-estrellas" element={<Metodo5Estrellas />} />
           <Route path="/kioscos-autoservicio" element={<KioscosPago />} />
           <Route path="/cajon-cobro-automatico" element={<CajonCobroAutomatico />} />
           <Route path="/robotica" element={<Robotica />} />

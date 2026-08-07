@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico 5 Estrellas · RobotsConsultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E101E; --surface:#141B33; --surface-2:#1B2440; --line:#2A3354;
+    --text:#FBFCF1; --muted:#9AA3C2; --accent:#FFD233;
+    --blue:#3C58A7; --purple:#867BBA; --pink:#F4CCE1;
+    --g1:#5C7BD9; --g2:#867BBA; --g3:#FFD233; --radius:16px; font-size:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:22px 16px 60px}
+  .wrap{width:100%;max-width:620px}
+  .logo-wrap{display:flex;justify-content:center;margin-bottom:20px}
+  .logo-wrap img{height:56px;width:auto;display:block}
+
+  .pbar-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-family:'Space Grotesk',sans-serif;font-size:.8rem}
+  .pbar-count{color:var(--text);font-weight:500}
+  .pbar-count b{color:var(--accent)}
+  .pbar-pct{color:var(--accent);font-weight:700}
+  .meter-track{height:12px;background:var(--surface-2);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+  .meter-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple) 55%,var(--accent));border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+  .meter-fill::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:translateX(-100%);animation:shine 1.8s infinite}
+  @keyframes shine{to{transform:translateX(100%)}}
+
+  .stages{display:flex;gap:8px;margin-top:12px}
+  .stage-chip{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.78rem;padding:10px 6px;border-radius:99px;border:1px solid var(--line);color:var(--muted);background:var(--surface);transition:all .35s cubic-bezier(.2,.8,.2,1);cursor:default}
+  .sc-ic{font-size:.95rem;line-height:1;flex:0 0 auto;transition:transform .35s}
+  .stage-chip.on{color:var(--ink);font-weight:700;transform:translateY(-1px)}
+  .stage-chip.on .sc-ic{transform:scale(1.15)}
+  .stage-chip[data-g="carta"].on{background:var(--g1);border-color:var(--g1);box-shadow:0 0 20px rgba(92,123,217,.55)}
+  .stage-chip[data-g="sala"].on{background:var(--g2);border-color:var(--g2);box-shadow:0 0 20px rgba(134,123,186,.55)}
+  .stage-chip[data-g="total"].on{background:var(--g3);border-color:var(--g3);box-shadow:0 0 22px rgba(255,210,51,.6)}
+  @media(max-width:460px){.stage-chip{font-size:.68rem;padding:9px 4px;gap:4px}.sc-ic{font-size:.8rem}}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:20px;animation:rise .4s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .hero{text-align:center;padding:38px 28px}
+  .hero-eyebrow{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;background:rgba(255,210,51,.10);border:1px solid rgba(255,210,51,.3);border-radius:99px;padding:6px 14px}
+  .hero-h{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2rem;line-height:1.16;margin-bottom:14px}
+  .hero-h em{font-style:normal;color:var(--accent)}
+  .hero-sub{font-size:1.04rem;line-height:1.6;color:#d6dcf0;margin:0 auto 24px;max-width:470px}
+  .hero-bullets{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:28px}
+  .hero-bullets span{font-size:.82rem;color:var(--text);background:var(--surface-2);border:1px solid var(--line);border-radius:99px;padding:8px 14px}
+  @media(max-width:460px){.hero-h{font-size:1.55rem}.hero{padding:30px 20px}}
+
+  .qhead{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .qicon{flex:0 0 52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;background:linear-gradient(150deg,rgba(255,210,51,.16),rgba(134,123,186,.16));border:1px solid var(--line)}
+  .qtag{font-size:.68rem;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:3px 9px;display:inline-block;margin-bottom:6px}
+  .qtitle{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:1.22rem;line-height:1.28}
+
+  .opt{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px;cursor:pointer;color:var(--text);font-size:.97rem;line-height:1.35;transition:border-color .15s,background .15s,transform .08s;font-family:inherit}
+  .opt:hover{border-color:var(--blue);background:#212c4d;transform:translateX(2px)}
+  .opt .oic{flex:0 0 34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;background:var(--ink);border:1px solid var(--line);transition:.15s}
+  .opt .otx{flex:1}
+  .opt .chk{flex:0 0 22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.72rem;transition:.15s}
+  .opt.sel{border-color:var(--accent);background:rgba(255,210,51,.10)}
+  .opt.sel .oic{border-color:var(--accent);background:rgba(255,210,51,.18)}
+  .opt.sel .chk{background:var(--accent);border-color:var(--accent)}
+  .opt.sel .chk::after{content:"\2713";color:var(--ink);font-weight:700}
+
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.82rem;color:var(--muted);margin-bottom:7px}
+  .field input{width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:13px 14px;color:var(--text);font-size:.97rem;font-family:inherit}
+  .field input:focus{outline:none;border-color:var(--accent)}
+
+  .row{display:flex;gap:12px;margin-top:20px;align-items:center}
+  .btn{font-family:'Space Grotesk',sans-serif;font-weight:500;border:none;border-radius:11px;padding:14px 22px;cursor:pointer;font-size:.95rem;transition:.15s}
+  .btn-primary{background:var(--accent);color:var(--ink);flex:1;font-weight:700}
+  .btn-primary:hover{filter:brightness(1.06)}
+  .btn-primary:disabled{opacity:.35;cursor:not-allowed}
+  .btn-back{background:transparent;color:var(--muted);border:none;font-size:.86rem;cursor:pointer;padding:8px 4px;font-family:'Space Grotesk',sans-serif}
+  .btn-back:hover{color:var(--text)}
+  .hint{font-size:.78rem;color:var(--muted);text-align:center;margin-top:14px}
+
+  /* resultado */
+  .stars{font-size:1.5rem;letter-spacing:4px;margin-bottom:12px}
+  .result-badge{font-family:'Space Grotesk',sans-serif;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+  .result-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.1rem;line-height:1.12;margin-bottom:8px}
+  .result-lead{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;color:var(--accent);margin-bottom:16px}
+  .result-body{font-size:1rem;line-height:1.6;color:#d6dcf0;margin-bottom:20px}
+  .risk{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:22px}
+  .risk-t{font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;font-family:'Space Grotesk',sans-serif}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:.86rem}
+  .bar-lab{flex:0 0 96px;color:var(--muted)}
+  .bar-track{flex:1;height:8px;background:var(--ink);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+  .bar-fill{height:100%;border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+  .bar-val{flex:0 0 38px;text-align:right;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem}
+  .result-list{list-style:none;margin:0 0 20px}
+  .result-list li{padding:10px 0 10px 26px;position:relative;border-top:1px solid var(--line);font-size:.95rem;line-height:1.45}
+  .result-list li::before{content:"\2192";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .why{background:rgba(134,123,186,.12);border-left:3px solid var(--purple);border-radius:8px;padding:14px 16px;font-size:.94rem;line-height:1.5;color:#d6dcf0;margin-bottom:22px;font-style:italic}
+  .slo{background:var(--surface-2);border:1px solid var(--purple);border-radius:13px;padding:22px}
+  .slo-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+  .slo h4{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;margin-bottom:10px}
+  .slo p{font-size:.93rem;color:#cdd6e0;line-height:1.55;margin-bottom:16px}
+  .offer-list{list-style:none;margin:0 0 18px}
+  .offer-list li{padding:6px 0 6px 24px;position:relative;font-size:.9rem;line-height:1.45;color:var(--text)}
+  .offer-list li::before{content:"\2713";position:absolute;left:0;color:var(--g3);font-weight:700}
+  .btn-wa{display:block;width:100%;text-align:center;background:#25D366;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;border:none;border-radius:11px;padding:16px;font-size:1rem;cursor:pointer;text-decoration:none}
+  .btn-wa:hover{filter:brightness(1.06)}
+  .guarantee{font-size:.79rem;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
+
+  .foot{color:var(--muted);font-size:.72rem;line-height:1.55;margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+  .foot strong{color:var(--text);font-weight:600}
+  .foot a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(255,210,51,.4)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo-wrap"><img src="data:image/png;base64,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" alt="RobotsConsultant"></div>
+
+  <div id="progress" style="display:none">
+    <div class="pbar-top"><span class="pbar-count" id="pcount"></span><span class="pbar-pct" id="ppct"></span></div>
+    <div class="meter-track"><div class="meter-fill" id="fill"></div></div>
+    <div class="stages" id="stages">
+      <div class="stage-chip on" data-g="carta"><span class="sc-ic">📄</span>5★ Carta</div>
+      <div class="stage-chip" data-g="sala"><span class="sc-ic">🍽️</span>5★ Sala</div>
+      <div class="stage-chip" data-g="total"><span class="sc-ic">⭐</span>5★ Total</div>
+    </div>
+  </div>
+
+  <div id="stage"></div>
+
+  <div class="foot"><strong>Protección de datos.</strong> Responsable: RobotsAdvisors OÜ (RobotsConsultant), info@robotsconsultant.net. Tratamos tu nombre y correo para enviarte el resultado de tu diagnóstico y, si lo consientes, comunicaciones comerciales sobre nuestros servicios. Base legal: tu consentimiento. Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, portabilidad y limitación escribiéndonos a info@robotsconsultant.net. Más información en nuestra <a href="https://robotsconsultant.net/politica-privacidad/" target="_blank" rel="noopener">Política de Privacidad</a>.</div>
+</div>
+
+<script>
+const SUBSCRIBE_ENDPOINT="https://mailerlite-workerjs.oscarina-hernandezgarcia.workers.dev";
+const FUNNEL="restaurante";
+const WA="https://wa.me/34641526150?text=Hola%20Osca%2C%20hice%20el%20diagn%C3%B3stico%20de%20rese%C3%B1as%20y%20quiero%20mi%20an%C3%A1lisis";
+const QUESTIONS=[
+  {type:"single",tag:"Tu situación",qi:"⭐",title:"¿Qué valoración tienes hoy en Google?",options:[
+    {t:"Menos de 3,5 — me está haciendo daño",ic:"😰",carta:6,sala:6,total:6},
+    {t:"Entre 3,5 y 4,0",ic:"😕",carta:4,sala:4,total:4},
+    {t:"Entre 4,1 y 4,5",ic:"🙂",carta:2,sala:2,total:2},
+    {t:"Más de 4,5 — y quiero mantenerlo",ic:"😃",carta:1,sala:1,total:1}]},
+  {type:"multi",tag:"La pregunta clave",qi:"💬",title:"¿Qué es lo que MÁS se repite en tus reseñas malas? Marca todas las que reconozcas.",options:[
+    {t:"«Tardaron en atendernos / en tomarnos nota»",ic:"⏳",carta:10},
+    {t:"«No había lo que pedimos» o la carta estaba desactualizada",ic:"📋",carta:8},
+    {t:"«Se equivocaron con el pedido»",ic:"❌",sala:10},
+    {t:"«La comida tardó muchísimo en salir»",ic:"🍽️",sala:9},
+    {t:"«Colas eternas para pagar» o «no nos cobraban»",ic:"🧾",total:11},
+    {t:"La verdad, no suelo leer mis reseñas",ic:"🙈",carta:3,sala:3,total:3,exclusive:true}]},
+  {type:"single",tag:"El momento de pedir",qi:"📖",title:"¿Cómo pide el cliente en tu local?",options:[
+    {t:"Carta de papel y espera a que vaya un camarero",ic:"📄",carta:10},
+    {t:"Carta en PDF o foto por QR (sin poder pedir)",ic:"📱",carta:6},
+    {t:"Pide en barra y se lleva la comanda",ic:"🧍",carta:4},
+    {t:"Carta digital donde ya puede pedir solo",ic:"✅",carta:0}]},
+  {type:"single",tag:"Tu carta",qi:"✏️",title:"Cambiar un precio o marcar un plato como agotado te cuesta…",options:[
+    {t:"Reimprimir cartas: lo dejo para cuando toque",ic:"🖨️",carta:10},
+    {t:"Llamar a alguien que me lo actualice",ic:"📞",carta:7},
+    {t:"Lo hago yo, pero me lleva un rato",ic:"⌛",carta:3},
+    {t:"Dos toques en el móvil y listo",ic:"⚡",carta:0}]},
+  {type:"single",tag:"Sala y cocina",qi:"👨‍🍳",title:"¿Cómo llega la comanda a cocina?",options:[
+    {t:"Se canta a voces",ic:"📣",sala:10},
+    {t:"En papel, alguien la lleva",ic:"🗒️",sala:7},
+    {t:"Por TPV, pero cocina no ve tiempos ni orden",ic:"🖥️",sala:4},
+    {t:"Pantalla de cocina con tiempos y orden de salida",ic:"📺",sala:0}]},
+  {type:"single",tag:"Sala y cocina",qi:"⏱️",title:"En hora punta, ¿sabes cuánto tarda de verdad un plato en salir?",options:[
+    {t:"Ni idea, se me va de las manos",ic:"🤷",sala:10},
+    {t:"Lo intuyo, pero no lo mido",ic:"🤔",sala:7},
+    {t:"Lo controlo a ojo y suele ir bien",ic:"👀",sala:3},
+    {t:"Lo tengo medido, sé mi tiempo medio",ic:"📊",sala:0}]},
+  {type:"single",tag:"El momento de pagar",qi:"💳",title:"¿Cómo paga el cliente?",options:[
+    {t:"Levanta la mano y espera al camarero",ic:"🙋",total:11},
+    {t:"Va a una caja única y hace cola",ic:"🚶",total:8},
+    {t:"Tiene alguna opción de pagar por QR",ic:"📲",total:4},
+    {t:"Autoservicio o autopago funcionando",ic:"🖲️",total:0}]},
+  {type:"single",tag:"Hora punta",qi:"🔥",title:"En tu hora punta, ¿se forman colas o gente esperando de pie?",options:[
+    {t:"Sí, y pierdo clientes que se van",ic:"🚪",total:11},
+    {t:"Sí, aunque acaban esperando",ic:"😬",total:7},
+    {t:"Alguna vez, poco",ic:"🙂",total:3},
+    {t:"No, fluye bien",ic:"😌",total:0}]},
+  {type:"single",tag:"Motor de reseñas",qi:"🔁",title:"¿Pides reseñas a tus clientes de forma sistemática?",options:[
+    {t:"Nunca, llegan las que llegan",ic:"😲",carta:5,sala:5,total:5},
+    {t:"A veces se lo digo de palabra",ic:"🗣️",carta:3,sala:3,total:3},
+    {t:"Tengo un QR o cartel, pero sin control",ic:"🪧",carta:2,sala:2,total:2},
+    {t:"Sí, con sistema y lo mido",ic:"📈",carta:0,sala:0,total:0}]}
+];
+const RESULTS={
+  carta:{key:"carta",color:"var(--g1)",badge:"Tu nivel recomendado",title:"5★ CARTA",lead:"Tu fuga está en el momento de pedir.",body:"Tu cocina no es el problema. El problema es el rato en que el cliente está sentado con la carta en la mano esperando a que alguien vaya. Ahí es donde nace la reseña de tres estrellas, antes incluso de probar la comida.",points:["Carta digital por QR con fotos, alérgenos y varios idiomas, con tu marca.","Marcar un agotado o cambiar un precio en dos toques desde tu móvil.","Motor de reseñas: la invitación sale en el momento justo, con enlace directo a tu ficha de Google."],why:"Es el paso que menos te toca la operativa actual: no cambias TPV, no cambias equipo. Entra en días."},
+  sala:{key:"sala",color:"var(--g2)",badge:"Tu nivel recomendado",title:"5★ SALA",lead:"Tu fuga está en el servicio.",body:"Pedidos que se equivocan y platos que tardan. Eso no se arregla cocinando mejor ni echándole más ganas al equipo: se arregla haciendo que la comanda viaje sola y que cocina vea tiempos y orden de salida.",points:["TPV Odoo con comanda desde tablet en mesa y barra: la comanda no se grita, viaja sola.","Pantallas de cocina y barra con tiempos y orden de salida.","Stock que se descuenta solo, escandallos y margen real por plato.","Panel Experiencia: cruza tus tiempos de servicio con tus reseñas y te enseña a qué hora se te cae la nota."],why:"Tu TPV actual te dice cuánto has facturado. Este te dice por qué te pusieron tres estrellas el sábado a las 14:30."},
+  total:{key:"total",color:"var(--g3)",badge:"Tu nivel recomendado",title:"5★ TOTAL",lead:"Tu fuga está en las colas.",body:"Lo más caro que te puede pasar: el cliente ha comido bien, está contento… y se le arruina la experiencia esperando para pagar. Esa es la reseña que empieza con «buenísimo todo, pero…».",points:["Kiosco de autoservicio táctil con tu marca y pago integrado.","Venta sugerida automática en cada pedido, que sube el ticket medio.","Opción de cajón de cobro automático: cero descuadres.","Invitación a reseñar en la propia pantalla, en el pico de satisfacción."],why:"Un kiosco no sustituye a un camarero: libera al camarero para que atienda en vez de cobrar. Y un camarero que atiende genera reseñas; uno que cobra, no."}
+};
+
+let step=-1, advancing=false;
+const answers=new Array(QUESTIONS.length).fill(null);
+let lead={name:"",email:""};
+const stage=document.getElementById("stage");
+const fill=document.getElementById("fill");
+
+/* ---- puntuación por ejes ---- */
+function axisMax(k){
+  let m=0;
+  QUESTIONS.forEach(q=>{
+    if(q.type==="multi"){ q.options.forEach(o=>{ if(o[k]&&!o.exclusive) m+=o[k]; }); }
+    else { m+=Math.max.apply(null,q.options.map(o=>o[k]||0)); }
+  });
+  return m||1;
+}
+const MAXES={carta:axisMax("carta"),sala:axisMax("sala"),total:axisMax("total")};
+
+function scores(){
+  const s={carta:0,sala:0,total:0};
+  QUESTIONS.forEach((q,i)=>{
+    const a=answers[i]; if(a===null) return;
+    const picks = Array.isArray(a)? a.map(x=>q.options[x]) : [q.options[a]];
+    picks.forEach(o=>{ ["carta","sala","total"].forEach(k=>{ if(o[k]) s[k]+=o[k]; }); });
+  });
+  return s;
+}
+function pcts(){
+  const s=scores();
+  return {carta:Math.round(s.carta/MAXES.carta*100), sala:Math.round(s.sala/MAXES.sala*100), total:Math.round(s.total/MAXES.total*100)};
+}
+function classify(){
+  const p=pcts();
+  if(p.total>=35) return RESULTS.total;
+  if(p.sala>=35) return RESULTS.sala;
+  return RESULTS.carta;
+}
+function riesgo(){ const p=pcts(); return Math.round((p.carta+p.sala+p.total)/3); }
+
+function setChips(g){ document.querySelectorAll(".stage-chip").forEach(el=>el.classList.toggle("on", el.dataset.g===g)); }
+function updateProgress(){
+  const total=QUESTIONS.length; let pct,label;
+  if(step<total){ pct=Math.round(step/total*100); label='Pregunta <b>'+(step+1)+'</b> de '+total; }
+  else if(step===total){ pct=96; label='Último paso'; }
+  else { pct=100; label='Completado'; }
+  fill.style.width=pct+"%";
+  document.getElementById("ppct").textContent=pct+"%";
+  document.getElementById("pcount").innerHTML=label;
+  setChips(classify().key);
+}
+
+function render(){
+  document.getElementById("progress").style.display = step<0 ? "none" : "";
+  if(step<0) return renderIntro();
+  updateProgress();
+  if(step<QUESTIONS.length) return renderQuestion();
+  if(step===QUESTIONS.length) return renderLead();
+  return renderResult();
+}
+
+function renderIntro(){
+  stage.innerHTML='<div class="card hero">'
+   +'<div class="hero-eyebrow">Diagnóstico gratuito · 2 minutos</div>'
+   +'<h1 class="hero-h">Tus malas reseñas no hablan de tu comida.<br><em>Hablan de tu operativa.</em></h1>'
+   +'<p class="hero-sub">«Tardaron mucho». «Se equivocaron». «No había lo que pedí». Eso no se arregla cocinando mejor. Responde 9 preguntas y descubre exactamente dónde se te están escapando las estrellas.</p>'
+   +'<div class="hero-bullets"><span>⏱️ 2 minutos</span><span>⭐ Resultado al instante</span><span>🔒 Sin compromiso</span></div>'
+   +'<div class="row"><button class="btn btn-primary" id="start">Ver dónde pierdo estrellas →</button></div></div>';
+  document.getElementById("start").onclick=()=>{step=0;render();};
+}
+
+function renderQuestion(){
+  const q=QUESTIONS[step];
+  let h='<div class="card"><div class="qhead"><div class="qicon">'+q.qi+'</div><div><span class="qtag">'+q.tag+'</span><div class="qtitle">'+q.title+'</div></div></div>';
+  h+=q.options.map((o,i)=>'<button class="opt '+(isSel(step,i)?'sel':'')+'" data-i="'+i+'"><span class="oic">'+o.ic+'</span><span class="otx">'+o.t+'</span><span class="chk"></span></button>').join("");
+  if(q.type==="multi"){
+    const ok=Array.isArray(answers[step])&&answers[step].length>0;
+    h+='<div class="row"><button class="btn btn-primary" id="next" '+(ok?'':'disabled')+'>Continuar</button></div><div class="hint">Marca todas las que apliquen y pulsa Continuar</div>';
+  } else { h+='<div class="hint">Toca una opción para continuar</div>'; }
+  if(step>0) h+='<div class="row" style="justify-content:center;margin-top:6px"><button class="btn-back" id="back">← Atrás</button></div>';
+  h+='</div>';
+  stage.innerHTML=h;
+  stage.querySelectorAll(".opt").forEach(el=>el.onclick=()=>pick(step,parseInt(el.dataset.i)));
+  const nb=document.getElementById("next"); if(nb) nb.onclick=next;
+  const bb=document.getElementById("back"); if(bb) bb.onclick=back;
+}
+function isSel(s,i){const a=answers[s];return Array.isArray(a)?a.includes(i):a===i;}
+function pick(s,i){
+  const q=QUESTIONS[s];
+  if(q.type==="single"){ if(advancing)return; answers[s]=i; advancing=true; render(); setTimeout(()=>{advancing=false;next();},400); }
+  else { let a=Array.isArray(answers[s])?[...answers[s]]:[]; const o=q.options[i];
+    if(o.exclusive){ a=a.includes(i)?[]:[i]; } else { a=a.filter(x=>!q.options[x].exclusive); a.includes(i)?a.splice(a.indexOf(i),1):a.push(i); }
+    answers[s]=a; render(); }
+}
+
+async function sendLead(resultado,puntuacion){
+  if(!SUBSCRIBE_ENDPOINT) return;
+  try{ await fetch(SUBSCRIBE_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({name:lead.name,email:lead.email,resultado:resultado,puntuacion:puntuacion,funnel:FUNNEL})});}
+  catch(e){console.error("MailerLite:",e);}
+}
+
+function renderLead(){
+  stage.innerHTML='<div class="card"><div class="qhead"><div class="qicon">✉️</div><div><span class="qtag">Casi está</span><div class="qtitle">¿A dónde te enviamos tu diagnóstico?</div></div></div>'
+   +'<div class="field"><label>Nombre</label><input id="ln" type="text" placeholder="Tu nombre" value="'+lead.name+'"></div>'
+   +'<div class="field"><label>Email</label><input id="le" type="email" placeholder="tucorreo@ejemplo.com" value="'+lead.email+'"></div>'
+   +'<div class="row"><button class="btn btn-primary" id="next">Ver mi diagnóstico ⭐</button></div>'
+   +'<div class="row" style="justify-content:center;margin-top:6px"><button class="btn-back" id="back">← Atrás</button></div></div>';
+  document.getElementById("next").onclick=()=>{
+    lead.name=document.getElementById("ln").value.trim();
+    lead.email=document.getElementById("le").value.trim();
+    if(!lead.email){document.getElementById("le").focus();return;}
+    const r=classify(); sendLead("5 Estrellas "+r.title.replace("5★ ",""), riesgo()); next();
+  };
+  document.getElementById("back").onclick=back;
+}
+
+function bar(lab,val,color){
+  return '<div class="bar-row"><span class="bar-lab">'+lab+'</span><span class="bar-track"><span class="bar-fill" style="width:'+val+'%;background:'+color+'"></span></span><span class="bar-val" style="color:'+color+'">'+val+'%</span></div>';
+}
+
+function renderResult(){
+  fill.style.width="100%";
+  const r=classify(), p=pcts(), rg=riesgo();
+  const estrellas = rg>=60?"★☆☆☆☆":rg>=40?"★★☆☆☆":rg>=20?"★★★☆☆":"★★★★☆";
+  stage.innerHTML='<div class="card">'
+   +'<div class="stars" style="color:var(--accent)">'+estrellas+'</div>'
+   +'<div class="result-badge" style="color:'+r.color+'">'+r.badge+'</div>'
+   +'<div class="result-title">'+r.title+'</div>'
+   +'<div class="result-lead">'+(lead.name?lead.name+', t':'T')+r.lead.slice(1)+'</div>'
+   +'<div class="result-body">'+r.body+'</div>'
+   +'<div class="risk"><div class="risk-t">Dónde se te escapan las estrellas</div>'
+     +bar('Al pedir',p.carta,'var(--g1)')
+     +bar('En el servicio',p.sala,'var(--g2)')
+     +bar('Al pagar',p.total,'var(--g3)')
+   +'</div>'
+   +'<ul class="result-list">'+r.points.map(x=>'<li>'+x+'</li>').join("")+'</ul>'
+   +'<div class="why">'+r.why+'</div>'
+   +'<div class="slo"><div class="slo-eyebrow">Tu siguiente paso</div>'
+     +'<h4>Te leo tus últimas 30 reseñas. Gratis.</h4>'
+     +'<p>Antes de hablar de nada, me leo tus reseñas reales de Google y te digo por escrito las tres quejas operativas que más se repiten en tu local. Sin compromiso y sin que tengas que hacer nada.</p>'
+     +'<ul class="offer-list"><li>Análisis de tus 30 últimas reseñas</li><li>Las 3 fugas operativas que te están costando estrellas</li><li>Qué arreglar primero y qué puede esperar</li></ul>'
+     +'<a class="btn-wa" href="'+WA+'" target="_blank" rel="noopener">Quiero mi análisis de reseñas</a>'
+     +'<div class="guarantee">Respuesta en menos de 24 h · Sin compromiso</div>'
+   +'</div>'
+   +'<div class="row" style="justify-content:center"><button class="btn-back" id="restart">Repetir el test</button></div></div>';
+  document.getElementById("restart").onclick=()=>{step=-1;answers.fill(null);lead={name:"",email:""};render();};
+}
+function next(){step++;render();}
+function back(){if(step>0){step--;render();}}
+render();
+</script>
+</body>
+</html>

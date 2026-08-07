@@ -1,11 +1,17 @@
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { Cookie } from 'lucide-react';
 
 const PoliticaCookies = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white">
+      <Seo
+        title="Política de Cookies | RobotsConsultant"
+        description="Qué cookies utiliza RobotsConsultant, para qué sirven y cómo puedes gestionarlas o desactivarlas."
+        path="/politica-cookies"
+      />
       <Navbar />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto">

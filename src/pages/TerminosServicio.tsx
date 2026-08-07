@@ -1,10 +1,16 @@
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 
 const TerminosServicio = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-gray-300">
+      <Seo
+        title="Términos y Condiciones de Contratación | RobotsConsultant"
+        description="Términos y condiciones generales de contratación de los servicios de RobotsAdvisors (RobotsConsultant)."
+        path="/terminos-servicio"
+      />
       <Navbar />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 max-w-4xl">
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">

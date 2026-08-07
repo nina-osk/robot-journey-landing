@@ -8,6 +8,8 @@ const COLUMNS: { title: string; links: { label: string; to: string; external?: b
   {
     title: 'Servicios',
     links: [
+      { label: 'TPV para restaurantes', to: '/tpv-hosteleria' },
+      { label: 'TPV para tiendas', to: '/tpv-inteligente' },
       { label: 'Implantación Odoo', to: '/odoo' },
       { label: 'Kioscos de autoservicio', to: '/kioscos-autoservicio' },
       { label: 'Cajón de cobro automático', to: '/cajon-cobro-automatico' },
@@ -19,6 +21,7 @@ const COLUMNS: { title: string; links: { label: string; to: string; external?: b
     title: 'Sectores',
     links: [
       { label: 'Hostelería', to: '/odoo/hosteleria' },
+      { label: 'Método 5 Estrellas', to: '/metodo-5-estrellas' },
       { label: 'Ecommerce', to: '/odoo/ecommerce' },
       { label: 'Transformación digital', to: '/transformacion-digital' },
     ],
@@ -28,7 +31,7 @@ const COLUMNS: { title: string; links: { label: string; to: string; external?: b
     links: [
       { label: 'Cursos y mentoría', to: '/mentoria-ia' },
       { label: 'Canal de YouTube', to: 'https://www.youtube.com/@robotsconsultant', external: true },
-      { label: 'Tienda', to: 'https://robotsconsultant.net/tienda', external: true },
+      { label: 'Tienda', to: 'https://cursos.robotsconsultant.net/', external: true },
       { label: 'Sobre mí', to: '/sobre-mi' },
       { label: 'Contacto', to: '/contacto' },
     ],

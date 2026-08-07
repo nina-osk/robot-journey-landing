@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Phone, Mail, CheckCircle, Users, Clock, DollarSign, BarChart3, Bot, Globe, Cpu, MessageSquare, Calendar, ShoppingCart, Headphones, ChefHat, Utensils } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -28,8 +29,13 @@ const AgentesIARestaurantes = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <Seo
+        title="Agente Telefónico IA para Restaurantes | Reservas y Pedidos 24/7"
+        description="Un agente de IA que atiende el teléfono de tu restaurante: toma reservas y pedidos, responde dudas y no deja llamadas sin atender. Pide tu demo."
+        path="/agentes-ia/restaurantes"
+      />
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0">

@@ -10,6 +10,13 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
 import { whatsappUrl, SITE_URL } from '@/config/contact';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Inicio', path: '/' },
+  { name: 'Odoo', path: '/odoo' },
+  { name: 'Ecommerce', path: '/odoo/ecommerce' },
+]);
 
 /**
  * Landing «Los números claros» (avatar Javier).
@@ -134,7 +141,7 @@ const OdooEcommerce = () => {
         description={DESCRIPTION}
         path="/odoo/ecommerce"
         type="article"
-        schemas={[serviceSchema, faqSchema]}
+        schemas={[serviceSchema, faqSchema, breadcrumb]}
       />
       <Navbar />
 
