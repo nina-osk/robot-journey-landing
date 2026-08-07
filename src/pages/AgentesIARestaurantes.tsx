@@ -564,9 +564,9 @@ const AgentesIARestaurantes = () => {
               </a>
             </Button>
             <Button asChild size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0">
-              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+              <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
-                <span>+34 654 94 27 20</span>
+                <span>+34 641 52 61 50</span>
               </a>
             </Button>
           </div>

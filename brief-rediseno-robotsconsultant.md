@@ -54,7 +54,7 @@ Exportar cada pose como PNG con fondo transparente y también como WebP. Máx. 3
 - Fondo `--hueso` con blur al hacer scroll, logo a la izquierda.
 - Menú: **Inicio · Odoo ▾ (Implantación / Migración) · Hostelería · Ecommerce · Kioscos · Apps con IA · Robótica · Cursos**
 - CTA en el header: botón coral "Diagnóstico gratis" → WhatsApp.
-- Un solo teléfono en toda la web: **654 94 27 20**.
+- Un solo teléfono en toda la web: **641 52 61 50**.
 - Todos los enlaces con rutas absolutas.
 
 ### Footer

@@ -221,7 +221,7 @@ const AppsPersonalizadas = () => {
                 <Button size="lg"
                   className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-2xl hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-8 py-6 text-base font-semibold group"
                   asChild>
-                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                     Solicitar presupuesto gratis
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -579,7 +579,7 @@ const AppsPersonalizadas = () => {
                 <Button
                   className={`w-full rounded-full font-semibold ${plan.badge ? 'bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-xl hover:shadow-[#667eea]/30 text-white border-0' : 'bg-white/10 hover:bg-white/20 text-white border border-white/20'}`}
                   asChild>
-                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                     Solicitar info {plan.badge && <ArrowRight className="ml-2 h-4 w-4" />}
                   </a>
                 </Button>
@@ -627,7 +627,7 @@ const AppsPersonalizadas = () => {
             <Button size="lg"
               className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-2xl hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-10 py-7 text-lg font-bold group"
               asChild>
-              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                 📲 Hablar por WhatsApp
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -640,7 +640,7 @@ const AppsPersonalizadas = () => {
           </div>
           <p className="text-gray-600 text-sm mt-8">
             O llámanos directamente:{' '}
-            <a href="tel:+34654942720" className="text-[#667eea] hover:underline">+34 654 94 27 20</a>
+            <a href="tel:+34641526150" className="text-[#667eea] hover:underline">+34 641 52 61 50</a>
           </p>
         </div>
       </section>
@@ -734,7 +734,7 @@ const AppsPersonalizadas = () => {
                 <Button size="lg"
                   className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-xl hover:shadow-[#667eea]/30 text-white border-0 rounded-full px-7 py-5 font-semibold group"
                   asChild>
-                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                     Hablemos de tu proyecto
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </a>

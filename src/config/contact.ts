@@ -5,13 +5,13 @@
  */
 
 /** Número en formato E.164 sin '+', tal y como lo espera wa.me */
-export const PHONE_E164 = '34654942720';
+export const PHONE_E164 = '34641526150';
 
 /** Formato de lectura para mostrar en pantalla */
-export const PHONE_DISPLAY = '+34 654 94 27 20';
+export const PHONE_DISPLAY = '+34 641 52 61 50';
 
 /** Formato para href="tel:" y para schema.org */
-export const PHONE_TEL = '+34654942720';
+export const PHONE_TEL = '+34641526150';
 
 export const EMAIL = 'info@robotsconsultant.net';
 

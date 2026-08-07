@@ -63,7 +63,7 @@ const Contacto = () => {
     );
 
     const link = document.createElement('a');
-    link.href = `https://wa.me/34654942720?text=${message}`;
+    link.href = `https://wa.me/34641526150?text=${message}`;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
@@ -84,7 +84,7 @@ const Contacto = () => {
     <div className="min-h-screen bg-[#0a0a0a]">
       <Helmet>
         <title>Contacto | RobotsConsultant Agency</title>
-        <meta name="description" content="Habla con nuestro equipo de IA y automatización. Consulta gratuita sin compromiso. Llámanos al +34 654 94 27 20 o escríbenos a info@robotsconsultant.net." />
+        <meta name="description" content="Habla con nuestro equipo de IA y automatización. Consulta gratuita sin compromiso. Llámanos al +34 641 52 61 50 o escríbenos a info@robotsconsultant.net." />
         <link rel="canonical" href="https://robotsconsultant.net/contacto" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -94,7 +94,7 @@ const Contacto = () => {
           "mainEntity": {
             "@type": "Organization",
             "name": "RobotsConsultant Agency",
-            "telephone": "+34654942720",
+            "telephone": "+34641526150",
             "email": "info@robotsconsultant.net"
           }
         })}</script>
@@ -131,8 +131,8 @@ const Contacto = () => {
                 </div>
                 <div>
                   <p className="text-white font-semibold">Teléfono / WhatsApp</p>
-                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#667eea] transition-colors">
-                    +34 654 94 27 20
+                  <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#667eea] transition-colors">
+                    +34 641 52 61 50
                   </a>
                 </div>
               </div>

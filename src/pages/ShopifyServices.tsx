@@ -161,7 +161,7 @@ const ShopifyServices = () => {
 
               <div data-sh data-delay="260" className="flex flex-wrap gap-3 mb-8">
                 <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0 rounded-full px-8 text-base font-semibold transition-all hover:scale-105" asChild>
-                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                     Solicita tu Presupuesto Personalizado
                   </a>
                 </Button>
@@ -485,7 +485,7 @@ const ShopifyServices = () => {
                 </div>
 
                 <Button className="w-full bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/30 text-white border-0 rounded-full font-semibold group" asChild>
-                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                     Quiero un tema personalizado
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -582,7 +582,7 @@ const ShopifyServices = () => {
                 </div>
 
                 <Button className="w-full bg-gradient-to-r from-[#764ba2] to-[#f093fb] hover:shadow-lg hover:shadow-[#764ba2]/30 text-white border-0 rounded-full font-semibold group" asChild>
-                  <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                     Quiero una app personalizada
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -840,9 +840,9 @@ const ShopifyServices = () => {
               </a>
             </Button>
             <Button asChild size="lg" className="bg-white/[0.05] border border-white/20 hover:bg-white/10 text-white rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300">
-              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+              <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
-                <span>+34 654 94 27 20</span>
+                <span>+34 641 52 61 50</span>
               </a>
             </Button>
           </div>

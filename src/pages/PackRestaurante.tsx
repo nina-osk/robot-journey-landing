@@ -53,7 +53,7 @@ const PackRestaurante = () => {
             reduce errores y aumenta la rentabilidad… sin depender de ti todo el tiempo.
           </p>
           <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white">
-            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20digitalizar%20mi%20restaurante%20con%20el%20pack%20restaurante." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/34641526150?text=Hola%2C%20quiero%20digitalizar%20mi%20restaurante%20con%20el%20pack%20restaurante." target="_blank" rel="noopener noreferrer">
             👉 Quiero digitalizar mi restaurante ahora
             </a>
           </Button>
@@ -226,7 +226,7 @@ const PackRestaurante = () => {
             Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
           </p>
           <Button asChild size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
-            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20del%20pack%20restaurante." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/34641526150?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20del%20pack%20restaurante." target="_blank" rel="noopener noreferrer">
             👉 Solicitar diagnóstico gratuito
             </a>
           </Button>

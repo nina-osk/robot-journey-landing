@@ -27,7 +27,7 @@ const TransformacionDigital = () => {
   /* Todos los CTA de la web van a WhatsApp. */
   const openWhatsApp = () => {
     window.open(
-      'https://wa.me/34654942720?text=' +
+      'https://wa.me/34641526150?text=' +
         encodeURIComponent('Hola, quiero información sobre transformación digital.'),
       '_blank',
       'noopener,noreferrer'

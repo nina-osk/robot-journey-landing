@@ -53,7 +53,7 @@ const PackHotel = () => {
             mientras optimizas la gestión interna sin depender de expertos ni perder tiempo.
           </p>
           <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20modernizar%20mi%20hotel%20con%20el%20pack%20hotel." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/34641526150?text=Hola%2C%20quiero%20modernizar%20mi%20hotel%20con%20el%20pack%20hotel." target="_blank" rel="noopener noreferrer">
             👉 Quiero modernizar mi hotel ahora
             </a>
           </Button>
@@ -222,7 +222,7 @@ const PackHotel = () => {
             Completa el formulario y recibe un diagnóstico gratuito sin compromiso.
           </p>
           <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-            <a href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20del%20pack%20hotel." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/34641526150?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20del%20pack%20hotel." target="_blank" rel="noopener noreferrer">
             👉 Solicitar diagnóstico gratuito
             </a>
           </Button>

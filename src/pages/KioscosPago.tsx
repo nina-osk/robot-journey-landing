@@ -503,7 +503,7 @@ const PacksPorSector = () => {
               </p>
               <Button asChild className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 <a
-                  href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
+                  href="https://wa.me/34641526150?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -735,7 +735,7 @@ const PacksPorSector = () => {
               </p>
               <Button asChild className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-[#764ba2] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 <a
-                  href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
+                  href="https://wa.me/34641526150?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -971,7 +971,7 @@ const PacksPorSector = () => {
               </p>
               <Button asChild className="bg-white/[0.05] border-white/10 hover:bg-white/[0.08] text-[#667eea] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 <a
-                  href="https://wa.me/34654942720?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
+                  href="https://wa.me/34641526150?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20kioscos%20de%20autoservicio."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

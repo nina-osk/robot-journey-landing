@@ -62,7 +62,7 @@ const AgentesIA = () => {
               Imagina un mundo donde tus clientes reciben atención instantánea, personalizada y profesional las 24 horas del día, los 7 días de la semana, sin costos adicionales de personal ni tiempos de espera frustrantes. Esa realidad es hoy posible con nuestra solución de Agentes Telefónicos IA.
             </p>
             <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0" asChild>
-              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
                 Agenda tu Demo Gratuita
               </a>
             </Button>
@@ -465,9 +465,9 @@ const AgentesIA = () => {
               </a>
             </Button>
             <Button asChild size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/20">
-              <a href="https://wa.me/34654942720" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+              <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
-                <span>+34 654 94 27 20</span>
+                <span>+34 641 52 61 50</span>
               </a>
             </Button>
           </div>
