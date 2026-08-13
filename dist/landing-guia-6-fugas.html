@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <style>
   :root{
     --ink:#0A0C16; --surface:#141B33; --surface-2:#1B2440; --line:#2A3354;
@@ -228,6 +229,8 @@
         <span>Acepto recibir la guía y comunicaciones de RobotsConsultant sobre automatización para hostelería. Puedo darme de baja cuando quiera. <a href="https://robotsconsultant.net/politica-privacidad/" target="_blank" rel="noopener">Política de Privacidad</a>.</span>
       </label>
 
+      <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD" data-theme="dark" style="margin:4px 0 16px"></div>
+
       <button class="btn" id="submit">Descargar la guía gratis</button>
       <div class="reassure">Sin spam. Sin llamadas comerciales sorpresa.<br>Tus datos no se ceden a terceros.</div>
     </div>
@@ -280,6 +283,7 @@ function submitToMailerLite(data){
     add("fields[company]", data.company);
     add("fields[phone]", data.phone);
     add("gdpr[]", "Email");
+    add("g-recaptcha-response", data.captcha || "");
     add("ml-submit", "1");
     add("anticsrf", "true");
     document.body.appendChild(f);
@@ -306,12 +310,14 @@ $("submit").onclick = async () => {
   if(!empresa) return showErr("Necesito el nombre de tu restaurante para poder mirar tus reseñas.");
   if(!telefono) return showErr("Falta el teléfono.");
   if(!$("consent").checked) return showErr("Marca la casilla de consentimiento para poder enviarte la guía.");
+  const captcha = (typeof grecaptcha !== "undefined") ? grecaptcha.getResponse() : "";
+  if(!captcha) return showErr("Marca la casilla «No soy un robot» para continuar.");
 
   const btn=$("submit");
   btn.disabled=true; btn.textContent="Enviando…";
 
   try{
-    await submitToMailerLite({ name:nombre, email:email, company:empresa, phone:telefono });
+    await submitToMailerLite({ name:nombre, email:email, company:empresa, phone:telefono, captcha:captcha });
   }catch(e){ console.error("No se pudo registrar:",e); }
 
   // Pase lo que pase, le damos su descarga: nunca castigamos al usuario por un fallo nuestro.
