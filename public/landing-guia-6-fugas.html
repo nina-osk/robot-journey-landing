@@ -255,11 +255,41 @@
 
 <script>
 /* ====== CONFIGURACIÓN ====== */
-const SUBSCRIBE_ENDPOINT = "https://mailerlite-workerjs.oscarina-hernandezgarcia.workers.dev";
+const ML_ACTION = "https://assets.mailerlite.com/jsonp/2267913/forms/195700236787648072/subscribe";
 const PDF_URL = "https://robotsconsultant.net/guia-6-fugas-de-estrellas.pdf";
 /* =========================== */
 
 const $=id=>document.getElementById(id);
+
+/* Envía el lead directamente al formulario nativo de MailerLite mediante un
+   iframe oculto (evita el bloqueo CORS). Mapea los campos de la landing a los
+   nombres que espera MailerLite (fields[name], fields[email], ...). */
+function submitToMailerLite(data){
+  return new Promise((resolve)=>{
+    let iframe=document.getElementById("ml_sink");
+    if(!iframe){
+      iframe=document.createElement("iframe");
+      iframe.name="ml_sink"; iframe.id="ml_sink"; iframe.style.display="none";
+      document.body.appendChild(iframe);
+    }
+    const f=document.createElement("form");
+    f.method="post"; f.action=ML_ACTION; f.target="ml_sink"; f.style.display="none";
+    const add=(n,v)=>{ const i=document.createElement("input"); i.type="hidden"; i.name=n; i.value=v; f.appendChild(i); };
+    add("fields[name]", data.name);
+    add("fields[email]", data.email);
+    add("fields[company]", data.company);
+    add("fields[phone]", data.phone);
+    add("gdpr[]", "Email");
+    add("ml-submit", "1");
+    add("anticsrf", "true");
+    document.body.appendChild(f);
+    let done=false;
+    const finish=()=>{ if(done) return; done=true; try{ f.remove(); }catch(_){ } resolve(); };
+    iframe.addEventListener("load", finish, {once:true});
+    f.submit();
+    setTimeout(finish, 1500); // no bloqueamos la descarga esperando la respuesta
+  });
+}
 const err=$("err");
 function showErr(m){ err.textContent=m; err.style.display="block"; err.scrollIntoView({block:"center",behavior:"smooth"}); }
 function hideErr(){ err.style.display="none"; }
@@ -281,11 +311,7 @@ $("submit").onclick = async () => {
   btn.disabled=true; btn.textContent="Enviando…";
 
   try{
-    await fetch(SUBSCRIBE_ENDPOINT,{
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({name:nombre,email:email,empresa:empresa,telefono:telefono,
-        resultado:"Guia 6 Fugas",funnel:"leadmagnet"})
-    });
+    await submitToMailerLite({ name:nombre, email:email, company:empresa, phone:telefono });
   }catch(e){ console.error("No se pudo registrar:",e); }
 
   // Pase lo que pase, le damos su descarga: nunca castigamos al usuario por un fallo nuestro.
