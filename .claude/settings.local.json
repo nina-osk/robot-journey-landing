@@ -16,7 +16,16 @@
       "Bash(node -p \"'instalada: '+require\\('react-helmet-async/package.json'\\).version\")",
       "Bash(rm -rf node_modules/.vite)",
       "Bash(npm run *)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Workflow de despliegue automatico a Hostinger por FTP *)",
+      "Bash(git push *)",
+      "Bash(grep -rIl --exclude-dir=node_modules --exclude-dir=.git -iE \"ovh|vps-|cloud\\\\.ovh|ovhcloud\" \"C:/Users/ingos/Documents/PAGINA WEB/\" 2>/dev/null | head -40)",
+      "Read(//c/Users/ingos/.ssh/**)",
+      "Bash(ssh -i ~/.ssh/ovh ubuntu@164.132.98.171 \"echo '--- SITES ---'; ls -la /etc/nginx/sites-enabled/; echo; grep -rhE 'server_name|root |proxy_pass' /etc/nginx/sites-enabled/ | sed 's/^ *//' | sort -u; echo '--- CERTS ---'; sudo ls /etc/letsencrypt/live/ 2>/dev/null; echo '--- DOCKER ---'; which docker docker-compose 2>/dev/null; docker --version 2>/dev/null; echo '--- PG ---'; which psql postgres 2>/dev/null; systemctl is-active postgresql 2>/dev/null\")",
+      "Bash(ssh -i ~/.ssh/ovh -o ConnectTimeout=20 -o ServerAliveInterval=10 ubuntu@164.132.98.171 \"echo '--- SITES ---'; ls /etc/nginx/sites-enabled/; echo; grep -rhE 'server_name|root |proxy_pass' /etc/nginx/sites-enabled/ | sed 's/^ *//' | sort -u; echo '--- CERTS ---'; sudo ls /etc/letsencrypt/live/ 2>/dev/null; echo '--- DOCKER ---'; docker --version 2>/dev/null || echo 'sin docker'; echo '--- PG ---'; systemctl is-active postgresql 2>/dev/null || echo 'sin postgres'\")",
+      "Bash(ping -n 3 164.132.98.171)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -m 15 https://terravia.tech)"
     ]
   }
 }
