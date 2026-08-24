@@ -88,6 +88,15 @@
 
   /* FORM */
   .formsec{padding:44px 0 80px}
+  .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .formpoints h2{font-size:1.9rem;margin-bottom:12px}
+  .formpoints .lead{margin-bottom:24px}
+  .plist{list-style:none;display:flex;flex-direction:column;gap:15px}
+  .plist li{display:flex;gap:13px;align-items:flex-start;font-family:'Space Grotesk',sans-serif;font-weight:500;
+    font-size:1.02rem;line-height:1.36;color:var(--text)}
+  .pn{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--ink);
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.78rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  @media(max-width:860px){.formgrid{grid-template-columns:1fr;gap:34px}.fcard{max-width:100%}}
   .fcard{background:linear-gradient(155deg,#182046,#111730);border:1px solid #33406B;border-radius:20px;
     padding:44px 44px 38px;box-shadow:0 30px 80px rgba(0,0,0,.5);max-width:620px;margin:0 auto}
   .fcard h2{font-size:1.72rem;margin-bottom:10px}
@@ -150,7 +159,7 @@
 <div class="wrap">
   <div class="hero">
     <div>
-      <div class="badge">⭐ Guía gratuita para hostelería</div>
+      <div class="badge">⭐ Guía gratuita para restaurantes y cafeterías con alta rotación</div>
       <h1>Cocinas bien.<br>Entonces, <em>¿por qué no llegas a 4,5?</em></h1>
       <p class="sub">Las 6 fugas por las que un restaurante con buena comida se queda en 3 estrellas en Google — y cómo taparlas.</p>
       <div class="trust"><span>📄 4 páginas, sin relleno</span><span>⏱️ Se lee en 6 minutos</span><span>🔒 Descarga inmediata</span></div>
@@ -186,23 +195,25 @@
   </div>
 </div>
 
-<section><div class="wrap">
-  <div class="eyebrow">Lo que vas a encontrar dentro</div>
-  <h2>Las 6 fugas de estrellas</h2>
-  <p class="lead">Un adelanto. Los datos del sector, las frases que las delatan en tus reseñas y qué arreglar primero están dentro de la guía.</p>
-  <div class="grid6">
-    <div class="f"><div class="n">1</div><h4>La queja número uno del sector: hasta el 20% del feedback negativo.</h4></div>
-    <div class="f"><div class="n">2</div><h4>No es problema del camarero…</h4></div>
-    <div class="f"><div class="n">3</div><h4>El atributo más importante. Pero la palabra clave…</h4></div>
-    <div class="f"><div class="n">4</div><h4>Seis de las diez quejas más frecuentes, y no es el trato del personal…</h4></div>
-    <div class="f"><div class="n">5</div><h4>El momento clave…</h4></div>
-    <div class="f"><div class="n">6</div><h4>Cómo gestionas el fallo…</h4></div>
-  </div>
-</div></section>
-
 
 <div class="formsec" id="descargar"><div class="wrap">
-  <div class="fcard">
+  <div class="formgrid">
+
+    <aside class="formpoints">
+      <div class="eyebrow">Lo que vas a encontrar dentro</div>
+      <h2>Las 6 fugas de estrellas</h2>
+      <p class="lead">Un adelanto. Los datos del sector, las frases que las delatan en tus reseñas y qué arreglar primero están dentro de la guía.</p>
+      <ul class="plist">
+        <li><span class="pn">1</span>La queja número uno del sector: hasta el 20% del feedback negativo.</li>
+        <li><span class="pn">2</span>No es problema del camarero…</li>
+        <li><span class="pn">3</span>El atributo más importante. Pero la palabra clave…</li>
+        <li><span class="pn">4</span>Seis de las diez quejas más frecuentes, y no es el trato del personal…</li>
+        <li><span class="pn">5</span>El momento clave…</li>
+        <li><span class="pn">6</span>Cómo gestionas el fallo…</li>
+      </ul>
+    </aside>
+
+    <div class="fcard">
 
     <div id="formview">
       <h2>Descarga la guía</h2>
@@ -254,6 +265,7 @@
       </div>
     </div>
 
+    </div>
   </div>
 </div></div>
 
