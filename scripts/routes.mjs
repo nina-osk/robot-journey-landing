@@ -6,7 +6,7 @@
 // src/App.tsx sigue siendo independiente por ser JSX.)
 //
 // Las rutas antiguas con 301 en public/.htaccess NO van aquí
-// (/servicios-odoo, /shopify, /agentes-ia, /kioscos-pago, /robots-moviles):
+// (/servicios-odoo, /shopify, /kioscos-pago, /robots-moviles):
 // un fichero prerenderizado o una entrada de sitemap competirían con la
 // redirección y mandarían señales contradictorias a Google.
 
@@ -38,6 +38,7 @@ export const routes = [
   { path: '/pack-ecommerce', priority: 0.7, changefreq: 'monthly' },
 
   // IA / formación
+  { path: '/agentes-ia', priority: 0.8, changefreq: 'monthly' },
   { path: '/transformacion-digital', priority: 0.7, changefreq: 'monthly' },
   { path: '/agentes-ia/restaurantes', priority: 0.7, changefreq: 'monthly' },
   { path: '/mentoria-ia', priority: 0.6, changefreq: 'monthly' },

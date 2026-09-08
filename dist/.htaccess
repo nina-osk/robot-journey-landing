@@ -16,7 +16,6 @@
   # ---------------------------------------------------------------
   RewriteRule ^servicios-odoo/?$        /odoo                        [R=301,L]
   RewriteRule ^shopify/?$               /odoo/integracion-shopify    [R=301,L]
-  RewriteRule ^agentes-ia/?$            /odoo/ecommerce              [R=301,L]
   RewriteRule ^kioscos-pago/?$          /kioscos-autoservicio        [R=301,L]
   RewriteRule ^robots-moviles/?$        /robotica                    [R=301,L]
 

@@ -1,481 +1,348 @@
-import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Phone, Mail, CheckCircle, Users, Clock, DollarSign, BarChart3, Bot, Globe, Cpu, MessageSquare, Calendar, ShoppingCart, Headphones, ChefHat } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  MessageCircle, CalendarCheck, ShoppingBag, Bot, Clock, Zap,
+  ArrowRight, Check, ShieldCheck,
+} from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Roberta from '@/components/Roberta';
+import Seo from '@/components/Seo';
+import {
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
+} from '@/components/ui/accordion';
+import { whatsappUrl, SITE_URL } from '@/config/contact';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const PAGE_URL = `${SITE_URL}/agentes-ia`;
+const TITLE = 'Agentes de IA para tu Negocio | WhatsApp, Reservas y Atención 24/7';
+const DESCRIPTION =
+  'Agentes de inteligencia artificial que atienden por WhatsApp 24/7: toman reservas y pedidos en hostelería y resuelven la atención al cliente de tu ecommerce, con el contexto real de tu negocio.';
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Inicio', path: '/' },
+  { name: 'Agentes de IA', path: '/agentes-ia' },
+]);
+
+const FAQS = [
+  {
+    q: '¿Un agente de IA sustituye a mi equipo?',
+    a: 'No: lo libera. El agente se encarga de lo repetitivo (dudas, disponibilidad, «¿dónde está mi pedido?») a cualquier hora, y cuando algo se sale del guion lo pasa a una persona con todo el contexto ya cargado. Tu equipo atiende mejor porque deja de apagar fuegos.',
+  },
+  {
+    q: '¿Responde con datos reales o se los inventa?',
+    a: 'Con datos reales. Lo conectamos a tu sistema (Odoo, tu tienda online, tu agenda de reservas), así que responde con tu stock, tus horarios y tus pedidos de verdad. Y le ponemos límites: lo que no sabe, no se lo inventa, lo escala.',
+  },
+  {
+    q: '¿En qué canales funciona?',
+    a: 'El principal es WhatsApp, que es donde ya te escriben tus clientes. También puede vivir en el chat de tu web. Para reservas y pedidos de hostelería tenemos además un agente que atiende el teléfono.',
+  },
+  {
+    q: '¿Cuánto se tarda en ponerlo en marcha?',
+    a: 'Depende de a qué lo conectemos, pero un agente básico de WhatsApp con la información de tu negocio se monta en pocos días. Empezamos por lo esencial y lo ampliamos por fases.',
+  },
+  {
+    q: '¿Cumple con la protección de datos?',
+    a: 'Sí. Se recoge el consentimiento y se trata la información conforme al RGPD. El agente no hace spam: contesta a quien te escribe y avisa solo a quien lo ha aceptado.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Agentes de IA para atención, reservas y pedidos',
+  serviceType: 'Agentes de inteligencia artificial para WhatsApp, hostelería y ecommerce',
+  provider: { '@type': 'Organization', name: 'RobotsConsultant', url: SITE_URL },
+  description: DESCRIPTION,
+  areaServed: [
+    { '@type': 'City', name: 'Madrid' },
+    { '@type': 'Country', name: 'España' },
+  ],
+  url: PAGE_URL,
+};
+
+const UseCase = ({
+  icon: Icon, eyebrow, title, lead, items, links, dark = false,
+}: {
+  icon: typeof Bot;
+  eyebrow: string;
+  title: string;
+  lead: string;
+  items: string[];
+  links: { label: string; to: string }[];
+  dark?: boolean;
+}) => (
+  <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+    <div className="lg:sticky lg:top-28">
+      <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-card-sm ${dark ? 'bg-cian-glow/10 text-cian-glow' : 'bg-teal/10 text-teal'}`}>
+        <Icon className="h-7 w-7" />
+      </div>
+      <p className="eyebrow mb-3">{eyebrow}</p>
+      <h3 className={`text-2xl md:text-3xl lg:text-4xl mb-4 text-balance ${dark ? 'text-hueso' : ''}`}>{title}</h3>
+      <p className={`text-lg mb-6 ${dark ? 'text-hueso/75' : 'text-pantalla/75'}`}>{lead}</p>
+      <div className="flex flex-wrap gap-x-6 gap-y-2">
+        {links.map((l) => (
+          <Link key={l.to} to={l.to} className={`font-semibold ${dark ? 'text-cian-glow hover:text-white' : 'text-teal hover:text-teal-dark'}`}>
+            → {l.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+
+    <ul className="grid gap-3">
+      {items.map((item) => (
+        <li key={item} className={`flex gap-3 rounded-card-sm px-5 py-4 ${dark ? 'border border-white/10 bg-white/[0.04] text-hueso/80' : 'border border-greige bg-white text-pantalla/80'}`}>
+          <Check aria-hidden className={`mt-0.5 h-5 w-5 shrink-0 ${dark ? 'text-cian-glow' : 'text-teal'}`} />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 const AgentesIA = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  useScrollReveal();
 
-    document.querySelectorAll('.slide-in-section').forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const ctaHero = whatsappUrl('Hola, quiero una demo de los agentes de IA para mi negocio.');
+  const ctaFinal = whatsappUrl('Hola, quiero mi diagnóstico gratuito para automatizar la atención con IA.');
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
-      <Helmet>
-        <title>Agentes de IA para Empresas | RobotsConsultant Agency</title>
-        <meta name="description" content="Implementamos agentes de inteligencia artificial que atienden clientes 24/7, gestionan reservas, ventas y soporte sin intervención humana. Ahorra hasta un 70% en costes operativos." />
-        <link rel="canonical" href="https://robotsconsultant.net/agentes-ia" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Agentes de IA para Empresas",
-          "provider": { "@type": "Organization", "name": "RobotsConsultant Agency" },
-          "description": "Agentes de inteligencia artificial que atienden clientes 24/7, gestionan reservas, pedidos y soporte sin intervención humana.",
-          "areaServed": "ES"
-        })}</script>
-      </Helmet>
+    <div className="min-h-screen bg-hueso text-pantalla">
+      <Seo
+        title={TITLE}
+        description={DESCRIPTION}
+        path="/agentes-ia"
+        image="/roberta/saludando.png"
+        schemas={[serviceSchema, faqSchema, breadcrumb]}
+      />
+
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-16 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#667eea]/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#764ba2]/10 rounded-full blur-3xl" />
+      {/* ═══ HERO ═══ */}
+      <header className="pt-28 pb-16 md:pt-36 md:pb-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+            <div>
+              <p className="eyebrow mb-4">🤖 Agentes de IA · Atención 24/7</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 text-balance">
+                Un agente de IA que atiende a tus clientes cuando tú no puedes
+              </h1>
+              <p className="text-lg md:text-xl text-pantalla/75 mb-8 max-w-2xl">
+                Contesta por WhatsApp a cualquier hora, toma reservas y pedidos en tu restaurante y
+                resuelve las dudas de tu tienda online — con la información real de tu negocio y sin
+                dejar a nadie sin respuesta.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href={ctaHero} target="_blank" rel="noopener noreferrer" className="btn-coral">
+                  Quiero una demo <ArrowRight className="h-5 w-5" />
+                </a>
+                <a
+                  href="#casos"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-greige bg-white px-6 py-3 font-semibold text-teal-dark hover:border-teal"
+                >
+                  Ver los 3 casos
+                </a>
+              </div>
+
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-greige bg-white px-4 py-2 font-mono text-xs uppercase tracking-[0.14em] text-teal-dark">
+                <span className="h-2 w-2 rounded-full bg-teal" />
+                24/7 · WhatsApp · conectado a tu sistema
+              </p>
+            </div>
+
+            <div className="flex justify-center lg:justify-end">
+              <Roberta pose="saludando" width={460} priority className="animate-float" />
+            </div>
+          </div>
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-white slide-in-section">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Revoluciona tu Atención al Cliente con <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">Agentes Telefónicos IA</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-gray-300">
-              La Nueva Era de la Comunicación Empresarial Ha Llegado
+      </header>
+
+      {/* ═══ PROBLEMA ═══ */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="eyebrow mb-3">El problema</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 text-balance">
+              Cada mensaje sin contestar es un cliente que se va con otro
+            </h2>
+            <p className="text-lg text-pantalla/75">
+              Te escriben a las 23:00, en plena hora punta o en tu día libre. Preguntan lo de siempre:
+              si hay mesa, si te queda la talla, dónde está su pedido. Y si nadie contesta a tiempo,
+              se van. No te falta interés — te falta un par de manos que no duerman.
             </p>
-            <p className="text-lg mb-12 max-w-5xl mx-auto leading-relaxed text-gray-400">
-              Imagina un mundo donde tus clientes reciben atención instantánea, personalizada y profesional las 24 horas del día, los 7 días de la semana, sin costos adicionales de personal ni tiempos de espera frustrantes. Esa realidad es hoy posible con nuestra solución de Agentes Telefónicos IA.
-            </p>
-            <Button size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0" asChild>
-              <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer">
-                Agenda tu Demo Gratuita
-              </a>
-            </Button>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { icon: Clock, cifra: '24/7', label: 'sin horarios ni festivos' },
+              { icon: Zap, cifra: 'Al instante', label: 'respuesta en segundos' },
+              { icon: Bot, cifra: 'Cero', label: 'mensajes sin atender' },
+            ].map((item) => (
+              <div key={item.label} className="card-roberta text-center">
+                <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-card-sm bg-teal/10 text-teal">
+                  <item.icon className="h-6 w-6" />
+                </div>
+                <p className="font-display text-4xl md:text-5xl font-extrabold text-coral mb-2">{item.cifra}</p>
+                <p className="font-mono text-xs uppercase tracking-[0.14em] text-teal-dark">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose AI Agents */}
-      <section className="py-16 relative">
+      {/* ═══ CASO 1 — WHATSAPP ═══ */}
+      <section id="casos" className="py-16 md:py-24 scroll-mt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-section text-white">
-            ¿Por Qué Elegir Agentes Telefónicos IA?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <Clock className="w-12 h-12 text-[#667eea] mb-4" />
-                <CardTitle className="text-xl text-white">🚀 Disponibilidad Total</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Atención 24/7/365 sin descansos ni vacaciones</li>
-                  <li>• Respuesta inmediata en menos de 2 segundos</li>
-                  <li>• Cero tiempos de espera para tus clientes</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <DollarSign className="w-12 h-12 text-[#667eea] mb-4" />
-                <CardTitle className="text-xl text-white">💰 Reducción de Costos Operativos</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Hasta 70% menos costos que un call center tradicional</li>
-                  <li>• Sin gastos de contratación, capacitación ni rotación</li>
-                  <li>• Escalabilidad inmediata sin inversión adicional</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <Users className="w-12 h-12 text-[#667eea] mb-4" />
-                <CardTitle className="text-xl text-white">🎯 Experiencia Superior del Cliente</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Conversaciones naturales e inteligentes</li>
-                  <li>• Personalización basada en historial del cliente</li>
-                  <li>• Consistencia en cada interacción</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+          <UseCase
+            icon={MessageCircle}
+            eyebrow="Caso 1 · WhatsApp"
+            title="El agente vive donde ya te escriben: WhatsApp"
+            lead="Un solo número para tu negocio, atendido siempre. El agente entiende lo que preguntan y responde con el tono de tu marca."
+            items={[
+              'Responde 24/7 a dudas frecuentes: horarios, ubicación, precios, disponibilidad.',
+              'Un único número para todo el equipo — se acaba el WhatsApp del negocio en el móvil de alguien.',
+              'Cada conversación con el contexto del cliente: sus pedidos, sus reservas, su historial.',
+              'Lo que no sabe, lo escala a una persona con toda la conversación ya cargada.',
+              'Recoge el consentimiento y cumple con el RGPD: nada de spam.',
+            ]}
+            links={[
+              { label: 'Agente telefónico para restaurantes', to: '/agentes-ia/restaurantes' },
+            ]}
+          />
         </div>
       </section>
 
-      {/* Technology Solution */}
-      <section className="py-16 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-[#764ba2]/5 rounded-full blur-3xl" />
+      {/* ═══ CASO 2 — HOSTELERÍA (oscuro) ═══ */}
+      <section className="section-dark py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <UseCase
+            dark
+            icon={CalendarCheck}
+            eyebrow="Caso 2 · Hostelería"
+            title="Toma reservas y pedidos sin que suene el teléfono en mal momento"
+            lead="Para restaurantes, cafeterías y bares: el agente gestiona la reserva y el pedido de principio a fin, y no deja pasar ni una en hora punta."
+            items={[
+              'Toma reservas: consulta disponibilidad real, confirma y las registra solas.',
+              'Gestiona pedidos para recoger o a domicilio, con tu carta y tus precios.',
+              'Responde horarios, alérgenos y «¿tenéis mesa para 6 esta noche?» al instante.',
+              'Avisos automáticos: reserva confirmada, pedido listo, recordatorio.',
+              'Se integra con tu TPV y tu Odoo, así que todo queda en un único sitio.',
+            ]}
+            links={[
+              { label: 'Agente telefónico para restaurantes', to: '/agentes-ia/restaurantes' },
+              { label: 'TPV para restaurantes', to: '/tpv-hosteleria' },
+            ]}
+          />
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-section text-white">
-            Nuestra Solución Tecnológica de Vanguardia
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="slide-in-section">
-              <Card className="h-full bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-                <CardHeader>
-                  <Bot className="w-16 h-16 text-[#667eea] mb-4" />
-                  <CardTitle className="text-2xl text-white">RetellAI: El Cerebro de la Conversación</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 text-gray-400">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0" />
-                      <span>Procesamiento de Lenguaje Natural avanzado que entiende contexto y emociones</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0" />
-                      <span>Integración multiidioma para atender clientes globales</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0" />
-                      <span>Aprendizaje continuo que mejora con cada conversación</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#667eea] mt-0.5 flex-shrink-0" />
-                      <span>Personalización completa según tu marca y procesos</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+      </section>
+
+      {/* ═══ CASO 3 — ECOMMERCE ═══ */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <UseCase
+            icon={ShoppingBag}
+            eyebrow="Caso 3 · Ecommerce"
+            title="Atención al cliente de tu tienda, resuelta antes de que te frustre"
+            lead="El agente contesta las preguntas que más repiten tus clientes de tienda online — con tu stock y tus pedidos de verdad, no adivinando."
+            items={[
+              '«¿Dónde está mi pedido?» respondido con el estado real del envío.',
+              'Consultas de stock y tallas contestadas con el inventario en tiempo real.',
+              'Cambios y devoluciones guiados paso a paso, sin que tu equipo repita lo mismo.',
+              'Recuperación de carritos abandonados por WhatsApp, no por un email que nadie abre.',
+              'Atención 24/7 que escala a una persona cuando el caso lo pide.',
+            ]}
+            links={[
+              { label: 'TPV Inteligente para tiendas', to: '/tpv-inteligente' },
+              { label: 'Odoo para ecommerce', to: '/odoo/ecommerce' },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* ═══ CÓMO FUNCIONA ═══ */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="eyebrow mb-3">Cómo funciona</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-balance">De la idea a atendiendo clientes, por fases</h2>
+          </div>
+
+          <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { t: 'Diagnóstico gratuito', d: 'Vemos qué te preguntan más y por dónde se te escapan clientes.' },
+              { t: 'Conexión a tu sistema', d: 'Lo enlazamos con tu Odoo, tu tienda y tu agenda para que responda con datos reales.' },
+              { t: 'Lo entrenamos con tu negocio', d: 'Tu carta, tus horarios, tus políticas y tu tono. Y le ponemos límites.' },
+              { t: 'En marcha y acompañando', d: 'Arranca por WhatsApp y lo afinamos con las conversaciones reales.' },
+            ].map((paso, index) => (
+              <li key={paso.t} className="card-roberta">
+                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-teal font-mono text-base font-semibold text-white">
+                  {index + 1}
+                </span>
+                <h3 className="text-xl mb-2">{paso.t}</h3>
+                <p className="text-pantalla/75">{paso.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ═══ FAQ ═══ */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-12 items-start">
+            <div>
+              <p className="eyebrow mb-3">Preguntas frecuentes</p>
+              <h2 className="text-3xl md:text-4xl mb-8 text-balance">Lo que suelen preguntarnos</h2>
+              <Roberta pose="cara-timida" width={220} />
             </div>
 
-            <div className="slide-in-section">
-              <Card className="h-full bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-                <CardHeader>
-                  <Cpu className="w-16 h-16 text-[#764ba2] mb-4" />
-                  <CardTitle className="text-2xl text-white">LiveKit: La Infraestructura de Comunicación</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 text-gray-400">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0" />
-                      <span>Audio en tiempo real con calidad cristalina</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0" />
-                      <span>Latencia ultra-baja para conversaciones fluidas</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0" />
-                      <span>Escalabilidad empresarial que crece con tu negocio</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-[#764ba2] mt-0.5 flex-shrink-0" />
-                      <span>Integración robusta con sistemas existentes</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
+            <Accordion type="single" collapsible className="w-full">
+              {FAQS.map((faq, index) => (
+                <AccordionItem key={faq.q} value={`faq-${index}`} className="border-b border-greige">
+                  <AccordionTrigger className="text-left font-display text-lg md:text-xl hover:no-underline hover:text-teal-dark py-5">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-base text-pantalla/75 pb-5">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Use Cases */}
-      <section className="py-16 relative">
+      {/* ═══ CTA FINAL ═══ */}
+      <section className="section-dark py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-section text-white">
-            Casos de Uso que Transformarán tu Negocio
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <Headphones className="w-12 h-12 text-[#667eea] mb-4" />
-                <CardTitle className="text-xl text-white">📞 Atención al Cliente</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Resolución de consultas frecuentes</li>
-                  <li>• Seguimiento de pedidos y servicios</li>
-                  <li>• Soporte técnico de primer nivel</li>
-                  <li>• Gestión de quejas y reclamos</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <ShoppingCart className="w-12 h-12 text-[#764ba2] mb-4" />
-                <CardTitle className="text-xl text-white">💼 Ventas y Prospección</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Calificación automática de leads</li>
-                  <li>• Seguimiento de cotizaciones</li>
-                  <li>• Programación de citas comerciales</li>
-                  <li>• Cross-selling y up-selling inteligente</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <Calendar className="w-12 h-12 text-[#667eea] mb-4" />
-                <CardTitle className="text-xl text-white">📋 Servicios Administrativos</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Confirmación de citas médicas</li>
-                  <li>• Recordatorios de pagos</li>
-                  <li>• Encuestas de satisfacción</li>
-                  <li>• Recopilación de datos</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-16 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-[#667eea]/5 rounded-full blur-3xl" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-section text-white">
-            Beneficios Comprobados
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="slide-in-section">
-              <h3 className="text-2xl font-bold mb-6 text-center text-white">Para tu Empresa:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#667eea] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">ROI del 300% en los primeros 12 meses</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#667eea] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">Reducción del 60% en tiempo de respuesta</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#667eea] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">Aumento del 40% en satisfacción del cliente</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#667eea] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">Disponibilidad del 99.9% garantizada</span>
-                </li>
-              </ul>
+          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 text-balance">
+                Deja de perder clientes por no llegar a tiempo. Pon un agente a atender por ti.
+              </h2>
+              <a href={ctaFinal} target="_blank" rel="noopener noreferrer" className="btn-coral">
+                Quiero mi diagnóstico gratuito <ArrowRight className="h-5 w-5" />
+              </a>
+              <p className="mt-5 inline-flex items-center gap-2 text-base text-hueso/70">
+                <ShieldCheck className="h-4 w-4 text-cian-glow" /> Respuesta en 24 h · sin compromiso
+              </p>
             </div>
 
-            <div className="slide-in-section">
-              <h3 className="text-2xl font-bold mb-6 text-center text-white">Para tus Clientes:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#764ba2] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">Atención inmediata sin esperas</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#764ba2] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">Resolución eficiente de consultas</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#764ba2] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">Experiencia consistente y profesional</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#764ba2] flex-shrink-0" />
-                  <span className="text-lg text-gray-300">Disponibilidad total cuando la necesiten</span>
-                </li>
-              </ul>
+            <div className="flex justify-center lg:justify-end">
+              <Roberta pose="guino" width={300} />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Implementation */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-section text-white">
-            Implementación Sin Complicaciones
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <CardTitle className="text-xl text-white">Fase 1: Análisis y Configuración (Semana 1-2)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Análisis de procesos actuales</li>
-                  <li>• Configuración personalizada del agente IA</li>
-                  <li>• Integración con sistemas existentes</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <CardTitle className="text-xl text-white">Fase 2: Entrenamiento y Pruebas (Semana 3-4)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Entrenamiento con datos específicos de tu empresa</li>
-                  <li>• Pruebas internas y ajustes finos</li>
-                  <li>• Validación de flujos de conversación</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <CardTitle className="text-xl text-white">Fase 3: Lanzamiento y Optimización (Semana 5+)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Implementación gradual</li>
-                  <li>• Monitoreo continuo y optimización</li>
-                  <li>• Soporte técnico especializado</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-16 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#764ba2]/5 rounded-full blur-3xl" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-section text-white">
-            Casos de Éxito
-          </h2>
-          <div className="max-w-4xl mx-auto text-center slide-in-section">
-            <blockquote className="text-xl md:text-2xl italic text-gray-300 mb-8">
-              "Implementamos los agentes IA y en el primer mes redujimos los costos de call center en un 65% mientras mejoramos significativamente la satisfacción del cliente."
-            </blockquote>
-            <cite className="text-lg font-semibold text-[#667eea]">
-              — Director de Operaciones, Empresa de Telecomunicaciones
-            </cite>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-section text-white">
-            Inversión y Paquetes
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <CardTitle className="text-2xl text-white">Starter Plan</CardTitle>
-                <CardDescription className="text-3xl font-bold text-[#667eea]">Desde $299/mes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Hasta 1,000 llamadas mensuales</li>
-                  <li>• 1 agente IA personalizado</li>
-                  <li>• Integración básica</li>
-                  <li>• Soporte por email</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-gradient-to-br from-[#667eea]/20 to-[#764ba2]/20 border-[#667eea]/50 border-2 hover:from-[#667eea]/30 hover:to-[#764ba2]/30 transition-all">
-              <CardHeader>
-                <CardTitle className="text-2xl text-white">Professional Plan</CardTitle>
-                <CardDescription className="text-3xl font-bold text-white">Desde $899/mes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Hasta 10,000 llamadas mensuales</li>
-                  <li>• 3 agentes IA especializados</li>
-                  <li>• Integraciones avanzadas</li>
-                  <li>• Analytics y reportes</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="slide-in-section bg-white/[0.05] border-white/10 hover:bg-white/[0.08] transition-all">
-              <CardHeader>
-                <CardTitle className="text-2xl text-white">Enterprise Plan</CardTitle>
-                <CardDescription className="text-3xl font-bold text-[#764ba2]">Consultar</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Llamadas ilimitadas</li>
-                  <li>• Agentes IA ilimitados</li>
-                  <li>• Personalización completa</li>
-                  <li>• Soporte dedicado 24/7</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Final */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#667eea]/20 to-[#764ba2]/20" />
-          <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#667eea]/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#764ba2]/10 rounded-full blur-3xl" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white slide-in-section">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Soluciones Específicas por Sector</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">
-            Descubre nuestras soluciones personalizadas para diferentes industrias
-          </p>
-          
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
-            <Button asChild size="lg" className="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:shadow-lg hover:shadow-[#667eea]/40 text-white border-0">
-              <a href="/agentes-ia/restaurantes" className="flex items-center space-x-2">
-                <ChefHat className="w-5 h-5" />
-                <span>🍽️ Solución para Restaurantes</span>
-              </a>
-            </Button>
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">¿Listo para el Futuro?</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">
-            No esperes a que tu competencia tome la delantera. Los agentes telefónicos IA no son el futuro, son el presente.
-          </p>
-          <h3 className="text-2xl font-bold mb-8">Agenda tu Demo Gratuita Hoy</h3>
-          
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-8">
-            <Button asChild size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/20">
-              <a href="mailto:info@robotsconsultant.net" className="flex items-center space-x-2">
-                <Mail className="w-5 h-5" />
-                <span>info@robotsconsultant.net</span>
-              </a>
-            </Button>
-            <Button asChild size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/20">
-              <a href="https://wa.me/34641526150" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
-                <Phone className="w-5 h-5" />
-                <span>+34 641 52 61 50</span>
-              </a>
-            </Button>
-          </div>
-          
-          <p className="text-xl font-semibold text-gray-300">
-            La revolución de la atención al cliente comienza con una llamada.<br />
-            ¿Estás listo para liderar el cambio?
-          </p>
         </div>
       </section>
 

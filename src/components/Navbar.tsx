@@ -34,6 +34,7 @@ const NAV: NavItem[] = [
       { label: 'Odoo Ecommerce', to: '/odoo/ecommerce' },
     ],
   },
+  { label: 'Agentes IA', to: '/agentes-ia' },
   { label: 'Apps con IA', to: '/apps-personalizadas' },
   { label: 'Robótica', to: '/robotica' },
   { label: 'Tienda', to: 'https://cursos.robotsconsultant.net/', external: true },
