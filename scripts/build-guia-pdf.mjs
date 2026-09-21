@@ -12,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
 const GUIAS = [
-  { src: 'guias-pdf/guia-6-fugas.html', out: 'public/guia-6-fugas.pdf' },
+  { src: 'guias-pdf/guia-6-fugas.html', out: 'public/guia-las-6-fugas.pdf' },
 ]
 
 const run = async () => {
