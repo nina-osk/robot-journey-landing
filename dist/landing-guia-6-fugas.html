@@ -31,12 +31,12 @@
   header img{height:46px}
 
   /* HERO */
-  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:52px 0 70px}
+  .hero{display:block;padding:52px 0 60px}
   .badge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;letter-spacing:.11em;
     text-transform:uppercase;color:var(--accent);background:rgba(255,210,51,.09);border:1px solid rgba(255,210,51,.28);
     border-radius:99px;padding:7px 15px;margin-bottom:22px}
   .hstars{color:#FBBC04;font-size:2.1rem;letter-spacing:7px;line-height:1;margin-bottom:16px}
-  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:3.7rem;line-height:1.05;letter-spacing:-.015em;margin-bottom:20px}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.5rem;line-height:1.14;letter-spacing:-.01em;margin-bottom:18px;max-width:880px}
   .gstar{color:#FBBC04;font-size:.72em;vertical-align:.08em;margin-left:.08em}
   h1 em{font-style:normal;color:var(--accent)}
   .hero p.sub{font-size:1.13rem;line-height:1.62;color:#C7CFE6;max-width:520px;margin-bottom:26px}
@@ -90,7 +90,7 @@
 
   /* FORM */
   .formsec{padding:44px 0 80px}
-  .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
   .formpoints h2{font-size:1.9rem;margin-bottom:12px}
   .formpoints .lead{margin-bottom:24px}
   .plist{list-style:none;display:flex;flex-direction:column;gap:15px}
@@ -143,7 +143,7 @@
 
   @media(max-width:860px){
     .hero{grid-template-columns:1fr;gap:44px;padding:36px 0 50px}
-    h1{font-size:2.5rem}
+    h1{font-size:1.85rem}
     .grid6{grid-template-columns:1fr}
     .row2{grid-template-columns:1fr}
     .fcard{padding:32px 24px 28px}
@@ -164,30 +164,9 @@
     <div>
       <div class="badge">Guía gratuita para restaurantes y cafeterías con alta rotación</div>
       <div class="hstars" aria-label="Cinco estrellas">★★★★★</div>
-      <h1>Cocinas bien.<br>Entonces, <em>¿por qué no llegas a 4,5<span class="gstar">★</span>?</em></h1>
-      <p class="sub">Las 6 fugas por las que un restaurante con buena comida se queda en 3 estrellas en Google o menos — y cómo taparlas.</p>
+      <h1>Las 6 fugas por las que tu restaurante con buena comida se queda en <em>3 estrellas o menos</em> en las reseñas de Google.</h1>
+      <p class="sub">Cocinas bien. Entonces, ¿por qué no llegas a 4,5<span class="gstar">★</span>?</p>
       <div class="trust"><span>📄 4 páginas, sin relleno</span><span>⏱️ Se lee en 6 minutos</span><span>🔒 Descarga inmediata</span></div>
-    </div>
-    <div>
-      <div class="mock">
-        <div class="greview">
-          <div class="grh">
-            <span class="grscore">4,0</span>
-            <span class="grstars">★★★★<span class="e">★</span></span>
-            <span class="grcount">667 reseñas</span>
-          </div>
-          <div class="grrev">
-            <div class="grrh">
-              <span class="gr1">★<span class="e">★★★★</span></span>
-              <span class="grago">hace una semana</span>
-              <span class="grnew">Nueva</span>
-            </div>
-            <p class="grtext">«Decepcionante en todos los aspectos. Teníamos reserva a las 15:00 y nos sentaron a las 15:40. Mala gestión del restaurante… No volveré.»</p>
-            <div class="grthumbs">👍 3</div>
-          </div>
-        </div>
-      </div>
-      <div class="mock-tag">El cliente contento no la escribe. El decepcionado, sí — y te baja la nota.</div>
     </div>
   </div>
 </div>
