@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Las 6 fugas de estrellas · RobotsConsultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10131F; --navy:#1B2440; --text:#22262F; --muted:#5A6270;
+    --line:#E6E8EE; --accent:#F5C518; --blue:#2C3E7A; --soft:#F5F7FA;
+    --softy:#FFF9E6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  @page{ size:A4; margin:0 }
+  html,body{ font-family:'Inter',system-ui,sans-serif; color:var(--text); -webkit-print-color-adjust:exact; print-color-adjust:exact }
+  h1,h2,h3,h4,.dsp{ font-family:'Space Grotesk',sans-serif }
+
+  .page{ position:relative; width:210mm; height:297mm; padding:22mm 20mm 18mm; page-break-after:always; overflow:hidden; background:#fff }
+  .page:last-child{ page-break-after:auto }
+  .foot{ position:absolute; left:20mm; right:20mm; bottom:12mm; font-size:8.5pt; color:#9AA1AD; letter-spacing:.02em; display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-top:6px }
+
+  .eyebrow{ font-family:'Space Grotesk',sans-serif; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--blue); font-weight:700; margin-bottom:14px }
+  .eyebrow.gold{ color:#B8891A }
+
+  /* ---------- PORTADA ---------- */
+  .cover{ background:var(--ink); color:#fff; padding:26mm 22mm }
+  .cover .brand{ display:flex; align-items:center; gap:11px; margin-bottom:auto }
+  .cover .brand .mk{ width:34px;height:34px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#10131F;font-family:'Space Grotesk';font-weight:700;font-size:15pt }
+  .cover .brand b{ font-family:'Space Grotesk'; font-weight:700; letter-spacing:.02em; font-size:12pt }
+  .cover .stars{ color:var(--accent); font-size:15pt; letter-spacing:5px; margin:120mm 0 14px }
+  .cover .ceye{ font-family:'Space Grotesk'; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:16px }
+  .cover h1{ font-size:34pt; line-height:1.06; font-weight:700; letter-spacing:-.02em; max-width:150mm }
+  .cover h1 em{ font-style:normal; color:var(--accent) }
+  .cover .rule{ width:56px;height:4px;background:var(--accent);border-radius:4px;margin:20px 0 }
+  .cover .csub{ font-size:12pt; line-height:1.55; color:#C7CCD6; max-width:135mm }
+  .cover .cby{ position:absolute; left:22mm; bottom:22mm; font-size:9.5pt; color:#8990A0 }
+  .cover .cby b{ color:#fff; font-weight:600 }
+
+  /* ---------- INTRO ---------- */
+  h2.big{ font-size:23pt; line-height:1.14; font-weight:700; letter-spacing:-.01em; color:var(--ink); margin-bottom:14px; max-width:150mm }
+  h2.big em{ font-style:normal; color:#B8891A }
+  p.lead{ font-size:11.5pt; line-height:1.62; color:#3A414D; margin-bottom:12px }
+  p.body{ font-size:10.5pt; line-height:1.62; color:#424854; margin-bottom:10px }
+  .callbox{ background:var(--ink); color:#fff; border-radius:12px; padding:20px 22px; margin:16px 0 }
+  .callbox h4{ color:var(--accent); font-size:11pt; margin-bottom:8px }
+  .callbox p{ font-size:10pt; line-height:1.6; color:#D6DAE2 }
+  .toc{ margin-top:18px; border-top:1px solid var(--line) }
+  .toc a,.toc div{ display:flex; align-items:baseline; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--text) }
+  .toc .tn{ font-family:'Space Grotesk'; font-weight:700; color:var(--accent); width:26px; flex:0 0 26px; font-size:12pt }
+  .toc .tt{ font-family:'Space Grotesk'; font-weight:500; font-size:11.5pt; flex:1 }
+  .toc .tp{ color:#9AA1AD; font-size:9.5pt }
+
+  /* ---------- CAPÍTULO ---------- */
+  .chap-h{ display:flex; align-items:center; gap:16px; margin-bottom:6px }
+  .chap-n{ width:46px;height:46px;flex:0 0 46px;border-radius:50%;background:var(--accent);color:#10131F;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:18pt }
+  .chap-k{ font-family:'Space Grotesk'; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted) }
+  h3.chap-t{ font-size:19pt; line-height:1.12; font-weight:700; color:var(--ink); letter-spacing:-.01em; margin:2px 0 16px }
+
+  .stat{ background:var(--soft); border-left:4px solid var(--blue); border-radius:0 10px 10px 0; padding:15px 18px; margin:14px 0 }
+  .stat .big{ font-family:'Space Grotesk'; font-weight:700; font-size:16pt; color:var(--ink); line-height:1.2; margin-bottom:5px }
+  .stat .src{ font-size:8.5pt; color:var(--muted); font-style:italic }
+  .stat .src b{ font-style:normal; color:var(--blue); font-weight:700 }
+
+  .signal{ font-size:10pt; color:#7A818D; margin:12px 0 }
+  .signal b{ font-family:'Space Grotesk'; color:var(--ink); font-style:normal; font-weight:700 }
+  .signal i{ color:#B8891A; font-style:italic }
+
+  .fix{ background:var(--softy); border:1px solid #F0E2A8; border-radius:10px; padding:14px 18px; margin-top:14px }
+  .fix b{ font-family:'Space Grotesk'; color:#8A6A12; font-weight:700 }
+  .fix span{ font-size:10pt; line-height:1.55; color:#5B5327 }
+
+  /* ---------- FUENTES ---------- */
+  ul.src-list{ list-style:none; margin-top:8px }
+  ul.src-list li{ padding:12px 0; border-bottom:1px solid var(--line); font-size:9.5pt; line-height:1.5; color:#424854 }
+  ul.src-list li b{ font-family:'Space Grotesk'; color:var(--ink); font-weight:700 }
+  .disc{ font-size:8.5pt; color:#9AA1AD; line-height:1.5; margin-top:16px }
+
+  /* ---------- CTA ---------- */
+  .cta{ background:var(--ink); color:#fff; border-radius:14px; padding:26px 28px; margin-top:8px }
+  .cta .k{ font-family:'Space Grotesk'; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:10px }
+  .cta h3{ font-size:17pt; line-height:1.2; margin-bottom:12px }
+  .cta p{ font-size:10pt; line-height:1.6; color:#D6DAE2; margin-bottom:16px }
+  .cta .wa{ display:inline-block; background:var(--accent); color:#10131F; font-family:'Space Grotesk'; font-weight:700; font-size:11pt; padding:12px 22px; border-radius:9px; text-decoration:none }
+  .cta .sl{ font-size:9pt; color:#8990A0; margin-top:12px }
+</style>
+</head>
+<body>
+
+<!-- ══════════ PORTADA ══════════ -->
+<section class="page cover">
+  <div class="brand"><span class="mk">R</span><b>RobotsConsultant</b></div>
+  <div class="stars">★★★★★</div>
+  <div class="ceye">Guía para restaurantes y cafeterías</div>
+  <h1>La cocina <em>no es</em> el problema</h1>
+  <div class="rule"></div>
+  <div class="csub">Las 6 fugas por las que un buen restaurante se queda en tres estrellas — con el dato de cada estudio y de dónde sale.</div>
+  <div class="cby"><b>RobotsConsultant</b> · Método 5 Estrellas<br>Osca — Oscarina Hernández</div>
+</section>
+
+<!-- ══════════ INTRO + ÍNDICE ══════════ -->
+<section class="page">
+  <div class="eyebrow">Empecemos por aquí</div>
+  <h2 class="big">Tus malas reseñas casi nunca hablan de tu comida. <em>Hablan de tu operativa.</em></h2>
+  <p class="lead">«Tardaron mucho». «Se equivocaron con mi pedido». «No me atendían para pagar». Fíjate: casi ninguna dice que se coma mal. Hablan del <b>servicio</b>, no de la cocina.</p>
+  <p class="body">Y eso son buenas noticias, porque el servicio se arregla con un sistema, no cocinando más. En las páginas siguientes tienes las seis fugas por las que un restaurante con buena comida se queda en 3 estrellas. Para cada una verás el dato del sector <b>con su fuente</b>, la señal que la delata en tus reseñas y qué se arregla sin contratar a nadie más.</p>
+
+  <div class="callbox">
+    <h4>El dato que lo resume todo</h4>
+    <p>Subir una sola estrella en tu valoración media puede aumentar los ingresos de un restaurante entre un <b style="color:#F5C518">5% y un 9%</b>. No es cuestión de orgullo: es tu ocupación de los sábados. <span style="color:#9AA1AD">(Luca, Harvard Business School — ver Fuentes.)</span></p>
+  </div>
+
+  <div class="eyebrow gold" style="margin-top:20px">Las 6 fugas</div>
+  <div class="toc">
+    <div><span class="tn">1</span><span class="tt">La reseña empieza antes del primer bocado</span><span class="tp">pág. 3</span></div>
+    <div><span class="tn">2</span><span class="tt">«Esto no es lo que pedí»</span><span class="tp">pág. 4</span></div>
+    <div><span class="tn">3</span><span class="tt">«La otra vez estaba mejor»</span><span class="tp">pág. 5</span></div>
+    <div><span class="tn">4</span><span class="tt">«Parecía que molestábamos»</span><span class="tp">pág. 6</span></div>
+    <div><span class="tn">5</span><span class="tt">«Buenísimo todo… pero pagar fue un suplicio»</span><span class="tp">pág. 7</span></div>
+    <div><span class="tn">6</span><span class="tt">La estrella que se recupera contestando</span><span class="tp">pág. 8</span></div>
+  </div>
+  <div class="foot"><span>RobotsConsultant · Método 5 Estrellas</span><span>Página 2</span></div>
+</section>
+
+<!-- ══════════ FUGA 1 ══════════ -->
+<section class="page">
+  <div class="chap-h">
+    <div class="chap-n">1</div>
+    <div><div class="chap-k">La espera</div></div>
+  </div>
+  <h3 class="chap-t">La reseña empieza antes del primer bocado</h3>
+  <p class="body">La primera impresión no es el plato: es la acogida. Antes de probar nada, el cliente ya está puntuando cuánto tarda alguien en mirarle. Si a las 8:30 hay cola en barra y nadie se acerca a la mesa, la reseña de tres estrellas ya está escrita — aunque luego la comida sea excelente.</p>
+  <div class="stat">
+    <div class="big">+1 estrella = +5% a +9% de ingresos</div>
+    <div class="src"><b>Fuente:</b> Michael Luca, <i>Reviews, Reputation, and Revenue: The Case of Yelp.com</i>, Harvard Business School (2016).</div>
+  </div>
+  <p class="body">Cada minuto de espera al principio te está costando parte de esa estrella. Y la estrella, ya has visto, se traduce en dinero.</p>
+  <div class="signal"><b>La señal:</b> <i>«Estuvimos 15 minutos con la carta en la mano sin que nadie viniera».</i></div>
+  <div class="fix"><b>Qué lo arregla:&nbsp;</b><span>Carta digital con QR para que el cliente vea y pida a su ritmo, y un punto de autoservicio que no deja a nadie esperando en hora punta. Menos espera percibida, menos fuga.</span></div>
+  <div class="foot"><span>RobotsConsultant · Método 5 Estrellas</span><span>Página 3</span></div>
+</section>
+
+<!-- ══════════ FUGA 2 ══════════ -->
+<section class="page">
+  <div class="chap-h">
+    <div class="chap-n">2</div>
+    <div><div class="chap-k">El pedido</div></div>
+  </div>
+  <h3 class="chap-t">«Esto no es lo que pedí»</h3>
+  <p class="body">Un pedido equivocado rara vez es despiste del camarero: es la comunicación entre sala y cocina. La comanda cantada a voces, el papelito que se traspapela, el «¿esto de quién era?». Y un error visible pesa mucho más que diez aciertos silenciosos.</p>
+  <div class="stat">
+    <div class="big">Cerca de 9 de cada 10 leen tus reseñas</div>
+    <div class="src"><b>Fuente:</b> BrightLocal, <i>Local Consumer Review Survey</i> — la gran mayoría de consumidores lee reseñas online de negocios locales antes de decidir.</div>
+  </div>
+  <p class="body">Es decir: ese «se equivocaron con mi plato» no lo lee una persona. Lo leen casi todas las que dudaban entre tu restaurante y el de al lado.</p>
+  <div class="signal"><b>La señal:</b> <i>«Se equivocaron con mi plato y encima tardó una eternidad».</i></div>
+  <div class="fix"><b>Qué lo arregla:&nbsp;</b><span>Comanda digital que viaja de la mesa a la cocina sin traducciones, y pantallas de cocina con orden de salida y tiempos. La comanda no se grita: llega sola y correcta.</span></div>
+  <div class="foot"><span>RobotsConsultant · Método 5 Estrellas</span><span>Página 4</span></div>
+</section>
+
+<!-- ══════════ FUGA 3 ══════════ -->
+<section class="page">
+  <div class="chap-h">
+    <div class="chap-n">3</div>
+    <div><div class="chap-k">La consistencia</div></div>
+  </div>
+  <h3 class="chap-t">«La otra vez estaba mejor»</h3>
+  <p class="body">Lo que fideliza no es el día que bordas un plato: es que siempre esté igual de bueno. La inconsistencia —hoy generoso, mañana justo; hoy en su punto, mañana pasado— es lo que rompe la confianza que traía al cliente de vuelta.</p>
+  <div class="stat">
+    <div class="big">Confían en tus reseñas casi como en un amigo</div>
+    <div class="src"><b>Fuente:</b> ReviewTrackers, <i>Online Reviews Statistics</i> — los consumidores confían en las reseñas online casi tanto como en una recomendación personal.</div>
+  </div>
+  <p class="body">Si tu reputación pesa casi como el boca a boca, cada plato inconsistente es una grieta en esa recomendación pública que es tu ficha de Google.</p>
+  <div class="signal"><b>La señal:</b> <i>«Fuimos porque nos encantó, pero la otra vez estaba mejor».</i></div>
+  <div class="fix"><b>Qué lo arregla:&nbsp;</b><span>Fichas de producto y escandallos que estandarizan cada plato, y un sistema que te enseña qué referencia y a qué hora se te cae la nota, para corregir con datos y no con corazonadas.</span></div>
+  <div class="foot"><span>RobotsConsultant · Método 5 Estrellas</span><span>Página 5</span></div>
+</section>
+
+<!-- ══════════ FUGA 4 ══════════ -->
+<section class="page">
+  <div class="chap-h">
+    <div class="chap-n">4</div>
+    <div><div class="chap-k">El trato percibido</div></div>
+  </div>
+  <h3 class="chap-t">«Parecía que molestábamos»</h3>
+  <p class="body">Casi ninguna queja de trato es por mala educación de verdad. Es sensación de descuido: un equipo desbordado, apagando fuegos, que no llega a mirar a los ojos. El cliente no siente antipatía; siente que sobra. Y eso se escribe.</p>
+  <div class="stat">
+    <div class="big">Cerca del 94% evita un negocio por una mala reseña</div>
+    <div class="src"><b>Fuente:</b> ReviewTrackers — una parte muy alta de los consumidores afirma que una mala reseña les ha hecho evitar un negocio.</div>
+  </div>
+  <p class="body">Una sensación de «molestábamos» no se queda en esa mesa: aparta a mucha de la gente que la lee después.</p>
+  <div class="signal"><b>La señal:</b> <i>«La comida bien, pero parecía que molestábamos».</i></div>
+  <div class="fix"><b>Qué lo arregla:&nbsp;</b><span>Quitarle a tu equipo lo mecánico —apuntar, ir y venir a cobrar, cantar comandas— para que dedique ese tiempo a atender personas. Un camarero que atiende genera reseñas; uno que hace de recadero, no.</span></div>
+  <div class="foot"><span>RobotsConsultant · Método 5 Estrellas</span><span>Página 6</span></div>
+</section>
+
+<!-- ══════════ FUGA 5 ══════════ -->
+<section class="page">
+  <div class="chap-h">
+    <div class="chap-n">5</div>
+    <div><div class="chap-k">El pago</div></div>
+  </div>
+  <h3 class="chap-t">«Buenísimo todo… pero pagar fue un suplicio»</h3>
+  <p class="body">La última impresión es la que se escribe. Puedes clavar la comida, el trato y el ritmo, y arruinarlo todo con diez minutos de mano levantada esperando la cuenta. Es la reseña más cruel: la que empieza con un elogio y termina en tres estrellas.</p>
+  <div class="stat">
+    <div class="big">Lo que recuerdan es el final</div>
+    <div class="src"><b>Fuente:</b> la «regla pico-final» (peak-end rule), Daniel Kahneman — recordamos una experiencia sobre todo por su momento más intenso y por cómo termina.</div>
+  </div>
+  <p class="body">Si el final de tu servicio es una cola para pagar, ese es el recuerdo que se lleva el cliente… y el que deja por escrito.</p>
+  <div class="signal"><b>La señal:</b> <i>«Buenísimo todo, pero las colas para pagar son insufribles».</i></div>
+  <div class="fix"><b>Qué lo arregla:&nbsp;</b><span>Pago en la propia mesa, autopago o cajón de cobro automático: que nadie tenga que esperar —ni buscar— para pagar. El último minuto, redondo.</span></div>
+  <div class="foot"><span>RobotsConsultant · Método 5 Estrellas</span><span>Página 7</span></div>
+</section>
+
+<!-- ══════════ FUGA 6 ══════════ -->
+<section class="page">
+  <div class="chap-h">
+    <div class="chap-n">6</div>
+    <div><div class="chap-k">La respuesta</div></div>
+  </div>
+  <h3 class="chap-t">La estrella que se recupera contestando</h3>
+  <p class="body">Es la fuga más barata de tapar y la que casi nadie trabaja: responder a las reseñas. Una queja contestada con cabeza no solo recupera a ese cliente; le enseña a todos los que la leen que detrás hay alguien que se ocupa.</p>
+  <div class="stat">
+    <div class="big">Quien responde, gana más</div>
+    <div class="src"><b>Fuente:</b> Womply, análisis de negocios locales — los que responden a sus reseñas tienden a ingresar más que los que las ignoran.</div>
+  </div>
+  <p class="body">Y ojo con la trampa: pedir reseñas solo a los clientes contentos («review gating») viola las políticas de Google y puede costarte la ficha entera. El sistema no manipula: arregla la operativa para que las buenas lleguen solas.</p>
+  <div class="signal"><b>La señal:</b> <i>reseñas negativas de hace meses, sin una sola respuesta.</i></div>
+  <div class="fix"><b>Qué lo arregla:&nbsp;</b><span>Un proceso para responder rápido y con criterio, y un motor de reseñas que invita a valorar en el momento justo —tras el pago, en el pico de satisfacción— a todos por igual.</span></div>
+  <div class="foot"><span>RobotsConsultant · Método 5 Estrellas</span><span>Página 8</span></div>
+</section>
+
+<!-- ══════════ FUENTES + CTA ══════════ -->
+<section class="page">
+  <div class="eyebrow">De dónde salen los datos</div>
+  <h2 class="big" style="font-size:20pt">Fuentes</h2>
+  <ul class="src-list">
+    <li><b>Michael Luca — Harvard Business School.</b> <i>Reviews, Reputation, and Revenue: The Case of Yelp.com</i> (2016). Estima que subir una estrella en la valoración media se asocia a un aumento de ingresos de entre el 5% y el 9%.</li>
+    <li><b>BrightLocal.</b> <i>Local Consumer Review Survey</i> (informe anual). La gran mayoría de consumidores lee reseñas online de negocios locales y tiene en cuenta la nota media y las reseñas recientes al elegir.</li>
+    <li><b>ReviewTrackers.</b> <i>Online Reviews Statistics &amp; Trends</i>. La confianza en las reseñas online es comparable a la de una recomendación personal; una parte muy alta de consumidores evita un negocio tras una mala reseña.</li>
+    <li><b>Womply.</b> Análisis de reseñas y facturación de pequeños negocios. Los que responden a sus reseñas tienden a registrar más ingresos que los que no lo hacen.</li>
+    <li><b>Daniel Kahneman.</b> Regla «pico-final» (peak-end rule), psicología del recuerdo. La valoración de una experiencia depende sobre todo de su momento más intenso y de cómo termina.</li>
+  </ul>
+  <p class="disc">Las cifras son referencias publicadas del sector y de la investigación citada; no son garantías de resultado para un negocio concreto. La prohibición del «review gating» (pedir reseñas solo a clientes satisfechos) es política vigente de Google.</p>
+
+  <div class="cta" style="margin-top:22px">
+    <div class="k">Tu siguiente paso · gratis</div>
+    <h3>Te leo tus últimas 30 reseñas y te digo cuál es tu fuga</h3>
+    <p>Antes de hablar de nada, me leo tus reseñas reales de Google y te devuelvo por escrito las tres quejas operativas que más se repiten en tu local. Sin compromiso.</p>
+    <a class="wa" href="https://wa.me/34641526150?text=Hola%20Osca%2C%20le%C3%AD%20la%20gu%C3%ADa%20de%20las%206%20fugas%20y%20quiero%20mi%20an%C3%A1lisis%20de%20rese%C3%B1as">Quiero mi análisis de reseñas →</a>
+    <div class="sl">WhatsApp +34 641 526 150 · Respuesta en menos de 24 h</div>
+  </div>
+  <div class="foot"><span>© RobotsAdvisors OÜ (RobotsConsultant) · robotsconsultant.net</span><span>Página 9</span></div>
+</section>
+
+</body>
+</html>

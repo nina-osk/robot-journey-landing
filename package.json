@@ -11,7 +11,8 @@
     "build:ssg": "node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "guia:pdf": "node scripts/build-guia-pdf.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
