@@ -1,8 +1,11 @@
 import {
   ArrowRight, Check, X, Clock, Wrench, Map, LifeBuoy,
   ShieldCheck, Sparkles, Phone, BarChart3, Workflow, PlayCircle,
+  MessageCircle, ChevronDown,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import Roberta from '@/components/Roberta';
+import RetellSlot from '@/components/RetellSlot';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -189,7 +192,7 @@ const MentoriaIA = () => {
       <header className="pt-28 pb-16 md:pt-36 md:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
-            <div>
+            <div className="hero-rise">
               <p className="eyebrow mb-4">Mentoría privada 1:1 · Ecommerce</p>
               <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.08] mb-6 text-balance">
                 Tu primer asistente de IA de voz trabajando en tu tienda online en 21 días
@@ -233,7 +236,7 @@ const MentoriaIA = () => {
             </div>
 
             {/* Foto enmarcada + precio flotante */}
-            <div className="relative">
+            <div className="relative hero-rise" style={{ animationDelay: '0.15s' }}>
               <div className="rounded-card overflow-hidden border border-greige shadow-[0_18px_50px_-20px_rgba(23,23,27,0.28)]">
                 <img
                   src="/oscarina-mentoria.jpg"
@@ -244,12 +247,15 @@ const MentoriaIA = () => {
                   loading="eager"
                 />
               </div>
-              <div className="card-roberta -mt-10 mx-4 relative z-10 text-center">
-                <p className="eyebrow mb-1">Precio de lanzamiento</p>
-                <p className="font-display text-4xl leading-none">297 €</p>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-coral-dark mt-2">
-                  Solo 5 plazas fundadoras
-                </p>
+              {/* La flotación va en un envoltorio: la tarjeta ya usa transform para aparecer */}
+              <div className="animate-float -mt-10 mx-4 relative z-10">
+                <div className="card-roberta text-center">
+                  <p className="eyebrow mb-1">Precio de lanzamiento</p>
+                  <p className="font-display text-4xl leading-none">297 €</p>
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-coral-dark mt-2">
+                    Solo 5 plazas fundadoras
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -349,6 +355,47 @@ const MentoriaIA = () => {
               que realmente necesita una persona.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ PRUÉBALO — Roberta con su cartel + demo de voz (Retell) ═══ */}
+      <section id="pruebalo" className="py-16 md:py-24 scroll-mt-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="grid grid-cols-[auto_1fr] items-center gap-4 md:gap-10 max-w-2xl mx-auto mb-10">
+            <div className="roberta-sway w-28 sm:w-40 md:w-[200px]">
+              <Roberta pose="saludando" width={200} />
+            </div>
+
+            {/* Cartel en forma de bocadillo: sale de Roberta y se mece hacia ella */}
+            <div className="sign-swing relative" style={{ transformOrigin: '0% 60%' }}>
+              <span
+                className="absolute left-0 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b-2 border-l-2 border-teal-dark bg-white"
+                aria-hidden
+              />
+              <div className="rounded-card border-2 border-teal-dark bg-white p-4 sm:p-6 text-center shadow-[0_18px_40px_-18px_rgba(23,23,27,0.3)]">
+                <p className="eyebrow mb-2">¿Te quedan dudas?</p>
+                <p className="font-display text-lg sm:text-2xl leading-tight mb-4 sm:mb-5 text-balance">
+                  Escríbeme por WhatsApp o prueba mi asistente de voz aquí abajo
+                </p>
+                <a
+                  href={CTA}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-coral w-full px-4 py-3 text-sm sm:px-7 sm:py-3.5 sm:text-base"
+                >
+                  <MessageCircle className="h-5 w-5 shrink-0" />
+                  <span className="sm:hidden">Abrir WhatsApp</span>
+                  <span className="hidden sm:inline">Escribir por WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="nudge-down mb-6 flex justify-center text-teal-dark" aria-hidden>
+            <ChevronDown className="h-9 w-9" />
+          </div>
+
+          <RetellSlot />
         </div>
       </section>
 
