@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer'
-import { spawn } from 'child_process'
+import { spawn, spawnSync } from 'child_process'
 import { writeFileSync, mkdirSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
@@ -47,7 +47,13 @@ async function prerender() {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   })
 
-  for (const route of routes) {
+  // La última pasada es una URL inexistente: React pinta NotFound y se guarda
+  // como dist/404.html, que nginx sirve con estado 404 (error_page).
+  const NOT_FOUND = '/__404__'
+
+  let failed = 0
+
+  for (const route of [...routes, NOT_FOUND]) {
     const page = await browser.newPage()
     await page.setViewport({ width: 1280, height: 800 })
 
@@ -63,10 +69,18 @@ async function prerender() {
 
     try {
       try {
-        await page.goto(`http://localhost:${PORT}${route}`, {
+        // La 404 no se pide al servidor: vite preview falla en rutas que no
+        // existen en dist/. Se carga la home y se navega dentro de React Router.
+        await page.goto(`http://localhost:${PORT}${route === NOT_FOUND ? '/' : route}`, {
           waitUntil: 'networkidle2',
           timeout: 20000,
         })
+        if (route === NOT_FOUND) {
+          await page.evaluate((path) => {
+            history.pushState({}, '', path)
+            dispatchEvent(new PopStateEvent('popstate'))
+          }, NOT_FOUND)
+        }
       } catch (_) {
         // timeout or network never settled — still capture what rendered
       }
@@ -76,8 +90,16 @@ async function prerender() {
 
       const html = await page.content()
 
+      // Si vite preview no responde, Chrome devuelve su propia página de error
+      // y antes se guardaba igual, machacando el HTML bueno. Mejor no escribir.
+      if (!html.includes('<div id="root">') || html.includes('ERR_CONNECTION')) {
+        throw new Error('la página no cargó (¿vite preview caído?)')
+      }
+
       const filePath =
-        route === '/'
+        route === NOT_FOUND
+          ? join(DIST, '404.html')
+          : route === '/'
           ? join(DIST, 'index.html')
           : join(DIST, route.slice(1), 'index.html')
 
@@ -88,6 +110,7 @@ async function prerender() {
       console.log(`✅ ${route}`)
     } catch (err) {
       console.error(`❌ ${route}: ${err.message}`)
+      failed++
     } finally {
       await page.close()
     }
@@ -95,7 +118,17 @@ async function prerender() {
 
   await browser.close()
 
-  server.kill()
+  // Con shell:true, en Windows server.kill() solo mata la shell y vite preview
+  // queda huérfano en el puerto 4173. Hay que matar el árbol entero.
+  if (process.platform === 'win32') {
+    spawnSync('taskkill', ['/pid', String(server.pid), '/T', '/F'], { stdio: 'ignore' })
+  } else {
+    server.kill()
+  }
+  if (failed) {
+    console.error(`\n💥 ${failed} ruta(s) fallaron. NO despliegues este dist/.`)
+    process.exit(1)
+  }
   console.log('\n✨ Pre-rendering complete! Static HTML saved to dist/')
   process.exit(0)
 }
