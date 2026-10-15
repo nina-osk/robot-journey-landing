@@ -35,6 +35,7 @@ const NAV: NavItem[] = [
     ],
   },
   { label: 'Agentes IA', to: '/agentes-ia' },
+  { label: 'Mentoría IA', to: '/mentoria-ia' },
   { label: 'Apps con IA', to: '/apps-personalizadas' },
   { label: 'Robótica', to: '/robotica' },
   { label: 'Tienda', to: 'https://cursos.robotsconsultant.net/', external: true },

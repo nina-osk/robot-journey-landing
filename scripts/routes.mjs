@@ -41,7 +41,7 @@ export const routes = [
   { path: '/agentes-ia', priority: 0.8, changefreq: 'monthly' },
   { path: '/transformacion-digital', priority: 0.7, changefreq: 'monthly' },
   { path: '/agentes-ia/restaurantes', priority: 0.7, changefreq: 'monthly' },
-  { path: '/mentoria-ia', priority: 0.6, changefreq: 'monthly' },
+  { path: '/mentoria-ia', priority: 0.9, changefreq: 'weekly' },
 
   // Marca / contacto
   { path: '/sobre-mi', priority: 0.6, changefreq: 'monthly' },
