@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Dónde está mi pedido? · Guía gratuita para tiendas online · RobotsQueen</title>
+<meta name="description" content="Guía gratuita para ecommerce: el método de 4 pasos para que dejen de preguntarte «¿dónde está mi pedido?» y reducir hasta un 80% los mensajes de seguimiento.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<style>
+  :root{
+    --ink:#0A0C16; --surface:#141B33; --surface-2:#1B2440; --line:#2A3354;
+    --text:#FBFCF1; --muted:#9AA3C2; --accent:#FFD233;
+    --blue:#3C58A7; --purple:#867BBA; --coral:#E8825A; --ok:#54C7A6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* glow de fondo */
+  .glow{position:fixed;top:-320px;left:50%;transform:translateX(-50%);width:900px;height:620px;
+    background:radial-gradient(ellipse at center,rgba(60,88,167,.32),transparent 68%);pointer-events:none;z-index:0}
+  .glow2{position:fixed;bottom:-380px;right:-160px;width:760px;height:700px;
+    background:radial-gradient(ellipse at center,rgba(232,130,90,.16),transparent 70%);pointer-events:none;z-index:0}
+  .page{position:relative;z-index:1}
+
+  header{padding:26px 0 0}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;
+    font-size:1.05rem;letter-spacing:.02em;color:var(--text)}
+  .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--coral)}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:48px 0 66px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--accent);background:rgba(255,210,51,.09);border:1px solid rgba(255,210,51,.28);
+    border-radius:99px;padding:7px 15px;margin-bottom:22px}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:3.05rem;line-height:1.07;letter-spacing:-.015em;margin-bottom:20px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .hero p.sub{font-size:1.13rem;line-height:1.62;color:#C7CFE6;max-width:520px;margin-bottom:26px}
+  .trust{display:flex;flex-wrap:wrap;gap:9px}
+  .trust span{font-size:.83rem;color:var(--text);background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:99px;padding:8px 15px}
+
+  /* mockup del PDF */
+  .mock{perspective:1400px;display:flex;justify-content:center}
+  .cover{width:300px;aspect-ratio:1/1.414;background:linear-gradient(158deg,#F3EDE4,#E7DFD3);color:#1B2440;
+    border:1px solid #CDBFA9;border-radius:12px;padding:28px 26px;position:relative;
+    transform:rotateY(-13deg) rotateX(4deg) rotate(-1.5deg);
+    box-shadow:-24px 34px 70px rgba(0,0,0,.62), 0 0 0 1px rgba(255,255,255,.05) inset;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .cover:hover{transform:rotateY(-6deg) rotateX(2deg) rotate(0deg)}
+  .cover .ctop{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+  .cover .cbrand{display:inline-flex;align-items:center;gap:6px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;color:#1B2440}
+  .cover .cbrand .d{width:8px;height:8px;border-radius:50%;background:var(--coral)}
+  .cover .cpill{font-family:'Space Grotesk',sans-serif;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:#6B6052;
+    border:1px solid #CDBFA9;border-radius:99px;padding:4px 9px}
+  .cover .cstat{background:var(--coral);border-radius:14px;padding:24px 22px;margin-top:6px}
+  .cover .cstat .cbig{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:3.4rem;line-height:1;color:#fff;margin-bottom:12px}
+  .cover .cstat .cs{display:block;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.92)}
+  .cover .cf{position:absolute;bottom:22px;left:26px;font-size:.6rem;color:#8A7F6E}
+  .mock-tag{text-align:center;margin-top:20px;font-size:.8rem;color:var(--muted)}
+
+  /* SECCIONES */
+  section{padding:60px 0}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);margin-bottom:12px}
+  h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.05rem;line-height:1.18;margin-bottom:14px;letter-spacing:-.01em}
+  h2 em{font-style:normal;color:var(--accent)}
+  .lead{font-size:1.06rem;color:#C7CFE6;max-width:640px;margin-bottom:36px}
+
+  .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .f{background:rgba(255,255,255,.032);border:1px solid var(--line);border-radius:14px;padding:24px 22px;transition:.2s}
+  .f:hover{border-color:var(--purple);transform:translateY(-3px)}
+  .f .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.78rem;color:var(--ink);background:var(--accent);
+    width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .f h4{font-family:'Space Grotesk',sans-serif;font-size:1.03rem;margin-bottom:8px}
+  .f p{font-size:.9rem;color:var(--muted);line-height:1.55}
+  .f .q{color:#D8A66B;font-style:italic;font-size:.86rem;margin-top:10px;display:block}
+
+  /* cita grande */
+  .pull{background:linear-gradient(150deg,#1A2242,#121834);border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:16px;padding:38px 40px;margin:8px 0}
+  .pull p{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;line-height:1.42;margin-bottom:14px}
+  .pull p:last-child{margin:0;font-family:'Inter',sans-serif;font-size:1rem;color:var(--muted)}
+
+  /* números/pasos */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+  .step{background:rgba(255,255,255,.032);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+  .step .sn{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:var(--accent);margin-bottom:8px}
+  .step h4{font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:6px}
+  .step p{font-size:.86rem;color:var(--muted);line-height:1.5}
+  .step .free{display:inline-block;margin-top:10px;font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ok);border:1px solid rgba(84,199,166,.4);border-radius:99px;padding:3px 9px}
+
+  /* FORM */
+  .formsec{padding:44px 0 80px}
+  .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .formpoints h2{font-size:1.5rem;margin:26px 0 20px}
+  .statbox{background:var(--coral);border-radius:16px;padding:28px 28px 26px}
+  .statbox .statbig{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.4rem;line-height:1.02;color:#fff;margin-bottom:12px}
+  .statbox .stattxt{font-size:1rem;line-height:1.5;color:#fff;margin-bottom:14px}
+  .statbox .stattxt strong{font-weight:700}
+  .statbox .statsub{font-size:.9rem;line-height:1.5;color:rgba(255,255,255,.9)}
+  .statbox .statsub strong{color:#fff;font-weight:700}
+  .plist{list-style:none;display:flex;flex-direction:column;gap:16px}
+  .plist li{display:flex;gap:13px;align-items:flex-start;font-size:.96rem;line-height:1.45;color:var(--muted)}
+  .plist li b{color:var(--text);font-family:'Space Grotesk',sans-serif;font-weight:600}
+  .plist li.plus b{color:var(--accent)}
+  .pn{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--ink);
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.78rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .fcard{background:linear-gradient(155deg,#182046,#111730);border:1px solid #33406B;border-radius:20px;
+    padding:44px 44px 38px;box-shadow:0 30px 80px rgba(0,0,0,.5);max-width:620px;margin:0 auto}
+  .fcard h2{font-size:1.72rem;margin-bottom:10px}
+  .fcard .fsub{font-size:.98rem;color:#C7CFE6;margin-bottom:28px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:.83rem;color:var(--text);margin-bottom:7px;font-weight:500}
+  .field label small{color:var(--muted);font-weight:400}
+  .field input{width:100%;background:rgba(10,12,22,.72);border:1px solid var(--line);border-radius:10px;
+    padding:14px 15px;color:var(--text);font-size:.98rem;font-family:inherit;transition:.15s}
+  .field input:focus{outline:none;border-color:var(--accent);background:rgba(10,12,22,.95)}
+  .field input::placeholder{color:#5F6885}
+  .field .help{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.45}
+
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:20px 0 22px;font-size:.83rem;color:var(--muted);line-height:1.5}
+  .consent input{flex:0 0 18px;height:18px;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+  .consent a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(255,210,51,.4)}
+
+  .btn{width:100%;background:var(--accent);color:var(--ink);font-family:'Space Grotesk',sans-serif;font-weight:700;
+    border:none;border-radius:12px;padding:17px;font-size:1.06rem;cursor:pointer;transition:.15s}
+  .btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+  .reassure{text-align:center;font-size:.79rem;color:var(--muted);margin-top:14px;line-height:1.5}
+  .err{background:rgba(232,130,90,.13);border:1px solid rgba(232,130,90,.4);color:#E8825A;border-radius:9px;
+    padding:11px 14px;font-size:.87rem;margin-bottom:16px;display:none}
+
+  /* éxito */
+  .done{display:none;text-align:center;padding:12px 0}
+  .done .tick{width:62px;height:62px;border-radius:50%;background:rgba(84,199,166,.15);border:1px solid var(--ok);
+    color:var(--ok);font-size:1.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+  .done h3{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;margin-bottom:12px}
+  .done p{color:#C7CFE6;font-size:.98rem;margin-bottom:24px;line-height:1.6}
+  .done .dl{display:inline-block;background:var(--accent);color:var(--ink);font-family:'Space Grotesk',sans-serif;
+    font-weight:700;padding:15px 30px;border-radius:11px;text-decoration:none;font-size:1rem}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:.76rem;color:var(--muted);line-height:1.6}
+  footer a{color:var(--muted)}
+  footer strong{color:var(--text)}
+
+  /* Bloque de oferta fundador */
+  .offer{background:linear-gradient(155deg,#1E2748,#141B33);border:1px solid var(--purple);border-radius:16px;
+    padding:30px 32px;margin-top:22px;text-align:left}
+  .offer .eyeb{font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:12px}
+  .offer h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.45rem;line-height:1.2;margin-bottom:14px}
+  .offer p{font-size:.96rem;line-height:1.6;color:#C7CFE6;margin-bottom:14px}
+  .offer .why{background:rgba(255,210,51,.07);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+    padding:14px 18px;font-size:.92rem;line-height:1.55;color:#D6DCF0;margin-bottom:18px}
+  .offer .why b{color:var(--text)}
+  .offer-list{list-style:none;margin-bottom:20px}
+  .offer-list li{padding:7px 0 7px 26px;position:relative;font-size:.93rem;line-height:1.45;color:var(--text)}
+  .offer-list li::before{content:"\2713";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .offer .btn-wa{display:block;text-align:center;background:#25D366;color:#fff;font-family:'Space Grotesk',sans-serif;
+    font-weight:700;border-radius:12px;padding:16px;font-size:1rem;text-decoration:none;transition:.15s}
+  .offer .btn-wa:hover{filter:brightness(1.07);transform:translateY(-1px)}
+  .offer .slots{text-align:center;font-size:.8rem;color:var(--muted);margin-top:12px;line-height:1.5}
+
+  @media(max-width:860px){
+    .hero{grid-template-columns:1fr;gap:40px;padding:34px 0 48px}
+    h1{font-size:2.2rem}
+    .grid6{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .row2{grid-template-columns:1fr}
+    .formgrid{grid-template-columns:1fr;gap:32px}
+    .fcard{padding:32px 24px 28px;max-width:100%}
+    .pull{padding:28px 24px}
+    .pull p{font-size:1.18rem}
+    h2{font-size:1.65rem}
+  }
+  @media(max-width:480px){.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="glow"></div><div class="glow2"></div>
+<div class="page"><div class="wrap">
+
+<header>
+  <span class="brand"><span class="dot"></span>RobotsQueen</span>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div>
+    <span class="badge">★ Guía gratuita · Ecommerce</span>
+    <h1>¿Dónde está <em>mi pedido?</em></h1>
+    <p class="sub">La pregunta que te llena el WhatsApp a cualquier hora. Aquí tienes el método de <strong>4 pasos</strong> para dejar de contestarla tú — y bajar hasta un <strong>80%</strong> los mensajes de seguimiento. Sin contratar a nadie y sin aprender a programar.</p>
+    <div class="trust">
+      <span>4 pasos</span>
+      <span>1 calculadora</span>
+      <span>6 casos reales</span>
+      <span>Datos de España</span>
+    </div>
+  </div>
+
+  <div class="mock">
+    <div class="cover">
+      <div class="ctop">
+        <span class="cbrand"><span class="d"></span>ROBOTSQUEEN</span>
+        <span class="cpill">Ecommerce</span>
+      </div>
+      <div class="cstat">
+        <span class="cbig">−80%</span>
+        <span class="cs">de mensajes de seguimiento, sin contratar a nadie y sin aprender a programar.</span>
+      </div>
+      <span class="cf">Oscarina · robotsconsultant.net · Edición 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FORMULARIO ===== -->
+<section class="formsec" id="descargar">
+  <div class="formgrid">
+    <div class="formpoints">
+      <div class="statbox">
+        <p class="statbig">2 a 5 de cada 10</p>
+        <p class="stattxt">mensajes que recibe tu tienda son el mismo: «¿dónde está mi pedido?». En Black Friday y Navidad llegan al <strong>50–60%</strong> de todo lo que entra.</p>
+        <p class="statsub">Lo que te cuesta no son los minutos. Son las interrupciones: de media se tarda <strong>23 minutos</strong> en volver a lo que estabas haciendo.</p>
+      </div>
+      <h2>Lo que te llevas en la guía (gratis)</h2>
+      <ul class="plist">
+        <li><span class="pn">1</span><span><b>El método de 4 pasos</b> para que dejen de preguntarte «¿dónde está mi pedido?».</span></li>
+        <li><span class="pn">2</span><span><b>Los 3 avisos automáticos</b> que ya trae tu plataforma (Shopify, WooCommerce, PrestaShop, Odoo) y bajan las consultas un 20–30%.</span></li>
+        <li><span class="pn">3</span><span><b>La calculadora</b> de cuánto te cuesta a ti, en horas al mes, con tus propios números.</span></li>
+        <li><span class="pn">4</span><span><b>6 casos reales</b> (de −25% a −80% de consultas) y la tabla de herramientas para cada paso.</span></li>
+        <li class="plus"><span class="pn">✦</span><span><b>La plantilla para contar tus consultas</b> y el checklist de la Semana 1 para empezar hoy.</span></li>
+      </ul>
+    </div>
+
+    <div class="fcard">
+      <div id="formview">
+        <h2>Te la envío al correo</h2>
+        <p class="fsub">Rellena esto y la descargas al instante. También te llega al email por si quieres guardarla.</p>
+
+        <div class="err" id="err"></div>
+
+        <div class="field">
+          <label for="nombre">Tu nombre</label>
+          <input id="nombre" type="text" placeholder="Marta" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="email">Tu correo</label>
+          <input id="email" type="email" placeholder="marta@mitienda.com" autocomplete="email">
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="empresa">Tu tienda <small>nombre o web</small></label>
+            <input id="empresa" type="text" placeholder="mitienda.com" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="tel" placeholder="600 000 000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field" style="margin-top:-4px">
+          <div class="help">💡 Así sé qué vendes y puedo darte ejemplos de avisos que te sirvan de verdad.</div>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="consent">
+          <span>Acepto recibir la guía y comunicaciones de RobotsConsultant sobre automatización para ecommerce. Puedo darme de baja cuando quiera. <a href="https://robotsconsultant.net/politica-privacidad/" target="_blank" rel="noopener">Política de Privacidad</a>.</span>
+        </label>
+
+        <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD" data-theme="dark" style="margin:4px 0 16px"></div>
+
+        <button class="btn" id="submit">Descargar la guía gratis</button>
+        <div class="reassure">Sin spam. Sin llamadas comerciales sorpresa.<br>Tus datos no se ceden a terceros.</div>
+      </div>
+
+      <div class="done" id="doneview">
+        <div class="tick">✓</div>
+        <h3 id="donetitle">¡Listo! Ya es tuya</h3>
+        <p>Te la he enviado también al correo, por si quieres guardarla. Si no te llega en unos minutos, mira en Promociones o Spam.</p>
+        <a class="dl" id="dlbtn" href="https://robotsconsultant.net/guia-donde-esta-mi-pedido.pdf" target="_blank" rel="noopener">⬇ Descargar la guía en PDF</a>
+        <div class="offer">
+          <div class="eyeb">Precio de cliente fundador</div>
+          <h3>El paso 4, montado para ti:<br>tu asistente de IA que contesta «¿dónde está mi pedido?»</h3>
+          <ul class="offer-list">
+            <li>Responde el estado y la fecha del pedido en WhatsApp, 24/7</li>
+            <li>Empieza en modo borrador: tú apruebas con un toque hasta que acierta solo</li>
+            <li>Las incidencias de verdad (perdido, roto, devuelto) te las pasa a ti</li>
+          </ul>
+          <div class="why"><b>Por qué el descuento:</b> acabo de lanzar este servicio y busco las primeras tiendas para documentar resultados reales. Tú te llevas el 40%; yo me llevo el permiso para contar tu caso — con tu nombre o sin él, como prefieras.</div>
+          <a class="btn-wa" href="https://wa.me/34641526150?text=Hola%20Osca%2C%20quiero%20info%20del%20asistente%20de%20IA%20para%20%C2%ABd%C3%B3nde%20est%C3%A1%20mi%20pedido%C2%BB%20con%20el%20precio%20de%20cliente%20fundador" target="_blank" rel="noopener">Quiero una plaza de fundadora</a>
+          <div class="slots">Sin compromiso · Te respondo yo en menos de 24 h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <strong>RobotsAdvisors OÜ</strong> (RobotsConsultant · RobotsQueen) · info@robotsconsultant.net<br>
+  Responsable del tratamiento: RobotsAdvisors OÜ. Finalidad: enviarte la guía solicitada y, si lo consientes, comunicaciones comerciales sobre nuestros servicios. Base legal: tu consentimiento. Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, portabilidad y limitación escribiendo a info@robotsconsultant.net. Más información en la <a href="https://robotsconsultant.net/politica-privacidad/" target="_blank" rel="noopener">Política de Privacidad</a>.
+</div></footer>
+
+</div></div>
+
+<script>
+/* ====== CONFIGURACIÓN ====== */
+const ML_ACTION = "https://assets.mailerlite.com/jsonp/2267913/forms/195524044267717634/subscribe";
+const PDF_URL = "https://robotsconsultant.net/guia-donde-esta-mi-pedido.pdf";
+/* =========================== */
+
+const $=id=>document.getElementById(id);
+
+/* Envía el lead directamente al formulario nativo de MailerLite (grupo Ecommerce)
+   mediante un iframe oculto, para evitar el bloqueo CORS. */
+function submitToMailerLite(data){
+  return new Promise((resolve)=>{
+    let iframe=document.getElementById("ml_sink");
+    if(!iframe){
+      iframe=document.createElement("iframe");
+      iframe.name="ml_sink"; iframe.id="ml_sink"; iframe.style.display="none";
+      document.body.appendChild(iframe);
+    }
+    const f=document.createElement("form");
+    f.method="post"; f.action=ML_ACTION; f.target="ml_sink"; f.style.display="none";
+    const add=(n,v)=>{ const i=document.createElement("input"); i.type="hidden"; i.name=n; i.value=v; f.appendChild(i); };
+    add("fields[name]", data.name);
+    add("fields[email]", data.email);
+    add("fields[company]", data.company);
+    add("fields[phone]", data.phone);
+    add("gdpr[]", "Email");
+    add("g-recaptcha-response", data.captcha || "");
+    add("ml-submit", "1");
+    add("anticsrf", "true");
+    document.body.appendChild(f);
+    let done=false;
+    const finish=()=>{ if(done) return; done=true; try{ f.remove(); }catch(_){ } resolve(); };
+    iframe.addEventListener("load", finish, {once:true});
+    f.submit();
+    setTimeout(finish, 1500);
+  });
+}
+const err=$("err");
+function showErr(m){ err.textContent=m; err.style.display="block"; err.scrollIntoView({block:"center",behavior:"smooth"}); }
+function hideErr(){ err.style.display="none"; }
+
+$("submit").onclick = async () => {
+  hideErr();
+  const nombre=$("nombre").value.trim();
+  const email=$("email").value.trim();
+  const empresa=$("empresa").value.trim();
+  const telefono=$("telefono").value.trim();
+
+  if(!nombre) return showErr("Dime tu nombre, que es para saludarte bien.");
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showErr("Revisa el correo: parece que falta algo.");
+  if(!empresa) return showErr("Dime el nombre de tu tienda o tu web.");
+  if(!telefono) return showErr("Falta el teléfono.");
+  if(!$("consent").checked) return showErr("Marca la casilla de consentimiento para poder enviarte la guía.");
+  const captcha = (typeof grecaptcha !== "undefined") ? grecaptcha.getResponse() : "";
+  if(!captcha) return showErr("Marca la casilla «No soy un robot» para continuar.");
+
+  const btn=$("submit");
+  btn.disabled=true; btn.textContent="Enviando…";
+
+  try{
+    await submitToMailerLite({ name:nombre, email:email, company:empresa, phone:telefono, captcha:captcha });
+  }catch(e){ console.error("No se pudo registrar:",e); }
+
+  // Pase lo que pase, le damos su descarga: nunca castigamos al usuario por un fallo nuestro.
+  $("formview").style.display="none";
+  $("doneview").style.display="block";
+  $("donetitle").textContent = "¡Listo, "+nombre.split(" ")[0]+"!";
+  document.querySelector(".fcard").scrollIntoView({block:"center",behavior:"smooth"});
+  window.open(PDF_URL,"_blank");
+};
+
+/* Enter envía el formulario */
+document.querySelectorAll("#formview input").forEach(i=>{
+  i.addEventListener("keydown",e=>{ if(e.key==="Enter") $("submit").click(); });
+});
+</script>
+</body>
+</html>
